@@ -31,9 +31,9 @@
             headerPanel = new Panel();
             headerLabel = new Label();
             leagueGroupBox = new GroupBox();
-            comboBox1 = new ComboBox();
+            seasonNameComboBox = new ComboBox();
             seasonLabel = new Label();
-            textBox1 = new TextBox();
+            leagNameTextBox = new TextBox();
             leagueNameLabel = new Label();
             teamSettingsGroupBox = new GroupBox();
             numberTeamComboBox = new ComboBox();
@@ -49,7 +49,7 @@
             losePointsComboBox = new ComboBox();
             losePointsLabel = new Label();
             pointsWinComboBox = new ComboBox();
-            comboBox3 = new ComboBox();
+            drawPoints = new ComboBox();
             pointsDrawLabel = new Label();
             pointsWinLabel = new Label();
             settingsLeagueBtn = new Button();
@@ -81,9 +81,9 @@
             // 
             // leagueGroupBox
             // 
-            leagueGroupBox.Controls.Add(comboBox1);
+            leagueGroupBox.Controls.Add(seasonNameComboBox);
             leagueGroupBox.Controls.Add(seasonLabel);
-            leagueGroupBox.Controls.Add(textBox1);
+            leagueGroupBox.Controls.Add(leagNameTextBox);
             leagueGroupBox.Controls.Add(leagueNameLabel);
             leagueGroupBox.Font = new Font("Century Gothic", 12.2F, FontStyle.Bold);
             leagueGroupBox.Location = new Point(62, 81);
@@ -93,13 +93,13 @@
             leagueGroupBox.TabStop = false;
             leagueGroupBox.Text = "League Information";
             // 
-            // comboBox1
+            // seasonNameComboBox
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(200, 135);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(177, 31);
-            comboBox1.TabIndex = 3;
+            seasonNameComboBox.FormattingEnabled = true;
+            seasonNameComboBox.Location = new Point(200, 135);
+            seasonNameComboBox.Name = "seasonNameComboBox";
+            seasonNameComboBox.Size = new Size(177, 31);
+            seasonNameComboBox.TabIndex = 3;
             // 
             // seasonLabel
             // 
@@ -111,12 +111,12 @@
             seasonLabel.TabIndex = 2;
             seasonLabel.Text = "Season:";
             // 
-            // textBox1
+            // leagNameTextBox
             // 
-            textBox1.Location = new Point(200, 46);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(177, 32);
-            textBox1.TabIndex = 1;
+            leagNameTextBox.Location = new Point(200, 46);
+            leagNameTextBox.Name = "leagNameTextBox";
+            leagNameTextBox.Size = new Size(177, 32);
+            leagNameTextBox.TabIndex = 1;
             // 
             // leagueNameLabel
             // 
@@ -233,7 +233,7 @@
             pointsRulesGroupBox.Controls.Add(losePointsComboBox);
             pointsRulesGroupBox.Controls.Add(losePointsLabel);
             pointsRulesGroupBox.Controls.Add(pointsWinComboBox);
-            pointsRulesGroupBox.Controls.Add(comboBox3);
+            pointsRulesGroupBox.Controls.Add(drawPoints);
             pointsRulesGroupBox.Controls.Add(pointsDrawLabel);
             pointsRulesGroupBox.Controls.Add(pointsWinLabel);
             pointsRulesGroupBox.Font = new Font("Century Gothic", 12.2F, FontStyle.Bold);
@@ -270,13 +270,13 @@
             pointsWinComboBox.Size = new Size(177, 31);
             pointsWinComboBox.TabIndex = 4;
             // 
-            // comboBox3
+            // drawPoints
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(200, 94);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(177, 31);
-            comboBox3.TabIndex = 3;
+            drawPoints.FormattingEnabled = true;
+            drawPoints.Location = new Point(200, 94);
+            drawPoints.Name = "drawPoints";
+            drawPoints.Size = new Size(177, 31);
+            drawPoints.TabIndex = 3;
             // 
             // pointsDrawLabel
             // 
@@ -345,8 +345,8 @@
         private GroupBox leagueGroupBox;
         private Label leagueNameLabel;
         private Label seasonLabel;
-        private TextBox textBox1;
-        private ComboBox comboBox1;
+        private TextBox leagNameTextBox;
+        private ComboBox seasonNameComboBox;
         private GroupBox teamSettingsGroupBox;
         private ComboBox playerComboBox;
         private Label teamPlayerLabel;
@@ -359,7 +359,7 @@
         private ComboBox matchDurationComboBox;
         private GroupBox pointsRulesGroupBox;
         private ComboBox pointsWinComboBox;
-        private ComboBox comboBox3;
+        private ComboBox drawPoints;
         private Label pointsDrawLabel;
         private Label pointsWinLabel;
         private Label losePointsLabel;

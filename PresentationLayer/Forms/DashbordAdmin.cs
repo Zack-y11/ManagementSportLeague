@@ -55,7 +55,8 @@ namespace PresentationLayer.Forms
         }
 
         private void SetupButton()
-        {   if (dashboardBtn != null) ConfigureButton(dashboardBtn);
+        {
+            if (dashboardBtn != null) ConfigureButton(dashboardBtn);
             if (teamsBtn != null) ConfigureButton(teamsBtn);
             if (featuresBtn != null) ConfigureButton(featuresBtn);
             if (settingsBtn != null) ConfigureButton(settingsBtn);
@@ -68,13 +69,13 @@ namespace PresentationLayer.Forms
             button.MouseLeave -= Button_MouseLeave;
             button.Click -= Button_Click;
 
-            // Configure button appearance
+            
             button.FlatStyle = FlatStyle.Flat;
-            button.FlatAppearance.BorderSize = 0; 
+            button.FlatAppearance.BorderSize = 0;
             button.BackColor = DEFAULT_BACKGROUND;
             button.IconColor = Color.Black;
 
-            // Add event handlers
+          
             button.MouseEnter += Button_MouseEnter;
             button.MouseLeave += Button_MouseLeave;
             button.Click += Button_Click;
@@ -178,7 +179,7 @@ namespace PresentationLayer.Forms
 
         }
 
-            private void LoadTeamsContent()
+        private void LoadTeamsContent()
         {
             try
             {
@@ -240,5 +241,7 @@ namespace PresentationLayer.Forms
                 activeForm.Dispose();
             }
         }
+
+    
     }
 }

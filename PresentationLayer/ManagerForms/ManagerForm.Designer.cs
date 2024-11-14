@@ -29,47 +29,54 @@
         private void InitializeComponent()
         {
             panelHeader = new Panel();
-            labelLeague = new Label();
-            labelSeason = new Label();
+            ipbManager = new FontAwesome.Sharp.IconPictureBox();
+            ibPositionTable = new FontAwesome.Sharp.IconButton();
+            ibtInjured = new FontAwesome.Sharp.IconButton();
+            ibtCalendar = new FontAwesome.Sharp.IconButton();
             labelCoach = new Label();
-            panel1 = new Panel();
+            panelNextMach = new Panel();
+            ipbCalendar = new FontAwesome.Sharp.IconPictureBox();
             labelTimeNextMatch = new Label();
             labelRival = new Label();
             labelNextMatch = new Label();
-            panel2 = new Panel();
+            panelWins = new Panel();
+            ipbStar = new FontAwesome.Sharp.IconPictureBox();
             labelWinsNumber = new Label();
             labelWins = new Label();
-            panel3 = new Panel();
+            panelObjetiveSeason = new Panel();
             ipbTrophy = new FontAwesome.Sharp.IconPictureBox();
             labelObjetiveStatus = new Label();
             labelObejtiveCompetition = new Label();
             labelObejtive = new Label();
             panelPositionTable = new Panel();
-            label1 = new Label();
-            ipbStar = new FontAwesome.Sharp.IconPictureBox();
-            ipbCalendar = new FontAwesome.Sharp.IconPictureBox();
-            panelInjuredPlayers = new Panel();
-            labelInjuredPlayers = new Label();
-            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            label2 = new Label();
+            ipbPositionTable = new FontAwesome.Sharp.IconPictureBox();
             dataGridView1 = new DataGridView();
+            labelPositionTable = new Label();
+            panelInjuredPlayers = new Panel();
+            labelInjuredPlayersNUmber = new Label();
+            ipbInjured = new FontAwesome.Sharp.IconPictureBox();
+            labelInjuredPlayers = new Label();
             panelHeader.SuspendLayout();
-            panel1.SuspendLayout();
-            panel2.SuspendLayout();
-            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ipbManager).BeginInit();
+            panelNextMach.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ipbCalendar).BeginInit();
+            panelWins.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ipbStar).BeginInit();
+            panelObjetiveSeason.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ipbTrophy).BeginInit();
             panelPositionTable.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)ipbStar).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)ipbCalendar).BeginInit();
-            panelInjuredPlayers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ipbPositionTable).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panelInjuredPlayers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ipbInjured).BeginInit();
             SuspendLayout();
             // 
             // panelHeader
             // 
-            panelHeader.Controls.Add(labelLeague);
-            panelHeader.Controls.Add(labelSeason);
+            panelHeader.Controls.Add(ipbManager);
+            panelHeader.Controls.Add(ibPositionTable);
+            panelHeader.Controls.Add(ibtInjured);
+            panelHeader.Controls.Add(ibtCalendar);
             panelHeader.Controls.Add(labelCoach);
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(0, 0);
@@ -77,47 +84,99 @@
             panelHeader.Size = new Size(1182, 125);
             panelHeader.TabIndex = 0;
             // 
-            // labelLeague
+            // ipbManager
             // 
-            labelLeague.AutoSize = true;
-            labelLeague.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelLeague.Location = new Point(975, 54);
-            labelLeague.Name = "labelLeague";
-            labelLeague.Size = new Size(70, 19);
-            labelLeague.TabIndex = 2;
-            labelLeague.Text = "League";
+            ipbManager.BackColor = SystemColors.Control;
+            ipbManager.ForeColor = SystemColors.ControlText;
+            ipbManager.IconChar = FontAwesome.Sharp.IconChar.UserTie;
+            ipbManager.IconColor = SystemColors.ControlText;
+            ipbManager.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ipbManager.IconSize = 40;
+            ipbManager.Location = new Point(12, 55);
+            ipbManager.Name = "ipbManager";
+            ipbManager.Size = new Size(40, 40);
+            ipbManager.TabIndex = 5;
+            ipbManager.TabStop = false;
             // 
-            // labelSeason
+            // ibPositionTable
             // 
-            labelSeason.AutoSize = true;
-            labelSeason.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelSeason.Location = new Point(362, 31);
-            labelSeason.Name = "labelSeason";
-            labelSeason.Size = new Size(74, 19);
-            labelSeason.TabIndex = 1;
-            labelSeason.Text = "Season ";
+            ibPositionTable.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ibPositionTable.IconChar = FontAwesome.Sharp.IconChar.RankingStar;
+            ibPositionTable.IconColor = Color.Black;
+            ibPositionTable.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ibPositionTable.ImageAlign = ContentAlignment.MiddleRight;
+            ibPositionTable.Location = new Point(833, 50);
+            ibPositionTable.Name = "ibPositionTable";
+            ibPositionTable.Size = new Size(191, 49);
+            ibPositionTable.TabIndex = 4;
+            ibPositionTable.Text = "Position Table";
+            ibPositionTable.TextAlign = ContentAlignment.MiddleLeft;
+            ibPositionTable.UseVisualStyleBackColor = true;
+            // 
+            // ibtInjured
+            // 
+            ibtInjured.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ibtInjured.IconChar = FontAwesome.Sharp.IconChar.HeartPulse;
+            ibtInjured.IconColor = Color.Black;
+            ibtInjured.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ibtInjured.ImageAlign = ContentAlignment.MiddleRight;
+            ibtInjured.Location = new Point(623, 50);
+            ibtInjured.Name = "ibtInjured";
+            ibtInjured.Size = new Size(191, 49);
+            ibtInjured.TabIndex = 3;
+            ibtInjured.Text = "Nucering";
+            ibtInjured.TextAlign = ContentAlignment.MiddleLeft;
+            ibtInjured.UseVisualStyleBackColor = true;
+            // 
+            // ibtCalendar
+            // 
+            ibtCalendar.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ibtCalendar.IconChar = FontAwesome.Sharp.IconChar.Calendar;
+            ibtCalendar.IconColor = Color.Black;
+            ibtCalendar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ibtCalendar.ImageAlign = ContentAlignment.MiddleRight;
+            ibtCalendar.Location = new Point(413, 50);
+            ibtCalendar.Name = "ibtCalendar";
+            ibtCalendar.Size = new Size(191, 49);
+            ibtCalendar.TabIndex = 2;
+            ibtCalendar.Text = "Calendar";
+            ibtCalendar.TextAlign = ContentAlignment.MiddleLeft;
+            ibtCalendar.UseVisualStyleBackColor = true;
             // 
             // labelCoach
             // 
             labelCoach.AutoSize = true;
             labelCoach.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelCoach.Location = new Point(12, 21);
+            labelCoach.Location = new Point(52, 55);
             labelCoach.Name = "labelCoach";
             labelCoach.Size = new Size(264, 34);
             labelCoach.TabIndex = 1;
             labelCoach.Text = "Dashboard Coach";
             // 
-            // panel1
+            // panelNextMach
             // 
-            panel1.BackColor = Color.FromArgb(37, 99, 235);
-            panel1.Controls.Add(ipbCalendar);
-            panel1.Controls.Add(labelTimeNextMatch);
-            panel1.Controls.Add(labelRival);
-            panel1.Controls.Add(labelNextMatch);
-            panel1.Location = new Point(80, 192);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(505, 152);
-            panel1.TabIndex = 2;
+            panelNextMach.BackColor = Color.FromArgb(37, 99, 235);
+            panelNextMach.Controls.Add(ipbCalendar);
+            panelNextMach.Controls.Add(labelTimeNextMatch);
+            panelNextMach.Controls.Add(labelRival);
+            panelNextMach.Controls.Add(labelNextMatch);
+            panelNextMach.Location = new Point(80, 192);
+            panelNextMach.Name = "panelNextMach";
+            panelNextMach.Size = new Size(505, 152);
+            panelNextMach.TabIndex = 2;
+            // 
+            // ipbCalendar
+            // 
+            ipbCalendar.BackColor = Color.Transparent;
+            ipbCalendar.IconChar = FontAwesome.Sharp.IconChar.Calendar;
+            ipbCalendar.IconColor = Color.White;
+            ipbCalendar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ipbCalendar.IconSize = 40;
+            ipbCalendar.Location = new Point(454, 9);
+            ipbCalendar.Name = "ipbCalendar";
+            ipbCalendar.Size = new Size(40, 40);
+            ipbCalendar.TabIndex = 4;
+            ipbCalendar.TabStop = false;
             // 
             // labelTimeNextMatch
             // 
@@ -153,16 +212,29 @@
             labelNextMatch.TabIndex = 0;
             labelNextMatch.Text = "Next Match";
             // 
-            // panel2
+            // panelWins
             // 
-            panel2.BackColor = Color.FromArgb(22, 163, 74);
-            panel2.Controls.Add(ipbStar);
-            panel2.Controls.Add(labelWinsNumber);
-            panel2.Controls.Add(labelWins);
-            panel2.Location = new Point(80, 387);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(505, 152);
-            panel2.TabIndex = 3;
+            panelWins.BackColor = Color.FromArgb(22, 163, 74);
+            panelWins.Controls.Add(ipbStar);
+            panelWins.Controls.Add(labelWinsNumber);
+            panelWins.Controls.Add(labelWins);
+            panelWins.Location = new Point(80, 387);
+            panelWins.Name = "panelWins";
+            panelWins.Size = new Size(505, 152);
+            panelWins.TabIndex = 3;
+            // 
+            // ipbStar
+            // 
+            ipbStar.BackColor = Color.Transparent;
+            ipbStar.IconChar = FontAwesome.Sharp.IconChar.Star;
+            ipbStar.IconColor = Color.White;
+            ipbStar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ipbStar.IconSize = 40;
+            ipbStar.Location = new Point(454, 16);
+            ipbStar.Name = "ipbStar";
+            ipbStar.Size = new Size(40, 40);
+            ipbStar.TabIndex = 4;
+            ipbStar.TabStop = false;
             // 
             // labelWinsNumber
             // 
@@ -186,17 +258,17 @@
             labelWins.TabIndex = 0;
             labelWins.Text = "Victorias";
             // 
-            // panel3
+            // panelObjetiveSeason
             // 
-            panel3.BackColor = Color.FromArgb(202, 138, 4);
-            panel3.Controls.Add(ipbTrophy);
-            panel3.Controls.Add(labelObjetiveStatus);
-            panel3.Controls.Add(labelObejtiveCompetition);
-            panel3.Controls.Add(labelObejtive);
-            panel3.Location = new Point(80, 574);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(505, 152);
-            panel3.TabIndex = 4;
+            panelObjetiveSeason.BackColor = Color.FromArgb(202, 138, 4);
+            panelObjetiveSeason.Controls.Add(ipbTrophy);
+            panelObjetiveSeason.Controls.Add(labelObjetiveStatus);
+            panelObjetiveSeason.Controls.Add(labelObejtiveCompetition);
+            panelObjetiveSeason.Controls.Add(labelObejtive);
+            panelObjetiveSeason.Location = new Point(80, 574);
+            panelObjetiveSeason.Name = "panelObjetiveSeason";
+            panelObjetiveSeason.Size = new Size(505, 152);
+            panelObjetiveSeason.TabIndex = 4;
             // 
             // ipbTrophy
             // 
@@ -248,60 +320,81 @@
             // panelPositionTable
             // 
             panelPositionTable.BackColor = Color.FromArgb(147, 51, 234);
+            panelPositionTable.Controls.Add(ipbPositionTable);
             panelPositionTable.Controls.Add(dataGridView1);
-            panelPositionTable.Controls.Add(label1);
+            panelPositionTable.Controls.Add(labelPositionTable);
             panelPositionTable.Location = new Point(739, 192);
             panelPositionTable.Name = "panelPositionTable";
             panelPositionTable.Size = new Size(406, 347);
             panelPositionTable.TabIndex = 5;
             // 
-            // label1
+            // ipbPositionTable
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(120, 6);
-            label1.Name = "label1";
-            label1.Size = new Size(165, 27);
-            label1.TabIndex = 0;
-            label1.Text = "Position Table";
+            ipbPositionTable.BackColor = Color.FromArgb(147, 51, 234);
+            ipbPositionTable.IconChar = FontAwesome.Sharp.IconChar.RankingStar;
+            ipbPositionTable.IconColor = Color.White;
+            ipbPositionTable.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ipbPositionTable.IconSize = 40;
+            ipbPositionTable.Location = new Point(354, 9);
+            ipbPositionTable.Name = "ipbPositionTable";
+            ipbPositionTable.Size = new Size(40, 40);
+            ipbPositionTable.TabIndex = 2;
+            ipbPositionTable.TabStop = false;
             // 
-            // ipbStar
+            // dataGridView1
             // 
-            ipbStar.BackColor = Color.Transparent;
-            ipbStar.IconChar = FontAwesome.Sharp.IconChar.Star;
-            ipbStar.IconColor = Color.White;
-            ipbStar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            ipbStar.IconSize = 40;
-            ipbStar.Location = new Point(454, 16);
-            ipbStar.Name = "ipbStar";
-            ipbStar.Size = new Size(40, 40);
-            ipbStar.TabIndex = 4;
-            ipbStar.TabStop = false;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(35, 63);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(345, 268);
+            dataGridView1.TabIndex = 1;
             // 
-            // ipbCalendar
+            // labelPositionTable
             // 
-            ipbCalendar.BackColor = Color.Transparent;
-            ipbCalendar.IconChar = FontAwesome.Sharp.IconChar.Calendar;
-            ipbCalendar.IconColor = Color.White;
-            ipbCalendar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            ipbCalendar.IconSize = 40;
-            ipbCalendar.Location = new Point(454, 9);
-            ipbCalendar.Name = "ipbCalendar";
-            ipbCalendar.Size = new Size(40, 40);
-            ipbCalendar.TabIndex = 4;
-            ipbCalendar.TabStop = false;
+            labelPositionTable.AutoSize = true;
+            labelPositionTable.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelPositionTable.ForeColor = Color.White;
+            labelPositionTable.Location = new Point(120, 6);
+            labelPositionTable.Name = "labelPositionTable";
+            labelPositionTable.Size = new Size(165, 27);
+            labelPositionTable.TabIndex = 0;
+            labelPositionTable.Text = "Position Table";
             // 
             // panelInjuredPlayers
             // 
             panelInjuredPlayers.BackColor = Color.FromArgb(220, 38, 38);
-            panelInjuredPlayers.Controls.Add(label2);
-            panelInjuredPlayers.Controls.Add(iconPictureBox1);
+            panelInjuredPlayers.Controls.Add(labelInjuredPlayersNUmber);
+            panelInjuredPlayers.Controls.Add(ipbInjured);
             panelInjuredPlayers.Controls.Add(labelInjuredPlayers);
             panelInjuredPlayers.Location = new Point(739, 574);
             panelInjuredPlayers.Name = "panelInjuredPlayers";
             panelInjuredPlayers.Size = new Size(406, 152);
             panelInjuredPlayers.TabIndex = 6;
+            // 
+            // labelInjuredPlayersNUmber
+            // 
+            labelInjuredPlayersNUmber.AutoSize = true;
+            labelInjuredPlayersNUmber.Font = new Font("Century Gothic", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelInjuredPlayersNUmber.ForeColor = Color.White;
+            labelInjuredPlayersNUmber.Location = new Point(179, 50);
+            labelInjuredPlayersNUmber.Name = "labelInjuredPlayersNUmber";
+            labelInjuredPlayersNUmber.Size = new Size(47, 51);
+            labelInjuredPlayersNUmber.TabIndex = 4;
+            labelInjuredPlayersNUmber.Text = "5";
+            // 
+            // ipbInjured
+            // 
+            ipbInjured.BackColor = Color.FromArgb(220, 38, 38);
+            ipbInjured.IconChar = FontAwesome.Sharp.IconChar.HeartPulse;
+            ipbInjured.IconColor = Color.White;
+            ipbInjured.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ipbInjured.IconSize = 40;
+            ipbInjured.Location = new Point(354, 11);
+            ipbInjured.Name = "ipbInjured";
+            ipbInjured.Size = new Size(40, 40);
+            ipbInjured.TabIndex = 1;
+            ipbInjured.TabStop = false;
             // 
             // labelInjuredPlayers
             // 
@@ -314,39 +407,6 @@
             labelInjuredPlayers.TabIndex = 0;
             labelInjuredPlayers.Text = "injured players";
             // 
-            // iconPictureBox1
-            // 
-            iconPictureBox1.BackColor = Color.FromArgb(220, 38, 38);
-            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.HeartPulse;
-            iconPictureBox1.IconColor = Color.White;
-            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox1.IconSize = 40;
-            iconPictureBox1.Location = new Point(354, 11);
-            iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(40, 40);
-            iconPictureBox1.TabIndex = 1;
-            iconPictureBox1.TabStop = false;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Century Gothic", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(179, 50);
-            label2.Name = "label2";
-            label2.Size = new Size(47, 51);
-            label2.TabIndex = 4;
-            label2.Text = "5";
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(35, 63);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(345, 268);
-            dataGridView1.TabIndex = 1;
-            // 
             // ManagerForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -354,30 +414,32 @@
             ClientSize = new Size(1182, 754);
             Controls.Add(panelInjuredPlayers);
             Controls.Add(panelPositionTable);
-            Controls.Add(panel3);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
+            Controls.Add(panelObjetiveSeason);
+            Controls.Add(panelWins);
+            Controls.Add(panelNextMach);
             Controls.Add(panelHeader);
             FormBorderStyle = FormBorderStyle.None;
             Name = "ManagerForm";
             Text = "ManagerForm";
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ipbManager).EndInit();
+            panelNextMach.ResumeLayout(false);
+            panelNextMach.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ipbCalendar).EndInit();
+            panelWins.ResumeLayout(false);
+            panelWins.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ipbStar).EndInit();
+            panelObjetiveSeason.ResumeLayout(false);
+            panelObjetiveSeason.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)ipbTrophy).EndInit();
             panelPositionTable.ResumeLayout(false);
             panelPositionTable.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)ipbStar).EndInit();
-            ((System.ComponentModel.ISupportInitialize)ipbCalendar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ipbPositionTable).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panelInjuredPlayers.ResumeLayout(false);
             panelInjuredPlayers.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ipbInjured).EndInit();
             ResumeLayout(false);
         }
 
@@ -385,19 +447,17 @@
 
         private Panel panelHeader;
         private Label labelCoach;
-        private Label labelLeague;
-        private Label labelSeason;
-        private Panel panel1;
+        private Panel panelNextMach;
         private Label labelNextMatch;
         private Label labelTimeNextMatch;
         private Label labelRival;
-        private Panel panel2;
+        private Panel panelWins;
         private Label labelWins;
-        private Panel panel3;
+        private Panel panelObjetiveSeason;
         private Label label7;
         private Label label8;
         private Label labelObejtive;
-        private Label label1;
+        private Label labelPositionTable;
         private Label labelWinsNumber;
         private Label labelObjetiveStatus;
         private Label labelObejtiveCompetition;
@@ -407,8 +467,13 @@
         private FontAwesome.Sharp.IconPictureBox ipbCalendar;
         private Panel panelInjuredPlayers;
         private Label labelInjuredPlayers;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private Label label2;
+        private FontAwesome.Sharp.IconPictureBox ipbInjured;
+        private Label labelInjuredPlayersNUmber;
         private DataGridView dataGridView1;
+        private FontAwesome.Sharp.IconButton ibtCalendar;
+        private FontAwesome.Sharp.IconButton ibtInjured;
+        private FontAwesome.Sharp.IconPictureBox ipbPositionTable;
+        private FontAwesome.Sharp.IconButton ibPositionTable;
+        private FontAwesome.Sharp.IconPictureBox ipbManager;
     }
 }

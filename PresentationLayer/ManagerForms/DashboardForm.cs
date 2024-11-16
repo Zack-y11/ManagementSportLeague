@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PresentationLayer.ManagerForms
 {
-    public partial class CalendarMach : Form
+    public partial class DashboardForm : Form
     {
-        public CalendarMach()
+        public DashboardForm()
         {
             InitializeComponent();
         }

@@ -54,9 +54,9 @@
             ibtnPositionTable = new FontAwesome.Sharp.IconButton();
             ibtnNucering = new FontAwesome.Sharp.IconButton();
             ibtnPlayers = new FontAwesome.Sharp.IconButton();
-            ibtnCalendar = new FontAwesome.Sharp.IconButton();
+            btnCalendar = new FontAwesome.Sharp.IconButton();
             panelLogo = new Panel();
-            labelCoach = new Label();
+            coachLabel = new Label();
             ipbManager = new FontAwesome.Sharp.IconPictureBox();
             panelHeader = new Panel();
             ibtnRestaurar = new FontAwesome.Sharp.IconButton();
@@ -334,11 +334,11 @@
             // 
             // panelMenu
             // 
-            panelMenu.BackColor = Color.FromArgb(51, 51, 76);
+            panelMenu.BackColor = Color.WhiteSmoke;
             panelMenu.Controls.Add(ibtnPositionTable);
             panelMenu.Controls.Add(ibtnNucering);
             panelMenu.Controls.Add(ibtnPlayers);
-            panelMenu.Controls.Add(ibtnCalendar);
+            panelMenu.Controls.Add(btnCalendar);
             panelMenu.Controls.Add(panelLogo);
             panelMenu.Dock = DockStyle.Left;
             panelMenu.ForeColor = Color.White;
@@ -353,8 +353,9 @@
             ibtnPositionTable.FlatAppearance.BorderSize = 0;
             ibtnPositionTable.FlatStyle = FlatStyle.Flat;
             ibtnPositionTable.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ibtnPositionTable.ForeColor = Color.Black;
             ibtnPositionTable.IconChar = FontAwesome.Sharp.IconChar.RankingStar;
-            ibtnPositionTable.IconColor = Color.White;
+            ibtnPositionTable.IconColor = Color.Black;
             ibtnPositionTable.IconFont = FontAwesome.Sharp.IconFont.Auto;
             ibtnPositionTable.ImageAlign = ContentAlignment.MiddleLeft;
             ibtnPositionTable.Location = new Point(0, 305);
@@ -363,8 +364,6 @@
             ibtnPositionTable.Size = new Size(302, 60);
             ibtnPositionTable.TabIndex = 7;
             ibtnPositionTable.Text = "Position Table";
-            ibtnPositionTable.TextAlign = ContentAlignment.MiddleLeft;
-            ibtnPositionTable.TextImageRelation = TextImageRelation.ImageBeforeText;
             ibtnPositionTable.UseVisualStyleBackColor = true;
             // 
             // ibtnNucering
@@ -373,8 +372,9 @@
             ibtnNucering.FlatAppearance.BorderSize = 0;
             ibtnNucering.FlatStyle = FlatStyle.Flat;
             ibtnNucering.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ibtnNucering.ForeColor = Color.Black;
             ibtnNucering.IconChar = FontAwesome.Sharp.IconChar.HeartPulse;
-            ibtnNucering.IconColor = Color.White;
+            ibtnNucering.IconColor = Color.Black;
             ibtnNucering.IconFont = FontAwesome.Sharp.IconFont.Auto;
             ibtnNucering.ImageAlign = ContentAlignment.MiddleLeft;
             ibtnNucering.Location = new Point(0, 245);
@@ -383,8 +383,6 @@
             ibtnNucering.Size = new Size(302, 60);
             ibtnNucering.TabIndex = 6;
             ibtnNucering.Text = "Nucering";
-            ibtnNucering.TextAlign = ContentAlignment.MiddleLeft;
-            ibtnNucering.TextImageRelation = TextImageRelation.ImageBeforeText;
             ibtnNucering.UseVisualStyleBackColor = true;
             // 
             // ibtnPlayers
@@ -393,8 +391,9 @@
             ibtnPlayers.FlatAppearance.BorderSize = 0;
             ibtnPlayers.FlatStyle = FlatStyle.Flat;
             ibtnPlayers.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ibtnPlayers.ForeColor = Color.Black;
             ibtnPlayers.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
-            ibtnPlayers.IconColor = Color.White;
+            ibtnPlayers.IconColor = Color.Black;
             ibtnPlayers.IconFont = FontAwesome.Sharp.IconFont.Auto;
             ibtnPlayers.ImageAlign = ContentAlignment.MiddleLeft;
             ibtnPlayers.Location = new Point(0, 185);
@@ -403,34 +402,31 @@
             ibtnPlayers.Size = new Size(302, 60);
             ibtnPlayers.TabIndex = 5;
             ibtnPlayers.Text = "Players";
-            ibtnPlayers.TextAlign = ContentAlignment.MiddleLeft;
-            ibtnPlayers.TextImageRelation = TextImageRelation.ImageBeforeText;
             ibtnPlayers.UseVisualStyleBackColor = true;
             // 
-            // ibtnCalendar
+            // btnCalendar
             // 
-            ibtnCalendar.Dock = DockStyle.Top;
-            ibtnCalendar.FlatAppearance.BorderSize = 0;
-            ibtnCalendar.FlatStyle = FlatStyle.Flat;
-            ibtnCalendar.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ibtnCalendar.IconChar = FontAwesome.Sharp.IconChar.Calendar;
-            ibtnCalendar.IconColor = Color.White;
-            ibtnCalendar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            ibtnCalendar.ImageAlign = ContentAlignment.MiddleLeft;
-            ibtnCalendar.Location = new Point(0, 125);
-            ibtnCalendar.Name = "ibtnCalendar";
-            ibtnCalendar.Padding = new Padding(12, 0, 0, 0);
-            ibtnCalendar.Size = new Size(302, 60);
-            ibtnCalendar.TabIndex = 4;
-            ibtnCalendar.Text = "Calendar";
-            ibtnCalendar.TextAlign = ContentAlignment.MiddleLeft;
-            ibtnCalendar.TextImageRelation = TextImageRelation.ImageBeforeText;
-            ibtnCalendar.UseVisualStyleBackColor = true;
+            btnCalendar.Dock = DockStyle.Top;
+            btnCalendar.FlatAppearance.BorderSize = 0;
+            btnCalendar.FlatStyle = FlatStyle.Flat;
+            btnCalendar.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCalendar.ForeColor = Color.Black;
+            btnCalendar.IconChar = FontAwesome.Sharp.IconChar.Calendar;
+            btnCalendar.IconColor = Color.Black;
+            btnCalendar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnCalendar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCalendar.Location = new Point(0, 125);
+            btnCalendar.Name = "btnCalendar";
+            btnCalendar.Padding = new Padding(12, 0, 0, 0);
+            btnCalendar.Size = new Size(302, 60);
+            btnCalendar.TabIndex = 4;
+            btnCalendar.Text = "Calendar";
+            btnCalendar.UseVisualStyleBackColor = true;
             // 
             // panelLogo
             // 
-            panelLogo.BackColor = Color.FromArgb(39, 39, 58);
-            panelLogo.Controls.Add(labelCoach);
+            panelLogo.BackColor = Color.WhiteSmoke;
+            panelLogo.Controls.Add(coachLabel);
             panelLogo.Controls.Add(ipbManager);
             panelLogo.Dock = DockStyle.Top;
             panelLogo.Location = new Point(0, 0);
@@ -438,24 +434,26 @@
             panelLogo.Size = new Size(302, 125);
             panelLogo.TabIndex = 3;
             // 
-            // labelCoach
+            // coachLabel
             // 
-            labelCoach.AutoSize = true;
-            labelCoach.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelCoach.Location = new Point(5, 65);
-            labelCoach.Name = "labelCoach";
-            labelCoach.Size = new Size(294, 34);
-            labelCoach.TabIndex = 1;
-            labelCoach.Text = "Dashboard Manager";
+            coachLabel.AutoSize = true;
+            coachLabel.Font = new Font("Century Gothic", 14F, FontStyle.Bold);
+            coachLabel.ForeColor = Color.Black;
+            coachLabel.Location = new Point(58, 24);
+            coachLabel.Name = "coachLabel";
+            coachLabel.Size = new Size(227, 28);
+            coachLabel.TabIndex = 6;
+            coachLabel.Text = "Coach Dashboard";
             // 
             // ipbManager
             // 
-            ipbManager.BackColor = Color.FromArgb(39, 39, 58);
+            ipbManager.BackColor = Color.WhiteSmoke;
+            ipbManager.ForeColor = Color.Black;
             ipbManager.IconChar = FontAwesome.Sharp.IconChar.UserTie;
-            ipbManager.IconColor = Color.White;
+            ipbManager.IconColor = Color.Black;
             ipbManager.IconFont = FontAwesome.Sharp.IconFont.Auto;
             ipbManager.IconSize = 40;
-            ipbManager.Location = new Point(123, 12);
+            ipbManager.Location = new Point(12, 12);
             ipbManager.Name = "ipbManager";
             ipbManager.Size = new Size(40, 40);
             ipbManager.TabIndex = 5;
@@ -463,7 +461,7 @@
             // 
             // panelHeader
             // 
-            panelHeader.BackColor = Color.FromArgb(39, 39, 58);
+            panelHeader.BackColor = Color.FromArgb(0, 123, 250);
             panelHeader.Controls.Add(ibtnRestaurar);
             panelHeader.Controls.Add(ibtnMaximizar);
             panelHeader.Controls.Add(ibtnCerrar);
@@ -522,6 +520,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Control;
             ClientSize = new Size(1348, 754);
             Controls.Add(panelHeader);
             Controls.Add(panelMenu);
@@ -584,15 +583,15 @@
         private FontAwesome.Sharp.IconPictureBox ipbPositionTable;
         private Panel panelMenu;
         private Panel panelLogo;
-        private FontAwesome.Sharp.IconButton ibtnCalendar;
+        private FontAwesome.Sharp.IconButton btnCalendar;
         private FontAwesome.Sharp.IconButton ibtnPositionTable;
         private FontAwesome.Sharp.IconButton ibtnNucering;
         private FontAwesome.Sharp.IconButton ibtnPlayers;
         private FontAwesome.Sharp.IconPictureBox ipbManager;
-        private Label labelCoach;
         private Panel panelHeader;
         private FontAwesome.Sharp.IconButton ibtnCerrar;
         private FontAwesome.Sharp.IconButton ibtnRestaurar;
         private FontAwesome.Sharp.IconButton ibtnMaximizar;
+        private Label coachLabel;
     }
 }

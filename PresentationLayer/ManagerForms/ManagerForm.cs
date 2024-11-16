@@ -31,9 +31,9 @@ namespace PresentationLayer.ManagerForms
 
         private void ibtnRestaurar_Click(object sender, EventArgs e)
         {
-            this.WindowState=FormWindowState.Normal;
-            ibtnRestaurar.Visible=false;
-            ibtnMaximizar.Visible=true;
+            this.WindowState = FormWindowState.Normal;
+            ibtnRestaurar.Visible = false;
+            ibtnMaximizar.Visible = true;
         }
     }
 }

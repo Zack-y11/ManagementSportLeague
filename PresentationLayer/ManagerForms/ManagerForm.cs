@@ -17,14 +17,23 @@ namespace PresentationLayer.ManagerForms
             InitializeComponent();
         }
 
-        private void iconPictureBox1_Click(object sender, EventArgs e)
+        private void ibtnCerrar_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
-        private void panelLogo_Paint(object sender, PaintEventArgs e)
+        private void ibtnMaximizar_Click(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
+            ibtnMaximizar.Visible = false;
+            ibtnRestaurar.Visible = true;
+        }
 
+        private void ibtnRestaurar_Click(object sender, EventArgs e)
+        {
+            this.WindowState=FormWindowState.Normal;
+            ibtnRestaurar.Visible=false;
+            ibtnMaximizar.Visible=true;
         }
     }
 }

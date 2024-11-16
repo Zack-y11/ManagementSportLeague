@@ -59,9 +59,9 @@
             labelCoach = new Label();
             ipbManager = new FontAwesome.Sharp.IconPictureBox();
             panelHeader = new Panel();
+            ibtnRestaurar = new FontAwesome.Sharp.IconButton();
+            ibtnMaximizar = new FontAwesome.Sharp.IconButton();
             ibtnCerrar = new FontAwesome.Sharp.IconButton();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
             panelNextMach.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ipbCalendar).BeginInit();
             panelWins.SuspendLayout();
@@ -208,7 +208,6 @@
             ipbTrophy.Size = new Size(40, 40);
             ipbTrophy.TabIndex = 3;
             ipbTrophy.TabStop = false;
-            ipbTrophy.Click += iconPictureBox1_Click;
             // 
             // labelObjetiveStatus
             // 
@@ -465,14 +464,44 @@
             // panelHeader
             // 
             panelHeader.BackColor = Color.FromArgb(39, 39, 58);
-            panelHeader.Controls.Add(iconButton2);
-            panelHeader.Controls.Add(iconButton1);
+            panelHeader.Controls.Add(ibtnRestaurar);
+            panelHeader.Controls.Add(ibtnMaximizar);
             panelHeader.Controls.Add(ibtnCerrar);
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(302, 0);
             panelHeader.Name = "panelHeader";
             panelHeader.Size = new Size(1046, 52);
             panelHeader.TabIndex = 8;
+            // 
+            // ibtnRestaurar
+            // 
+            ibtnRestaurar.Dock = DockStyle.Right;
+            ibtnRestaurar.FlatStyle = FlatStyle.Flat;
+            ibtnRestaurar.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ibtnRestaurar.IconChar = FontAwesome.Sharp.IconChar.Clone;
+            ibtnRestaurar.IconColor = Color.White;
+            ibtnRestaurar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ibtnRestaurar.Location = new Point(899, 0);
+            ibtnRestaurar.Name = "ibtnRestaurar";
+            ibtnRestaurar.Size = new Size(49, 52);
+            ibtnRestaurar.TabIndex = 2;
+            ibtnRestaurar.UseVisualStyleBackColor = true;
+            ibtnRestaurar.Click += ibtnRestaurar_Click;
+            // 
+            // ibtnMaximizar
+            // 
+            ibtnMaximizar.Dock = DockStyle.Right;
+            ibtnMaximizar.FlatStyle = FlatStyle.Flat;
+            ibtnMaximizar.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ibtnMaximizar.IconChar = FontAwesome.Sharp.IconChar.Expand;
+            ibtnMaximizar.IconColor = Color.White;
+            ibtnMaximizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ibtnMaximizar.Location = new Point(948, 0);
+            ibtnMaximizar.Name = "ibtnMaximizar";
+            ibtnMaximizar.Size = new Size(49, 52);
+            ibtnMaximizar.TabIndex = 1;
+            ibtnMaximizar.UseVisualStyleBackColor = true;
+            ibtnMaximizar.Click += ibtnMaximizar_Click;
             // 
             // ibtnCerrar
             // 
@@ -487,34 +516,7 @@
             ibtnCerrar.Size = new Size(49, 52);
             ibtnCerrar.TabIndex = 0;
             ibtnCerrar.UseVisualStyleBackColor = true;
-            // 
-            // iconButton1
-            // 
-            iconButton1.Dock = DockStyle.Right;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Close;
-            iconButton1.IconColor = Color.White;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.Location = new Point(948, 0);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(49, 52);
-            iconButton1.TabIndex = 1;
-            iconButton1.UseVisualStyleBackColor = true;
-            // 
-            // iconButton2
-            // 
-            iconButton2.Dock = DockStyle.Right;
-            iconButton2.FlatStyle = FlatStyle.Flat;
-            iconButton2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.Close;
-            iconButton2.IconColor = Color.White;
-            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.Location = new Point(899, 0);
-            iconButton2.Name = "iconButton2";
-            iconButton2.Size = new Size(49, 52);
-            iconButton2.TabIndex = 2;
-            iconButton2.UseVisualStyleBackColor = true;
+            ibtnCerrar.Click += ibtnCerrar_Click;
             // 
             // ManagerForm
             // 
@@ -590,7 +592,7 @@
         private Label labelCoach;
         private Panel panelHeader;
         private FontAwesome.Sharp.IconButton ibtnCerrar;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton ibtnRestaurar;
+        private FontAwesome.Sharp.IconButton ibtnMaximizar;
     }
 }

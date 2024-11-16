@@ -5,7 +5,10 @@ using QuestPDF.Infrastructure;
 using PresentationLayer.Forms;
 using BusinessLayer.Services;
 using DataLayer.Repositories;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 916d78166662fe29a6cfb8089cf700ba96cf1702
 
 namespace PresentationLayer
 {

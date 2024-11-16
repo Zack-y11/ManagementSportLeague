@@ -34,11 +34,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj" />
-<<<<<<< HEAD
-    <ProjectReference Include="..\CommonLayer\CommonLayer.csproj" />
-=======
     <ProjectReference Include="..\DataLayer\DataLayer.csproj" />
->>>>>>> 916d78166662fe29a6cfb8089cf700ba96cf1702
   </ItemGroup>
 
 </Project>

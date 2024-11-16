@@ -271,9 +271,9 @@
             editPermissonBtn.IconColor = Color.White;
             editPermissonBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             editPermissonBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            editPermissonBtn.Location = new Point(841, 334);
+            editPermissonBtn.Location = new Point(786, 334);
             editPermissonBtn.Name = "editPermissonBtn";
-            editPermissonBtn.Size = new Size(246, 51);
+            editPermissonBtn.Size = new Size(275, 51);
             editPermissonBtn.TabIndex = 1;
             editPermissonBtn.Text = "Edit Permisson";
             editPermissonBtn.UseVisualStyleBackColor = false;
@@ -289,7 +289,7 @@
             rolesDataGrip.Location = new Point(6, 6);
             rolesDataGrip.Name = "rolesDataGrip";
             rolesDataGrip.RowHeadersWidth = 51;
-            rolesDataGrip.Size = new Size(829, 379);
+            rolesDataGrip.Size = new Size(774, 379);
             rolesDataGrip.TabIndex = 0;
             // 
             // roleColumn
@@ -308,7 +308,7 @@
             // 
             // seachTextBox
             // 
-            seachTextBox.Location = new Point(25, 638);
+            seachTextBox.Location = new Point(25, 660);
             seachTextBox.Name = "seachTextBox";
             seachTextBox.PlaceholderText = "Search teams, coachs, players...";
             seachTextBox.Size = new Size(238, 27);

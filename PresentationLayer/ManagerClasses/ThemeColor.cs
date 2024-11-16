@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PresentationLayer.Clases
+namespace PresentationLayer.ManagerClasses
 {
-    internal class Victorias
+    public static class ThemeColor
     {
     }
 }

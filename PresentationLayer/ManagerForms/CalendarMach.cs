@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace PresentationLayer.ManagerForms
 {
-    public partial class ManagerForm : Form
+    public partial class CalendarMach : Form
     {
-        public ManagerForm()
+        public CalendarMach()
         {
             InitializeComponent();
-        }
-
-        private void iconPictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelLogo_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

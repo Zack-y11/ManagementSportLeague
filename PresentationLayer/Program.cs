@@ -4,7 +4,7 @@ using Microsoft.Extensions.Hosting;
 using QuestPDF.Infrastructure;
 using PresentationLayer.Forms;
 using BusinessLayer.Services;
-
+using DataLayer.Repositories;
 
 namespace PresentationLayer
 {
@@ -45,11 +45,11 @@ namespace PresentationLayer
                     services.AddTransient<dashboardAdmin>();
 
                     //Repositories
-                    services.AddScoped<IMatchService, CategoryRepository>();
+                    services.AddScoped<IMatchRepository, MatchRepository>();
                     //services.AddScoped<IEmailQueueRepository, EmailQueueRepository>();
 
                     //Services
-                    //services.AddScoped<ICategoryService, CategoryService>();
+                    services.AddScoped<IMatchService, MatchService>();
                     //services.AddScoped<IEmailService, EmailService>();
 
                     //Notifications

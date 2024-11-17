@@ -47,10 +47,12 @@ namespace PresentationLayer
 
                     //Repositories
                     services.AddScoped<IMatchRepository, MatchRepository>();
+                    services.AddScoped<ITeamsRepository, TeamsRepository>();
                     //services.AddScoped<IEmailQueueRepository, EmailQueueRepository>();
 
                     //Services
                     services.AddScoped<IMatchService, MatchService>();
+                    services.AddScoped<ITeamService, TeamService>();
                     //services.AddScoped<IEmailService, EmailService>();
 
                     //Notifications

@@ -37,14 +37,11 @@
             tapControlTeams = new TabControl();
             tapTeamsControl = new TabPage();
             activeTeamsDataGrip = new DataGridView();
-            teamNameColumn = new DataGridViewTextBoxColumn();
-            divisionTeam = new DataGridViewTextBoxColumn();
-            coachColumn = new DataGridViewTextBoxColumn();
-            pointsColumn = new DataGridViewTextBoxColumn();
-            winsOrLose = new DataGridViewTextBoxColumn();
             editTeamBtn = new FontAwesome.Sharp.IconButton();
             deleteTeamBtn = new FontAwesome.Sharp.IconButton();
             teamPanel = new Panel();
+            coachComboBox = new ComboBox();
+            coachLabel = new Label();
             deleteTeamLabel = new Label();
             editTeamLabel = new Label();
             addTeamTextBox = new TextBox();
@@ -111,7 +108,7 @@
             addTeamBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             addTeamBtn.IconSize = 40;
             addTeamBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            addTeamBtn.Location = new Point(20, 123);
+            addTeamBtn.Location = new Point(20, 238);
             addTeamBtn.Name = "addTeamBtn";
             addTeamBtn.Size = new Size(194, 46);
             addTeamBtn.TabIndex = 3;
@@ -152,48 +149,11 @@
             // 
             activeTeamsDataGrip.BackgroundColor = SystemColors.ButtonFace;
             activeTeamsDataGrip.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            activeTeamsDataGrip.Columns.AddRange(new DataGridViewColumn[] { teamNameColumn, divisionTeam, coachColumn, pointsColumn, winsOrLose });
             activeTeamsDataGrip.Location = new Point(3, 3);
             activeTeamsDataGrip.Name = "activeTeamsDataGrip";
             activeTeamsDataGrip.RowHeadersWidth = 51;
             activeTeamsDataGrip.Size = new Size(713, 527);
             activeTeamsDataGrip.TabIndex = 0;
-            // 
-            // teamNameColumn
-            // 
-            teamNameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            teamNameColumn.HeaderText = "Team Name";
-            teamNameColumn.MinimumWidth = 6;
-            teamNameColumn.Name = "teamNameColumn";
-            teamNameColumn.Width = 158;
-            // 
-            // divisionTeam
-            // 
-            divisionTeam.HeaderText = "Division";
-            divisionTeam.MinimumWidth = 6;
-            divisionTeam.Name = "divisionTeam";
-            divisionTeam.Width = 125;
-            // 
-            // coachColumn
-            // 
-            coachColumn.HeaderText = "Coach";
-            coachColumn.MinimumWidth = 6;
-            coachColumn.Name = "coachColumn";
-            coachColumn.Width = 125;
-            // 
-            // pointsColumn
-            // 
-            pointsColumn.HeaderText = "Points";
-            pointsColumn.MinimumWidth = 6;
-            pointsColumn.Name = "pointsColumn";
-            pointsColumn.Width = 125;
-            // 
-            // winsOrLose
-            // 
-            winsOrLose.HeaderText = "W/L/D";
-            winsOrLose.MinimumWidth = 6;
-            winsOrLose.Name = "winsOrLose";
-            winsOrLose.Width = 125;
             // 
             // editTeamBtn
             // 
@@ -203,7 +163,7 @@
             editTeamBtn.IconColor = Color.White;
             editTeamBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             editTeamBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            editTeamBtn.Location = new Point(20, 244);
+            editTeamBtn.Location = new Point(20, 361);
             editTeamBtn.Name = "editTeamBtn";
             editTeamBtn.Size = new Size(194, 49);
             editTeamBtn.TabIndex = 4;
@@ -218,7 +178,7 @@
             deleteTeamBtn.IconColor = Color.White;
             deleteTeamBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             deleteTeamBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            deleteTeamBtn.Location = new Point(20, 386);
+            deleteTeamBtn.Location = new Point(20, 495);
             deleteTeamBtn.Name = "deleteTeamBtn";
             deleteTeamBtn.Size = new Size(194, 49);
             deleteTeamBtn.TabIndex = 5;
@@ -228,6 +188,8 @@
             // teamPanel
             // 
             teamPanel.BackColor = Color.WhiteSmoke;
+            teamPanel.Controls.Add(coachComboBox);
+            teamPanel.Controls.Add(coachLabel);
             teamPanel.Controls.Add(deleteTeamLabel);
             teamPanel.Controls.Add(editTeamLabel);
             teamPanel.Controls.Add(addTeamTextBox);
@@ -241,11 +203,29 @@
             teamPanel.Size = new Size(424, 566);
             teamPanel.TabIndex = 2;
             // 
+            // coachComboBox
+            // 
+            coachComboBox.FormattingEnabled = true;
+            coachComboBox.Location = new Point(28, 173);
+            coachComboBox.Name = "coachComboBox";
+            coachComboBox.Size = new Size(186, 28);
+            coachComboBox.TabIndex = 11;
+            // 
+            // coachLabel
+            // 
+            coachLabel.AutoSize = true;
+            coachLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            coachLabel.Location = new Point(20, 120);
+            coachLabel.Name = "coachLabel";
+            coachLabel.Size = new Size(143, 23);
+            coachLabel.TabIndex = 10;
+            coachLabel.Text = "Coach Name";
+            // 
             // deleteTeamLabel
             // 
             deleteTeamLabel.AutoSize = true;
             deleteTeamLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            deleteTeamLabel.Location = new Point(20, 349);
+            deleteTeamLabel.Location = new Point(20, 450);
             deleteTeamLabel.Name = "deleteTeamLabel";
             deleteTeamLabel.Size = new Size(133, 23);
             deleteTeamLabel.TabIndex = 9;
@@ -255,7 +235,7 @@
             // 
             editTeamLabel.AutoSize = true;
             editTeamLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            editTeamLabel.Location = new Point(20, 204);
+            editTeamLabel.Location = new Point(20, 308);
             editTeamLabel.Name = "editTeamLabel";
             editTeamLabel.Size = new Size(103, 23);
             editTeamLabel.TabIndex = 8;
@@ -320,15 +300,12 @@
         private FontAwesome.Sharp.IconButton addTeamBtn;
         private FontAwesome.Sharp.IconButton editTeamBtn;
         private FontAwesome.Sharp.IconButton deleteTeamBtn;
-        private DataGridViewTextBoxColumn teamNameColumn;
-        private DataGridViewTextBoxColumn divisionTeam;
-        private DataGridViewTextBoxColumn coachColumn;
-        private DataGridViewTextBoxColumn pointsColumn;
-        private DataGridViewTextBoxColumn winsOrLose;
         private Panel teamPanel;
         private Label addReamLabel;
         private TextBox addTeamTextBox;
         private Label editTeamLabel;
         private Label deleteTeamLabel;
+        private Label coachLabel;
+        private ComboBox coachComboBox;
     }
 }

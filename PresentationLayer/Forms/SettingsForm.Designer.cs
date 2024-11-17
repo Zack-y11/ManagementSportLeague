@@ -34,17 +34,12 @@
             administrationGroupBox = new GroupBox();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            roleLabel = new Label();
+            textBox1 = new TextBox();
             addUserTextBox = new TextBox();
             addUserLabel = new Label();
-            deleteUserLabel = new Label();
-            editUserLabel = new Label();
-            deleteUserBtn = new FontAwesome.Sharp.IconButton();
-            editUserBtn = new FontAwesome.Sharp.IconButton();
             addUserBtn = new FontAwesome.Sharp.IconButton();
             dataGridView1 = new DataGridView();
-            userNameColumn = new DataGridViewTextBoxColumn();
-            userRoleColumn = new DataGridViewTextBoxColumn();
-            actionsUserColumn = new DataGridViewTextBoxColumn();
             tabPage2 = new TabPage();
             editPermissonBtn = new FontAwesome.Sharp.IconButton();
             rolesDataGrip = new DataGridView();
@@ -123,12 +118,10 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(roleLabel);
+            tabPage1.Controls.Add(textBox1);
             tabPage1.Controls.Add(addUserTextBox);
             tabPage1.Controls.Add(addUserLabel);
-            tabPage1.Controls.Add(deleteUserLabel);
-            tabPage1.Controls.Add(editUserLabel);
-            tabPage1.Controls.Add(deleteUserBtn);
-            tabPage1.Controls.Add(editUserBtn);
             tabPage1.Controls.Add(addUserBtn);
             tabPage1.Controls.Add(dataGridView1);
             tabPage1.Location = new Point(4, 32);
@@ -138,6 +131,23 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Users";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // roleLabel
+            // 
+            roleLabel.AutoSize = true;
+            roleLabel.ForeColor = Color.Black;
+            roleLabel.Location = new Point(784, 141);
+            roleLabel.Name = "roleLabel";
+            roleLabel.Size = new Size(53, 23);
+            roleLabel.TabIndex = 9;
+            roleLabel.Text = "Role";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(786, 182);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(277, 32);
+            textBox1.TabIndex = 8;
             // 
             // addUserTextBox
             // 
@@ -152,59 +162,9 @@
             addUserLabel.ForeColor = Color.Black;
             addUserLabel.Location = new Point(784, 18);
             addUserLabel.Name = "addUserLabel";
-            addUserLabel.Size = new Size(98, 23);
+            addUserLabel.Size = new Size(123, 23);
             addUserLabel.TabIndex = 6;
-            addUserLabel.Text = "Add User";
-            // 
-            // deleteUserLabel
-            // 
-            deleteUserLabel.AutoSize = true;
-            deleteUserLabel.ForeColor = Color.Black;
-            deleteUserLabel.Location = new Point(784, 267);
-            deleteUserLabel.Name = "deleteUserLabel";
-            deleteUserLabel.Size = new Size(127, 23);
-            deleteUserLabel.TabIndex = 5;
-            deleteUserLabel.Text = "Delete User ";
-            // 
-            // editUserLabel
-            // 
-            editUserLabel.AutoSize = true;
-            editUserLabel.ForeColor = Color.Black;
-            editUserLabel.Location = new Point(784, 174);
-            editUserLabel.Name = "editUserLabel";
-            editUserLabel.Size = new Size(91, 23);
-            editUserLabel.TabIndex = 4;
-            editUserLabel.Text = "Edit User";
-            // 
-            // deleteUserBtn
-            // 
-            deleteUserBtn.BackColor = Color.Red;
-            deleteUserBtn.ForeColor = Color.White;
-            deleteUserBtn.IconChar = FontAwesome.Sharp.IconChar.UsersSlash;
-            deleteUserBtn.IconColor = Color.White;
-            deleteUserBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            deleteUserBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            deleteUserBtn.Location = new Point(784, 314);
-            deleteUserBtn.Name = "deleteUserBtn";
-            deleteUserBtn.Size = new Size(279, 42);
-            deleteUserBtn.TabIndex = 3;
-            deleteUserBtn.Text = "Delete User";
-            deleteUserBtn.UseVisualStyleBackColor = false;
-            // 
-            // editUserBtn
-            // 
-            editUserBtn.BackColor = Color.FromArgb(0, 123, 250);
-            editUserBtn.ForeColor = Color.White;
-            editUserBtn.IconChar = FontAwesome.Sharp.IconChar.UsersCog;
-            editUserBtn.IconColor = Color.White;
-            editUserBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            editUserBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            editUserBtn.Location = new Point(782, 210);
-            editUserBtn.Name = "editUserBtn";
-            editUserBtn.Size = new Size(279, 42);
-            editUserBtn.TabIndex = 2;
-            editUserBtn.Text = "Edit User";
-            editUserBtn.UseVisualStyleBackColor = false;
+            addUserLabel.Text = "Name  User";
             // 
             // addUserBtn
             // 
@@ -214,7 +174,7 @@
             addUserBtn.IconColor = Color.White;
             addUserBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             addUserBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            addUserBtn.Location = new Point(784, 110);
+            addUserBtn.Location = new Point(784, 327);
             addUserBtn.Name = "addUserBtn";
             addUserBtn.Size = new Size(279, 42);
             addUserBtn.TabIndex = 1;
@@ -224,33 +184,11 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { userNameColumn, userRoleColumn, actionsUserColumn });
             dataGridView1.Location = new Point(3, 3);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(775, 382);
             dataGridView1.TabIndex = 0;
-            // 
-            // userNameColumn
-            // 
-            userNameColumn.HeaderText = "Name";
-            userNameColumn.MinimumWidth = 6;
-            userNameColumn.Name = "userNameColumn";
-            userNameColumn.Width = 125;
-            // 
-            // userRoleColumn
-            // 
-            userRoleColumn.HeaderText = "User";
-            userRoleColumn.MinimumWidth = 6;
-            userRoleColumn.Name = "userRoleColumn";
-            userRoleColumn.Width = 125;
-            // 
-            // actionsUserColumn
-            // 
-            actionsUserColumn.HeaderText = "Actions";
-            actionsUserColumn.MinimumWidth = 6;
-            actionsUserColumn.Name = "actionsUserColumn";
-            actionsUserColumn.Width = 125;
             // 
             // tabPage2
             // 
@@ -367,18 +305,13 @@
         private FontAwesome.Sharp.IconButton editPermissonBtn;
         private FontAwesome.Sharp.IconButton addUserBtn;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn userNameColumn;
-        private DataGridViewTextBoxColumn userRoleColumn;
-        private DataGridViewTextBoxColumn actionsUserColumn;
         private DataGridViewTextBoxColumn roleColumn;
         private DataGridViewTextBoxColumn descriptionColumn;
-        private FontAwesome.Sharp.IconButton editUserBtn;
-        private FontAwesome.Sharp.IconButton deleteUserBtn;
-        private Label editUserLabel;
-        private Label deleteUserLabel;
         private Label addUserLabel;
         private TextBox addUserTextBox;
         private TextBox seachTextBox;
         private FontAwesome.Sharp.IconButton logOutBtn;
+        private Label roleLabel;
+        private TextBox textBox1;
     }
 }

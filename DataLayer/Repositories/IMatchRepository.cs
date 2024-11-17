@@ -1,4 +1,4 @@
-﻿using CommonLayer.Entities;
+﻿using CommonLayer.Models;
 
 namespace DataLayer.Repositories
 {

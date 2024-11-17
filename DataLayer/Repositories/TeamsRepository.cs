@@ -24,14 +24,15 @@ namespace DataLayer.Repositories
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = @"SELECT 
+                string query = @"
+                        SELECT 
                             t.TeamName AS Name,
-                            u.UserId AS Manager,
+                            u.Name AS Manager, 
                             t.Wins,
                             t.Loses,
                             t.Points
-                            FROM Teams t
-                            JOIN Users u ON t.ManagerId = u.UserId;";
+                        FROM Teams t
+                        JOIN Users u ON t.ManagerId = u.UserId;";
                 return connection.Query<Team>(query);
             }
         }

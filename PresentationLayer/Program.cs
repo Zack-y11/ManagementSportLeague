@@ -5,6 +5,7 @@ using QuestPDF.Infrastructure;
 using PresentationLayer.Forms;
 using BusinessLayer.Services;
 using DataLayer.Repositories;
+using DataLayer.DbConnection;
 
 
 namespace PresentationLayer
@@ -34,11 +35,11 @@ namespace PresentationLayer
         {
             return Host.CreateDefaultBuilder()
                 .ConfigureAppConfiguration((context, config) => {
-                    //config.AddJsonFile(
-                    //    "appsettings.json",
-                    //    optional: false,
-                    //    reloadOnChange: true
-                    // );
+                    config.AddJsonFile(
+                        "appsettings.json",
+                        optional: false,
+                        reloadOnChange: true
+                     );
                 })
                 .ConfigureServices((context, services) => {
 
@@ -62,7 +63,7 @@ namespace PresentationLayer
                     //services.AddScoped<ICategoryReport, CategoryReport>();
 
                     //Connection
-                    //services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
+                    services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
                 });
         }
     }

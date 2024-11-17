@@ -44,21 +44,11 @@
             teamLabel = new Label();
             matchTeamComboBox = new ComboBox();
             createMatchLabel = new Label();
-            editCoachPanel = new Panel();
-            coachInformationLabel = new Label();
-            addCoachBtn = new FontAwesome.Sharp.IconButton();
-            textBox1 = new TextBox();
-            deleteCoachBtn = new FontAwesome.Sharp.IconButton();
-            deleteCoachLabel = new Label();
-            createCoachLabel = new Label();
-            editCoachLabel = new Label();
-            editCoachBtn = new FontAwesome.Sharp.IconButton();
-            coachDataGrip = new DataGridView();
+            timeTextBox = new ComboBox();
+            timeLabel = new Label();
             contentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)matchInformation).BeginInit();
             matchPanel.SuspendLayout();
-            editCoachPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)coachDataGrip).BeginInit();
             SuspendLayout();
             // 
             // centerPanel
@@ -74,7 +64,6 @@
             contentPanel.Controls.Add(matchInformation);
             contentPanel.Controls.Add(matchInformationLabel);
             contentPanel.Controls.Add(matchPanel);
-            contentPanel.Controls.Add(editCoachPanel);
             contentPanel.Dock = DockStyle.Fill;
             contentPanel.Location = new Point(0, 0);
             contentPanel.Name = "contentPanel";
@@ -84,17 +73,17 @@
             // matchInformation
             // 
             matchInformation.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            matchInformation.Location = new Point(536, 417);
+            matchInformation.Location = new Point(24, 431);
             matchInformation.Name = "matchInformation";
             matchInformation.RowHeadersWidth = 51;
-            matchInformation.Size = new Size(567, 255);
+            matchInformation.Size = new Size(885, 255);
             matchInformation.TabIndex = 13;
             // 
             // matchInformationLabel
             // 
             matchInformationLabel.AutoSize = true;
             matchInformationLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            matchInformationLabel.Location = new Point(536, 376);
+            matchInformationLabel.Location = new Point(24, 378);
             matchInformationLabel.Name = "matchInformationLabel";
             matchInformationLabel.Size = new Size(189, 23);
             matchInformationLabel.TabIndex = 12;
@@ -102,6 +91,8 @@
             // 
             // matchPanel
             // 
+            matchPanel.Controls.Add(timeLabel);
+            matchPanel.Controls.Add(timeTextBox);
             matchPanel.Controls.Add(editMatchLabel);
             matchPanel.Controls.Add(deleteMatchLabel);
             matchPanel.Controls.Add(vsTeamLabel);
@@ -113,16 +104,17 @@
             matchPanel.Controls.Add(teamLabel);
             matchPanel.Controls.Add(matchTeamComboBox);
             matchPanel.Controls.Add(createMatchLabel);
-            matchPanel.Location = new Point(530, 3);
+            matchPanel.Dock = DockStyle.Top;
+            matchPanel.Location = new Point(0, 0);
             matchPanel.Name = "matchPanel";
-            matchPanel.Size = new Size(838, 353);
+            matchPanel.Size = new Size(1371, 353);
             matchPanel.TabIndex = 11;
             // 
             // editMatchLabel
             // 
             editMatchLabel.AutoSize = true;
             editMatchLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            editMatchLabel.Location = new Point(347, 167);
+            editMatchLabel.Location = new Point(846, 156);
             editMatchLabel.Name = "editMatchLabel";
             editMatchLabel.Size = new Size(112, 23);
             editMatchLabel.TabIndex = 15;
@@ -132,7 +124,7 @@
             // 
             deleteMatchLabel.AutoSize = true;
             deleteMatchLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            deleteMatchLabel.Location = new Point(347, 250);
+            deleteMatchLabel.Location = new Point(846, 269);
             deleteMatchLabel.Name = "deleteMatchLabel";
             deleteMatchLabel.Size = new Size(142, 23);
             deleteMatchLabel.TabIndex = 15;
@@ -158,7 +150,7 @@
             deleteMatchBtn.IconColor = Color.White;
             deleteMatchBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             deleteMatchBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            deleteMatchBtn.Location = new Point(347, 285);
+            deleteMatchBtn.Location = new Point(846, 295);
             deleteMatchBtn.Name = "deleteMatchBtn";
             deleteMatchBtn.Size = new Size(226, 43);
             deleteMatchBtn.TabIndex = 10;
@@ -175,7 +167,7 @@
             editMatchBtn.IconColor = Color.White;
             editMatchBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             editMatchBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            editMatchBtn.Location = new Point(347, 197);
+            editMatchBtn.Location = new Point(846, 209);
             editMatchBtn.Name = "editMatchBtn";
             editMatchBtn.Size = new Size(226, 43);
             editMatchBtn.TabIndex = 10;
@@ -192,7 +184,7 @@
             addMatchBtn.IconColor = Color.White;
             addMatchBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             addMatchBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            addMatchBtn.Location = new Point(347, 108);
+            addMatchBtn.Location = new Point(846, 83);
             addMatchBtn.Name = "addMatchBtn";
             addMatchBtn.Size = new Size(226, 43);
             addMatchBtn.TabIndex = 10;
@@ -214,9 +206,9 @@
             vsLabel.ForeColor = Color.Gold;
             vsLabel.Location = new Point(3, 156);
             vsLabel.Name = "vsLabel";
-            vsLabel.Size = new Size(40, 23);
+            vsLabel.Size = new Size(83, 23);
             vsLabel.TabIndex = 13;
-            vsLabel.Text = "VS:";
+            vsLabel.Text = "Agains:";
             // 
             // teamLabel
             // 
@@ -246,130 +238,23 @@
             createMatchLabel.TabIndex = 10;
             createMatchLabel.Text = "Create Match";
             // 
-            // editCoachPanel
+            // timeTextBox
             // 
-            editCoachPanel.BackColor = Color.WhiteSmoke;
-            editCoachPanel.Controls.Add(coachInformationLabel);
-            editCoachPanel.Controls.Add(addCoachBtn);
-            editCoachPanel.Controls.Add(textBox1);
-            editCoachPanel.Controls.Add(deleteCoachBtn);
-            editCoachPanel.Controls.Add(deleteCoachLabel);
-            editCoachPanel.Controls.Add(createCoachLabel);
-            editCoachPanel.Controls.Add(editCoachLabel);
-            editCoachPanel.Controls.Add(editCoachBtn);
-            editCoachPanel.Controls.Add(coachDataGrip);
-            editCoachPanel.Dock = DockStyle.Left;
-            editCoachPanel.Location = new Point(0, 0);
-            editCoachPanel.Name = "editCoachPanel";
-            editCoachPanel.Size = new Size(524, 716);
-            editCoachPanel.TabIndex = 10;
+            timeTextBox.FormattingEnabled = true;
+            timeTextBox.Location = new Point(332, 98);
+            timeTextBox.Name = "timeTextBox";
+            timeTextBox.Size = new Size(238, 28);
+            timeTextBox.TabIndex = 20;
             // 
-            // coachInformationLabel
+            // timeLabel
             // 
-            coachInformationLabel.AutoSize = true;
-            coachInformationLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            coachInformationLabel.Location = new Point(25, 376);
-            coachInformationLabel.Name = "coachInformationLabel";
-            coachInformationLabel.Size = new Size(194, 23);
-            coachInformationLabel.TabIndex = 14;
-            coachInformationLabel.Text = "Coach Information";
-            // 
-            // addCoachBtn
-            // 
-            addCoachBtn.BackColor = Color.Green;
-            addCoachBtn.FlatStyle = FlatStyle.Flat;
-            addCoachBtn.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            addCoachBtn.ForeColor = Color.White;
-            addCoachBtn.IconChar = FontAwesome.Sharp.IconChar.UserLarge;
-            addCoachBtn.IconColor = Color.White;
-            addCoachBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            addCoachBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            addCoachBtn.Location = new Point(15, 111);
-            addCoachBtn.Name = "addCoachBtn";
-            addCoachBtn.Size = new Size(226, 43);
-            addCoachBtn.TabIndex = 4;
-            addCoachBtn.Text = "Add coach";
-            addCoachBtn.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(15, 66);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(226, 27);
-            textBox1.TabIndex = 6;
-            // 
-            // deleteCoachBtn
-            // 
-            deleteCoachBtn.BackColor = Color.Red;
-            deleteCoachBtn.FlatStyle = FlatStyle.Flat;
-            deleteCoachBtn.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            deleteCoachBtn.ForeColor = Color.White;
-            deleteCoachBtn.IconChar = FontAwesome.Sharp.IconChar.UserXmark;
-            deleteCoachBtn.IconColor = Color.White;
-            deleteCoachBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            deleteCoachBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            deleteCoachBtn.Location = new Point(12, 288);
-            deleteCoachBtn.Name = "deleteCoachBtn";
-            deleteCoachBtn.Size = new Size(226, 43);
-            deleteCoachBtn.TabIndex = 9;
-            deleteCoachBtn.Text = "Delete Coach";
-            deleteCoachBtn.UseVisualStyleBackColor = false;
-            // 
-            // deleteCoachLabel
-            // 
-            deleteCoachLabel.AutoSize = true;
-            deleteCoachLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            deleteCoachLabel.Location = new Point(12, 253);
-            deleteCoachLabel.Name = "deleteCoachLabel";
-            deleteCoachLabel.Size = new Size(147, 23);
-            deleteCoachLabel.TabIndex = 8;
-            deleteCoachLabel.Text = "Delete Coach";
-            // 
-            // createCoachLabel
-            // 
-            createCoachLabel.AutoSize = true;
-            createCoachLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            createCoachLabel.Location = new Point(15, 24);
-            createCoachLabel.Name = "createCoachLabel";
-            createCoachLabel.Size = new Size(174, 23);
-            createCoachLabel.TabIndex = 5;
-            createCoachLabel.Text = "Add New Coach";
-            // 
-            // editCoachLabel
-            // 
-            editCoachLabel.AutoSize = true;
-            editCoachLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            editCoachLabel.Location = new Point(15, 170);
-            editCoachLabel.Name = "editCoachLabel";
-            editCoachLabel.Size = new Size(117, 23);
-            editCoachLabel.TabIndex = 7;
-            editCoachLabel.Text = "Edit Coach";
-            // 
-            // editCoachBtn
-            // 
-            editCoachBtn.BackColor = Color.FromArgb(0, 123, 250);
-            editCoachBtn.FlatStyle = FlatStyle.Flat;
-            editCoachBtn.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            editCoachBtn.ForeColor = Color.White;
-            editCoachBtn.IconChar = FontAwesome.Sharp.IconChar.UsersCog;
-            editCoachBtn.IconColor = Color.White;
-            editCoachBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            editCoachBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            editCoachBtn.Location = new Point(15, 200);
-            editCoachBtn.Name = "editCoachBtn";
-            editCoachBtn.Size = new Size(226, 43);
-            editCoachBtn.TabIndex = 4;
-            editCoachBtn.Text = "Edit coach";
-            editCoachBtn.UseVisualStyleBackColor = false;
-            // 
-            // coachDataGrip
-            // 
-            coachDataGrip.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            coachDataGrip.Location = new Point(15, 417);
-            coachDataGrip.Name = "coachDataGrip";
-            coachDataGrip.RowHeadersWidth = 51;
-            coachDataGrip.Size = new Size(484, 255);
-            coachDataGrip.TabIndex = 6;
+            timeLabel.AutoSize = true;
+            timeLabel.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
+            timeLabel.Location = new Point(332, 63);
+            timeLabel.Name = "timeLabel";
+            timeLabel.Size = new Size(52, 19);
+            timeLabel.TabIndex = 21;
+            timeLabel.Text = "Time:";
             // 
             // DashboardForm
             // 
@@ -385,24 +270,12 @@
             ((System.ComponentModel.ISupportInitialize)matchInformation).EndInit();
             matchPanel.ResumeLayout(false);
             matchPanel.PerformLayout();
-            editCoachPanel.ResumeLayout(false);
-            editCoachPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)coachDataGrip).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
         private Panel centerPanel;
         private Panel contentPanel;
-        private TextBox textBox1;
-        private FontAwesome.Sharp.IconButton addCoachBtn;
-        private Label createCoachLabel;
-        private Panel editCoachPanel;
-        private FontAwesome.Sharp.IconButton editCoachBtn;
-        private DataGridView coachDataGrip;
-        private Label deleteCoachLabel;
-        private Label editCoachLabel;
-        private FontAwesome.Sharp.IconButton deleteCoachBtn;
         private Label createMatchLabel;
         private Panel matchPanel;
         private Label teamLabel;
@@ -415,8 +288,9 @@
         private Label vsTeamLabel;
         private Label matchInformationLabel;
         private DataGridView matchInformation;
-        private Label coachInformationLabel;
         private Label deleteMatchLabel;
         private Label editMatchLabel;
+        private Label timeLabel;
+        private ComboBox timeTextBox;
     }
 }

@@ -1,12 +1,9 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using QuestPDF.Infrastructure;
 using PresentationLayer.Forms;
-using BusinessLayer.Services;
-using DataLayer.Repositories;
-using DataLayer.DbConnection;
 using PresentationLayer.LoginF;
+using QuestPDF.Infrastructure;
 
 namespace PresentationLayer
 {
@@ -34,14 +31,16 @@ namespace PresentationLayer
         static IHostBuilder CreateHostBuilder()
         {
             return Host.CreateDefaultBuilder()
-                .ConfigureAppConfiguration((context, config) => {
+                .ConfigureAppConfiguration((context, config) =>
+                {
                     //config.AddJsonFile(
                     //    "appsettings.json",
                     //    optional: false,
                     //    reloadOnChange: true
                     // );
                 })
-                .ConfigureServices((context, services) => {
+                .ConfigureServices((context, services) =>
+                {
 
                     //Forms
                     services.AddTransient<dashboardAdmin>();

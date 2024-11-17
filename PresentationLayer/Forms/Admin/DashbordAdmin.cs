@@ -56,7 +56,8 @@ namespace PresentationLayer.Forms
 
         private void SetupButton()
         {
-            if (dashboardBtn != null) ConfigureButton(dashboardBtn);
+            if (matchesBtn != null) ConfigureButton(matchesBtn);
+            if (coachBtn != null) ConfigureButton(coachBtn);
             if (teamsBtn != null) ConfigureButton(teamsBtn);
             if (featuresBtn != null) ConfigureButton(featuresBtn);
             if (settingsBtn != null) ConfigureButton(settingsBtn);
@@ -142,8 +143,11 @@ namespace PresentationLayer.Forms
                 // Load the appropriate form
                 switch (button.Name.ToLower())
                 {
-                    case "dashboardbtn":
+                    case "matchesbtn":
                         LoadDashboardContent();
+                        break;
+                    case "coachbtn":
+                        LoadCoachContent();
                         break;
                     case "teamsbtn":
                         LoadTeamsContent();
@@ -177,6 +181,20 @@ namespace PresentationLayer.Forms
                 MessageBox.Show($"Error loading Dashboard form: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void LoadCoachContent()
+        {
+            try
+            {
+                var form = new CoachForm();
+                OpenChildForm(form);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading Coach form: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void LoadTeamsContent()

@@ -5,7 +5,8 @@ using QuestPDF.Infrastructure;
 using PresentationLayer.Forms;
 using BusinessLayer.Services;
 using DataLayer.Repositories;
-
+using DataLayer.DbConnection;
+using PresentationLayer.LoginF;
 
 namespace PresentationLayer
 {
@@ -25,7 +26,7 @@ namespace PresentationLayer
             var host = CreateHostBuilder().Build();
             ServiceProvider = host.Services;
 
-            Application.Run(ServiceProvider.GetRequiredService<dashboardAdmin>());
+            Application.Run(ServiceProvider.GetRequiredService<LoginForms>());
         }
 
         public static IServiceProvider ServiceProvider { get; private set; }
@@ -44,13 +45,17 @@ namespace PresentationLayer
 
                     //Forms
                     services.AddTransient<dashboardAdmin>();
+                    services.AddTransient<LoginForms>();
 
                     //Repositories
                     services.AddScoped<IMatchRepository, MatchRepository>();
                     //services.AddScoped<IEmailQueueRepository, EmailQueueRepository>();
 
+                    services.AddScoped<IUserRepository, UserRepository>();
                     //Services
                     services.AddScoped<IMatchService, MatchService>();
+                    services.AddScoped<IUserService, UserService>();
+
                     //services.AddScoped<IEmailService, EmailService>();
 
                     //Notifications
@@ -60,7 +65,7 @@ namespace PresentationLayer
                     //services.AddScoped<ICategoryReport, CategoryReport>();
 
                     //Connection
-                    //services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
+                    services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
                 });
         }
     }

@@ -42,8 +42,10 @@ namespace PresentationLayer
                         optional: false,
                         reloadOnChange: true
                      );
+                })
+                .ConfigureServices((context, services) => {
 
-               
+
 
                     //Forms
                     services.AddTransient<dashboardAdmin>();

@@ -7,6 +7,7 @@ using DataLayer.Repositories;
 using DataLayer.DbConnection;
 using PresentationLayer.LoginF;
 using QuestPDF.Infrastructure;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 
 namespace PresentationLayer
@@ -45,8 +46,6 @@ namespace PresentationLayer
                 })
                 .ConfigureServices((context, services) => {
 
-
-
                     //Forms
                     services.AddTransient<dashboardAdmin>();
                     services.AddTransient<LoginForms>();
@@ -54,15 +53,17 @@ namespace PresentationLayer
                     //Repositories
                     services.AddScoped<IMatchRepository, MatchRepository>();
                     services.AddScoped<ITeamsRepository, TeamsRepository>();
-                    //services.AddScoped<IEmailQueueRepository, EmailQueueRepository>();
+                    services.AddScoped<IPlayerRepository, PlayerRepository>();
 
+                    //services.AddScoped<IEmailQueueRepository, EmailQueueRepository>();
                     services.AddScoped<IUserRepository, UserRepository>();
                     //Services
-                    services.AddScoped<IMatchService, MatchService>();
 
+
+                    services.AddScoped<IMatchService, MatchService>();
                     services.AddScoped<ITeamService, TeamService>();
                     services.AddScoped<IUserService, UserService>();
-
+                    services.AddScoped<IPlayerService, PlayerService>();
 
                     //services.AddScoped<IEmailService, EmailService>();
 

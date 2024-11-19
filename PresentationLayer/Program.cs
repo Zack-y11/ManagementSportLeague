@@ -2,8 +2,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PresentationLayer.Forms;
+using BusinessLayer.Services;
+using DataLayer.Repositories;
+using DataLayer.DbConnection;
 using PresentationLayer.LoginF;
 using QuestPDF.Infrastructure;
+
 
 namespace PresentationLayer
 {
@@ -31,16 +35,15 @@ namespace PresentationLayer
         static IHostBuilder CreateHostBuilder()
         {
             return Host.CreateDefaultBuilder()
-                .ConfigureAppConfiguration((context, config) =>
-                {
-                    //config.AddJsonFile(
-                    //    "appsettings.json",
-                    //    optional: false,
-                    //    reloadOnChange: true
-                    // );
-                })
-                .ConfigureServices((context, services) =>
-                {
+
+                .ConfigureAppConfiguration((context, config) => {
+                    config.AddJsonFile(
+                        "appsettings.json",
+                        optional: false,
+                        reloadOnChange: true
+                     );
+
+               
 
                     //Forms
                     services.AddTransient<dashboardAdmin>();
@@ -48,12 +51,16 @@ namespace PresentationLayer
 
                     //Repositories
                     services.AddScoped<IMatchRepository, MatchRepository>();
+                    services.AddScoped<ITeamsRepository, TeamsRepository>();
                     //services.AddScoped<IEmailQueueRepository, EmailQueueRepository>();
 
                     services.AddScoped<IUserRepository, UserRepository>();
                     //Services
                     services.AddScoped<IMatchService, MatchService>();
+
+                    services.AddScoped<ITeamService, TeamService>();
                     services.AddScoped<IUserService, UserService>();
+
 
                     //services.AddScoped<IEmailService, EmailService>();
 

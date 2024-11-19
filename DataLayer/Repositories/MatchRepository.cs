@@ -1,4 +1,4 @@
-﻿using CommonLayer.Entities;
+﻿using CommonLayer.Models;
 using Dapper;
 using DataLayer.DbConnection;
 using System;

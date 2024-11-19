@@ -1,11 +1,12 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using QuestPDF.Infrastructure;
 using PresentationLayer.Forms;
 using BusinessLayer.Services;
 using DataLayer.Repositories;
 using DataLayer.DbConnection;
+using PresentationLayer.LoginF;
+using QuestPDF.Infrastructure;
 
 
 namespace PresentationLayer
@@ -26,7 +27,7 @@ namespace PresentationLayer
             var host = CreateHostBuilder().Build();
             ServiceProvider = host.Services;
 
-            Application.Run(ServiceProvider.GetRequiredService<dashboardAdmin>());
+            Application.Run(ServiceProvider.GetRequiredService<LoginForms>());
         }
 
         public static IServiceProvider ServiceProvider { get; private set; }
@@ -34,26 +35,33 @@ namespace PresentationLayer
         static IHostBuilder CreateHostBuilder()
         {
             return Host.CreateDefaultBuilder()
+
                 .ConfigureAppConfiguration((context, config) => {
                     config.AddJsonFile(
                         "appsettings.json",
                         optional: false,
                         reloadOnChange: true
                      );
-                })
-                .ConfigureServices((context, services) => {
+
+               
 
                     //Forms
                     services.AddTransient<dashboardAdmin>();
+                    services.AddTransient<LoginForms>();
 
                     //Repositories
                     services.AddScoped<IMatchRepository, MatchRepository>();
                     services.AddScoped<ITeamsRepository, TeamsRepository>();
                     //services.AddScoped<IEmailQueueRepository, EmailQueueRepository>();
 
+                    services.AddScoped<IUserRepository, UserRepository>();
                     //Services
                     services.AddScoped<IMatchService, MatchService>();
+
                     services.AddScoped<ITeamService, TeamService>();
+                    services.AddScoped<IUserService, UserService>();
+
+
                     //services.AddScoped<IEmailService, EmailService>();
 
                     //Notifications

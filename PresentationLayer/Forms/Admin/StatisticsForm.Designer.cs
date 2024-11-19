@@ -45,20 +45,8 @@
             leagueTapControl = new TabControl();
             teamPage = new TabPage();
             leagueTableDataGrip = new DataGridView();
-            teamsColumn = new DataGridViewTextBoxColumn();
-            playedColumn = new DataGridViewTextBoxColumn();
-            winColumn = new DataGridViewTextBoxColumn();
-            loseColumn = new DataGridViewTextBoxColumn();
-            drawColumn = new DataGridViewTextBoxColumn();
-            goalsFcolumn = new DataGridViewTextBoxColumn();
-            goalsAcolumn = new DataGridViewTextBoxColumn();
-            pointsColumn = new DataGridViewTextBoxColumn();
             scoresPage = new TabPage();
             topScoresDataGrip = new DataGridView();
-            playerColumn = new DataGridViewTextBoxColumn();
-            teamColumn = new DataGridViewTextBoxColumn();
-            goalsColumn = new DataGridViewTextBoxColumn();
-            assistsColumn = new DataGridViewTextBoxColumn();
             perfomancePage = new TabPage();
             updateChartBtn = new FontAwesome.Sharp.IconButton();
             perfomanceChart = new LiveChartsCore.SkiaSharpView.WinForms.CartesianChart();
@@ -262,7 +250,6 @@
             // 
             leagueTableDataGrip.BackgroundColor = SystemColors.ControlLight;
             leagueTableDataGrip.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            leagueTableDataGrip.Columns.AddRange(new DataGridViewColumn[] { teamsColumn, playedColumn, winColumn, loseColumn, drawColumn, goalsFcolumn, goalsAcolumn, pointsColumn });
             leagueTableDataGrip.Dock = DockStyle.Fill;
             leagueTableDataGrip.GridColor = SystemColors.ScrollBar;
             leagueTableDataGrip.Location = new Point(3, 3);
@@ -270,63 +257,6 @@
             leagueTableDataGrip.RowHeadersWidth = 51;
             leagueTableDataGrip.Size = new Size(1364, 553);
             leagueTableDataGrip.TabIndex = 1;
-            // 
-            // teamsColumn
-            // 
-            teamsColumn.HeaderText = "Team";
-            teamsColumn.MinimumWidth = 6;
-            teamsColumn.Name = "teamsColumn";
-            teamsColumn.Resizable = DataGridViewTriState.False;
-            teamsColumn.Width = 125;
-            // 
-            // playedColumn
-            // 
-            playedColumn.HeaderText = "Played";
-            playedColumn.MinimumWidth = 6;
-            playedColumn.Name = "playedColumn";
-            playedColumn.Width = 125;
-            // 
-            // winColumn
-            // 
-            winColumn.HeaderText = "Wins";
-            winColumn.MinimumWidth = 6;
-            winColumn.Name = "winColumn";
-            winColumn.Width = 125;
-            // 
-            // loseColumn
-            // 
-            loseColumn.HeaderText = "Losses";
-            loseColumn.MinimumWidth = 6;
-            loseColumn.Name = "loseColumn";
-            loseColumn.Width = 125;
-            // 
-            // drawColumn
-            // 
-            drawColumn.HeaderText = "Draws";
-            drawColumn.MinimumWidth = 6;
-            drawColumn.Name = "drawColumn";
-            drawColumn.Width = 125;
-            // 
-            // goalsFcolumn
-            // 
-            goalsFcolumn.HeaderText = "Goals For";
-            goalsFcolumn.MinimumWidth = 6;
-            goalsFcolumn.Name = "goalsFcolumn";
-            goalsFcolumn.Width = 125;
-            // 
-            // goalsAcolumn
-            // 
-            goalsAcolumn.HeaderText = "Goals Agains";
-            goalsAcolumn.MinimumWidth = 6;
-            goalsAcolumn.Name = "goalsAcolumn";
-            goalsAcolumn.Width = 125;
-            // 
-            // pointsColumn
-            // 
-            pointsColumn.HeaderText = "Points";
-            pointsColumn.MinimumWidth = 6;
-            pointsColumn.Name = "pointsColumn";
-            pointsColumn.Width = 125;
             // 
             // scoresPage
             // 
@@ -343,41 +273,11 @@
             // 
             topScoresDataGrip.BackgroundColor = SystemColors.ControlLight;
             topScoresDataGrip.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            topScoresDataGrip.Columns.AddRange(new DataGridViewColumn[] { playerColumn, teamColumn, goalsColumn, assistsColumn });
             topScoresDataGrip.Location = new Point(147, 0);
             topScoresDataGrip.Name = "topScoresDataGrip";
             topScoresDataGrip.RowHeadersWidth = 51;
             topScoresDataGrip.Size = new Size(553, 384);
             topScoresDataGrip.TabIndex = 0;
-            // 
-            // playerColumn
-            // 
-            playerColumn.HeaderText = "Player";
-            playerColumn.MinimumWidth = 6;
-            playerColumn.Name = "playerColumn";
-            playerColumn.Resizable = DataGridViewTriState.False;
-            playerColumn.Width = 125;
-            // 
-            // teamColumn
-            // 
-            teamColumn.HeaderText = "Team";
-            teamColumn.MinimumWidth = 6;
-            teamColumn.Name = "teamColumn";
-            teamColumn.Width = 125;
-            // 
-            // goalsColumn
-            // 
-            goalsColumn.HeaderText = "Goals";
-            goalsColumn.MinimumWidth = 6;
-            goalsColumn.Name = "goalsColumn";
-            goalsColumn.Width = 125;
-            // 
-            // assistsColumn
-            // 
-            assistsColumn.HeaderText = "Assists";
-            assistsColumn.MinimumWidth = 6;
-            assistsColumn.Name = "assistsColumn";
-            assistsColumn.Width = 125;
             // 
             // perfomancePage
             // 
@@ -480,18 +380,6 @@
         private TabPage perfomancePage;
         private DataGridView leagueTableDataGrip;
         private DataGridView topScoresDataGrip;
-        private DataGridViewTextBoxColumn teamsColumn;
-        private DataGridViewTextBoxColumn playedColumn;
-        private DataGridViewTextBoxColumn winColumn;
-        private DataGridViewTextBoxColumn loseColumn;
-        private DataGridViewTextBoxColumn drawColumn;
-        private DataGridViewTextBoxColumn goalsFcolumn;
-        private DataGridViewTextBoxColumn goalsAcolumn;
-        private DataGridViewTextBoxColumn pointsColumn;
-        private DataGridViewTextBoxColumn playerColumn;
-        private DataGridViewTextBoxColumn teamColumn;
-        private DataGridViewTextBoxColumn goalsColumn;
-        private DataGridViewTextBoxColumn assistsColumn;
         private LiveChartsCore.SkiaSharpView.WinForms.CartesianChart perfomanceChart;
         private DataGridView perfomanceDataGrip;
         private FontAwesome.Sharp.IconButton updateChartBtn;

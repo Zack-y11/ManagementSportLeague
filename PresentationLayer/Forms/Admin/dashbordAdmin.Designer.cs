@@ -31,8 +31,9 @@ namespace PresentationLayer.Forms
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            coachBtn = new IconButton();
             panel2 = new Panel();
-            dashboardBtn = new IconButton();
+            matchesBtn = new IconButton();
             settingsBtn = new IconButton();
             statisticsBtn = new IconButton();
             featuresBtn = new IconButton();
@@ -46,6 +47,8 @@ namespace PresentationLayer.Forms
             matchInformation = new DataGridView();
             matchInformationLabel = new Label();
             matchPanel = new Panel();
+            timeTextBox = new ComboBox();
+            timeLabel = new Label();
             deleteMachLabel = new Label();
             editMatchLabel = new Label();
             vsTeamLabel = new Label();
@@ -57,30 +60,19 @@ namespace PresentationLayer.Forms
             teamLabel = new Label();
             matchTeamComboBox = new ComboBox();
             createMatchLabel = new Label();
-            editCoachPanel = new Panel();
-            coachInformationLabel = new Label();
-            addCoachBtn = new IconButton();
-            textBox1 = new TextBox();
-            deleteCoachBtn = new IconButton();
-            deleteCoachLabel = new Label();
-            label1 = new Label();
-            editCoachLabel = new Label();
-            editCoachBtn = new IconButton();
-            coachDataGrip = new DataGridView();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             contentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)matchInformation).BeginInit();
             matchPanel.SuspendLayout();
-            editCoachPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)coachDataGrip).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(coachBtn);
             panel1.Controls.Add(panel2);
-            panel1.Controls.Add(dashboardBtn);
+            panel1.Controls.Add(matchesBtn);
             panel1.Controls.Add(settingsBtn);
             panel1.Controls.Add(statisticsBtn);
             panel1.Controls.Add(featuresBtn);
@@ -93,6 +85,21 @@ namespace PresentationLayer.Forms
             panel1.Size = new Size(263, 753);
             panel1.TabIndex = 1;
             // 
+            // coachBtn
+            // 
+            coachBtn.FlatStyle = FlatStyle.Flat;
+            coachBtn.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            coachBtn.IconChar = IconChar.PeopleGroup;
+            coachBtn.IconColor = Color.Black;
+            coachBtn.IconFont = IconFont.Auto;
+            coachBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            coachBtn.Location = new Point(0, 160);
+            coachBtn.Name = "coachBtn";
+            coachBtn.Size = new Size(263, 59);
+            coachBtn.TabIndex = 8;
+            coachBtn.Text = "Coach";
+            coachBtn.UseVisualStyleBackColor = true;
+            // 
             // panel2
             // 
             panel2.Location = new Point(263, 64);
@@ -100,20 +107,20 @@ namespace PresentationLayer.Forms
             panel2.Size = new Size(817, 139);
             panel2.TabIndex = 0;
             // 
-            // dashboardBtn
+            // matchesBtn
             // 
-            dashboardBtn.FlatStyle = FlatStyle.Flat;
-            dashboardBtn.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
-            dashboardBtn.IconChar = IconChar.Newspaper;
-            dashboardBtn.IconColor = Color.Black;
-            dashboardBtn.IconFont = IconFont.Auto;
-            dashboardBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            dashboardBtn.Location = new Point(0, 120);
-            dashboardBtn.Name = "dashboardBtn";
-            dashboardBtn.Size = new Size(263, 59);
-            dashboardBtn.TabIndex = 7;
-            dashboardBtn.Text = "Dashboard";
-            dashboardBtn.UseVisualStyleBackColor = true;
+            matchesBtn.FlatStyle = FlatStyle.Flat;
+            matchesBtn.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            matchesBtn.IconChar = IconChar.Newspaper;
+            matchesBtn.IconColor = Color.Black;
+            matchesBtn.IconFont = IconFont.Auto;
+            matchesBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            matchesBtn.Location = new Point(0, 106);
+            matchesBtn.Name = "matchesBtn";
+            matchesBtn.Size = new Size(263, 59);
+            matchesBtn.TabIndex = 7;
+            matchesBtn.Text = "Matches";
+            matchesBtn.UseVisualStyleBackColor = true;
             // 
             // settingsBtn
             // 
@@ -123,7 +130,7 @@ namespace PresentationLayer.Forms
             settingsBtn.IconColor = Color.Black;
             settingsBtn.IconFont = IconFont.Auto;
             settingsBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            settingsBtn.Location = new Point(0, 342);
+            settingsBtn.Location = new Point(0, 385);
             settingsBtn.Name = "settingsBtn";
             settingsBtn.Size = new Size(263, 59);
             settingsBtn.TabIndex = 6;
@@ -138,7 +145,7 @@ namespace PresentationLayer.Forms
             statisticsBtn.IconColor = Color.Black;
             statisticsBtn.IconFont = IconFont.Auto;
             statisticsBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            statisticsBtn.Location = new Point(0, 286);
+            statisticsBtn.Location = new Point(0, 329);
             statisticsBtn.Name = "statisticsBtn";
             statisticsBtn.Size = new Size(263, 59);
             statisticsBtn.TabIndex = 5;
@@ -153,7 +160,7 @@ namespace PresentationLayer.Forms
             featuresBtn.IconColor = Color.Black;
             featuresBtn.IconFont = IconFont.Auto;
             featuresBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            featuresBtn.Location = new Point(0, 231);
+            featuresBtn.Location = new Point(0, 269);
             featuresBtn.Name = "featuresBtn";
             featuresBtn.Size = new Size(263, 59);
             featuresBtn.TabIndex = 4;
@@ -168,7 +175,7 @@ namespace PresentationLayer.Forms
             teamsBtn.IconColor = Color.Black;
             teamsBtn.IconFont = IconFont.Auto;
             teamsBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            teamsBtn.Location = new Point(0, 175);
+            teamsBtn.Location = new Point(0, 213);
             teamsBtn.Name = "teamsBtn";
             teamsBtn.Size = new Size(263, 59);
             teamsBtn.TabIndex = 3;
@@ -214,7 +221,6 @@ namespace PresentationLayer.Forms
             contentPanel.Controls.Add(matchInformation);
             contentPanel.Controls.Add(matchInformationLabel);
             contentPanel.Controls.Add(matchPanel);
-            contentPanel.Controls.Add(editCoachPanel);
             contentPanel.Dock = DockStyle.Fill;
             contentPanel.Location = new Point(263, 61);
             contentPanel.Name = "contentPanel";
@@ -224,17 +230,17 @@ namespace PresentationLayer.Forms
             // matchInformation
             // 
             matchInformation.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            matchInformation.Location = new Point(533, 422);
+            matchInformation.Location = new Point(6, 442);
             matchInformation.Name = "matchInformation";
             matchInformation.RowHeadersWidth = 51;
-            matchInformation.Size = new Size(589, 226);
+            matchInformation.Size = new Size(736, 226);
             matchInformation.TabIndex = 14;
             // 
             // matchInformationLabel
             // 
             matchInformationLabel.AutoSize = true;
             matchInformationLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            matchInformationLabel.Location = new Point(544, 379);
+            matchInformationLabel.Location = new Point(6, 398);
             matchInformationLabel.Name = "matchInformationLabel";
             matchInformationLabel.Size = new Size(189, 23);
             matchInformationLabel.TabIndex = 13;
@@ -243,6 +249,8 @@ namespace PresentationLayer.Forms
             // matchPanel
             // 
             matchPanel.BackColor = SystemColors.Control;
+            matchPanel.Controls.Add(timeTextBox);
+            matchPanel.Controls.Add(timeLabel);
             matchPanel.Controls.Add(deleteMachLabel);
             matchPanel.Controls.Add(editMatchLabel);
             matchPanel.Controls.Add(vsTeamLabel);
@@ -254,16 +262,34 @@ namespace PresentationLayer.Forms
             matchPanel.Controls.Add(teamLabel);
             matchPanel.Controls.Add(matchTeamComboBox);
             matchPanel.Controls.Add(createMatchLabel);
-            matchPanel.Location = new Point(530, 3);
+            matchPanel.Location = new Point(0, 3);
             matchPanel.Name = "matchPanel";
-            matchPanel.Size = new Size(586, 353);
+            matchPanel.Size = new Size(1144, 353);
             matchPanel.TabIndex = 12;
+            // 
+            // timeTextBox
+            // 
+            timeTextBox.FormattingEnabled = true;
+            timeTextBox.Location = new Point(411, 98);
+            timeTextBox.Name = "timeTextBox";
+            timeTextBox.Size = new Size(238, 26);
+            timeTextBox.TabIndex = 19;
+            // 
+            // timeLabel
+            // 
+            timeLabel.AutoSize = true;
+            timeLabel.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
+            timeLabel.Location = new Point(421, 63);
+            timeLabel.Name = "timeLabel";
+            timeLabel.Size = new Size(52, 19);
+            timeLabel.TabIndex = 18;
+            timeLabel.Text = "Time:";
             // 
             // deleteMachLabel
             // 
             deleteMachLabel.AutoSize = true;
             deleteMachLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            deleteMachLabel.Location = new Point(347, 241);
+            deleteMachLabel.Location = new Point(721, 255);
             deleteMachLabel.Name = "deleteMachLabel";
             deleteMachLabel.Size = new Size(142, 23);
             deleteMachLabel.TabIndex = 17;
@@ -273,7 +299,7 @@ namespace PresentationLayer.Forms
             // 
             editMatchLabel.AutoSize = true;
             editMatchLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            editMatchLabel.Location = new Point(347, 156);
+            editMatchLabel.Location = new Point(721, 142);
             editMatchLabel.Name = "editMatchLabel";
             editMatchLabel.Size = new Size(112, 23);
             editMatchLabel.TabIndex = 16;
@@ -299,7 +325,7 @@ namespace PresentationLayer.Forms
             deleteMatchBtn.IconColor = Color.White;
             deleteMatchBtn.IconFont = IconFont.Auto;
             deleteMatchBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            deleteMatchBtn.Location = new Point(347, 269);
+            deleteMatchBtn.Location = new Point(721, 291);
             deleteMatchBtn.Name = "deleteMatchBtn";
             deleteMatchBtn.Size = new Size(226, 43);
             deleteMatchBtn.TabIndex = 10;
@@ -316,7 +342,7 @@ namespace PresentationLayer.Forms
             editMatchBtn.IconColor = Color.White;
             editMatchBtn.IconFont = IconFont.Auto;
             editMatchBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            editMatchBtn.Location = new Point(347, 183);
+            editMatchBtn.Location = new Point(721, 205);
             editMatchBtn.Name = "editMatchBtn";
             editMatchBtn.Size = new Size(226, 43);
             editMatchBtn.TabIndex = 10;
@@ -333,7 +359,7 @@ namespace PresentationLayer.Forms
             addMatchBtn.IconColor = Color.White;
             addMatchBtn.IconFont = IconFont.Auto;
             addMatchBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            addMatchBtn.Location = new Point(347, 96);
+            addMatchBtn.Location = new Point(721, 81);
             addMatchBtn.Name = "addMatchBtn";
             addMatchBtn.Size = new Size(226, 43);
             addMatchBtn.TabIndex = 10;
@@ -343,7 +369,7 @@ namespace PresentationLayer.Forms
             // vsTeamComboBox
             // 
             vsTeamComboBox.FormattingEnabled = true;
-            vsTeamComboBox.Location = new Point(0, 241);
+            vsTeamComboBox.Location = new Point(6, 241);
             vsTeamComboBox.Name = "vsTeamComboBox";
             vsTeamComboBox.Size = new Size(238, 26);
             vsTeamComboBox.TabIndex = 14;
@@ -355,9 +381,9 @@ namespace PresentationLayer.Forms
             vsLabel.ForeColor = Color.Gold;
             vsLabel.Location = new Point(3, 156);
             vsLabel.Name = "vsLabel";
-            vsLabel.Size = new Size(40, 23);
+            vsLabel.Size = new Size(77, 23);
             vsLabel.TabIndex = 13;
-            vsLabel.Text = "VS:";
+            vsLabel.Text = "Agains";
             // 
             // teamLabel
             // 
@@ -387,131 +413,6 @@ namespace PresentationLayer.Forms
             createMatchLabel.TabIndex = 10;
             createMatchLabel.Text = "Create Match";
             // 
-            // editCoachPanel
-            // 
-            editCoachPanel.BackColor = Color.WhiteSmoke;
-            editCoachPanel.Controls.Add(coachInformationLabel);
-            editCoachPanel.Controls.Add(addCoachBtn);
-            editCoachPanel.Controls.Add(textBox1);
-            editCoachPanel.Controls.Add(deleteCoachBtn);
-            editCoachPanel.Controls.Add(deleteCoachLabel);
-            editCoachPanel.Controls.Add(label1);
-            editCoachPanel.Controls.Add(editCoachLabel);
-            editCoachPanel.Controls.Add(editCoachBtn);
-            editCoachPanel.Controls.Add(coachDataGrip);
-            editCoachPanel.Dock = DockStyle.Left;
-            editCoachPanel.Location = new Point(0, 0);
-            editCoachPanel.Name = "editCoachPanel";
-            editCoachPanel.Size = new Size(524, 692);
-            editCoachPanel.TabIndex = 11;
-            // 
-            // coachInformationLabel
-            // 
-            coachInformationLabel.AutoSize = true;
-            coachInformationLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            coachInformationLabel.Location = new Point(15, 379);
-            coachInformationLabel.Name = "coachInformationLabel";
-            coachInformationLabel.Size = new Size(194, 23);
-            coachInformationLabel.TabIndex = 15;
-            coachInformationLabel.Text = "Coach Information";
-            // 
-            // addCoachBtn
-            // 
-            addCoachBtn.BackColor = Color.Green;
-            addCoachBtn.FlatStyle = FlatStyle.Flat;
-            addCoachBtn.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            addCoachBtn.ForeColor = Color.White;
-            addCoachBtn.IconChar = IconChar.Users;
-            addCoachBtn.IconColor = Color.White;
-            addCoachBtn.IconFont = IconFont.Auto;
-            addCoachBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            addCoachBtn.Location = new Point(15, 111);
-            addCoachBtn.Name = "addCoachBtn";
-            addCoachBtn.Size = new Size(226, 43);
-            addCoachBtn.TabIndex = 4;
-            addCoachBtn.Text = "Add coach";
-            addCoachBtn.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(15, 66);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(226, 26);
-            textBox1.TabIndex = 6;
-            // 
-            // deleteCoachBtn
-            // 
-            deleteCoachBtn.BackColor = Color.Red;
-            deleteCoachBtn.FlatStyle = FlatStyle.Flat;
-            deleteCoachBtn.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            deleteCoachBtn.ForeColor = Color.White;
-            deleteCoachBtn.IconChar = IconChar.Users;
-            deleteCoachBtn.IconColor = Color.White;
-            deleteCoachBtn.IconFont = IconFont.Auto;
-            deleteCoachBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            deleteCoachBtn.Location = new Point(15, 281);
-            deleteCoachBtn.Name = "deleteCoachBtn";
-            deleteCoachBtn.Size = new Size(226, 43);
-            deleteCoachBtn.TabIndex = 9;
-            deleteCoachBtn.Text = "Delete Coach";
-            deleteCoachBtn.UseVisualStyleBackColor = false;
-            // 
-            // deleteCoachLabel
-            // 
-            deleteCoachLabel.AutoSize = true;
-            deleteCoachLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            deleteCoachLabel.Location = new Point(15, 253);
-            deleteCoachLabel.Name = "deleteCoachLabel";
-            deleteCoachLabel.Size = new Size(147, 23);
-            deleteCoachLabel.TabIndex = 8;
-            deleteCoachLabel.Text = "Delete Coach";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(15, 24);
-            label1.Name = "label1";
-            label1.Size = new Size(174, 23);
-            label1.TabIndex = 5;
-            label1.Text = "Add New Coach";
-            // 
-            // editCoachLabel
-            // 
-            editCoachLabel.AutoSize = true;
-            editCoachLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            editCoachLabel.Location = new Point(15, 170);
-            editCoachLabel.Name = "editCoachLabel";
-            editCoachLabel.Size = new Size(117, 23);
-            editCoachLabel.TabIndex = 7;
-            editCoachLabel.Text = "Edit Coach";
-            // 
-            // editCoachBtn
-            // 
-            editCoachBtn.BackColor = Color.FromArgb(0, 123, 250);
-            editCoachBtn.FlatStyle = FlatStyle.Flat;
-            editCoachBtn.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            editCoachBtn.ForeColor = Color.White;
-            editCoachBtn.IconChar = IconChar.Users;
-            editCoachBtn.IconColor = Color.White;
-            editCoachBtn.IconFont = IconFont.Auto;
-            editCoachBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            editCoachBtn.Location = new Point(15, 200);
-            editCoachBtn.Name = "editCoachBtn";
-            editCoachBtn.Size = new Size(226, 43);
-            editCoachBtn.TabIndex = 4;
-            editCoachBtn.Text = "Edit coach";
-            editCoachBtn.UseVisualStyleBackColor = false;
-            // 
-            // coachDataGrip
-            // 
-            coachDataGrip.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            coachDataGrip.Location = new Point(15, 422);
-            coachDataGrip.Name = "coachDataGrip";
-            coachDataGrip.RowHeadersWidth = 51;
-            coachDataGrip.Size = new Size(483, 226);
-            coachDataGrip.TabIndex = 6;
-            // 
             // dashboardAdmin
             // 
             AutoScaleDimensions = new SizeF(9F, 18F);
@@ -534,9 +435,6 @@ namespace PresentationLayer.Forms
             ((System.ComponentModel.ISupportInitialize)matchInformation).EndInit();
             matchPanel.ResumeLayout(false);
             matchPanel.PerformLayout();
-            editCoachPanel.ResumeLayout(false);
-            editCoachPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)coachDataGrip).EndInit();
             ResumeLayout(false);
         }
 
@@ -551,18 +449,9 @@ namespace PresentationLayer.Forms
         private IconButton featuresBtn;
         private IconButton statisticsBtn;
         private IconButton settingsBtn;
-        private IconButton dashboardBtn;
+        private IconButton matchesBtn;
         private Panel panel2;
         private Panel contentPanel;
-        private Panel editCoachPanel;
-        private IconButton addCoachBtn;
-        private TextBox textBox1;
-        private IconButton deleteCoachBtn;
-        private Label deleteCoachLabel;
-        private Label label1;
-        private Label editCoachLabel;
-        private IconButton editCoachBtn;
-        private DataGridView coachDataGrip;
         private Panel matchPanel;
         private Label vsTeamLabel;
         private IconButton deleteMatchBtn;
@@ -573,10 +462,12 @@ namespace PresentationLayer.Forms
         private Label teamLabel;
         private ComboBox matchTeamComboBox;
         private Label createMatchLabel;
-        private Label coachInformationLabel;
         private Label matchInformationLabel;
         private DataGridView matchInformation;
         private Label editMatchLabel;
         private Label deleteMachLabel;
+        private IconButton coachBtn;
+        private Label timeLabel;
+        private ComboBox timeTextBox;
     }
 }

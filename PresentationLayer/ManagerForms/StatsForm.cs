@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PresentationLayer.ManagerForms
 {
-    public partial class NuceringForm : Form
+    public partial class StatsForm : Form
     {
-        public NuceringForm()
+        public StatsForm()
         {
             InitializeComponent();
         }

@@ -45,7 +45,7 @@
             panelPositionTable.Controls.Add(labelPositionTable);
             panelPositionTable.Location = new Point(197, 52);
             panelPositionTable.Name = "panelPositionTable";
-            panelPositionTable.Size = new Size(406, 347);
+            panelPositionTable.Size = new Size(505, 588);
             panelPositionTable.TabIndex = 6;
             // 
             // ipbPositionTable
@@ -67,7 +67,7 @@
             dataGridView1.Location = new Point(35, 63);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(345, 268);
+            dataGridView1.Size = new Size(431, 473);
             dataGridView1.TabIndex = 1;
             // 
             // labelPositionTable

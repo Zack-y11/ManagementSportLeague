@@ -36,12 +36,9 @@ namespace PresentationLayer.ManagerForms
         private void ibtnRestaurar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
-<<<<<<< HEAD
             ibtnRestaurar.Visible = false;
             ibtnMaximizar.Visible = true;
-=======
             UpdateWindowButtons();
->>>>>>> 024431e8092413a35f0440e41dbe925d41a57980
         }
 
         private void UpdateWindowButtons()
@@ -53,9 +50,9 @@ namespace PresentationLayer.ManagerForms
         private void SetUpButtons()
         {
             btnDashboard.Click += ButtonClickHandler;
-            btnCalendar.Click += ButtonClickHandler;
+            btnActivities.Click += ButtonClickHandler;
             btnPlayers.Click += ButtonClickHandler;
-            btnNucering.Click += ButtonClickHandler;
+            btnStats.Click += ButtonClickHandler;
             btnPositionTable.Click += ButtonClickHandler;
            
 
@@ -101,8 +98,8 @@ namespace PresentationLayer.ManagerForms
                     LoadDashboardContent();
                     break;
 
-                case "btncalendar":
-                    LoadCalendarContent();
+                case "btnactivities":
+                    LoadActivitiesContent();
                     break;
                 default:
                     MessageBox.Show($"Unknown button: {button.Name}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -112,8 +109,8 @@ namespace PresentationLayer.ManagerForms
                     LoadPlayersContent();
                     break;
 
-                case "btnnucering":
-                    LoadNuceringsContent();
+                case "btnstats":
+                    LoadStatsContent();
                     break;
 
                 case "btnpositiontable":
@@ -122,16 +119,16 @@ namespace PresentationLayer.ManagerForms
             }
         }
 
-        private void LoadCalendarContent()
+        private void LoadActivitiesContent()
         {
             try
             {
-                var calendarForm = new CalendarForm();
-                OpenChildForm(calendarForm);
+                var activitiesForm = new ActivitiesForm();
+                OpenChildForm(activitiesForm);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred while loading the calendar: {ex.Message}",
+                MessageBox.Show($"An error occurred while loading the activities: {ex.Message}",
                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -149,16 +146,16 @@ namespace PresentationLayer.ManagerForms
                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void LoadNuceringsContent()
+        private void LoadStatsContent()
         {
             try
             {
-                var nuceringForm = new NuceringForm();
-                OpenChildForm(nuceringForm);
+                var statsForm = new StatsForm();
+                OpenChildForm(statsForm);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred while loading the nucerings: {ex.Message}",
+                MessageBox.Show($"An error occurred while loading the stats: {ex.Message}",
                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

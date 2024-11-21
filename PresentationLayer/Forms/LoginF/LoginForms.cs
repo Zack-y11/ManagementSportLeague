@@ -37,8 +37,8 @@ namespace PresentationLayer.LoginF
 
                 if (AuthenticatedUser.RoleId == (int)Roles.Admin)
                 {
-                    _serviceProvider.GetRequiredService<dashboardAdmin>().ShowDialog();
                     this.Hide();
+                    _serviceProvider.GetRequiredService<dashboardAdmin>().ShowDialog();
                 } else if (AuthenticatedUser.RoleId == (int)Roles.Manager)
                 {
                     // manager o coach

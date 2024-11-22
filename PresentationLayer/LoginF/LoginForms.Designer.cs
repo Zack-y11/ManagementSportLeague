@@ -31,16 +31,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForms));
             LoginLabel = new Label();
             YourAccountGroupBox = new GroupBox();
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            UserLabel = new Label();
-            PasswordLabel = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
             SignInButtom = new Button();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
+            PasswordLabel = new Label();
+            EmailLabel = new Label();
+            pictureBox2 = new PictureBox();
+            pictureBox1 = new PictureBox();
             YourAccountGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // LoginLabel
@@ -63,7 +63,7 @@
             YourAccountGroupBox.Controls.Add(textBox2);
             YourAccountGroupBox.Controls.Add(textBox1);
             YourAccountGroupBox.Controls.Add(PasswordLabel);
-            YourAccountGroupBox.Controls.Add(UserLabel);
+            YourAccountGroupBox.Controls.Add(EmailLabel);
             YourAccountGroupBox.Controls.Add(pictureBox2);
             YourAccountGroupBox.Controls.Add(pictureBox1);
             YourAccountGroupBox.Font = new Font("Segoe UI Symbol", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
@@ -75,15 +75,48 @@
             YourAccountGroupBox.TabStop = false;
             YourAccountGroupBox.Text = "Your Account";
             // 
-            // pictureBox1
+            // SignInButtom
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(125, 112);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(55, 52);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            SignInButtom.BackColor = Color.DodgerBlue;
+            SignInButtom.Font = new Font("Segoe UI Symbol", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SignInButtom.Location = new Point(263, 305);
+            SignInButtom.Name = "SignInButtom";
+            SignInButtom.Size = new Size(114, 44);
+            SignInButtom.TabIndex = 6;
+            SignInButtom.Text = "Sign in";
+            SignInButtom.UseVisualStyleBackColor = false;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(195, 231);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(283, 34);
+            textBox2.TabIndex = 5;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(196, 121);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(283, 34);
+            textBox1.TabIndex = 4;
+            // 
+            // PasswordLabel
+            // 
+            PasswordLabel.AutoSize = true;
+            PasswordLabel.Location = new Point(195, 200);
+            PasswordLabel.Name = "PasswordLabel";
+            PasswordLabel.Size = new Size(94, 28);
+            PasswordLabel.TabIndex = 3;
+            PasswordLabel.Text = "Password";
+            // 
+            // EmailLabel
+            // 
+            EmailLabel.AutoSize = true;
+            EmailLabel.Location = new Point(195, 90);
+            EmailLabel.Name = "EmailLabel";
+            EmailLabel.Size = new Size(67, 28);
+            EmailLabel.TabIndex = 2;
+            EmailLabel.Text = "E-mail";
             // 
             // pictureBox2
             // 
@@ -95,48 +128,15 @@
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
             // 
-            // UserLabel
+            // pictureBox1
             // 
-            UserLabel.AutoSize = true;
-            UserLabel.Location = new Point(195, 90);
-            UserLabel.Name = "UserLabel";
-            UserLabel.Size = new Size(51, 28);
-            UserLabel.TabIndex = 2;
-            UserLabel.Text = "User";
-            // 
-            // PasswordLabel
-            // 
-            PasswordLabel.AutoSize = true;
-            PasswordLabel.Location = new Point(195, 200);
-            PasswordLabel.Name = "PasswordLabel";
-            PasswordLabel.Size = new Size(94, 28);
-            PasswordLabel.TabIndex = 3;
-            PasswordLabel.Text = "Password";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(196, 121);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(283, 34);
-            textBox1.TabIndex = 4;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(195, 231);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(283, 34);
-            textBox2.TabIndex = 5;
-            // 
-            // SignInButtom
-            // 
-            SignInButtom.BackColor = Color.DodgerBlue;
-            SignInButtom.Font = new Font("Segoe UI Symbol", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            SignInButtom.Location = new Point(263, 305);
-            SignInButtom.Name = "SignInButtom";
-            SignInButtom.Size = new Size(114, 44);
-            SignInButtom.TabIndex = 6;
-            SignInButtom.Text = "Sign in";
-            SignInButtom.UseVisualStyleBackColor = false;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(125, 112);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(55, 52);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // LoginForms
             // 
@@ -151,8 +151,8 @@
             Text = "LoginForms";
             YourAccountGroupBox.ResumeLayout(false);
             YourAccountGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -164,7 +164,7 @@
         private TextBox textBox2;
         private TextBox textBox1;
         private Label PasswordLabel;
-        private Label UserLabel;
+        private Label EmailLabel;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
         private Button SignInButtom;

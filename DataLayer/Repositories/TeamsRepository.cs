@@ -25,7 +25,8 @@ namespace DataLayer.Repositories
             using (var connection = _dbConnection.GetConnection())
             {
                 string query = @"
-                SELECT 
+                SELECT
+                    t.TeamId AS Id,
                     t.TeamName AS Name,
                     u.Name AS Manager, 
                     t.Wins,

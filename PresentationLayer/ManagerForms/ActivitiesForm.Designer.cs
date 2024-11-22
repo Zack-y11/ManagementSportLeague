@@ -71,7 +71,7 @@
             btnEditActivity.IconColor = Color.Black;
             btnEditActivity.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnEditActivity.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEditActivity.Location = new Point(40, 422);
+            btnEditActivity.Location = new Point(40, 373);
             btnEditActivity.Name = "btnEditActivity";
             btnEditActivity.Padding = new Padding(12, 0, 0, 0);
             btnEditActivity.Size = new Size(248, 46);
@@ -88,7 +88,7 @@
             btnDeleteActivity.IconColor = Color.Black;
             btnDeleteActivity.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnDeleteActivity.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDeleteActivity.Location = new Point(40, 370);
+            btnDeleteActivity.Location = new Point(40, 425);
             btnDeleteActivity.Name = "btnDeleteActivity";
             btnDeleteActivity.Padding = new Padding(12, 0, 0, 0);
             btnDeleteActivity.Size = new Size(248, 46);

@@ -189,11 +189,6 @@ namespace PresentationLayer.ManagerForms
                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void panelObjetiveSeason_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }
 

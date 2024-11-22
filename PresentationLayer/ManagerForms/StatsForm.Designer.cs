@@ -433,7 +433,6 @@
             Controls.Add(panelGoalsScored);
             Name = "StatsForm";
             Text = "StatsForm";
-            Load += StatsForm_Load;
             panelGoalsScored.ResumeLayout(false);
             panelGoalsScored.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)ipbGoalsScored).EndInit();

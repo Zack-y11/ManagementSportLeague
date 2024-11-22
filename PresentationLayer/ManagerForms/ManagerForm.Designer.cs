@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             panelNextMach = new Panel();
-            ipbCalendar = new FontAwesome.Sharp.IconPictureBox();
+            ipbActivities = new FontAwesome.Sharp.IconPictureBox();
             labelTimeNextMatch = new Label();
             labelRival = new Label();
             labelNextMatch = new Label();
@@ -38,19 +38,19 @@
             labelWinsNumber = new Label();
             labelWins = new Label();
             panelObjetiveSeason = new Panel();
-            ipbTrophy = new FontAwesome.Sharp.IconPictureBox();
-            labelObjetiveStatus = new Label();
-            labelObejtiveCompetition = new Label();
-            labelPlayerOnTeam = new Label();
+            ipbPlayers = new FontAwesome.Sharp.IconPictureBox();
+            labelPlayersStatus = new Label();
+            labelPlayersNumber = new Label();
+            labelPlayers = new Label();
             panelPositionTable = new Panel();
             ipbPositionTable = new FontAwesome.Sharp.IconPictureBox();
             dataGridView1 = new DataGridView();
             labelPositionTable = new Label();
-            panelInjuredPlayers = new Panel();
-            label1 = new Label();
-            labelInjuredPlayersNUmber = new Label();
-            ipbInjured = new FontAwesome.Sharp.IconPictureBox();
-            labelInjuredPlayers = new Label();
+            panelGoals = new Panel();
+            labelGoalsStatus = new Label();
+            labelGoalsNUmber = new Label();
+            ipbGoals = new FontAwesome.Sharp.IconPictureBox();
+            labelGoals = new Label();
             sidePanel = new Panel();
             btnActivities = new FontAwesome.Sharp.IconButton();
             btnDashboard = new FontAwesome.Sharp.IconButton();
@@ -66,16 +66,16 @@
             ibtnCerrar = new FontAwesome.Sharp.IconButton();
             contentPanel = new Panel();
             panelNextMach.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)ipbCalendar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ipbActivities).BeginInit();
             panelWins.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ipbStar).BeginInit();
             panelObjetiveSeason.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)ipbTrophy).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ipbPlayers).BeginInit();
             panelPositionTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ipbPositionTable).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            panelInjuredPlayers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)ipbInjured).BeginInit();
+            panelGoals.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ipbGoals).BeginInit();
             sidePanel.SuspendLayout();
             panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ipbManager).BeginInit();
@@ -86,7 +86,7 @@
             // panelNextMach
             // 
             panelNextMach.BackColor = Color.FromArgb(37, 99, 235);
-            panelNextMach.Controls.Add(ipbCalendar);
+            panelNextMach.Controls.Add(ipbActivities);
             panelNextMach.Controls.Add(labelTimeNextMatch);
             panelNextMach.Controls.Add(labelRival);
             panelNextMach.Controls.Add(labelNextMatch);
@@ -95,18 +95,18 @@
             panelNextMach.Size = new Size(505, 152);
             panelNextMach.TabIndex = 2;
             // 
-            // ipbCalendar
+            // ipbActivities
             // 
-            ipbCalendar.BackColor = Color.Transparent;
-            ipbCalendar.IconChar = FontAwesome.Sharp.IconChar.Calendar;
-            ipbCalendar.IconColor = Color.White;
-            ipbCalendar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            ipbCalendar.IconSize = 40;
-            ipbCalendar.Location = new Point(454, 9);
-            ipbCalendar.Name = "ipbCalendar";
-            ipbCalendar.Size = new Size(40, 40);
-            ipbCalendar.TabIndex = 4;
-            ipbCalendar.TabStop = false;
+            ipbActivities.BackColor = Color.Transparent;
+            ipbActivities.IconChar = FontAwesome.Sharp.IconChar.Calendar;
+            ipbActivities.IconColor = Color.White;
+            ipbActivities.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ipbActivities.IconSize = 40;
+            ipbActivities.Location = new Point(454, 9);
+            ipbActivities.Name = "ipbActivities";
+            ipbActivities.Size = new Size(40, 40);
+            ipbActivities.TabIndex = 4;
+            ipbActivities.TabStop = false;
             // 
             // labelTimeNextMatch
             // 
@@ -191,61 +191,61 @@
             // panelObjetiveSeason
             // 
             panelObjetiveSeason.BackColor = Color.FromArgb(202, 138, 4);
-            panelObjetiveSeason.Controls.Add(ipbTrophy);
-            panelObjetiveSeason.Controls.Add(labelObjetiveStatus);
-            panelObjetiveSeason.Controls.Add(labelObejtiveCompetition);
-            panelObjetiveSeason.Controls.Add(labelPlayerOnTeam);
+            panelObjetiveSeason.Controls.Add(ipbPlayers);
+            panelObjetiveSeason.Controls.Add(labelPlayersStatus);
+            panelObjetiveSeason.Controls.Add(labelPlayersNumber);
+            panelObjetiveSeason.Controls.Add(labelPlayers);
             panelObjetiveSeason.Location = new Point(22, 431);
             panelObjetiveSeason.Name = "panelObjetiveSeason";
             panelObjetiveSeason.Size = new Size(505, 152);
             panelObjetiveSeason.TabIndex = 4;
             panelObjetiveSeason.Paint += panelObjetiveSeason_Paint;
             // 
-            // ipbTrophy
+            // ipbPlayers
             // 
-            ipbTrophy.BackColor = Color.Transparent;
-            ipbTrophy.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
-            ipbTrophy.IconColor = Color.White;
-            ipbTrophy.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            ipbTrophy.IconSize = 40;
-            ipbTrophy.Location = new Point(454, 11);
-            ipbTrophy.Name = "ipbTrophy";
-            ipbTrophy.Size = new Size(40, 40);
-            ipbTrophy.TabIndex = 3;
-            ipbTrophy.TabStop = false;
+            ipbPlayers.BackColor = Color.Transparent;
+            ipbPlayers.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
+            ipbPlayers.IconColor = Color.White;
+            ipbPlayers.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ipbPlayers.IconSize = 40;
+            ipbPlayers.Location = new Point(454, 11);
+            ipbPlayers.Name = "ipbPlayers";
+            ipbPlayers.Size = new Size(40, 40);
+            ipbPlayers.TabIndex = 3;
+            ipbPlayers.TabStop = false;
             // 
-            // labelObjetiveStatus
+            // labelPlayersStatus
             // 
-            labelObjetiveStatus.AutoSize = true;
-            labelObjetiveStatus.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelObjetiveStatus.ForeColor = Color.White;
-            labelObjetiveStatus.Location = new Point(23, 115);
-            labelObjetiveStatus.Name = "labelObjetiveStatus";
-            labelObjetiveStatus.Size = new Size(102, 23);
-            labelObjetiveStatus.TabIndex = 4;
-            labelObjetiveStatus.Text = "en activo";
+            labelPlayersStatus.AutoSize = true;
+            labelPlayersStatus.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelPlayersStatus.ForeColor = Color.White;
+            labelPlayersStatus.Location = new Point(23, 115);
+            labelPlayersStatus.Name = "labelPlayersStatus";
+            labelPlayersStatus.Size = new Size(102, 23);
+            labelPlayersStatus.TabIndex = 4;
+            labelPlayersStatus.Text = "en activo";
             // 
-            // labelObejtiveCompetition
+            // labelPlayersNumber
             // 
-            labelObejtiveCompetition.AutoSize = true;
-            labelObejtiveCompetition.Font = new Font("Century Gothic", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelObejtiveCompetition.ForeColor = Color.White;
-            labelObejtiveCompetition.Location = new Point(13, 50);
-            labelObejtiveCompetition.Name = "labelObejtiveCompetition";
-            labelObejtiveCompetition.Size = new Size(236, 51);
-            labelObejtiveCompetition.TabIndex = 3;
-            labelObejtiveCompetition.Text = "21 Players";
+            labelPlayersNumber.AutoSize = true;
+            labelPlayersNumber.Font = new Font("Century Gothic", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelPlayersNumber.ForeColor = Color.White;
+            labelPlayersNumber.Location = new Point(13, 50);
+            labelPlayersNumber.Name = "labelPlayersNumber";
+            labelPlayersNumber.Size = new Size(236, 51);
+            labelPlayersNumber.TabIndex = 3;
+            labelPlayersNumber.Text = "21 Players";
             // 
-            // labelPlayerOnTeam
+            // labelPlayers
             // 
-            labelPlayerOnTeam.AutoSize = true;
-            labelPlayerOnTeam.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelPlayerOnTeam.ForeColor = Color.White;
-            labelPlayerOnTeam.Location = new Point(134, 11);
-            labelPlayerOnTeam.Name = "labelPlayerOnTeam";
-            labelPlayerOnTeam.Size = new Size(169, 23);
-            labelPlayerOnTeam.TabIndex = 0;
-            labelPlayerOnTeam.Text = "Players on Team";
+            labelPlayers.AutoSize = true;
+            labelPlayers.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelPlayers.ForeColor = Color.White;
+            labelPlayers.Location = new Point(134, 11);
+            labelPlayers.Name = "labelPlayers";
+            labelPlayers.Size = new Size(169, 23);
+            labelPlayers.TabIndex = 0;
+            labelPlayers.Text = "Players on Team";
             // 
             // panelPositionTable
             // 
@@ -291,63 +291,63 @@
             labelPositionTable.TabIndex = 0;
             labelPositionTable.Text = "Position Table";
             // 
-            // panelInjuredPlayers
+            // panelGoals
             // 
-            panelInjuredPlayers.BackColor = Color.FromArgb(220, 38, 38);
-            panelInjuredPlayers.Controls.Add(label1);
-            panelInjuredPlayers.Controls.Add(labelInjuredPlayersNUmber);
-            panelInjuredPlayers.Controls.Add(ipbInjured);
-            panelInjuredPlayers.Controls.Add(labelInjuredPlayers);
-            panelInjuredPlayers.Location = new Point(591, 431);
-            panelInjuredPlayers.Name = "panelInjuredPlayers";
-            panelInjuredPlayers.Size = new Size(406, 152);
-            panelInjuredPlayers.TabIndex = 6;
+            panelGoals.BackColor = Color.FromArgb(220, 38, 38);
+            panelGoals.Controls.Add(labelGoalsStatus);
+            panelGoals.Controls.Add(labelGoalsNUmber);
+            panelGoals.Controls.Add(ipbGoals);
+            panelGoals.Controls.Add(labelGoals);
+            panelGoals.Location = new Point(591, 431);
+            panelGoals.Name = "panelGoals";
+            panelGoals.Size = new Size(406, 152);
+            panelGoals.TabIndex = 6;
             // 
-            // label1
+            // labelGoalsStatus
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(15, 115);
-            label1.Name = "label1";
-            label1.Size = new Size(171, 23);
-            label1.TabIndex = 5;
-            label1.Text = "En la temporada";
+            labelGoalsStatus.AutoSize = true;
+            labelGoalsStatus.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelGoalsStatus.ForeColor = Color.White;
+            labelGoalsStatus.Location = new Point(15, 115);
+            labelGoalsStatus.Name = "labelGoalsStatus";
+            labelGoalsStatus.Size = new Size(171, 23);
+            labelGoalsStatus.TabIndex = 5;
+            labelGoalsStatus.Text = "En la temporada";
             // 
-            // labelInjuredPlayersNUmber
+            // labelGoalsNUmber
             // 
-            labelInjuredPlayersNUmber.AutoSize = true;
-            labelInjuredPlayersNUmber.Font = new Font("Century Gothic", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelInjuredPlayersNUmber.ForeColor = Color.White;
-            labelInjuredPlayersNUmber.Location = new Point(179, 50);
-            labelInjuredPlayersNUmber.Name = "labelInjuredPlayersNUmber";
-            labelInjuredPlayersNUmber.Size = new Size(72, 51);
-            labelInjuredPlayersNUmber.TabIndex = 4;
-            labelInjuredPlayersNUmber.Text = "34";
+            labelGoalsNUmber.AutoSize = true;
+            labelGoalsNUmber.Font = new Font("Century Gothic", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelGoalsNUmber.ForeColor = Color.White;
+            labelGoalsNUmber.Location = new Point(179, 50);
+            labelGoalsNUmber.Name = "labelGoalsNUmber";
+            labelGoalsNUmber.Size = new Size(72, 51);
+            labelGoalsNUmber.TabIndex = 4;
+            labelGoalsNUmber.Text = "34";
             // 
-            // ipbInjured
+            // ipbGoals
             // 
-            ipbInjured.BackColor = Color.FromArgb(220, 38, 38);
-            ipbInjured.IconChar = FontAwesome.Sharp.IconChar.SoccerBall;
-            ipbInjured.IconColor = Color.White;
-            ipbInjured.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            ipbInjured.IconSize = 40;
-            ipbInjured.Location = new Point(354, 11);
-            ipbInjured.Name = "ipbInjured";
-            ipbInjured.Size = new Size(40, 40);
-            ipbInjured.TabIndex = 1;
-            ipbInjured.TabStop = false;
+            ipbGoals.BackColor = Color.FromArgb(220, 38, 38);
+            ipbGoals.IconChar = FontAwesome.Sharp.IconChar.SoccerBall;
+            ipbGoals.IconColor = Color.White;
+            ipbGoals.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ipbGoals.IconSize = 40;
+            ipbGoals.Location = new Point(354, 11);
+            ipbGoals.Name = "ipbGoals";
+            ipbGoals.Size = new Size(40, 40);
+            ipbGoals.TabIndex = 1;
+            ipbGoals.TabStop = false;
             // 
-            // labelInjuredPlayers
+            // labelGoals
             // 
-            labelInjuredPlayers.AutoSize = true;
-            labelInjuredPlayers.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelInjuredPlayers.ForeColor = Color.White;
-            labelInjuredPlayers.Location = new Point(132, 0);
-            labelInjuredPlayers.Name = "labelInjuredPlayers";
-            labelInjuredPlayers.Size = new Size(141, 23);
-            labelInjuredPlayers.TabIndex = 0;
-            labelInjuredPlayers.Text = "Goals Scored";
+            labelGoals.AutoSize = true;
+            labelGoals.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelGoals.ForeColor = Color.White;
+            labelGoals.Location = new Point(132, 0);
+            labelGoals.Name = "labelGoals";
+            labelGoals.Size = new Size(141, 23);
+            labelGoals.TabIndex = 0;
+            labelGoals.Text = "Goals Scored";
             // 
             // sidePanel
             // 
@@ -552,7 +552,7 @@
             // 
             contentPanel.Controls.Add(panelPositionTable);
             contentPanel.Controls.Add(panelWins);
-            contentPanel.Controls.Add(panelInjuredPlayers);
+            contentPanel.Controls.Add(panelGoals);
             contentPanel.Controls.Add(panelNextMach);
             contentPanel.Controls.Add(panelObjetiveSeason);
             contentPanel.Dock = DockStyle.Fill;
@@ -575,20 +575,20 @@
             Text = "ManagerForm";
             panelNextMach.ResumeLayout(false);
             panelNextMach.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)ipbCalendar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ipbActivities).EndInit();
             panelWins.ResumeLayout(false);
             panelWins.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)ipbStar).EndInit();
             panelObjetiveSeason.ResumeLayout(false);
             panelObjetiveSeason.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)ipbTrophy).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ipbPlayers).EndInit();
             panelPositionTable.ResumeLayout(false);
             panelPositionTable.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)ipbPositionTable).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            panelInjuredPlayers.ResumeLayout(false);
-            panelInjuredPlayers.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)ipbInjured).EndInit();
+            panelGoals.ResumeLayout(false);
+            panelGoals.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ipbGoals).EndInit();
             sidePanel.ResumeLayout(false);
             panelLogo.ResumeLayout(false);
             panelLogo.PerformLayout();
@@ -608,19 +608,19 @@
         private Panel panelObjetiveSeason;
         private Label label7;
         private Label label8;
-        private Label labelPlayerOnTeam;
+        private Label labelPlayers;
         private Label labelPositionTable;
         private Label labelWinsNumber;
-        private Label labelObjetiveStatus;
-        private Label labelObejtiveCompetition;
+        private Label labelPlayersStatus;
+        private Label labelPlayersNumber;
         private Panel panelPositionTable;
-        private FontAwesome.Sharp.IconPictureBox ipbTrophy;
+        private FontAwesome.Sharp.IconPictureBox ipbPlayers;
         private FontAwesome.Sharp.IconPictureBox ipbStar;
-        private FontAwesome.Sharp.IconPictureBox ipbCalendar;
-        private Panel panelInjuredPlayers;
-        private Label labelInjuredPlayers;
-        private FontAwesome.Sharp.IconPictureBox ipbInjured;
-        private Label labelInjuredPlayersNUmber;
+        private FontAwesome.Sharp.IconPictureBox ipbActivities;
+        private Panel panelGoals;
+        private Label labelGoals;
+        private FontAwesome.Sharp.IconPictureBox ipbGoals;
+        private Label labelGoalsNUmber;
         private DataGridView dataGridView1;
         private FontAwesome.Sharp.IconPictureBox ipbPositionTable;
         private Panel sidePanel;
@@ -636,7 +636,7 @@
         private Label coachLabel;
         private Panel contentPanel;
         private FontAwesome.Sharp.IconButton btnDashboard;
-        private Label label1;
+        private Label labelGoalsStatus;
         private FontAwesome.Sharp.IconButton btnActivities;
     }
 }

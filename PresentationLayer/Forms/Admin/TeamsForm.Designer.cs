@@ -46,6 +46,12 @@
             editTeamLabel = new Label();
             addTeamTextBox = new TextBox();
             addReamLabel = new Label();
+            winsLabel = new Label();
+            winsTextBox = new TextBox();
+            loosesLabel = new Label();
+            loosesTextBox = new TextBox();
+            pointsLabel = new Label();
+            pointsTextBox = new TextBox();
             headerTeamsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)searchIcon).BeginInit();
             contentTeamsPanel.SuspendLayout();
@@ -108,7 +114,7 @@
             addTeamBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             addTeamBtn.IconSize = 40;
             addTeamBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            addTeamBtn.Location = new Point(20, 238);
+            addTeamBtn.Location = new Point(20, 292);
             addTeamBtn.Name = "addTeamBtn";
             addTeamBtn.Size = new Size(194, 46);
             addTeamBtn.TabIndex = 3;
@@ -163,7 +169,7 @@
             editTeamBtn.IconColor = Color.White;
             editTeamBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             editTeamBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            editTeamBtn.Location = new Point(20, 361);
+            editTeamBtn.Location = new Point(20, 397);
             editTeamBtn.Name = "editTeamBtn";
             editTeamBtn.Size = new Size(194, 49);
             editTeamBtn.TabIndex = 4;
@@ -174,7 +180,7 @@
             // 
             deleteTeamBtn.BackColor = Color.Red;
             deleteTeamBtn.ForeColor = Color.White;
-            deleteTeamBtn.IconChar = FontAwesome.Sharp.IconChar.LandmarkFlag;
+            deleteTeamBtn.IconChar = FontAwesome.Sharp.IconChar.FileCircleXmark;
             deleteTeamBtn.IconColor = Color.White;
             deleteTeamBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             deleteTeamBtn.ImageAlign = ContentAlignment.MiddleLeft;
@@ -188,6 +194,12 @@
             // teamPanel
             // 
             teamPanel.BackColor = Color.WhiteSmoke;
+            teamPanel.Controls.Add(pointsTextBox);
+            teamPanel.Controls.Add(pointsLabel);
+            teamPanel.Controls.Add(loosesTextBox);
+            teamPanel.Controls.Add(loosesLabel);
+            teamPanel.Controls.Add(winsTextBox);
+            teamPanel.Controls.Add(winsLabel);
             teamPanel.Controls.Add(coachComboBox);
             teamPanel.Controls.Add(coachLabel);
             teamPanel.Controls.Add(deleteTeamLabel);
@@ -198,9 +210,9 @@
             teamPanel.Controls.Add(deleteTeamBtn);
             teamPanel.Controls.Add(addTeamBtn);
             teamPanel.Dock = DockStyle.Right;
-            teamPanel.Location = new Point(968, 126);
+            teamPanel.Location = new Point(770, 126);
             teamPanel.Name = "teamPanel";
-            teamPanel.Size = new Size(424, 566);
+            teamPanel.Size = new Size(622, 566);
             teamPanel.TabIndex = 2;
             // 
             // coachComboBox
@@ -225,7 +237,7 @@
             // 
             deleteTeamLabel.AutoSize = true;
             deleteTeamLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            deleteTeamLabel.Location = new Point(20, 450);
+            deleteTeamLabel.Location = new Point(20, 458);
             deleteTeamLabel.Name = "deleteTeamLabel";
             deleteTeamLabel.Size = new Size(133, 23);
             deleteTeamLabel.TabIndex = 9;
@@ -235,7 +247,7 @@
             // 
             editTeamLabel.AutoSize = true;
             editTeamLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            editTeamLabel.Location = new Point(20, 308);
+            editTeamLabel.Location = new Point(20, 360);
             editTeamLabel.Name = "editTeamLabel";
             editTeamLabel.Size = new Size(103, 23);
             editTeamLabel.TabIndex = 8;
@@ -257,6 +269,57 @@
             addReamLabel.Size = new Size(110, 23);
             addReamLabel.TabIndex = 6;
             addReamLabel.Text = "Add Team";
+            // 
+            // winsLabel
+            // 
+            winsLabel.AutoSize = true;
+            winsLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            winsLabel.Location = new Point(255, 29);
+            winsLabel.Name = "winsLabel";
+            winsLabel.Size = new Size(54, 23);
+            winsLabel.TabIndex = 12;
+            winsLabel.Text = "Wins";
+            // 
+            // winsTextBox
+            // 
+            winsTextBox.Location = new Point(255, 76);
+            winsTextBox.Name = "winsTextBox";
+            winsTextBox.Size = new Size(194, 27);
+            winsTextBox.TabIndex = 13;
+            // 
+            // loosesLabel
+            // 
+            loosesLabel.AutoSize = true;
+            loosesLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            loosesLabel.Location = new Point(255, 120);
+            loosesLabel.Name = "loosesLabel";
+            loosesLabel.Size = new Size(76, 23);
+            loosesLabel.TabIndex = 14;
+            loosesLabel.Text = "Looses";
+            // 
+            // loosesTextBox
+            // 
+            loosesTextBox.Location = new Point(255, 174);
+            loosesTextBox.Name = "loosesTextBox";
+            loosesTextBox.Size = new Size(194, 27);
+            loosesTextBox.TabIndex = 15;
+            // 
+            // pointsLabel
+            // 
+            pointsLabel.AutoSize = true;
+            pointsLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            pointsLabel.Location = new Point(32, 220);
+            pointsLabel.Name = "pointsLabel";
+            pointsLabel.Size = new Size(66, 23);
+            pointsLabel.TabIndex = 16;
+            pointsLabel.Text = "Points";
+            // 
+            // pointsTextBox
+            // 
+            pointsTextBox.Location = new Point(20, 259);
+            pointsTextBox.Name = "pointsTextBox";
+            pointsTextBox.Size = new Size(194, 27);
+            pointsTextBox.TabIndex = 17;
             // 
             // TeamsForm
             // 
@@ -307,5 +370,11 @@
         private Label deleteTeamLabel;
         private Label coachLabel;
         private ComboBox coachComboBox;
+        private Label winsLabel;
+        private TextBox winsTextBox;
+        private Label loosesLabel;
+        private TextBox loosesTextBox;
+        private Label pointsLabel;
+        private TextBox pointsTextBox;
     }
 }

@@ -33,19 +33,27 @@
             matchInformation = new DataGridView();
             matchInformationLabel = new Label();
             matchPanel = new Panel();
+            timeLabel = new Label();
             editMatchLabel = new Label();
             deleteMatchLabel = new Label();
-            vsTeamLabel = new Label();
+            awayTeamLabel = new Label();
             deleteMatchBtn = new FontAwesome.Sharp.IconButton();
             editMatchBtn = new FontAwesome.Sharp.IconButton();
             addMatchBtn = new FontAwesome.Sharp.IconButton();
-            vsTeamComboBox = new ComboBox();
+            awayTeamComboBox = new ComboBox();
             vsLabel = new Label();
-            teamLabel = new Label();
-            matchTeamComboBox = new ComboBox();
+            homeTeamLabels = new Label();
+            homeTeamComboBox = new ComboBox();
             createMatchLabel = new Label();
-            timeTextBox = new ComboBox();
-            timeLabel = new Label();
+            matchDateTextBox = new TextBox();
+            matchStatusTextBox = new TextBox();
+            cornersTextBox = new TextBox();
+            foulsTextBox = new TextBox();
+            foulsLabel = new Label();
+            cornersLabel = new Label();
+            matchStatusLabel = new Label();
+            scoreLabel = new Label();
+            scoreTextBox = new TextBox();
             contentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)matchInformation).BeginInit();
             matchPanel.SuspendLayout();
@@ -91,24 +99,42 @@
             // 
             // matchPanel
             // 
+            matchPanel.Controls.Add(scoreTextBox);
+            matchPanel.Controls.Add(scoreLabel);
+            matchPanel.Controls.Add(matchStatusLabel);
+            matchPanel.Controls.Add(cornersLabel);
+            matchPanel.Controls.Add(foulsLabel);
+            matchPanel.Controls.Add(foulsTextBox);
+            matchPanel.Controls.Add(cornersTextBox);
+            matchPanel.Controls.Add(matchStatusTextBox);
+            matchPanel.Controls.Add(matchDateTextBox);
             matchPanel.Controls.Add(timeLabel);
-            matchPanel.Controls.Add(timeTextBox);
             matchPanel.Controls.Add(editMatchLabel);
             matchPanel.Controls.Add(deleteMatchLabel);
-            matchPanel.Controls.Add(vsTeamLabel);
+            matchPanel.Controls.Add(awayTeamLabel);
             matchPanel.Controls.Add(deleteMatchBtn);
             matchPanel.Controls.Add(editMatchBtn);
             matchPanel.Controls.Add(addMatchBtn);
-            matchPanel.Controls.Add(vsTeamComboBox);
+            matchPanel.Controls.Add(awayTeamComboBox);
             matchPanel.Controls.Add(vsLabel);
-            matchPanel.Controls.Add(teamLabel);
-            matchPanel.Controls.Add(matchTeamComboBox);
+            matchPanel.Controls.Add(homeTeamLabels);
+            matchPanel.Controls.Add(homeTeamComboBox);
             matchPanel.Controls.Add(createMatchLabel);
             matchPanel.Dock = DockStyle.Top;
             matchPanel.Location = new Point(0, 0);
             matchPanel.Name = "matchPanel";
             matchPanel.Size = new Size(1371, 353);
             matchPanel.TabIndex = 11;
+            // 
+            // timeLabel
+            // 
+            timeLabel.AutoSize = true;
+            timeLabel.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
+            timeLabel.Location = new Point(332, 63);
+            timeLabel.Name = "timeLabel";
+            timeLabel.Size = new Size(52, 19);
+            timeLabel.TabIndex = 21;
+            timeLabel.Text = "Time:";
             // 
             // editMatchLabel
             // 
@@ -130,15 +156,15 @@
             deleteMatchLabel.TabIndex = 15;
             deleteMatchLabel.Text = "Delete Match";
             // 
-            // vsTeamLabel
+            // awayTeamLabel
             // 
-            vsTeamLabel.AutoSize = true;
-            vsTeamLabel.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
-            vsTeamLabel.Location = new Point(3, 209);
-            vsTeamLabel.Name = "vsTeamLabel";
-            vsTeamLabel.Size = new Size(59, 19);
-            vsTeamLabel.TabIndex = 15;
-            vsTeamLabel.Text = "Team:";
+            awayTeamLabel.AutoSize = true;
+            awayTeamLabel.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
+            awayTeamLabel.Location = new Point(3, 209);
+            awayTeamLabel.Name = "awayTeamLabel";
+            awayTeamLabel.Size = new Size(112, 19);
+            awayTeamLabel.TabIndex = 15;
+            awayTeamLabel.Text = "Away Team:";
             // 
             // deleteMatchBtn
             // 
@@ -191,13 +217,13 @@
             addMatchBtn.Text = "Create Match";
             addMatchBtn.UseVisualStyleBackColor = false;
             // 
-            // vsTeamComboBox
+            // awayTeamComboBox
             // 
-            vsTeamComboBox.FormattingEnabled = true;
-            vsTeamComboBox.Location = new Point(0, 241);
-            vsTeamComboBox.Name = "vsTeamComboBox";
-            vsTeamComboBox.Size = new Size(238, 28);
-            vsTeamComboBox.TabIndex = 14;
+            awayTeamComboBox.FormattingEnabled = true;
+            awayTeamComboBox.Location = new Point(0, 241);
+            awayTeamComboBox.Name = "awayTeamComboBox";
+            awayTeamComboBox.Size = new Size(238, 28);
+            awayTeamComboBox.TabIndex = 14;
             // 
             // vsLabel
             // 
@@ -210,23 +236,23 @@
             vsLabel.TabIndex = 13;
             vsLabel.Text = "Agains:";
             // 
-            // teamLabel
+            // homeTeamLabels
             // 
-            teamLabel.AutoSize = true;
-            teamLabel.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
-            teamLabel.Location = new Point(3, 63);
-            teamLabel.Name = "teamLabel";
-            teamLabel.Size = new Size(59, 19);
-            teamLabel.TabIndex = 12;
-            teamLabel.Text = "Team:";
+            homeTeamLabels.AutoSize = true;
+            homeTeamLabels.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
+            homeTeamLabels.Location = new Point(3, 63);
+            homeTeamLabels.Name = "homeTeamLabels";
+            homeTeamLabels.Size = new Size(109, 19);
+            homeTeamLabels.TabIndex = 12;
+            homeTeamLabels.Text = "Home Team";
             // 
-            // matchTeamComboBox
+            // homeTeamComboBox
             // 
-            matchTeamComboBox.FormattingEnabled = true;
-            matchTeamComboBox.Location = new Point(3, 98);
-            matchTeamComboBox.Name = "matchTeamComboBox";
-            matchTeamComboBox.Size = new Size(238, 28);
-            matchTeamComboBox.TabIndex = 11;
+            homeTeamComboBox.FormattingEnabled = true;
+            homeTeamComboBox.Location = new Point(3, 98);
+            homeTeamComboBox.Name = "homeTeamComboBox";
+            homeTeamComboBox.Size = new Size(238, 28);
+            homeTeamComboBox.TabIndex = 11;
             // 
             // createMatchLabel
             // 
@@ -238,23 +264,80 @@
             createMatchLabel.TabIndex = 10;
             createMatchLabel.Text = "Create Match";
             // 
-            // timeTextBox
+            // matchDateTextBox
             // 
-            timeTextBox.FormattingEnabled = true;
-            timeTextBox.Location = new Point(332, 98);
-            timeTextBox.Name = "timeTextBox";
-            timeTextBox.Size = new Size(238, 28);
-            timeTextBox.TabIndex = 20;
+            matchDateTextBox.Location = new Point(332, 99);
+            matchDateTextBox.Name = "matchDateTextBox";
+            matchDateTextBox.Size = new Size(191, 27);
+            matchDateTextBox.TabIndex = 22;
             // 
-            // timeLabel
+            // matchStatusTextBox
             // 
-            timeLabel.AutoSize = true;
-            timeLabel.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
-            timeLabel.Location = new Point(332, 63);
-            timeLabel.Name = "timeLabel";
-            timeLabel.Size = new Size(52, 19);
-            timeLabel.TabIndex = 21;
-            timeLabel.Text = "Time:";
+            matchStatusTextBox.Location = new Point(585, 99);
+            matchStatusTextBox.Name = "matchStatusTextBox";
+            matchStatusTextBox.Size = new Size(191, 27);
+            matchStatusTextBox.TabIndex = 23;
+            // 
+            // cornersTextBox
+            // 
+            cornersTextBox.Location = new Point(332, 285);
+            cornersTextBox.Name = "cornersTextBox";
+            cornersTextBox.Size = new Size(191, 27);
+            cornersTextBox.TabIndex = 24;
+            // 
+            // foulsTextBox
+            // 
+            foulsTextBox.Location = new Point(332, 188);
+            foulsTextBox.Name = "foulsTextBox";
+            foulsTextBox.Size = new Size(191, 27);
+            foulsTextBox.TabIndex = 25;
+            // 
+            // foulsLabel
+            // 
+            foulsLabel.AutoSize = true;
+            foulsLabel.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
+            foulsLabel.Location = new Point(332, 156);
+            foulsLabel.Name = "foulsLabel";
+            foulsLabel.Size = new Size(55, 19);
+            foulsLabel.TabIndex = 26;
+            foulsLabel.Text = "Fouls:";
+            // 
+            // cornersLabel
+            // 
+            cornersLabel.AutoSize = true;
+            cornersLabel.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
+            cornersLabel.Location = new Point(332, 250);
+            cornersLabel.Name = "cornersLabel";
+            cornersLabel.Size = new Size(77, 19);
+            cornersLabel.TabIndex = 27;
+            cornersLabel.Text = "Corners:";
+            // 
+            // matchStatusLabel
+            // 
+            matchStatusLabel.AutoSize = true;
+            matchStatusLabel.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
+            matchStatusLabel.Location = new Point(585, 63);
+            matchStatusLabel.Name = "matchStatusLabel";
+            matchStatusLabel.Size = new Size(60, 19);
+            matchStatusLabel.TabIndex = 28;
+            matchStatusLabel.Text = "Status:";
+            // 
+            // scoreLabel
+            // 
+            scoreLabel.AutoSize = true;
+            scoreLabel.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
+            scoreLabel.Location = new Point(585, 156);
+            scoreLabel.Name = "scoreLabel";
+            scoreLabel.Size = new Size(60, 19);
+            scoreLabel.TabIndex = 29;
+            scoreLabel.Text = "Status:";
+            // 
+            // scoreTextBox
+            // 
+            scoreTextBox.Location = new Point(585, 188);
+            scoreTextBox.Name = "scoreTextBox";
+            scoreTextBox.Size = new Size(191, 27);
+            scoreTextBox.TabIndex = 30;
             // 
             // DashboardForm
             // 
@@ -278,19 +361,27 @@
         private Panel contentPanel;
         private Label createMatchLabel;
         private Panel matchPanel;
-        private Label teamLabel;
-        private ComboBox matchTeamComboBox;
+        private Label homeTeamLabels;
+        private ComboBox homeTeamComboBox;
         private Label vsLabel;
-        private ComboBox vsTeamComboBox;
+        private ComboBox awayTeamComboBox;
         private FontAwesome.Sharp.IconButton addMatchBtn;
         private FontAwesome.Sharp.IconButton editMatchBtn;
         private FontAwesome.Sharp.IconButton deleteMatchBtn;
-        private Label vsTeamLabel;
+        private Label awayTeamLabel;
         private Label matchInformationLabel;
         private DataGridView matchInformation;
         private Label deleteMatchLabel;
         private Label editMatchLabel;
         private Label timeLabel;
-        private ComboBox timeTextBox;
+        private TextBox matchDateTextBox;
+        private TextBox foulsTextBox;
+        private TextBox cornersTextBox;
+        private TextBox matchStatusTextBox;
+        private Label foulsLabel;
+        private Label cornersLabel;
+        private Label matchStatusLabel;
+        private TextBox scoreTextBox;
+        private Label scoreLabel;
     }
 }

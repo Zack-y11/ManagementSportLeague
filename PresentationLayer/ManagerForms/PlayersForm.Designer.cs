@@ -33,7 +33,6 @@
             dataGridView1 = new DataGridView();
             labelName = new Label();
             labelLastname = new Label();
-            label3 = new Label();
             textBoxLastname = new TextBox();
             panelPlayers = new Panel();
             btnEditPlayer = new FontAwesome.Sharp.IconButton();
@@ -95,14 +94,6 @@
             labelLastname.TabIndex = 6;
             labelLastname.Text = "Apellido";
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(104, 240);
-            label3.Name = "label3";
-            label3.Size = new Size(0, 20);
-            label3.TabIndex = 7;
-            // 
             // textBoxLastname
             // 
             textBoxLastname.Location = new Point(101, 177);
@@ -112,7 +103,7 @@
             // 
             // panelPlayers
             // 
-            panelPlayers.BackColor = Color.FromArgb(37, 99, 235);
+            panelPlayers.BackColor = Color.FromArgb(202, 138, 4);
             panelPlayers.Controls.Add(btnEditPlayer);
             panelPlayers.Controls.Add(btnDeletePlayer);
             panelPlayers.Controls.Add(btnAddPlayer);
@@ -203,7 +194,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1265, 574);
             Controls.Add(panelPlayers);
-            Controls.Add(label3);
             Controls.Add(dataGridView1);
             Name = "PlayersForm";
             Text = "PlayersForm";
@@ -211,7 +201,6 @@
             panelPlayers.ResumeLayout(false);
             panelPlayers.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -220,7 +209,6 @@
         private DataGridView dataGridView1;
         private Label labelName;
         private Label labelLastname;
-        private Label label3;
         private TextBox textBoxLastname;
         private Panel panelPlayers;
         private TextBox textBoxAge;

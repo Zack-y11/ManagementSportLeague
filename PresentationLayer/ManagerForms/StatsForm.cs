@@ -16,5 +16,10 @@ namespace PresentationLayer.ManagerForms
         {
             InitializeComponent();
         }
+
+        private void StatsForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

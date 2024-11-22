@@ -199,6 +199,7 @@
             panelObjetiveSeason.Name = "panelObjetiveSeason";
             panelObjetiveSeason.Size = new Size(505, 152);
             panelObjetiveSeason.TabIndex = 4;
+            panelObjetiveSeason.Paint += panelObjetiveSeason_Paint;
             // 
             // ipbTrophy
             // 

@@ -54,7 +54,7 @@ namespace PresentationLayer.ManagerForms
             btnPlayers.Click += ButtonClickHandler;
             btnStats.Click += ButtonClickHandler;
             btnPositionTable.Click += ButtonClickHandler;
-           
+
 
 
         }
@@ -190,6 +190,10 @@ namespace PresentationLayer.ManagerForms
             }
         }
 
+        private void panelObjetiveSeason_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
- }
+}
 

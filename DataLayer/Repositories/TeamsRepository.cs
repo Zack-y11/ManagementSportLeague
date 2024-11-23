@@ -6,6 +6,7 @@ using DataLayer.Repositories;
 
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,12 +27,13 @@ namespace DataLayer.Repositories
             {
                 string query = @"
                 SELECT
-                    t.TeamId AS Id,
-                    t.TeamName AS Name,
-                    u.Name AS Manager, 
+                    u.UserId AS ManagerId,
+                    t.TeamName AS TeamName,
                     t.Wins,
                     t.Loses,
-                    t.Points
+                    t.Points,
+                    u.Name AS Manager,
+                    t.TeamId AS TeamId
                 FROM Teams t
                 JOIN Users u ON t.ManagerId = u.UserId;";
                 return connection.Query<Team>(query);
@@ -78,6 +80,14 @@ namespace DataLayer.Repositories
                             JOIN Users u ON t.ManagerId = u.UserId
                             WHERE t.TeamName LIKE @search;";
                 return connection.Query<Team>(query, new { search });
+            }
+        }
+        public IEnumerable<User> GetManagers()
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"SELECT UserId, Name FROM Users WHERE RoleId = 2;";
+                return connection.Query<User>(query);
             }
         }
     }

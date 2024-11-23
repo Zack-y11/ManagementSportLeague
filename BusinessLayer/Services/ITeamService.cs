@@ -9,5 +9,6 @@ namespace BusinessLayer.Services
         IEnumerable<Team> GetTeams();
         IEnumerable<Team> SearchTeam(string search);
         void UpdateTeam(Team team);
+        IEnumerable<User> GetManagers();
     }
 }

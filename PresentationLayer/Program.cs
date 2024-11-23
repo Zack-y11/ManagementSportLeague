@@ -11,6 +11,7 @@ using PresentationLayer.LoginF;
 using QuestPDF.Infrastructure;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Configuration;
+using PresentationLayer.ManagerForms;
 
 
 namespace PresentationLayer
@@ -52,7 +53,7 @@ namespace PresentationLayer
                     //Forms
                     services.AddTransient<dashboardAdmin>();
                     services.AddTransient<LoginForms>();
-
+                    services.AddTransient<ManagerForm>();
                     //Repositories
                     services.AddScoped<IMatchRepository, MatchRepository>();
                     services.AddScoped<ITeamsRepository, TeamsRepository>();

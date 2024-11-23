@@ -3,6 +3,7 @@ using CommonLayer.Enums;
 using CommonLayer.Models;
 using Microsoft.Extensions.DependencyInjection;
 using PresentationLayer.Forms;
+using PresentationLayer.ManagerForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -42,6 +43,8 @@ namespace PresentationLayer.LoginF
                 } else if (AuthenticatedUser.RoleId == (int)Roles.Manager)
                 {
                     // manager o coach
+                    this.Hide();
+                    _serviceProvider.GetRequiredService<ManagerForm>().ShowDialog();
 
                 } else if (AuthenticatedUser.RoleId == (int)Roles.Player)
                 {

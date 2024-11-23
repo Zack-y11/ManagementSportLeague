@@ -40,21 +40,15 @@
             addUserLabel = new Label();
             addUserBtn = new FontAwesome.Sharp.IconButton();
             dataGridView1 = new DataGridView();
-            tabPage2 = new TabPage();
-            editPermissonBtn = new FontAwesome.Sharp.IconButton();
-            rolesDataGrip = new DataGridView();
-            roleColumn = new DataGridViewTextBoxColumn();
-            descriptionColumn = new DataGridViewTextBoxColumn();
             seachTextBox = new TextBox();
             logOutBtn = new FontAwesome.Sharp.IconButton();
+            editPermissonBtn = new FontAwesome.Sharp.IconButton();
             headerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)managementIcon).BeginInit();
             administrationGroupBox.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)rolesDataGrip).BeginInit();
             SuspendLayout();
             // 
             // headerPanel
@@ -109,7 +103,6 @@
             // tabControl1
             // 
             tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage2);
             tabControl1.Location = new Point(13, 58);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -118,6 +111,7 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(editPermissonBtn);
             tabPage1.Controls.Add(roleLabel);
             tabPage1.Controls.Add(textBox1);
             tabPage1.Controls.Add(addUserTextBox);
@@ -174,7 +168,7 @@
             addUserBtn.IconColor = Color.White;
             addUserBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             addUserBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            addUserBtn.Location = new Point(784, 327);
+            addUserBtn.Location = new Point(784, 262);
             addUserBtn.Name = "addUserBtn";
             addUserBtn.Size = new Size(279, 42);
             addUserBtn.TabIndex = 1;
@@ -189,60 +183,6 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(775, 382);
             dataGridView1.TabIndex = 0;
-            // 
-            // tabPage2
-            // 
-            tabPage2.Controls.Add(editPermissonBtn);
-            tabPage2.Controls.Add(rolesDataGrip);
-            tabPage2.Location = new Point(4, 32);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1257, 391);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "Roles";
-            tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // editPermissonBtn
-            // 
-            editPermissonBtn.BackColor = Color.FromArgb(0, 123, 250);
-            editPermissonBtn.IconChar = FontAwesome.Sharp.IconChar.UserGear;
-            editPermissonBtn.IconColor = Color.White;
-            editPermissonBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            editPermissonBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            editPermissonBtn.Location = new Point(786, 334);
-            editPermissonBtn.Name = "editPermissonBtn";
-            editPermissonBtn.Size = new Size(275, 51);
-            editPermissonBtn.TabIndex = 1;
-            editPermissonBtn.Text = "Edit Permisson";
-            editPermissonBtn.UseVisualStyleBackColor = false;
-            // 
-            // rolesDataGrip
-            // 
-            rolesDataGrip.AllowUserToAddRows = false;
-            rolesDataGrip.AllowUserToDeleteRows = false;
-            rolesDataGrip.AllowUserToResizeColumns = false;
-            rolesDataGrip.AllowUserToResizeRows = false;
-            rolesDataGrip.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            rolesDataGrip.Columns.AddRange(new DataGridViewColumn[] { roleColumn, descriptionColumn });
-            rolesDataGrip.Location = new Point(6, 6);
-            rolesDataGrip.Name = "rolesDataGrip";
-            rolesDataGrip.RowHeadersWidth = 51;
-            rolesDataGrip.Size = new Size(774, 379);
-            rolesDataGrip.TabIndex = 0;
-            // 
-            // roleColumn
-            // 
-            roleColumn.HeaderText = "Role";
-            roleColumn.MinimumWidth = 6;
-            roleColumn.Name = "roleColumn";
-            roleColumn.Width = 82;
-            // 
-            // descriptionColumn
-            // 
-            descriptionColumn.HeaderText = "Description";
-            descriptionColumn.MinimumWidth = 6;
-            descriptionColumn.Name = "descriptionColumn";
-            descriptionColumn.Width = 125;
             // 
             // seachTextBox
             // 
@@ -268,6 +208,20 @@
             logOutBtn.Text = "Log out";
             logOutBtn.UseVisualStyleBackColor = false;
             // 
+            // editPermissonBtn
+            // 
+            editPermissonBtn.BackColor = Color.FromArgb(0, 123, 250);
+            editPermissonBtn.IconChar = FontAwesome.Sharp.IconChar.UserGear;
+            editPermissonBtn.IconColor = Color.White;
+            editPermissonBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            editPermissonBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            editPermissonBtn.Location = new Point(788, 320);
+            editPermissonBtn.Name = "editPermissonBtn";
+            editPermissonBtn.Size = new Size(275, 51);
+            editPermissonBtn.TabIndex = 1;
+            editPermissonBtn.Text = "Edit Permisson";
+            editPermissonBtn.UseVisualStyleBackColor = false;
+            // 
             // SettingsForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -286,8 +240,6 @@
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)rolesDataGrip).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -300,18 +252,14 @@
         private FontAwesome.Sharp.IconPictureBox managementIcon;
         private TabControl tabControl1;
         private TabPage tabPage1;
-        private TabPage tabPage2;
-        private DataGridView rolesDataGrip;
-        private FontAwesome.Sharp.IconButton editPermissonBtn;
         private FontAwesome.Sharp.IconButton addUserBtn;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn roleColumn;
-        private DataGridViewTextBoxColumn descriptionColumn;
         private Label addUserLabel;
         private TextBox addUserTextBox;
         private TextBox seachTextBox;
         private FontAwesome.Sharp.IconButton logOutBtn;
         private Label roleLabel;
         private TextBox textBox1;
+        private FontAwesome.Sharp.IconButton editPermissonBtn;
     }
 }

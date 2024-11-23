@@ -9,5 +9,6 @@ namespace DataLayer.Repositories
         IEnumerable<Team> GetTeams();
         void updateTeam(Team team);
         IEnumerable<Team> SearchTeam(string search);
+        IEnumerable<User> GetManagers();
     }
 }

@@ -14,7 +14,7 @@ namespace PresentationLayer.Forms
 
     public partial class TeamsForm : Form
     {
-         private readonly ITeamService _teamService;
+        private readonly ITeamService _teamService;
         public TeamsForm(
             ITeamService teamService
             )
@@ -29,6 +29,6 @@ namespace PresentationLayer.Forms
             activeTeamsDataGrip.DataSource = _teamService.GetTeams();
         }
 
-
+       
     }
 }

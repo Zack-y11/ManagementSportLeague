@@ -1,4 +1,4 @@
-﻿using CommonLayer.Entities;
+﻿using CommonLayer.Models;
 using DataLayer.Repositories;
 using System;
 using System.Collections.Generic;

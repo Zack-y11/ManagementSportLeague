@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLayer.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,12 +14,21 @@ namespace PresentationLayer.Forms
 
     public partial class TeamsForm : Form
     {
-
-        public TeamsForm()
+         private readonly ITeamService _teamService;
+        public TeamsForm(
+            ITeamService teamService
+            )
         {
             InitializeComponent();
+            _teamService = teamService;
+            LoadData();
+            this.activeTeamsDataGrip.Columns["Id"].Visible = false;
+        }
+        public void LoadData()
+        {
+            activeTeamsDataGrip.DataSource = _teamService.GetTeams();
         }
 
-  
+
     }
 }

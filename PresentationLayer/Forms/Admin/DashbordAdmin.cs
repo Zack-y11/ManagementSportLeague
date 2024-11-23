@@ -1,4 +1,5 @@
-﻿using FontAwesome.Sharp;
+﻿using BusinessLayer.Services;
+using FontAwesome.Sharp;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -6,6 +7,7 @@ using System.Windows.Forms;
 namespace PresentationLayer.Forms
 {
     public partial class dashboardAdmin : Form
+
     {
         private readonly Color DEFAULT_BACKGROUND = Color.Transparent;
         private readonly Color HOVER_BACKGROUND = Color.FromArgb(230, 230, 230);
@@ -13,10 +15,12 @@ namespace PresentationLayer.Forms
         private IconButton currentButton;
         private Form activeForm = null;
         private IconButton hoveredButton = null;
+        private readonly ITeamService _teamService;
 
-        public dashboardAdmin()
+        public dashboardAdmin(ITeamService teamService)
         {
             InitializeComponent();
+        _teamService = teamService;
 
             headerPanel.Dock = DockStyle.Top;
             contentPanel.Dock = DockStyle.Fill;
@@ -199,9 +203,10 @@ namespace PresentationLayer.Forms
 
         private void LoadTeamsContent()
         {
+
             try
             {
-                var form = new TeamsForm();
+                var form = new TeamsForm(_teamService);
                 OpenChildForm(form);
             }
             catch (Exception ex)
@@ -212,6 +217,7 @@ namespace PresentationLayer.Forms
 
         private void LoadFeaturesContent()
         {
+
             try
             {
                 var form = new FeaturesForm();

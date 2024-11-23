@@ -4,8 +4,14 @@ using DataLayer.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PresentationLayer.Forms;
+using BusinessLayer.Services;
+using DataLayer.Repositories;
+using DataLayer.DbConnection;
 using PresentationLayer.LoginF;
 using QuestPDF.Infrastructure;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Configuration;
+
 
 namespace PresentationLayer
 {
@@ -33,16 +39,15 @@ namespace PresentationLayer
         static IHostBuilder CreateHostBuilder()
         {
             return Host.CreateDefaultBuilder()
-                .ConfigureAppConfiguration((context, config) =>
-                {
-                    //config.AddJsonFile(
-                    //    "appsettings.json",
-                    //    optional: false,
-                    //    reloadOnChange: true
-                    // );
+
+                .ConfigureAppConfiguration((context, config) => {
+                    config.AddJsonFile(
+                        "appsettings.json",
+                        optional: false,
+                        reloadOnChange: true
+                     );
                 })
-                .ConfigureServices((context, services) =>
-                {
+                .ConfigureServices((context, services) => {
 
                     //Forms
                     services.AddTransient<dashboardAdmin>();
@@ -50,12 +55,18 @@ namespace PresentationLayer
 
                     //Repositories
                     services.AddScoped<IMatchRepository, MatchRepository>();
-                    //services.AddScoped<IEmailQueueRepository, EmailQueueRepository>();
+                    services.AddScoped<ITeamsRepository, TeamsRepository>();
+                    services.AddScoped<IPlayerRepository, PlayerRepository>();
 
+                    //services.AddScoped<IEmailQueueRepository, EmailQueueRepository>();
                     services.AddScoped<IUserRepository, UserRepository>();
                     //Services
+
+
                     services.AddScoped<IMatchService, MatchService>();
+                    services.AddScoped<ITeamService, TeamService>();
                     services.AddScoped<IUserService, UserService>();
+                    services.AddScoped<IPlayerService, PlayerService>();
 
                     //services.AddScoped<IEmailService, EmailService>();
 

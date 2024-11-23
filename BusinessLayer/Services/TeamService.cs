@@ -36,5 +36,10 @@ namespace BusinessLayer.Services
         {
             return _teamsRepository.SearchTeam(search);
         }
+
+        public IEnumerable<User> GetManagers()
+        {
+            return _teamsRepository.GetManagers();
+        }
     }
 }

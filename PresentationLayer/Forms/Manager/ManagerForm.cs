@@ -18,13 +18,16 @@ namespace PresentationLayer.ManagerForms
     {
         private Form activeChildForm;
         private readonly IMatchService _matchService;
-        public ManagerForm(IMatchService matchService)
+        private readonly ITeamService _teamService;
+        public ManagerForm(IMatchService matchService, ITeamService teamService)
         {
             InitializeComponent();
             _matchService = matchService;
+            _teamService = teamService;
             LoadDashboardContent();
 
             SetUpButtons();
+            
         }
 
         private void ibtnCerrar_Click(object sender, EventArgs e)
@@ -185,7 +188,7 @@ namespace PresentationLayer.ManagerForms
             try
             {
                 // pass to dashboard the matches service
-                var dashboardForm = new DashboardForm(_matchService, AuthenticatedUser.UserId);
+                var dashboardForm = new DashboardForm(_matchService, _teamService, AuthenticatedUser.UserId);
                 OpenChildForm(dashboardForm);
 
             }

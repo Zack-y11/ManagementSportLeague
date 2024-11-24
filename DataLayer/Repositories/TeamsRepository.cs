@@ -90,5 +90,18 @@ namespace DataLayer.Repositories
                 return connection.Query<User>(query);
             }
         }
+
+        public int GetTeamVictoriesCount(int userId)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"SELECT T.Wins
+                FROM Users U
+                JOIN Teams T ON U.UserId = T.ManagerId
+                WHERE U.UserId = @userId;";
+
+                return connection.QueryFirstOrDefault<int>(query, new { userId });
+            }
+        }
     }
 }

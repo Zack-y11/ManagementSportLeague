@@ -1,4 +1,4 @@
-/* 
+
 use SportsLeagueDB;
 
 INSERT INTO MatchStatus (Status) Values ('In Progress'), ('Completed');
@@ -60,8 +60,8 @@ WHERE
 ORDER BY 
     M.MatchDate ASC
 ;  -- Gets only the next match
-*/
 
+/*
 CREATE PROCEDURE GetNextMatchRivalTeamAndDate
 @UserId INT
 AS
@@ -85,3 +85,13 @@ BEGIN
 		M.MatchDate ASC
 	;  -- Gets only the next match
 END;
+*/
+
+ SELECT T.Wins
+            FROM Teams T
+            WHERE T.ManagerId = 4
+            UNION
+            SELECT T.Wins
+            FROM Teams T
+            JOIN Players P ON T.TeamId = P.TeamId
+            WHERE P.UserId = 4

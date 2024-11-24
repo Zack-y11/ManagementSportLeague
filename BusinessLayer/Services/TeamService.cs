@@ -45,5 +45,9 @@ namespace BusinessLayer.Services
         {
             return _teamsRepository.GetTeamVictoriesCount(teamId);
         }
+        public int GetTeamPlayersCount(int userId)
+        {
+            return _teamsRepository.GetTeamPlayersCount(userId);
+        }
     }
 }

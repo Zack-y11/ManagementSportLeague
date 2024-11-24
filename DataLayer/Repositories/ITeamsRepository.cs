@@ -11,5 +11,6 @@ namespace DataLayer.Repositories
         IEnumerable<Team> SearchTeam(string search);
         IEnumerable<User> GetManagers();
         int GetTeamVictoriesCount(int teamId);
+        int GetTeamPlayersCount(int userId);
     }
 }

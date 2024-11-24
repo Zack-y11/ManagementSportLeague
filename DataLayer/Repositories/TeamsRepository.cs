@@ -103,5 +103,17 @@ namespace DataLayer.Repositories
                 return connection.QueryFirstOrDefault<int>(query, new { userId });
             }
         }
+
+        public int GetTeamPlayersCount(int userId)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"SELECT COUNT(P.PlayerId) as PlayerCount
+                FROM Teams T
+                JOIN Players P ON T.TeamId = P.TeamId
+                WHERE T.ManagerId = @userId";
+                return connection.QueryFirstOrDefault<int>(query, new { userId });
+            }
+        }
     }
 }

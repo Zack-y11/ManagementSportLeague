@@ -11,5 +11,6 @@ namespace BusinessLayer.Services
         void UpdateTeam(Team team);
         IEnumerable<User> GetManagers();
         int GetTeamVictoriesCount(int teamId);
+        int GetTeamPlayersCount(int userId);
     }
 }

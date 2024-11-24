@@ -33,7 +33,16 @@ namespace PresentationLayer.ManagerForms
         {
             NextMatchDto nextMatch = _matchService.GetNextMatch(_userId);
             int victories = _teamService.GetTeamVictoriesCount(_userId);
+            int playersCount = _teamService.GetTeamPlayersCount(_userId);
 
+            if (playersCount != 0)
+            {
+                labelPlayersNumber.Text = playersCount.ToString();
+            }
+            else
+            {
+                labelPlayersNumber.Text = "0";
+            }
             if (victories != null)
             {
                 labelWinsNumber.Text = victories.ToString();
@@ -52,7 +61,6 @@ namespace PresentationLayer.ManagerForms
                 labelTimeNextMatch.Text = "No match scheduled";
                 labelRival.Text = "No match scheduled";
             }
-            
         }
     }
 }

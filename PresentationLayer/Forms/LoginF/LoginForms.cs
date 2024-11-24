@@ -34,6 +34,7 @@ namespace PresentationLayer.LoginF
             if (user != null)
             {
                 AuthenticatedUser.Name = user.Name;
+                AuthenticatedUser.UserId = user.UserId;
                 AuthenticatedUser.RoleId = user.RoleId;
 
                 if (AuthenticatedUser.RoleId == (int)Roles.Admin)

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessLayer.Services;
+using CommonLayer.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,10 +17,13 @@ namespace PresentationLayer.ManagerForms
     public partial class ManagerForm : Form
     {
         private Form activeChildForm;
-
-        public ManagerForm()
+        private readonly IMatchService _matchService;
+        public ManagerForm(IMatchService matchService)
         {
             InitializeComponent();
+            _matchService = matchService;
+            LoadDashboardContent();
+
             SetUpButtons();
         }
 
@@ -179,7 +184,8 @@ namespace PresentationLayer.ManagerForms
         {
             try
             {
-                var dashboardForm = new DashboardForm();
+                // pass to dashboard the matches service
+                var dashboardForm = new DashboardForm(_matchService, AuthenticatedUser.UserId);
                 OpenChildForm(dashboardForm);
 
             }
@@ -189,6 +195,7 @@ namespace PresentationLayer.ManagerForms
                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }
 

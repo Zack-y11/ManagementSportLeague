@@ -3,6 +3,7 @@ using Dapper;
 using DataLayer.DbConnection;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +33,18 @@ namespace DataLayer.Repositories
                 return connection.Query<Match>(query);
             }
         }
+        public NextMatchDto? GetNextMatch(int userId)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = "GetNextMatchRivalTeamAndDate";
+
+                return connection.QueryFirstOrDefault<NextMatchDto>(query,
+                    new { userId },
+                    commandType: CommandType.StoredProcedure);
+            }
+        }
+
         public void AddMatch(Match match)
         {
             using (var connection = _dbConnection.GetConnection())

@@ -16,5 +16,10 @@ namespace BusinessLayer.Services
             _matchRepository = matchRepository;
         }
         public IEnumerable<Match> GetMatches() => _matchRepository.GetMatches();
+
+        public  void AddMatch(Match match) => _matchRepository.AddMatch(match);
+        public void UpdateMatch(Match match) => _matchRepository.UpdateMatch(match);
+        public void DeleteMatch(int matchId) => _matchRepository.DeleteMatch(matchId);
+        public NextMatchDto? GetNextMatch(int userId) => _matchRepository.GetNextMatch(userId);
     }
 }

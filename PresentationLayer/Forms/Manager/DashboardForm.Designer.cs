@@ -30,17 +30,12 @@
         {
             panelPositionTable = new Panel();
             ipbPositionTable = new FontAwesome.Sharp.IconPictureBox();
-            dataGridView1 = new DataGridView();
+            teamsStandingDGV = new DataGridView();
             labelPositionTable = new Label();
             panelWins = new Panel();
             ipbStar = new FontAwesome.Sharp.IconPictureBox();
             labelWinsNumber = new Label();
             labelWins = new Label();
-            panelGoals = new Panel();
-            labelGoalsstatus = new Label();
-            labelIGoalsNumber = new Label();
-            ipbIGoals = new FontAwesome.Sharp.IconPictureBox();
-            labelGoals = new Label();
             panelNextMach = new Panel();
             ipbActivities = new FontAwesome.Sharp.IconPictureBox();
             labelTimeNextMatch = new Label();
@@ -53,11 +48,9 @@
             labelPlayers = new Label();
             panelPositionTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ipbPositionTable).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)teamsStandingDGV).BeginInit();
             panelWins.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ipbStar).BeginInit();
-            panelGoals.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)ipbIGoals).BeginInit();
             panelNextMach.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ipbActivities).BeginInit();
             panelPlayers.SuspendLayout();
@@ -68,11 +61,11 @@
             // 
             panelPositionTable.BackColor = Color.FromArgb(147, 51, 234);
             panelPositionTable.Controls.Add(ipbPositionTable);
-            panelPositionTable.Controls.Add(dataGridView1);
+            panelPositionTable.Controls.Add(teamsStandingDGV);
             panelPositionTable.Controls.Add(labelPositionTable);
             panelPositionTable.Location = new Point(612, 39);
             panelPositionTable.Name = "panelPositionTable";
-            panelPositionTable.Size = new Size(406, 347);
+            panelPositionTable.Size = new Size(406, 562);
             panelPositionTable.TabIndex = 10;
             // 
             // ipbPositionTable
@@ -88,23 +81,23 @@
             ipbPositionTable.TabIndex = 2;
             ipbPositionTable.TabStop = false;
             // 
-            // dataGridView1
+            // teamsStandingDGV
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(35, 63);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(345, 268);
-            dataGridView1.TabIndex = 1;
+            teamsStandingDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            teamsStandingDGV.Location = new Point(35, 63);
+            teamsStandingDGV.Name = "teamsStandingDGV";
+            teamsStandingDGV.RowHeadersWidth = 51;
+            teamsStandingDGV.Size = new Size(345, 469);
+            teamsStandingDGV.TabIndex = 1;
             // 
             // labelPositionTable
             // 
             labelPositionTable.AutoSize = true;
-            labelPositionTable.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelPositionTable.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelPositionTable.ForeColor = Color.White;
             labelPositionTable.Location = new Point(120, 6);
             labelPositionTable.Name = "labelPositionTable";
-            labelPositionTable.Size = new Size(165, 27);
+            labelPositionTable.Size = new Size(183, 29);
             labelPositionTable.TabIndex = 0;
             labelPositionTable.Text = "Position Table";
             // 
@@ -135,82 +128,24 @@
             // labelWinsNumber
             // 
             labelWinsNumber.AutoSize = true;
-            labelWinsNumber.Font = new Font("Century Gothic", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelWinsNumber.Font = new Font("Microsoft Sans Serif", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelWinsNumber.ForeColor = Color.White;
             labelWinsNumber.Location = new Point(13, 58);
             labelWinsNumber.Name = "labelWinsNumber";
-            labelWinsNumber.Size = new Size(155, 51);
+            labelWinsNumber.Size = new Size(162, 52);
             labelWinsNumber.TabIndex = 3;
             labelWinsNumber.Text = "5 Wins";
             // 
             // labelWins
             // 
             labelWins.AutoSize = true;
-            labelWins.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelWins.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelWins.ForeColor = Color.White;
             labelWins.Location = new Point(229, 16);
             labelWins.Name = "labelWins";
-            labelWins.Size = new Size(94, 23);
+            labelWins.Size = new Size(96, 25);
             labelWins.TabIndex = 0;
             labelWins.Text = "Victorias";
-            // 
-            // panelGoals
-            // 
-            panelGoals.BackColor = Color.FromArgb(220, 38, 38);
-            panelGoals.Controls.Add(labelGoalsstatus);
-            panelGoals.Controls.Add(labelIGoalsNumber);
-            panelGoals.Controls.Add(ipbIGoals);
-            panelGoals.Controls.Add(labelGoals);
-            panelGoals.Location = new Point(612, 449);
-            panelGoals.Name = "panelGoals";
-            panelGoals.Size = new Size(406, 152);
-            panelGoals.TabIndex = 11;
-            // 
-            // labelGoalsstatus
-            // 
-            labelGoalsstatus.AutoSize = true;
-            labelGoalsstatus.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelGoalsstatus.ForeColor = Color.White;
-            labelGoalsstatus.Location = new Point(15, 115);
-            labelGoalsstatus.Name = "labelGoalsstatus";
-            labelGoalsstatus.Size = new Size(171, 23);
-            labelGoalsstatus.TabIndex = 5;
-            labelGoalsstatus.Text = "En la temporada";
-            // 
-            // labelIGoalsNumber
-            // 
-            labelIGoalsNumber.AutoSize = true;
-            labelIGoalsNumber.Font = new Font("Century Gothic", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelIGoalsNumber.ForeColor = Color.White;
-            labelIGoalsNumber.Location = new Point(179, 50);
-            labelIGoalsNumber.Name = "labelIGoalsNumber";
-            labelIGoalsNumber.Size = new Size(72, 51);
-            labelIGoalsNumber.TabIndex = 4;
-            labelIGoalsNumber.Text = "34";
-            // 
-            // ipbIGoals
-            // 
-            ipbIGoals.BackColor = Color.FromArgb(220, 38, 38);
-            ipbIGoals.IconChar = FontAwesome.Sharp.IconChar.SoccerBall;
-            ipbIGoals.IconColor = Color.White;
-            ipbIGoals.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            ipbIGoals.IconSize = 40;
-            ipbIGoals.Location = new Point(354, 11);
-            ipbIGoals.Name = "ipbIGoals";
-            ipbIGoals.Size = new Size(40, 40);
-            ipbIGoals.TabIndex = 1;
-            ipbIGoals.TabStop = false;
-            // 
-            // labelGoals
-            // 
-            labelGoals.AutoSize = true;
-            labelGoals.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelGoals.ForeColor = Color.White;
-            labelGoals.Location = new Point(132, 0);
-            labelGoals.Name = "labelGoals";
-            labelGoals.Size = new Size(141, 23);
-            labelGoals.TabIndex = 0;
-            labelGoals.Text = "Goals Scored";
             // 
             // panelNextMach
             // 
@@ -240,22 +175,22 @@
             // labelTimeNextMatch
             // 
             labelTimeNextMatch.AutoSize = true;
-            labelTimeNextMatch.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelTimeNextMatch.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelTimeNextMatch.ForeColor = Color.White;
             labelTimeNextMatch.Location = new Point(23, 118);
             labelTimeNextMatch.Name = "labelTimeNextMatch";
-            labelTimeNextMatch.Size = new Size(95, 23);
+            labelTimeNextMatch.Size = new Size(102, 25);
             labelTimeNextMatch.TabIndex = 2;
             labelTimeNextMatch.Text = "En 3 dias";
             // 
             // labelRival
             // 
             labelRival.AutoSize = true;
-            labelRival.Font = new Font("Century Gothic", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelRival.Font = new Font("Microsoft Sans Serif", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelRival.ForeColor = Color.White;
             labelRival.Location = new Point(30, 52);
             labelRival.Name = "labelRival";
-            labelRival.Size = new Size(322, 51);
+            labelRival.Size = new Size(336, 52);
             labelRival.TabIndex = 1;
             labelRival.Text = "Vs. Shibidis FC";
             // 
@@ -263,11 +198,11 @@
             // 
             labelNextActivity.AutoSize = true;
             labelNextActivity.BackColor = Color.FromArgb(37, 99, 235);
-            labelNextActivity.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelNextActivity.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelNextActivity.ForeColor = Color.White;
             labelNextActivity.Location = new Point(229, 9);
             labelNextActivity.Name = "labelNextActivity";
-            labelNextActivity.Size = new Size(123, 23);
+            labelNextActivity.Size = new Size(121, 25);
             labelNextActivity.TabIndex = 0;
             labelNextActivity.Text = "Next Match";
             // 
@@ -299,33 +234,33 @@
             // labelPlayersStatus
             // 
             labelPlayersStatus.AutoSize = true;
-            labelPlayersStatus.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelPlayersStatus.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelPlayersStatus.ForeColor = Color.White;
             labelPlayersStatus.Location = new Point(23, 115);
             labelPlayersStatus.Name = "labelPlayersStatus";
-            labelPlayersStatus.Size = new Size(102, 23);
+            labelPlayersStatus.Size = new Size(99, 25);
             labelPlayersStatus.TabIndex = 4;
             labelPlayersStatus.Text = "en activo";
             // 
             // labelPlayersNumber
             // 
             labelPlayersNumber.AutoSize = true;
-            labelPlayersNumber.Font = new Font("Century Gothic", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelPlayersNumber.Font = new Font("Microsoft Sans Serif", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelPlayersNumber.ForeColor = Color.White;
             labelPlayersNumber.Location = new Point(13, 50);
             labelPlayersNumber.Name = "labelPlayersNumber";
-            labelPlayersNumber.Size = new Size(236, 51);
+            labelPlayersNumber.Size = new Size(238, 52);
             labelPlayersNumber.TabIndex = 3;
             labelPlayersNumber.Text = "21 Players";
             // 
             // labelPlayers
             // 
             labelPlayers.AutoSize = true;
-            labelPlayers.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelPlayers.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelPlayers.ForeColor = Color.White;
             labelPlayers.Location = new Point(134, 11);
             labelPlayers.Name = "labelPlayers";
-            labelPlayers.Size = new Size(169, 23);
+            labelPlayers.Size = new Size(175, 25);
             labelPlayers.TabIndex = 0;
             labelPlayers.Text = "Players on Team";
             // 
@@ -336,7 +271,6 @@
             ClientSize = new Size(1096, 654);
             Controls.Add(panelPositionTable);
             Controls.Add(panelWins);
-            Controls.Add(panelGoals);
             Controls.Add(panelNextMach);
             Controls.Add(panelPlayers);
             Name = "DashboardForm";
@@ -344,13 +278,10 @@
             panelPositionTable.ResumeLayout(false);
             panelPositionTable.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)ipbPositionTable).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)teamsStandingDGV).EndInit();
             panelWins.ResumeLayout(false);
             panelWins.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)ipbStar).EndInit();
-            panelGoals.ResumeLayout(false);
-            panelGoals.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)ipbIGoals).EndInit();
             panelNextMach.ResumeLayout(false);
             panelNextMach.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)ipbActivities).EndInit();
@@ -363,17 +294,12 @@
         #endregion
         private Panel panelPositionTable;
         private FontAwesome.Sharp.IconPictureBox ipbPositionTable;
-        private DataGridView dataGridView1;
+        private DataGridView teamsStandingDGV;
         private Label labelPositionTable;
         private Panel panelWins;
         private FontAwesome.Sharp.IconPictureBox ipbStar;
         private Label labelWinsNumber;
         private Label labelWins;
-        private Panel panelGoals;
-        private Label labelGoalsstatus;
-        private Label labelIGoalsNumber;
-        private FontAwesome.Sharp.IconPictureBox ipbIGoals;
-        private Label labelGoals;
         private Panel panelNextMach;
         private FontAwesome.Sharp.IconPictureBox ipbActivities;
         private Label labelTimeNextMatch;

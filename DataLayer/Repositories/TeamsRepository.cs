@@ -115,5 +115,23 @@ namespace DataLayer.Repositories
                 return connection.QueryFirstOrDefault<int>(query, new { userId });
             }
         }
+        public IEnumerable<TeamStandingsDto> GetTeamStandings()
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"
+                SELECT 
+                    ROW_NUMBER() OVER (ORDER BY Points DESC) as Position,
+                    TeamName,
+                    Points,
+                    Wins,
+                    Loses
+                FROM Teams
+                ORDER BY Points DESC
+                ";
+
+                return connection.Query<TeamStandingsDto>(query);
+            }
+        }
     }
 }

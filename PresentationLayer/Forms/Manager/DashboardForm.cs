@@ -34,6 +34,14 @@ namespace PresentationLayer.ManagerForms
             NextMatchDto nextMatch = _matchService.GetNextMatch(_userId);
             int victories = _teamService.GetTeamVictoriesCount(_userId);
             int playersCount = _teamService.GetTeamPlayersCount(_userId);
+            var standings = _teamService.GetTeamStandings();
+
+            teamsStandingDGV.DataSource = standings.ToList();
+            teamsStandingDGV.Columns["Position"].HeaderText = "Pos";
+            teamsStandingDGV.Columns["TeamName"].HeaderText = "Team";
+            teamsStandingDGV.Columns["Points"].HeaderText = "PTS";
+            teamsStandingDGV.Columns["Wins"].HeaderText = "W";
+            teamsStandingDGV.Columns["Loses"].HeaderText = "L";
 
             if (playersCount != 0)
             {

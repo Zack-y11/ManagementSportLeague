@@ -21,5 +21,9 @@ namespace BusinessLayer.Services
         public void UpdateMatch(Match match) => _matchRepository.UpdateMatch(match);
         public void DeleteMatch(int matchId) => _matchRepository.DeleteMatch(matchId);
         public NextMatchDto? GetNextMatch(int userId) => _matchRepository.GetNextMatch(userId);
+
+        public IEnumerable<Team> GetTeamIdAndName() => _matchRepository.GetTeamIdAndName();
+
+        public IEnumerable<Match> GetMatchStatuses() => _matchRepository.MatchStatus();
     }
 }

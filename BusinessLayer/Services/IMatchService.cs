@@ -9,5 +9,7 @@ namespace BusinessLayer.Services
         void UpdateMatch(Match match);
         void DeleteMatch(int matchId);
         NextMatchDto? GetNextMatch(int userId);
+        IEnumerable<Team> GetTeamIdAndName();
+        IEnumerable<Match> GetMatchStatuses();
     }
 }

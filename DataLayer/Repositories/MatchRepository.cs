@@ -25,7 +25,7 @@ namespace DataLayer.Repositories
                  m.HomeTeamId, m.AwayTeamId, m.StatusId, m.Score, m.MatchDate, m.Fouls, m.Corners, m.MatchId,
                     ht.TeamName AS HomeTeam,
                     at.TeamName AS AwayTeam,
-                    ms.Status AS MatchStatus
+                    ms.Status AS Status
                     FROM Matches m
                     JOIN Teams ht ON m.HomeTeamId = ht.TeamId
                     JOIN Teams at ON m.AwayTeamId = at.TeamId
@@ -104,7 +104,7 @@ namespace DataLayer.Repositories
             {
                 string query = @"SELECT StatusId, Status FROM MatchStatus;";
                 return connection.Query<Match>(query);
-            }
+                }
             
         }
     }

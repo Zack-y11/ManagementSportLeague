@@ -189,7 +189,7 @@ namespace PresentationLayer.Forms
         {
             try
             {
-                var form = new DashboardForm();
+                var form = new DashboardForm(_matchService);
                 OpenChildForm(form);
             }
             catch (Exception ex)

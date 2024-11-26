@@ -73,7 +73,7 @@ namespace PresentationLayer.Forms
         private void SetupButton()
         {
             if (matchesBtn != null) ConfigureButton(matchesBtn);
-            if (coachBtn != null) ConfigureButton(coachBtn);
+            if (usersBtn != null) ConfigureButton(usersBtn);
             if (teamsBtn != null) ConfigureButton(teamsBtn);
             if (featuresBtn != null) ConfigureButton(featuresBtn);
             if (settingsBtn != null) ConfigureButton(settingsBtn);
@@ -162,7 +162,7 @@ namespace PresentationLayer.Forms
                     case "matchesbtn":
                         LoadDashboardContent();
                         break;
-                    case "coachbtn":
+                    case "usersbtn":
                         LoadCoachContent();
                         break;
                     case "teamsbtn":
@@ -189,7 +189,7 @@ namespace PresentationLayer.Forms
         {
             try
             {
-                var form = new DashboardForm(_matchService);
+                var form = new MatchesListForm();
                 OpenChildForm(form);
             }
             catch (Exception ex)
@@ -203,7 +203,7 @@ namespace PresentationLayer.Forms
         {
             try
             {
-                var form = new CoachForm();
+                var form = new usersForm();
                 OpenChildForm(form);
 
             }

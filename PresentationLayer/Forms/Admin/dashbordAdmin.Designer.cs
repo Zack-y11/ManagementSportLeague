@@ -31,7 +31,7 @@ namespace PresentationLayer.Forms
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            coachBtn = new IconButton();
+            usersBtn = new IconButton();
             panel2 = new Panel();
             matchesBtn = new IconButton();
             settingsBtn = new IconButton();
@@ -78,7 +78,7 @@ namespace PresentationLayer.Forms
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(coachBtn);
+            panel1.Controls.Add(usersBtn);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(matchesBtn);
             panel1.Controls.Add(settingsBtn);
@@ -93,20 +93,20 @@ namespace PresentationLayer.Forms
             panel1.Size = new Size(263, 749);
             panel1.TabIndex = 1;
             // 
-            // coachBtn
+            // usersBtn
             // 
-            coachBtn.FlatStyle = FlatStyle.Flat;
-            coachBtn.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
-            coachBtn.IconChar = IconChar.PeopleGroup;
-            coachBtn.IconColor = Color.Black;
-            coachBtn.IconFont = IconFont.Auto;
-            coachBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            coachBtn.Location = new Point(0, 160);
-            coachBtn.Name = "coachBtn";
-            coachBtn.Size = new Size(263, 59);
-            coachBtn.TabIndex = 8;
-            coachBtn.Text = "Coach";
-            coachBtn.UseVisualStyleBackColor = true;
+            usersBtn.FlatStyle = FlatStyle.Flat;
+            usersBtn.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            usersBtn.IconChar = IconChar.PeopleGroup;
+            usersBtn.IconColor = Color.Black;
+            usersBtn.IconFont = IconFont.Auto;
+            usersBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            usersBtn.Location = new Point(0, 330);
+            usersBtn.Name = "usersBtn";
+            usersBtn.Size = new Size(263, 59);
+            usersBtn.TabIndex = 8;
+            usersBtn.Text = "Users";
+            usersBtn.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -153,7 +153,7 @@ namespace PresentationLayer.Forms
             statisticsBtn.IconColor = Color.Black;
             statisticsBtn.IconFont = IconFont.Auto;
             statisticsBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            statisticsBtn.Location = new Point(0, 329);
+            statisticsBtn.Location = new Point(0, 271);
             statisticsBtn.Name = "statisticsBtn";
             statisticsBtn.Size = new Size(263, 59);
             statisticsBtn.TabIndex = 5;
@@ -168,7 +168,7 @@ namespace PresentationLayer.Forms
             featuresBtn.IconColor = Color.Black;
             featuresBtn.IconFont = IconFont.Auto;
             featuresBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            featuresBtn.Location = new Point(0, 269);
+            featuresBtn.Location = new Point(0, 217);
             featuresBtn.Name = "featuresBtn";
             featuresBtn.Size = new Size(263, 59);
             featuresBtn.TabIndex = 4;
@@ -183,7 +183,7 @@ namespace PresentationLayer.Forms
             teamsBtn.IconColor = Color.Black;
             teamsBtn.IconFont = IconFont.Auto;
             teamsBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            teamsBtn.Location = new Point(0, 213);
+            teamsBtn.Location = new Point(0, 160);
             teamsBtn.Name = "teamsBtn";
             teamsBtn.Size = new Size(263, 59);
             teamsBtn.TabIndex = 3;
@@ -481,25 +481,6 @@ namespace PresentationLayer.Forms
             createMatchLabel.TabIndex = 10;
             createMatchLabel.Text = "Create Match";
             // 
-            // matchInformation
-            // 
-            matchInformation.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            matchInformation.Location = new Point(6, 442);
-            matchInformation.Name = "matchInformation";
-            matchInformation.RowHeadersWidth = 51;
-            matchInformation.Size = new Size(736, 226);
-            matchInformation.TabIndex = 14;
-            // 
-            // matchInformationLabel
-            // 
-            matchInformationLabel.AutoSize = true;
-            matchInformationLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            matchInformationLabel.Location = new Point(6, 398);
-            matchInformationLabel.Name = "matchInformationLabel";
-            matchInformationLabel.Size = new Size(150, 19);
-            matchInformationLabel.TabIndex = 13;
-            matchInformationLabel.Text = "Match Information";
-            // 
             // dashboardAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
@@ -541,7 +522,7 @@ namespace PresentationLayer.Forms
         private Panel contentPanel;
         private Label matchInformationLabel;
         private DataGridView matchInformation;
-        private IconButton coachBtn;
+        private IconButton usersBtn;
         private Panel matchPanel;
         private Label matchStatusLabel;
         private Label cornersLabel;

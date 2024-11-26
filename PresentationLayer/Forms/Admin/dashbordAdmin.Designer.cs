@@ -210,7 +210,7 @@ namespace PresentationLayer.Forms
             sportLabel.Font = new Font("Century Gothic", 16F, FontStyle.Bold);
             sportLabel.Location = new Point(58, 21);
             sportLabel.Name = "sportLabel";
-            sportLabel.Size = new Size(153, 26);
+            sportLabel.Size = new Size(186, 32);
             sportLabel.TabIndex = 2;
             sportLabel.Text = "Sport League";
             // 
@@ -258,7 +258,6 @@ namespace PresentationLayer.Forms
             matchPanel.Controls.Add(homeTeamLabels);
             matchPanel.Controls.Add(homeTeamComboBox);
             matchPanel.Controls.Add(createMatchLabel);
-            matchPanel.Dock = DockStyle.Top;
             matchPanel.Location = new Point(0, 0);
             matchPanel.Name = "matchPanel";
             matchPanel.Size = new Size(1107, 353);
@@ -269,21 +268,21 @@ namespace PresentationLayer.Forms
             statusComboBox.FormattingEnabled = true;
             statusComboBox.Location = new Point(584, 104);
             statusComboBox.Name = "statusComboBox";
-            statusComboBox.Size = new Size(192, 24);
+            statusComboBox.Size = new Size(192, 26);
             statusComboBox.TabIndex = 32;
             // 
             // matchDateTimePicker
             // 
             matchDateTimePicker.Location = new Point(297, 99);
             matchDateTimePicker.Name = "matchDateTimePicker";
-            matchDateTimePicker.Size = new Size(226, 22);
+            matchDateTimePicker.Size = new Size(226, 26);
             matchDateTimePicker.TabIndex = 31;
             // 
             // scoreTextBox
             // 
             scoreTextBox.Location = new Point(585, 188);
             scoreTextBox.Name = "scoreTextBox";
-            scoreTextBox.Size = new Size(191, 22);
+            scoreTextBox.Size = new Size(191, 26);
             scoreTextBox.TabIndex = 30;
             // 
             // scoreLabel
@@ -292,7 +291,7 @@ namespace PresentationLayer.Forms
             scoreLabel.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
             scoreLabel.Location = new Point(585, 156);
             scoreLabel.Name = "scoreLabel";
-            scoreLabel.Size = new Size(50, 17);
+            scoreLabel.Size = new Size(61, 19);
             scoreLabel.TabIndex = 29;
             scoreLabel.Text = "Score:";
             // 
@@ -302,7 +301,7 @@ namespace PresentationLayer.Forms
             matchStatusLabel.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
             matchStatusLabel.Location = new Point(585, 63);
             matchStatusLabel.Name = "matchStatusLabel";
-            matchStatusLabel.Size = new Size(50, 17);
+            matchStatusLabel.Size = new Size(60, 19);
             matchStatusLabel.TabIndex = 28;
             matchStatusLabel.Text = "Status:";
             // 
@@ -312,7 +311,7 @@ namespace PresentationLayer.Forms
             cornersLabel.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
             cornersLabel.Location = new Point(332, 250);
             cornersLabel.Name = "cornersLabel";
-            cornersLabel.Size = new Size(63, 17);
+            cornersLabel.Size = new Size(77, 19);
             cornersLabel.TabIndex = 27;
             cornersLabel.Text = "Corners:";
             // 
@@ -322,7 +321,7 @@ namespace PresentationLayer.Forms
             foulsLabel.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
             foulsLabel.Location = new Point(332, 156);
             foulsLabel.Name = "foulsLabel";
-            foulsLabel.Size = new Size(46, 17);
+            foulsLabel.Size = new Size(55, 19);
             foulsLabel.TabIndex = 26;
             foulsLabel.Text = "Fouls:";
             // 
@@ -330,14 +329,14 @@ namespace PresentationLayer.Forms
             // 
             foulsTextBox.Location = new Point(332, 188);
             foulsTextBox.Name = "foulsTextBox";
-            foulsTextBox.Size = new Size(191, 22);
+            foulsTextBox.Size = new Size(191, 26);
             foulsTextBox.TabIndex = 25;
             // 
             // cornersTextBox
             // 
             cornersTextBox.Location = new Point(332, 285);
             cornersTextBox.Name = "cornersTextBox";
-            cornersTextBox.Size = new Size(191, 22);
+            cornersTextBox.Size = new Size(191, 26);
             cornersTextBox.TabIndex = 24;
             // 
             // timeLabel
@@ -346,7 +345,7 @@ namespace PresentationLayer.Forms
             timeLabel.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
             timeLabel.Location = new Point(332, 63);
             timeLabel.Name = "timeLabel";
-            timeLabel.Size = new Size(45, 17);
+            timeLabel.Size = new Size(52, 19);
             timeLabel.TabIndex = 21;
             timeLabel.Text = "Time:";
             // 
@@ -356,7 +355,7 @@ namespace PresentationLayer.Forms
             editMatchLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             editMatchLabel.Location = new Point(846, 156);
             editMatchLabel.Name = "editMatchLabel";
-            editMatchLabel.Size = new Size(89, 19);
+            editMatchLabel.Size = new Size(112, 23);
             editMatchLabel.TabIndex = 15;
             editMatchLabel.Text = "Edit Match";
             // 
@@ -366,7 +365,7 @@ namespace PresentationLayer.Forms
             deleteMatchLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             deleteMatchLabel.Location = new Point(846, 269);
             deleteMatchLabel.Name = "deleteMatchLabel";
-            deleteMatchLabel.Size = new Size(111, 19);
+            deleteMatchLabel.Size = new Size(142, 23);
             deleteMatchLabel.TabIndex = 15;
             deleteMatchLabel.Text = "Delete Match";
             // 
@@ -376,7 +375,7 @@ namespace PresentationLayer.Forms
             awayTeamLabel.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
             awayTeamLabel.Location = new Point(3, 209);
             awayTeamLabel.Name = "awayTeamLabel";
-            awayTeamLabel.Size = new Size(91, 17);
+            awayTeamLabel.Size = new Size(112, 19);
             awayTeamLabel.TabIndex = 15;
             awayTeamLabel.Text = "Away Team:";
             // 
@@ -396,7 +395,6 @@ namespace PresentationLayer.Forms
             deleteMatchBtn.TabIndex = 10;
             deleteMatchBtn.Text = "Delete Match";
             deleteMatchBtn.UseVisualStyleBackColor = false;
-            deleteMatchBtn.Click += deleteMatchBtn_Click;
             // 
             // editMatchBtn
             // 
@@ -414,7 +412,6 @@ namespace PresentationLayer.Forms
             editMatchBtn.TabIndex = 10;
             editMatchBtn.Text = "Edit Match";
             editMatchBtn.UseVisualStyleBackColor = false;
-            editMatchBtn.Click += editMatchBtn_Click;
             // 
             // addMatchBtn
             // 
@@ -432,14 +429,13 @@ namespace PresentationLayer.Forms
             addMatchBtn.TabIndex = 10;
             addMatchBtn.Text = "Create Match";
             addMatchBtn.UseVisualStyleBackColor = false;
-            addMatchBtn.Click += addMatchBtn_Click;
             // 
             // awayTeamComboBox
             // 
             awayTeamComboBox.FormattingEnabled = true;
             awayTeamComboBox.Location = new Point(0, 241);
             awayTeamComboBox.Name = "awayTeamComboBox";
-            awayTeamComboBox.Size = new Size(238, 24);
+            awayTeamComboBox.Size = new Size(238, 26);
             awayTeamComboBox.TabIndex = 14;
             // 
             // vsLabel
@@ -449,7 +445,7 @@ namespace PresentationLayer.Forms
             vsLabel.ForeColor = Color.Gold;
             vsLabel.Location = new Point(3, 156);
             vsLabel.Name = "vsLabel";
-            vsLabel.Size = new Size(67, 19);
+            vsLabel.Size = new Size(83, 23);
             vsLabel.TabIndex = 13;
             vsLabel.Text = "Agains:";
             // 
@@ -459,7 +455,7 @@ namespace PresentationLayer.Forms
             homeTeamLabels.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
             homeTeamLabels.Location = new Point(3, 63);
             homeTeamLabels.Name = "homeTeamLabels";
-            homeTeamLabels.Size = new Size(92, 17);
+            homeTeamLabels.Size = new Size(109, 19);
             homeTeamLabels.TabIndex = 12;
             homeTeamLabels.Text = "Home Team";
             // 
@@ -468,7 +464,7 @@ namespace PresentationLayer.Forms
             homeTeamComboBox.FormattingEnabled = true;
             homeTeamComboBox.Location = new Point(3, 98);
             homeTeamComboBox.Name = "homeTeamComboBox";
-            homeTeamComboBox.Size = new Size(238, 24);
+            homeTeamComboBox.Size = new Size(238, 26);
             homeTeamComboBox.TabIndex = 11;
             // 
             // createMatchLabel
@@ -477,13 +473,29 @@ namespace PresentationLayer.Forms
             createMatchLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             createMatchLabel.Location = new Point(3, 21);
             createMatchLabel.Name = "createMatchLabel";
-            createMatchLabel.Size = new Size(114, 19);
+            createMatchLabel.Size = new Size(145, 23);
             createMatchLabel.TabIndex = 10;
             createMatchLabel.Text = "Create Match";
             // 
+            // matchInformation
+            // 
+            matchInformation.ColumnHeadersHeight = 29;
+            matchInformation.Location = new Point(0, 0);
+            matchInformation.Name = "matchInformation";
+            matchInformation.RowHeadersWidth = 51;
+            matchInformation.Size = new Size(240, 150);
+            matchInformation.TabIndex = 16;
+            // 
+            // matchInformationLabel
+            // 
+            matchInformationLabel.Location = new Point(0, 0);
+            matchInformationLabel.Name = "matchInformationLabel";
+            matchInformationLabel.Size = new Size(100, 23);
+            matchInformationLabel.TabIndex = 17;
+            // 
             // dashboardAdmin
             // 
-            AutoScaleDimensions = new SizeF(7F, 16F);
+            AutoScaleDimensions = new SizeF(9F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(241, 244, 254);
             ClientSize = new Size(1370, 749);
@@ -499,7 +511,6 @@ namespace PresentationLayer.Forms
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             contentPanel.ResumeLayout(false);
-            contentPanel.PerformLayout();
             matchPanel.ResumeLayout(false);
             matchPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)matchInformation).EndInit();
@@ -521,9 +532,12 @@ namespace PresentationLayer.Forms
         private Panel panel2;
         private Panel contentPanel;
         private Label matchInformationLabel;
-        private DataGridView matchInformation;
         private IconButton usersBtn;
         private Panel matchPanel;
+        private ComboBox statusComboBox;
+        private DateTimePicker matchDateTimePicker;
+        private TextBox scoreTextBox;
+        private Label scoreLabel;
         private Label matchStatusLabel;
         private Label cornersLabel;
         private Label foulsLabel;
@@ -541,9 +555,6 @@ namespace PresentationLayer.Forms
         private Label homeTeamLabels;
         private ComboBox homeTeamComboBox;
         private Label createMatchLabel;
-        private DateTimePicker matchDateTimePicker;
-        private TextBox scoreTextBox;
-        private Label scoreLabel;
-        private ComboBox statusComboBox;
+        private DataGridView matchInformation;
     }
 }

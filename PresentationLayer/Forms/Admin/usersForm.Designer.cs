@@ -31,9 +31,14 @@
             administrationGroupBox = new GroupBox();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            userPasswordTextBox = new TextBox();
+            userMailTextBox = new TextBox();
+            userMailLabel = new Label();
+            userPassword = new Label();
+            deleteUserBtn = new FontAwesome.Sharp.IconButton();
+            comboBox1 = new ComboBox();
             editPermissonBtn = new FontAwesome.Sharp.IconButton();
             roleLabel = new Label();
-            roleTextBox = new TextBox();
             addUserTextBox = new TextBox();
             addUserLabel = new Label();
             addUserBtn = new FontAwesome.Sharp.IconButton();
@@ -69,9 +74,14 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(userPasswordTextBox);
+            tabPage1.Controls.Add(userMailTextBox);
+            tabPage1.Controls.Add(userMailLabel);
+            tabPage1.Controls.Add(userPassword);
+            tabPage1.Controls.Add(deleteUserBtn);
+            tabPage1.Controls.Add(comboBox1);
             tabPage1.Controls.Add(editPermissonBtn);
             tabPage1.Controls.Add(roleLabel);
-            tabPage1.Controls.Add(roleTextBox);
             tabPage1.Controls.Add(addUserTextBox);
             tabPage1.Controls.Add(addUserLabel);
             tabPage1.Controls.Add(addUserBtn);
@@ -84,16 +94,74 @@
             tabPage1.Text = "Users";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // userPasswordTextBox
+            // 
+            userPasswordTextBox.Location = new Point(592, 327);
+            userPasswordTextBox.Name = "userPasswordTextBox";
+            userPasswordTextBox.Size = new Size(216, 32);
+            userPasswordTextBox.TabIndex = 15;
+            // 
+            // userMailTextBox
+            // 
+            userMailTextBox.Location = new Point(592, 222);
+            userMailTextBox.Name = "userMailTextBox";
+            userMailTextBox.Size = new Size(216, 32);
+            userMailTextBox.TabIndex = 14;
+            // 
+            // userMailLabel
+            // 
+            userMailLabel.AutoSize = true;
+            userMailLabel.ForeColor = Color.Black;
+            userMailLabel.Location = new Point(592, 184);
+            userMailLabel.Name = "userMailLabel";
+            userMailLabel.Size = new Size(99, 23);
+            userMailLabel.TabIndex = 13;
+            userMailLabel.Text = "User mail";
+            // 
+            // userPassword
+            // 
+            userPassword.AutoSize = true;
+            userPassword.ForeColor = Color.Black;
+            userPassword.Location = new Point(592, 289);
+            userPassword.Name = "userPassword";
+            userPassword.Size = new Size(147, 23);
+            userPassword.TabIndex = 12;
+            userPassword.Text = "User Password";
+            // 
+            // deleteUserBtn
+            // 
+            deleteUserBtn.BackColor = Color.Red;
+            deleteUserBtn.ForeColor = SystemColors.Control;
+            deleteUserBtn.IconChar = FontAwesome.Sharp.IconChar.UserMinus;
+            deleteUserBtn.IconColor = Color.White;
+            deleteUserBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            deleteUserBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            deleteUserBtn.Location = new Point(827, 318);
+            deleteUserBtn.Name = "deleteUserBtn";
+            deleteUserBtn.Size = new Size(240, 41);
+            deleteUserBtn.TabIndex = 11;
+            deleteUserBtn.Text = "Edit Permisson";
+            deleteUserBtn.UseVisualStyleBackColor = false;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(592, 138);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(216, 31);
+            comboBox1.TabIndex = 10;
+            // 
             // editPermissonBtn
             // 
             editPermissonBtn.BackColor = Color.FromArgb(0, 123, 250);
+            editPermissonBtn.ForeColor = SystemColors.Control;
             editPermissonBtn.IconChar = FontAwesome.Sharp.IconChar.UserGear;
             editPermissonBtn.IconColor = Color.White;
             editPermissonBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             editPermissonBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            editPermissonBtn.Location = new Point(788, 320);
+            editPermissonBtn.Location = new Point(827, 184);
             editPermissonBtn.Name = "editPermissonBtn";
-            editPermissonBtn.Size = new Size(275, 51);
+            editPermissonBtn.Size = new Size(240, 42);
             editPermissonBtn.TabIndex = 1;
             editPermissonBtn.Text = "Edit Permisson";
             editPermissonBtn.UseVisualStyleBackColor = false;
@@ -102,35 +170,28 @@
             // 
             roleLabel.AutoSize = true;
             roleLabel.ForeColor = Color.Black;
-            roleLabel.Location = new Point(787, 144);
+            roleLabel.Location = new Point(592, 101);
             roleLabel.Name = "roleLabel";
             roleLabel.Size = new Size(53, 23);
             roleLabel.TabIndex = 9;
             roleLabel.Text = "Role";
             // 
-            // roleTextBox
-            // 
-            roleTextBox.Location = new Point(786, 182);
-            roleTextBox.Name = "roleTextBox";
-            roleTextBox.Size = new Size(277, 32);
-            roleTextBox.TabIndex = 8;
-            // 
             // addUserTextBox
             // 
-            addUserTextBox.Location = new Point(784, 57);
+            addUserTextBox.Location = new Point(592, 48);
             addUserTextBox.Name = "addUserTextBox";
-            addUserTextBox.Size = new Size(277, 32);
+            addUserTextBox.Size = new Size(216, 32);
             addUserTextBox.TabIndex = 7;
             // 
             // addUserLabel
             // 
             addUserLabel.AutoSize = true;
             addUserLabel.ForeColor = Color.Black;
-            addUserLabel.Location = new Point(787, 21);
+            addUserLabel.Location = new Point(592, 13);
             addUserLabel.Name = "addUserLabel";
-            addUserLabel.Size = new Size(123, 23);
+            addUserLabel.Size = new Size(108, 23);
             addUserLabel.TabIndex = 6;
-            addUserLabel.Text = "Name  User";
+            addUserLabel.Text = "Username";
             // 
             // addUserBtn
             // 
@@ -140,9 +201,9 @@
             addUserBtn.IconColor = Color.White;
             addUserBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             addUserBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            addUserBtn.Location = new Point(784, 262);
+            addUserBtn.Location = new Point(827, 41);
             addUserBtn.Name = "addUserBtn";
-            addUserBtn.Size = new Size(279, 42);
+            addUserBtn.Size = new Size(240, 42);
             addUserBtn.TabIndex = 1;
             addUserBtn.Text = "Add User";
             addUserBtn.UseVisualStyleBackColor = false;
@@ -153,7 +214,7 @@
             usersDataGrip.Location = new Point(3, 3);
             usersDataGrip.Name = "usersDataGrip";
             usersDataGrip.RowHeadersWidth = 51;
-            usersDataGrip.Size = new Size(775, 382);
+            usersDataGrip.Size = new Size(583, 382);
             usersDataGrip.TabIndex = 0;
             // 
             // userManagementLabel
@@ -209,12 +270,17 @@
         private TabPage tabPage1;
         private FontAwesome.Sharp.IconButton editPermissonBtn;
         private Label roleLabel;
-        private TextBox roleTextBox;
         private TextBox addUserTextBox;
         private Label addUserLabel;
         private FontAwesome.Sharp.IconButton addUserBtn;
         private DataGridView usersDataGrip;
         private Label userManagementLabel;
         private FontAwesome.Sharp.IconPictureBox managementIcon;
+        private Label userMailLabel;
+        private Label userPassword;
+        private FontAwesome.Sharp.IconButton deleteUserBtn;
+        private ComboBox comboBox1;
+        private TextBox userMailTextBox;
+        private TextBox userPasswordTextBox;
     }
 }

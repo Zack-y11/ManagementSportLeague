@@ -12,12 +12,12 @@ using System.Windows.Forms;
 
 namespace PresentationLayer.Forms
 {
-    public partial class DashboardForm : Form
+    public partial class MatchesListForm : Form
     {
         private IMatchService _matchService;
         bool isUpdating = false;
 
-        public DashboardForm(IMatchService matchService)
+        public MatchesListForm(IMatchService matchService)
         {
             InitializeComponent();
             _matchService = matchService;

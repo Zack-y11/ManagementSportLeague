@@ -1,6 +1,6 @@
 ﻿namespace PresentationLayer.Forms.Player
 {
-    partial class SettingsForm
+    partial class SettingsPlayerForm
     {
         /// <summary>
         /// Required designer variable.

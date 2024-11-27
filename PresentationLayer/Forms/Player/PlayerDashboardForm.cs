@@ -146,8 +146,8 @@ namespace PresentationLayer.Forms.Player
         {
             try
             {
-                var setitngsForm = new SettingsForm();
-                OpenChildForm(setitngsForm);
+                var setitngsPlayerForm = new SettingsPlayerForm();
+                OpenChildForm(setitngsPlayerForm);
             }
             catch (Exception ex)
             {

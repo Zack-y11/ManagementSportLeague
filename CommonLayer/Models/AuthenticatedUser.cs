@@ -10,5 +10,6 @@ namespace CommonLayer.Models
     {
         public static string Name { get; set; }
         public static int RoleId { get; set; }
+        public static int UserId { get; set; }
     }
 }

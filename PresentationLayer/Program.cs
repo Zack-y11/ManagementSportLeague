@@ -57,6 +57,7 @@ namespace PresentationLayer
                     services.AddTransient<ManagerForm>();
                     services.AddTransient<PlayerDashboardForm>();
 
+
                     //Repositories
                     services.AddScoped<IMatchRepository, MatchRepository>();
                     services.AddScoped<ITeamsRepository, TeamsRepository>();

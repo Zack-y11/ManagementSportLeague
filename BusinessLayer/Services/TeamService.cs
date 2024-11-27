@@ -41,5 +41,17 @@ namespace BusinessLayer.Services
         {
             return _teamsRepository.GetManagers();
         }
+        public int GetTeamVictoriesCount(int teamId)
+        {
+            return _teamsRepository.GetTeamVictoriesCount(teamId);
+        }
+        public int GetTeamPlayersCount(int userId)
+        {
+            return _teamsRepository.GetTeamPlayersCount(userId);
+        }
+        public IEnumerable<TeamStandingsDto> GetTeamStandings()
+        {
+            return _teamsRepository.GetTeamStandings();
+        }
     }
 }

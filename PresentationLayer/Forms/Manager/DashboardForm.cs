@@ -1,4 +1,8 @@
-﻿using System;
+﻿using BusinessLayer.Services;
+using CommonLayer.Models;
+using Microsoft.Extensions.Logging.Console;
+using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +16,59 @@ namespace PresentationLayer.ManagerForms
 {
     public partial class DashboardForm : Form
     {
-        public DashboardForm()
+        private readonly IMatchService _matchService;
+        bool isUpdating = false;
+        private int _userId;
+        private readonly ITeamService _teamService;
+        public DashboardForm(IMatchService matchService, ITeamService teamService, int userId)
         {
             InitializeComponent();
+            _userId = userId;
+            _matchService = matchService;
+            _teamService = teamService;
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            NextMatchDto nextMatch = _matchService.GetNextMatch(_userId);
+            int victories = _teamService.GetTeamVictoriesCount(_userId);
+            int playersCount = _teamService.GetTeamPlayersCount(_userId);
+            var standings = _teamService.GetTeamStandings();
+
+            teamsStandingDGV.DataSource = standings.ToList();
+            teamsStandingDGV.Columns["Position"].HeaderText = "Pos";
+            teamsStandingDGV.Columns["TeamName"].HeaderText = "Team";
+            teamsStandingDGV.Columns["Points"].HeaderText = "PTS";
+            teamsStandingDGV.Columns["Wins"].HeaderText = "W";
+            teamsStandingDGV.Columns["Loses"].HeaderText = "L";
+
+            if (playersCount != 0)
+            {
+                labelPlayersNumber.Text = playersCount.ToString();
+            }
+            else
+            {
+                labelPlayersNumber.Text = "0";
+            }
+            if (victories != null)
+            {
+                labelWinsNumber.Text = victories.ToString();
+            }
+            else
+            {
+                labelWinsNumber.Text = "0";
+            }
+            if (nextMatch != null)
+            {
+                labelTimeNextMatch.Text = nextMatch.MatchDate.ToString("MMMM d, yyyy");
+                labelRival.Text = nextMatch.RivalTeamName;
+            }
+            else
+            {
+                labelTimeNextMatch.Text = "No match scheduled";
+                labelRival.Text = "No match scheduled";
+            }
         }
     }
 }

@@ -8,6 +8,6 @@ namespace BusinessLayer.Services
         void Delete(int playerId);
         IEnumerable<Player> GetAll();
         void Update(Player player);
-        void CreateUserPlayer(int creatorId, string email, string password, string name, int teamId, string position, DateTime birthDate);
+        void CreateUserPlayer(int creatorId, string email, string password, string name, string position, DateTime birthDate);
     }
 }

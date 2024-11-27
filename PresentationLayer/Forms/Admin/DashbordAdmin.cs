@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Services;
+using CommonLayer.Models;
 using FontAwesome.Sharp;
 using System;
 using System.Drawing;
@@ -15,17 +16,26 @@ namespace PresentationLayer.Forms
         private IconButton currentButton;
         private Form activeForm = null;
         private IconButton hoveredButton = null;
+        bool isUpdating = false;
         private readonly ITeamService _teamService;
+        private readonly IMatchService _matchService;
 
-        public dashboardAdmin(ITeamService teamService)
+        public dashboardAdmin(
+            ITeamService teamService,
+            IMatchService matchService)
         {
             InitializeComponent();
-        _teamService = teamService;
+            _teamService = teamService;
+            _matchService = matchService;
+
+
+
 
             headerPanel.Dock = DockStyle.Top;
             contentPanel.Dock = DockStyle.Fill;
             contentPanel.BringToFront();
 
+            LoadDashboardContent();
             SetupButton();
         }
 
@@ -61,7 +71,7 @@ namespace PresentationLayer.Forms
         private void SetupButton()
         {
             if (matchesBtn != null) ConfigureButton(matchesBtn);
-            if (coachBtn != null) ConfigureButton(coachBtn);
+            if (usersBtn != null) ConfigureButton(usersBtn);
             if (teamsBtn != null) ConfigureButton(teamsBtn);
             if (featuresBtn != null) ConfigureButton(featuresBtn);
             if (settingsBtn != null) ConfigureButton(settingsBtn);
@@ -74,13 +84,13 @@ namespace PresentationLayer.Forms
             button.MouseLeave -= Button_MouseLeave;
             button.Click -= Button_Click;
 
-            
+
             button.FlatStyle = FlatStyle.Flat;
             button.FlatAppearance.BorderSize = 0;
             button.BackColor = DEFAULT_BACKGROUND;
             button.IconColor = Color.Black;
 
-          
+
             button.MouseEnter += Button_MouseEnter;
             button.MouseLeave += Button_MouseLeave;
             button.Click += Button_Click;
@@ -174,7 +184,7 @@ namespace PresentationLayer.Forms
         {
             try
             {
-                var form = new DashboardForm();
+                var form = new MatchesListForm(_matchService);
                 OpenChildForm(form);
             }
             catch (Exception ex)
@@ -183,8 +193,6 @@ namespace PresentationLayer.Forms
             }
 
         }
-
-    
 
         private void LoadTeamsContent()
         {
@@ -251,6 +259,5 @@ namespace PresentationLayer.Forms
             }
         }
 
-    
     }
 }

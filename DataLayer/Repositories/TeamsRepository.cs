@@ -90,5 +90,48 @@ namespace DataLayer.Repositories
                 return connection.Query<User>(query);
             }
         }
+
+        public int GetTeamVictoriesCount(int userId)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"SELECT T.Wins
+                FROM Users U
+                JOIN Teams T ON U.UserId = T.ManagerId
+                WHERE U.UserId = @userId;";
+
+                return connection.QueryFirstOrDefault<int>(query, new { userId });
+            }
+        }
+
+        public int GetTeamPlayersCount(int userId)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"SELECT COUNT(P.PlayerId) as PlayerCount
+                FROM Teams T
+                JOIN Players P ON T.TeamId = P.TeamId
+                WHERE T.ManagerId = @userId";
+                return connection.QueryFirstOrDefault<int>(query, new { userId });
+            }
+        }
+        public IEnumerable<TeamStandingsDto> GetTeamStandings()
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"
+                SELECT 
+                    ROW_NUMBER() OVER (ORDER BY Points DESC) as Position,
+                    TeamName,
+                    Points,
+                    Wins,
+                    Loses
+                FROM Teams
+                ORDER BY Points DESC
+                ";
+
+                return connection.Query<TeamStandingsDto>(query);
+            }
+        }
     }
 }

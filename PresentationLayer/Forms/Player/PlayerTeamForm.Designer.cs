@@ -32,12 +32,12 @@
             titleIcon = new FontAwesome.Sharp.IconPictureBox();
             titleLabel = new Label();
             teamGroupBox = new GroupBox();
-            dataGridView1 = new DataGridView();
+            teamDataGrip = new DataGridView();
             contentTeamPanel = new Panel();
             headerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)titleIcon).BeginInit();
             teamGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)teamDataGrip).BeginInit();
             contentTeamPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -79,7 +79,7 @@
             // teamGroupBox
             // 
             teamGroupBox.BackColor = Color.White;
-            teamGroupBox.Controls.Add(dataGridView1);
+            teamGroupBox.Controls.Add(teamDataGrip);
             teamGroupBox.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             teamGroupBox.Location = new Point(67, 31);
             teamGroupBox.Name = "teamGroupBox";
@@ -88,14 +88,14 @@
             teamGroupBox.TabStop = false;
             teamGroupBox.Text = "Team content";
             // 
-            // dataGridView1
+            // teamDataGrip
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(47, 73);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(883, 373);
-            dataGridView1.TabIndex = 0;
+            teamDataGrip.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            teamDataGrip.Location = new Point(47, 73);
+            teamDataGrip.Name = "teamDataGrip";
+            teamDataGrip.RowHeadersWidth = 51;
+            teamDataGrip.Size = new Size(883, 373);
+            teamDataGrip.TabIndex = 0;
             // 
             // contentTeamPanel
             // 
@@ -120,7 +120,7 @@
             headerPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)titleIcon).EndInit();
             teamGroupBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)teamDataGrip).EndInit();
             contentTeamPanel.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -131,7 +131,7 @@
         private Label titleLabel;
         private FontAwesome.Sharp.IconPictureBox titleIcon;
         private GroupBox teamGroupBox;
-        private DataGridView dataGridView1;
+        private DataGridView teamDataGrip;
         private Panel contentTeamPanel;
     }
 }

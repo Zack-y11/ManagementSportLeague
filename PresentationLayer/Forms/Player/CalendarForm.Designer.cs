@@ -28,55 +28,55 @@
         /// </summary>
         private void InitializeComponent()
         {
-            groupBox1 = new GroupBox();
-            dataGridView1 = new DataGridView();
-            comboBox2 = new ComboBox();
+            calendarGroupBox = new GroupBox();
+            calendarDataGrip = new DataGridView();
+            yearComboBox = new ComboBox();
             yearLabel = new Label();
             monthLabel = new Label();
-            comboBox1 = new ComboBox();
+            monthComboBox = new ComboBox();
             calendarLabel = new Label();
             calendarIcon = new FontAwesome.Sharp.IconPictureBox();
             headerPanel = new Panel();
             contentCalendarPanel = new Panel();
-            groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            calendarGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)calendarDataGrip).BeginInit();
             ((System.ComponentModel.ISupportInitialize)calendarIcon).BeginInit();
             headerPanel.SuspendLayout();
             contentCalendarPanel.SuspendLayout();
             SuspendLayout();
             // 
-            // groupBox1
+            // calendarGroupBox
             // 
-            groupBox1.BackColor = Color.White;
-            groupBox1.Controls.Add(dataGridView1);
-            groupBox1.Controls.Add(comboBox2);
-            groupBox1.Controls.Add(yearLabel);
-            groupBox1.Controls.Add(monthLabel);
-            groupBox1.Controls.Add(comboBox1);
-            groupBox1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(60, 33);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(945, 550);
-            groupBox1.TabIndex = 0;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Calendar Activities ";
+            calendarGroupBox.BackColor = Color.White;
+            calendarGroupBox.Controls.Add(calendarDataGrip);
+            calendarGroupBox.Controls.Add(yearComboBox);
+            calendarGroupBox.Controls.Add(yearLabel);
+            calendarGroupBox.Controls.Add(monthLabel);
+            calendarGroupBox.Controls.Add(monthComboBox);
+            calendarGroupBox.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            calendarGroupBox.Location = new Point(60, 33);
+            calendarGroupBox.Name = "calendarGroupBox";
+            calendarGroupBox.Size = new Size(945, 550);
+            calendarGroupBox.TabIndex = 0;
+            calendarGroupBox.TabStop = false;
+            calendarGroupBox.Text = "Calendar Activities ";
             // 
-            // dataGridView1
+            // calendarDataGrip
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(35, 129);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(871, 356);
-            dataGridView1.TabIndex = 4;
+            calendarDataGrip.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            calendarDataGrip.Location = new Point(35, 129);
+            calendarDataGrip.Name = "calendarDataGrip";
+            calendarDataGrip.RowHeadersWidth = 51;
+            calendarDataGrip.Size = new Size(871, 356);
+            calendarDataGrip.TabIndex = 4;
             // 
-            // comboBox2
+            // yearComboBox
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(243, 74);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(165, 31);
-            comboBox2.TabIndex = 3;
+            yearComboBox.FormattingEnabled = true;
+            yearComboBox.Location = new Point(243, 74);
+            yearComboBox.Name = "yearComboBox";
+            yearComboBox.Size = new Size(165, 31);
+            yearComboBox.TabIndex = 3;
             // 
             // yearLabel
             // 
@@ -96,13 +96,13 @@
             monthLabel.TabIndex = 1;
             monthLabel.Text = "Month";
             // 
-            // comboBox1
+            // monthComboBox
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(17, 74);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(165, 31);
-            comboBox1.TabIndex = 0;
+            monthComboBox.FormattingEnabled = true;
+            monthComboBox.Location = new Point(17, 74);
+            monthComboBox.Name = "monthComboBox";
+            monthComboBox.Size = new Size(165, 31);
+            monthComboBox.TabIndex = 0;
             // 
             // calendarLabel
             // 
@@ -143,7 +143,7 @@
             // contentCalendarPanel
             // 
             contentCalendarPanel.BackColor = SystemColors.HighlightText;
-            contentCalendarPanel.Controls.Add(groupBox1);
+            contentCalendarPanel.Controls.Add(calendarGroupBox);
             contentCalendarPanel.Dock = DockStyle.Fill;
             contentCalendarPanel.Location = new Point(0, 100);
             contentCalendarPanel.Name = "contentCalendarPanel";
@@ -159,9 +159,9 @@
             Controls.Add(headerPanel);
             Name = "CalendarForm";
             Text = "CalendarForm";
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            calendarGroupBox.ResumeLayout(false);
+            calendarGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)calendarDataGrip).EndInit();
             ((System.ComponentModel.ISupportInitialize)calendarIcon).EndInit();
             headerPanel.ResumeLayout(false);
             headerPanel.PerformLayout();
@@ -171,14 +171,14 @@
 
         #endregion
 
-        private GroupBox groupBox1;
+        private GroupBox calendarGroupBox;
         private Label calendarLabel;
         private FontAwesome.Sharp.IconPictureBox calendarIcon;
-        private ComboBox comboBox1;
+        private ComboBox monthComboBox;
         private Label yearLabel;
         private Label monthLabel;
-        private DataGridView dataGridView1;
-        private ComboBox comboBox2;
+        private DataGridView calendarDataGrip;
+        private ComboBox yearComboBox;
         private Panel headerPanel;
         private Panel contentCalendarPanel;
     }

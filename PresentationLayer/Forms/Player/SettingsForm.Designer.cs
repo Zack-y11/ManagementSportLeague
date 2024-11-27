@@ -33,7 +33,7 @@
             label2 = new Label();
             logOutBtn = new FontAwesome.Sharp.IconButton();
             contentGroupBox = new GroupBox();
-            label1 = new Label();
+            pdfLabel = new Label();
             PDFButton = new FontAwesome.Sharp.IconButton();
             settingsContentPanel = new Panel();
             headerPanel.SuspendLayout();
@@ -97,7 +97,7 @@
             // 
             // contentGroupBox
             // 
-            contentGroupBox.Controls.Add(label1);
+            contentGroupBox.Controls.Add(pdfLabel);
             contentGroupBox.Controls.Add(PDFButton);
             contentGroupBox.Controls.Add(logOutBtn);
             contentGroupBox.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -108,14 +108,14 @@
             contentGroupBox.TabStop = false;
             contentGroupBox.Text = "Settings";
             // 
-            // label1
+            // pdfLabel
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(232, 88);
-            label1.Name = "label1";
-            label1.Size = new Size(261, 19);
-            label1.TabIndex = 8;
-            label1.Text = "Generate PDF of your stadistics";
+            pdfLabel.AutoSize = true;
+            pdfLabel.Location = new Point(232, 88);
+            pdfLabel.Name = "pdfLabel";
+            pdfLabel.Size = new Size(261, 19);
+            pdfLabel.TabIndex = 8;
+            pdfLabel.Text = "Generate PDF of your stadistics";
             // 
             // PDFButton
             // 
@@ -170,7 +170,7 @@
         private FontAwesome.Sharp.IconButton logOutBtn;
         private GroupBox contentGroupBox;
         private FontAwesome.Sharp.IconButton PDFButton;
-        private Label label1;
+        private Label pdfLabel;
         private Panel settingsContentPanel;
     }
 }

@@ -233,6 +233,7 @@
             pointsTextBox.Location = new Point(14, 201);
             pointsTextBox.Margin = new Padding(3, 2, 3, 2);
             pointsTextBox.Name = "pointsTextBox";
+            pointsTextBox.PlaceholderText = "Default: 0";
             pointsTextBox.Size = new Size(170, 23);
             pointsTextBox.TabIndex = 17;
             // 
@@ -251,6 +252,7 @@
             loosesTextBox.Location = new Point(209, 130);
             loosesTextBox.Margin = new Padding(3, 2, 3, 2);
             loosesTextBox.Name = "loosesTextBox";
+            loosesTextBox.PlaceholderText = "Default: 0";
             loosesTextBox.Size = new Size(170, 23);
             loosesTextBox.TabIndex = 15;
             // 
@@ -269,6 +271,7 @@
             winsTextBox.Location = new Point(209, 57);
             winsTextBox.Margin = new Padding(3, 2, 3, 2);
             winsTextBox.Name = "winsTextBox";
+            winsTextBox.PlaceholderText = "Default: 0";
             winsTextBox.Size = new Size(170, 23);
             winsTextBox.TabIndex = 13;
             // 

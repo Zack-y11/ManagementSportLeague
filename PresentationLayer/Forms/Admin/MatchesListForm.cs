@@ -71,8 +71,8 @@ namespace PresentationLayer.Forms
                     StatusId = Convert.ToInt32(statusComboBox.SelectedValue),
                     Score = scoreTextBox.Text,
                     MatchDate = matchDateTimePicker.Value,
-                    Fouls = int.Parse(foulsTextBox.Text),
-                    Corners = int.Parse(cornersTextBox.Text)
+                    Fouls = 0,
+                    Corners = 0
                 };
                 _matchService.AddMatch(match);
             }
@@ -114,8 +114,6 @@ namespace PresentationLayer.Forms
                     _matchService.DeleteMatch(id);
                     MessageBox.Show("Match Eliminado Correctamente");
                     LoadData();
-
-
                 }
             }
         }

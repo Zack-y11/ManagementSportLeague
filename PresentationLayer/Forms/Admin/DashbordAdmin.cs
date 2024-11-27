@@ -19,17 +19,17 @@ namespace PresentationLayer.Forms
         bool isUpdating = false;
         private readonly ITeamService _teamService;
         private readonly IMatchService _matchService;
+        private readonly IUserService _userService;
 
         public dashboardAdmin(
             ITeamService teamService,
-            IMatchService matchService)
+            IMatchService matchService,
+            IUserService userService)
         {
             InitializeComponent();
             _teamService = teamService;
             _matchService = matchService;
-
-
-
+            _userService = userService;
 
             headerPanel.Dock = DockStyle.Top;
             contentPanel.Dock = DockStyle.Fill;
@@ -160,6 +160,11 @@ namespace PresentationLayer.Forms
                     case "matchesbtn":
                         LoadDashboardContent();
                         break;
+
+                    case "usersbtn":
+                        LoadUserContent();
+                        break;
+
                     case "teamsbtn":
                         LoadTeamsContent();
                         break;
@@ -192,6 +197,20 @@ namespace PresentationLayer.Forms
                 MessageBox.Show($"Error loading Dashboard form: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+        
+        private void LoadUserContent()
+        {
+            try
+            {
+                var form = new usersForm(_userService);
+                OpenChildForm(form);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading Coach form: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void LoadTeamsContent()

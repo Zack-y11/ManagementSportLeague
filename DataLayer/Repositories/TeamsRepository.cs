@@ -52,7 +52,8 @@ namespace DataLayer.Repositories
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = @"UPDATE Teams SET ManagerId = @ManagerId, TeamName = @TeamName, Wins = @Wins, Loses = @Loses, Points = @Points
+                string query = @"UPDATE Teams SET ManagerId = @ManagerId, TeamName = @TeamName,
+                        Wins = @Wins, Loses = @Loses, Points = @Points
                         WHERE TeamId = @TeamId;";
                 connection.Execute(query, team);
             }

@@ -17,9 +17,28 @@ namespace BusinessLayer.Services
             _userRepository = userRepository;
         }
 
+        public void CreateUser(User user)
+        {
+            _userRepository.CreateUser(user);
+        }
+
+        public void DeleteUser(int userId)
+        {
+            _userRepository.DeleteUser(userId);
+        }
+
+        public IEnumerable<User> GetRoles()=> _userRepository.GetRoles();
+
+        public IEnumerable<User> GetUsers()=>_userRepository.GetUsers();
+
         public User? Login(string email, string password)
         {
             return _userRepository.GetUserByEmailAndPassword(email, password);
+        }
+
+        public void UpdateUser(User user)
+        {
+            _userRepository.UpdateUser(user);
         }
     }
 }

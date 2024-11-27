@@ -10,5 +10,11 @@ namespace DataLayer.Repositories
     public interface IUserRepository
     { 
         User? GetUserByEmailAndPassword(string email, string password);
+        IEnumerable<User> GetUsers();
+        public void CreateUser(User user);
+        public void UpdateUser(User user);
+        public void DeleteUser(int userId);
+        //get roles
+        IEnumerable<User> GetRoles();
     }
 }

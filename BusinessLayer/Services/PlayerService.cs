@@ -31,5 +31,9 @@ namespace BusinessLayer.Services
         {
             _playerRepository.Delete(playerId);
         }
+        public void CreateUserPlayer(int creatorId, string email, string password, string name, int teamId, string position, DateTime birthDate)
+        {
+            _playerRepository.CreateUserPlayer(creatorId, email, password, name, teamId, position, birthDate);
+        }
     }
 }

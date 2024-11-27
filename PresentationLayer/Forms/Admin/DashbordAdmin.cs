@@ -19,17 +19,17 @@ namespace PresentationLayer.Forms
         bool isUpdating = false;
         private readonly ITeamService _teamService;
         private readonly IMatchService _matchService;
+        private readonly IUserService _userService;
 
         public dashboardAdmin(
             ITeamService teamService,
-            IMatchService matchService)
+            IMatchService matchService,
+            IUserService userService)
         {
             InitializeComponent();
             _teamService = teamService;
             _matchService = matchService;
-
-
-
+            _userService = userService;
 
             headerPanel.Dock = DockStyle.Top;
             contentPanel.Dock = DockStyle.Fill;
@@ -161,7 +161,7 @@ namespace PresentationLayer.Forms
                         LoadDashboardContent();
                         break;
                     case "usersbtn":
-                        LoadCoachContent();
+                        LoadUserContent();
                         break;
                     case "teamsbtn":
                         LoadTeamsContent();
@@ -197,11 +197,11 @@ namespace PresentationLayer.Forms
 
         }
 
-        private void LoadCoachContent()
+        private void LoadUserContent()
         {
             try
             {
-                var form = new usersForm();
+                var form = new usersForm(_userService);
                 OpenChildForm(form);
 
             }

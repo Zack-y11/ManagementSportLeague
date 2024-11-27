@@ -114,8 +114,6 @@ namespace PresentationLayer.Forms
                     _matchService.DeleteMatch(id);
                     MessageBox.Show("Match Eliminado Correctamente");
                     LoadData();
-
-
                 }
             }
         }

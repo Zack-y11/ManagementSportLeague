@@ -54,8 +54,6 @@
             sidePanel = new Panel();
             btnActivities = new FontAwesome.Sharp.IconButton();
             btnDashboard = new FontAwesome.Sharp.IconButton();
-            btnPositionTable = new FontAwesome.Sharp.IconButton();
-            btnStats = new FontAwesome.Sharp.IconButton();
             btnPlayers = new FontAwesome.Sharp.IconButton();
             panelLogo = new Panel();
             coachLabel = new Label();
@@ -353,8 +351,6 @@
             sidePanel.BackColor = Color.WhiteSmoke;
             sidePanel.Controls.Add(btnActivities);
             sidePanel.Controls.Add(btnDashboard);
-            sidePanel.Controls.Add(btnPositionTable);
-            sidePanel.Controls.Add(btnStats);
             sidePanel.Controls.Add(btnPlayers);
             sidePanel.Controls.Add(panelLogo);
             sidePanel.Dock = DockStyle.Left;
@@ -399,42 +395,6 @@
             btnDashboard.TabIndex = 8;
             btnDashboard.Text = "Dashboard";
             btnDashboard.UseVisualStyleBackColor = true;
-            // 
-            // btnPositionTable
-            // 
-            btnPositionTable.FlatAppearance.BorderSize = 0;
-            btnPositionTable.FlatStyle = FlatStyle.Flat;
-            btnPositionTable.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPositionTable.ForeColor = Color.Black;
-            btnPositionTable.IconChar = FontAwesome.Sharp.IconChar.RankingStar;
-            btnPositionTable.IconColor = Color.Black;
-            btnPositionTable.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnPositionTable.ImageAlign = ContentAlignment.MiddleLeft;
-            btnPositionTable.Location = new Point(0, 386);
-            btnPositionTable.Name = "btnPositionTable";
-            btnPositionTable.Padding = new Padding(12, 0, 0, 0);
-            btnPositionTable.Size = new Size(302, 66);
-            btnPositionTable.TabIndex = 7;
-            btnPositionTable.Text = "Position Table";
-            btnPositionTable.UseVisualStyleBackColor = true;
-            // 
-            // btnStats
-            // 
-            btnStats.FlatAppearance.BorderSize = 0;
-            btnStats.FlatStyle = FlatStyle.Flat;
-            btnStats.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnStats.ForeColor = Color.Black;
-            btnStats.IconChar = FontAwesome.Sharp.IconChar.SoccerBall;
-            btnStats.IconColor = Color.Black;
-            btnStats.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnStats.ImageAlign = ContentAlignment.MiddleLeft;
-            btnStats.Location = new Point(0, 323);
-            btnStats.Name = "btnStats";
-            btnStats.Padding = new Padding(12, 0, 0, 0);
-            btnStats.Size = new Size(302, 60);
-            btnStats.TabIndex = 6;
-            btnStats.Text = "Stats";
-            btnStats.UseVisualStyleBackColor = true;
             // 
             // btnPlayers
             // 
@@ -624,8 +584,6 @@
         private FontAwesome.Sharp.IconPictureBox ipbPositionTable;
         private Panel sidePanel;
         private Panel panelLogo;
-        private FontAwesome.Sharp.IconButton btnPositionTable;
-        private FontAwesome.Sharp.IconButton btnStats;
         private FontAwesome.Sharp.IconButton btnPlayers;
         private FontAwesome.Sharp.IconPictureBox ipbManager;
         private Panel panelHeader;

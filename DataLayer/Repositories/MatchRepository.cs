@@ -76,17 +76,18 @@ namespace DataLayer.Repositories
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = @"SELECT 
-                 m.MatchId, m.HomeTeamId, m.AwayTeamId, m.StatusId, m.Score, m.MatchDate, m.Fouls, m.Corners,
-                    ht.TeamName AS HomeTeam,
-                    at.TeamName AS AwayTeam,
-                    ms.Status AS MatchStatus
-                    FROM Matches m
-                    JOIN Teams ht ON m.HomeTeamId = ht.TeamId
-                    JOIN Teams at ON m.AwayTeamId = at.TeamId
-                    JOIN MatchStatus ms ON m.StatusId = ms.StatusId
-                    WHERE m.MatchDate BETWEEN @start AND @end;";
-                return connection.Query<Match>(query, new { start, end });
+                string query = "spMatch_GetByDates";
+                //string query = @"SELECT 
+                // m.MatchId, m.HomeTeamId, m.AwayTeamId, m.StatusId, m.Score, m.MatchDate, m.Fouls, m.Corners,
+                //    ht.TeamName AS HomeTeam,
+                //    at.TeamName AS AwayTeam,
+                //    ms.Status AS MatchStatus
+                //    FROM Matches m
+                //    JOIN Teams ht ON m.HomeTeamId = ht.TeamId
+                //    JOIN Teams at ON m.AwayTeamId = at.TeamId
+                //    JOIN MatchStatus ms ON m.StatusId = ms.StatusId
+                //    WHERE m.MatchDate BETWEEN @start AND @end;";
+                return connection.Query<Match>(query, new { start, end }, commandType: CommandType.StoredProcedure);
             }
         }
         public IEnumerable<Team>GetTeamIdAndName()

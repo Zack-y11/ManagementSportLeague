@@ -150,9 +150,6 @@ namespace PresentationLayer.Forms
                     case "matchesbtn":
                         LoadDashboardContent();
                         break;
-                    case "coachbtn":
-                        LoadCoachContent();
-                        break;
                     case "teamsbtn":
                         LoadTeamsContent();
                         break;
@@ -187,19 +184,7 @@ namespace PresentationLayer.Forms
 
         }
 
-        private void LoadCoachContent()
-        {
-            try
-            {
-                var form = new CoachForm();
-                OpenChildForm(form);
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error loading Coach form: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+    
 
         private void LoadTeamsContent()
         {

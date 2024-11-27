@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PresentationLayer.Forms
+namespace PresentationLayer.Forms.Player
 {
-    public partial class CoachForm : Form
+    public partial class PlayerInfoForm : Form
     {
-        public CoachForm()
+        public PlayerInfoForm()
         {
             InitializeComponent();
         }

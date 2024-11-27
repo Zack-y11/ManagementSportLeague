@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace PresentationLayer.Forms.Player
 {
-    public partial class playerSportForm : Form
+    public partial class CalendarForm : Form
     {
-        public playerSportForm()
+        public CalendarForm()
         {
             InitializeComponent();
         }
+
+    
     }
 }

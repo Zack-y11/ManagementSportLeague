@@ -52,6 +52,7 @@
             editTeamLabel = new Label();
             teamNameTextBox = new TextBox();
             teamNameLabel = new Label();
+            searchTeamBtn = new FontAwesome.Sharp.IconButton();
             headerTeamsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)searchIcon).BeginInit();
             contentTeamsPanel.SuspendLayout();
@@ -63,24 +64,23 @@
             // 
             // headerTeamsPanel
             // 
+            headerTeamsPanel.Controls.Add(searchTeamBtn);
             headerTeamsPanel.Controls.Add(searchTeamTextBox);
             headerTeamsPanel.Controls.Add(searchIcon);
             headerTeamsPanel.Controls.Add(teamsLabel);
             headerTeamsPanel.Dock = DockStyle.Top;
             headerTeamsPanel.Location = new Point(0, 0);
-            headerTeamsPanel.Margin = new Padding(3, 2, 3, 2);
             headerTeamsPanel.Name = "headerTeamsPanel";
-            headerTeamsPanel.Size = new Size(1199, 94);
+            headerTeamsPanel.Size = new Size(1370, 125);
             headerTeamsPanel.TabIndex = 0;
             // 
             // searchTeamTextBox
             // 
-            searchTeamTextBox.Location = new Point(86, 62);
-            searchTeamTextBox.Margin = new Padding(3, 2, 3, 2);
+            searchTeamTextBox.Location = new Point(98, 83);
             searchTeamTextBox.Multiline = true;
             searchTeamTextBox.Name = "searchTeamTextBox";
             searchTeamTextBox.PlaceholderText = "All teams";
-            searchTeamTextBox.Size = new Size(574, 26);
+            searchTeamTextBox.Size = new Size(655, 33);
             searchTeamTextBox.TabIndex = 2;
             // 
             // searchIcon
@@ -90,11 +90,10 @@
             searchIcon.IconChar = FontAwesome.Sharp.IconChar.Search;
             searchIcon.IconColor = SystemColors.ControlText;
             searchIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            searchIcon.IconSize = 30;
-            searchIcon.Location = new Point(26, 57);
-            searchIcon.Margin = new Padding(3, 2, 3, 2);
+            searchIcon.IconSize = 40;
+            searchIcon.Location = new Point(30, 76);
             searchIcon.Name = "searchIcon";
-            searchIcon.Size = new Size(35, 30);
+            searchIcon.Size = new Size(40, 40);
             searchIcon.TabIndex = 1;
             searchIcon.TabStop = false;
             // 
@@ -102,9 +101,9 @@
             // 
             teamsLabel.AutoSize = true;
             teamsLabel.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            teamsLabel.Location = new Point(26, 16);
+            teamsLabel.Location = new Point(30, 21);
             teamsLabel.Name = "teamsLabel";
-            teamsLabel.Size = new Size(234, 26);
+            teamsLabel.Size = new Size(292, 34);
             teamsLabel.TabIndex = 0;
             teamsLabel.Text = "Teams Management";
             // 
@@ -117,10 +116,9 @@
             addTeamBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             addTeamBtn.IconSize = 40;
             addTeamBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            addTeamBtn.Location = new Point(209, 194);
-            addTeamBtn.Margin = new Padding(3, 2, 3, 2);
+            addTeamBtn.Location = new Point(239, 259);
             addTeamBtn.Name = "addTeamBtn";
-            addTeamBtn.Size = new Size(170, 34);
+            addTeamBtn.Size = new Size(194, 45);
             addTeamBtn.TabIndex = 3;
             addTeamBtn.Text = "Add Team";
             addTeamBtn.UseVisualStyleBackColor = false;
@@ -129,10 +127,9 @@
             // contentTeamsPanel
             // 
             contentTeamsPanel.Controls.Add(tapControlTeams);
-            contentTeamsPanel.Location = new Point(0, 94);
-            contentTeamsPanel.Margin = new Padding(3, 2, 3, 2);
+            contentTeamsPanel.Location = new Point(0, 125);
             contentTeamsPanel.Name = "contentTeamsPanel";
-            contentTeamsPanel.Size = new Size(612, 424);
+            contentTeamsPanel.Size = new Size(699, 565);
             contentTeamsPanel.TabIndex = 1;
             // 
             // tapControlTeams
@@ -141,21 +138,19 @@
             tapControlTeams.Controls.Add(tapTeamsControl);
             tapControlTeams.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             tapControlTeams.Location = new Point(0, 0);
-            tapControlTeams.Margin = new Padding(3, 2, 3, 2);
             tapControlTeams.Name = "tapControlTeams";
             tapControlTeams.SelectedIndex = 0;
-            tapControlTeams.Size = new Size(615, 424);
+            tapControlTeams.Size = new Size(703, 565);
             tapControlTeams.TabIndex = 0;
             // 
             // tapTeamsControl
             // 
             tapTeamsControl.BackColor = Color.White;
             tapTeamsControl.Controls.Add(activeTeamsDataGrip);
-            tapTeamsControl.Location = new Point(4, 31);
-            tapTeamsControl.Margin = new Padding(3, 2, 3, 2);
+            tapTeamsControl.Location = new Point(4, 35);
             tapTeamsControl.Name = "tapTeamsControl";
-            tapTeamsControl.Padding = new Padding(3, 2, 3, 2);
-            tapTeamsControl.Size = new Size(607, 389);
+            tapTeamsControl.Padding = new Padding(3, 3, 3, 3);
+            tapTeamsControl.Size = new Size(695, 526);
             tapTeamsControl.TabIndex = 1;
             tapTeamsControl.Text = "Active Teams ";
             // 
@@ -163,11 +158,10 @@
             // 
             activeTeamsDataGrip.BackgroundColor = SystemColors.ButtonFace;
             activeTeamsDataGrip.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            activeTeamsDataGrip.Location = new Point(3, 2);
-            activeTeamsDataGrip.Margin = new Padding(3, 2, 3, 2);
+            activeTeamsDataGrip.Location = new Point(3, 3);
             activeTeamsDataGrip.Name = "activeTeamsDataGrip";
             activeTeamsDataGrip.RowHeadersWidth = 51;
-            activeTeamsDataGrip.Size = new Size(602, 395);
+            activeTeamsDataGrip.Size = new Size(688, 527);
             activeTeamsDataGrip.TabIndex = 0;
             // 
             // editTeamBtn
@@ -178,10 +172,9 @@
             editTeamBtn.IconColor = Color.White;
             editTeamBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             editTeamBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            editTeamBtn.Location = new Point(14, 277);
-            editTeamBtn.Margin = new Padding(3, 2, 3, 2);
+            editTeamBtn.Location = new Point(16, 369);
             editTeamBtn.Name = "editTeamBtn";
-            editTeamBtn.Size = new Size(170, 37);
+            editTeamBtn.Size = new Size(194, 49);
             editTeamBtn.TabIndex = 4;
             editTeamBtn.Text = "Edit Team";
             editTeamBtn.UseVisualStyleBackColor = false;
@@ -195,10 +188,9 @@
             deleteTeamBtn.IconColor = Color.White;
             deleteTeamBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             deleteTeamBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            deleteTeamBtn.Location = new Point(209, 277);
-            deleteTeamBtn.Margin = new Padding(3, 2, 3, 2);
+            deleteTeamBtn.Location = new Point(239, 369);
             deleteTeamBtn.Name = "deleteTeamBtn";
-            deleteTeamBtn.Size = new Size(170, 37);
+            deleteTeamBtn.Size = new Size(194, 49);
             deleteTeamBtn.TabIndex = 5;
             deleteTeamBtn.Text = "    Delete Team";
             deleteTeamBtn.UseVisualStyleBackColor = false;
@@ -222,85 +214,80 @@
             teamPanel.Controls.Add(teamNameLabel);
             teamPanel.Controls.Add(deleteTeamBtn);
             teamPanel.Controls.Add(addTeamBtn);
-            teamPanel.Location = new Point(620, 94);
-            teamPanel.Margin = new Padding(3, 2, 3, 2);
+            teamPanel.Location = new Point(709, 125);
             teamPanel.Name = "teamPanel";
-            teamPanel.Size = new Size(595, 424);
+            teamPanel.Size = new Size(680, 565);
             teamPanel.TabIndex = 2;
             // 
             // pointsTextBox
             // 
-            pointsTextBox.Location = new Point(14, 201);
-            pointsTextBox.Margin = new Padding(3, 2, 3, 2);
+            pointsTextBox.Location = new Point(16, 268);
             pointsTextBox.Name = "pointsTextBox";
             pointsTextBox.PlaceholderText = "Default: 0";
-            pointsTextBox.Size = new Size(170, 23);
+            pointsTextBox.Size = new Size(194, 27);
             pointsTextBox.TabIndex = 17;
             // 
             // pointsLabel
             // 
             pointsLabel.AutoSize = true;
             pointsLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            pointsLabel.Location = new Point(14, 170);
+            pointsLabel.Location = new Point(16, 227);
             pointsLabel.Name = "pointsLabel";
-            pointsLabel.Size = new Size(52, 19);
+            pointsLabel.Size = new Size(66, 23);
             pointsLabel.TabIndex = 16;
             pointsLabel.Text = "Points";
             // 
             // loosesTextBox
             // 
-            loosesTextBox.Location = new Point(209, 130);
-            loosesTextBox.Margin = new Padding(3, 2, 3, 2);
+            loosesTextBox.Location = new Point(239, 173);
             loosesTextBox.Name = "loosesTextBox";
             loosesTextBox.PlaceholderText = "Default: 0";
-            loosesTextBox.Size = new Size(170, 23);
+            loosesTextBox.Size = new Size(194, 27);
             loosesTextBox.TabIndex = 15;
             // 
             // loosesLabel
             // 
             loosesLabel.AutoSize = true;
             loosesLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            loosesLabel.Location = new Point(209, 98);
+            loosesLabel.Location = new Point(239, 131);
             loosesLabel.Name = "loosesLabel";
-            loosesLabel.Size = new Size(58, 19);
+            loosesLabel.Size = new Size(76, 23);
             loosesLabel.TabIndex = 14;
             loosesLabel.Text = "Looses";
             // 
             // winsTextBox
             // 
-            winsTextBox.Location = new Point(209, 57);
-            winsTextBox.Margin = new Padding(3, 2, 3, 2);
+            winsTextBox.Location = new Point(239, 76);
             winsTextBox.Name = "winsTextBox";
             winsTextBox.PlaceholderText = "Default: 0";
-            winsTextBox.Size = new Size(170, 23);
+            winsTextBox.Size = new Size(194, 27);
             winsTextBox.TabIndex = 13;
             // 
             // winsLabel
             // 
             winsLabel.AutoSize = true;
             winsLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            winsLabel.Location = new Point(209, 28);
+            winsLabel.Location = new Point(239, 37);
             winsLabel.Name = "winsLabel";
-            winsLabel.Size = new Size(43, 19);
+            winsLabel.Size = new Size(54, 23);
             winsLabel.TabIndex = 12;
             winsLabel.Text = "Wins";
             // 
             // coachComboBox
             // 
             coachComboBox.FormattingEnabled = true;
-            coachComboBox.Location = new Point(14, 129);
-            coachComboBox.Margin = new Padding(3, 2, 3, 2);
+            coachComboBox.Location = new Point(16, 172);
             coachComboBox.Name = "coachComboBox";
-            coachComboBox.Size = new Size(163, 23);
+            coachComboBox.Size = new Size(186, 28);
             coachComboBox.TabIndex = 11;
             // 
             // coachLabel
             // 
             coachLabel.AutoSize = true;
             coachLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            coachLabel.Location = new Point(14, 98);
+            coachLabel.Location = new Point(16, 131);
             coachLabel.Name = "coachLabel";
-            coachLabel.Size = new Size(115, 19);
+            coachLabel.Size = new Size(143, 23);
             coachLabel.TabIndex = 10;
             coachLabel.Text = "Coach Name";
             // 
@@ -308,9 +295,9 @@
             // 
             deleteTeamLabel.AutoSize = true;
             deleteTeamLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            deleteTeamLabel.Location = new Point(209, 241);
+            deleteTeamLabel.Location = new Point(239, 321);
             deleteTeamLabel.Name = "deleteTeamLabel";
-            deleteTeamLabel.Size = new Size(106, 19);
+            deleteTeamLabel.Size = new Size(133, 23);
             deleteTeamLabel.TabIndex = 9;
             deleteTeamLabel.Text = "Delete Team";
             // 
@@ -318,40 +305,52 @@
             // 
             editTeamLabel.AutoSize = true;
             editTeamLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            editTeamLabel.Location = new Point(14, 241);
+            editTeamLabel.Location = new Point(16, 321);
             editTeamLabel.Name = "editTeamLabel";
-            editTeamLabel.Size = new Size(84, 19);
+            editTeamLabel.Size = new Size(103, 23);
             editTeamLabel.TabIndex = 8;
             editTeamLabel.Text = "Edit Team";
             // 
             // teamNameTextBox
             // 
-            teamNameTextBox.Location = new Point(14, 57);
-            teamNameTextBox.Margin = new Padding(3, 2, 3, 2);
+            teamNameTextBox.Location = new Point(16, 76);
             teamNameTextBox.Name = "teamNameTextBox";
-            teamNameTextBox.Size = new Size(170, 23);
+            teamNameTextBox.Size = new Size(194, 27);
             teamNameTextBox.TabIndex = 7;
             // 
             // teamNameLabel
             // 
             teamNameLabel.AutoSize = true;
             teamNameLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            teamNameLabel.Location = new Point(14, 28);
+            teamNameLabel.Location = new Point(16, 37);
             teamNameLabel.Name = "teamNameLabel";
-            teamNameLabel.Size = new Size(106, 19);
+            teamNameLabel.Size = new Size(129, 23);
             teamNameLabel.TabIndex = 6;
             teamNameLabel.Text = "Team Name";
             // 
+            // searchTeamBtn
+            // 
+            searchTeamBtn.BackColor = Color.YellowGreen;
+            searchTeamBtn.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            searchTeamBtn.IconChar = FontAwesome.Sharp.IconChar.None;
+            searchTeamBtn.IconColor = Color.Black;
+            searchTeamBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            searchTeamBtn.Location = new Point(784, 80);
+            searchTeamBtn.Name = "searchTeamBtn";
+            searchTeamBtn.Size = new Size(240, 39);
+            searchTeamBtn.TabIndex = 7;
+            searchTeamBtn.Text = "Search";
+            searchTeamBtn.UseVisualStyleBackColor = false;
+            // 
             // TeamsForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1199, 519);
+            ClientSize = new Size(1370, 692);
             Controls.Add(teamPanel);
             Controls.Add(contentTeamsPanel);
             Controls.Add(headerTeamsPanel);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "TeamsForm";
             Text = "TeamsForm";
             headerTeamsPanel.ResumeLayout(false);
@@ -398,5 +397,6 @@
         private TextBox loosesTextBox;
         private Label pointsLabel;
         private TextBox pointsTextBox;
+        private FontAwesome.Sharp.IconButton searchTeamBtn;
     }
 }

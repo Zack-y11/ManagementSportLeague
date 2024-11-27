@@ -15,10 +15,11 @@ namespace DataLayer.Repositories
     public class PlayerRepository : IPlayerRepository
     {
         private readonly ISqlDataAccess _dbConnection;
-        PlayerRepository(ISqlDataAccess dbConnection)
+        public PlayerRepository(ISqlDataAccess dbConnection)
         {
             _dbConnection = dbConnection;
         }
+
         public IEnumerable<Player> GetAll()
         {
             using (var connection = _dbConnection.GetConnection())
@@ -39,7 +40,7 @@ namespace DataLayer.Repositories
                 return connection.Query<Player>(query);
             }
         }
-        public void CreateUserPlayer(int creatorId, string email, string password, string name, int teamId, string position, DateTime birthDate)
+        public void CreateUserPlayer(int creatorId, string email, string password, string name, string position, DateTime birthDate)
         {
             using (var connection = _dbConnection.GetConnection())
             {

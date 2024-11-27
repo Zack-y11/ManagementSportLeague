@@ -33,7 +33,7 @@ namespace PresentationLayer
             var host = CreateHostBuilder().Build();
             ServiceProvider = host.Services;
 
-            Application.Run(ServiceProvider.GetRequiredService<LoginForms>());
+            Application.Run(ServiceProvider.GetRequiredService<PlayerDashboardForm>());
         }
 
         public static IServiceProvider ServiceProvider { get; private set; }
@@ -55,7 +55,8 @@ namespace PresentationLayer
                     services.AddTransient<dashboardAdmin>();
                     services.AddTransient<LoginForms>();
                     services.AddTransient<ManagerForm>();
-                    services.AddTransient<playerSportForm>();
+                    services.AddTransient<PlayerDashboardForm>();
+
 
                     //Repositories
                     services.AddScoped<IMatchRepository, MatchRepository>();

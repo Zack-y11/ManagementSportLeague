@@ -30,18 +30,18 @@
         {
             panelPositionTable = new Panel();
             ipbPositionTable = new FontAwesome.Sharp.IconPictureBox();
-            dataGridView1 = new DataGridView();
+            dataGridViewPosition = new DataGridView();
             labelPositionTable = new Label();
             panelPositionTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ipbPositionTable).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewPosition).BeginInit();
             SuspendLayout();
             // 
             // panelPositionTable
             // 
             panelPositionTable.BackColor = Color.FromArgb(147, 51, 234);
             panelPositionTable.Controls.Add(ipbPositionTable);
-            panelPositionTable.Controls.Add(dataGridView1);
+            panelPositionTable.Controls.Add(dataGridViewPosition);
             panelPositionTable.Controls.Add(labelPositionTable);
             panelPositionTable.Location = new Point(197, 52);
             panelPositionTable.Name = "panelPositionTable";
@@ -61,14 +61,14 @@
             ipbPositionTable.TabIndex = 2;
             ipbPositionTable.TabStop = false;
             // 
-            // dataGridView1
+            // dataGridViewPosition
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(35, 63);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(431, 473);
-            dataGridView1.TabIndex = 1;
+            dataGridViewPosition.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewPosition.Location = new Point(35, 63);
+            dataGridViewPosition.Name = "dataGridViewPosition";
+            dataGridViewPosition.RowHeadersWidth = 51;
+            dataGridViewPosition.Size = new Size(431, 473);
+            dataGridViewPosition.TabIndex = 1;
             // 
             // labelPositionTable
             // 
@@ -92,7 +92,7 @@
             panelPositionTable.ResumeLayout(false);
             panelPositionTable.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)ipbPositionTable).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewPosition).EndInit();
             ResumeLayout(false);
         }
 
@@ -100,7 +100,7 @@
 
         private Panel panelPositionTable;
         private FontAwesome.Sharp.IconPictureBox ipbPositionTable;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridViewPosition;
         private Label labelPositionTable;
     }
 }

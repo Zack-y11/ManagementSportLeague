@@ -39,9 +39,9 @@
             textBoxName = new TextBox();
             labelName = new Label();
             labelDescrition = new Label();
-            dataGridView1 = new DataGridView();
+            dataGridViewActivity = new DataGridView();
             panelPlayers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewActivity).BeginInit();
             SuspendLayout();
             // 
             // panelPlayers
@@ -178,14 +178,14 @@
             labelDescrition.TabIndex = 6;
             labelDescrition.Text = "Description";
             // 
-            // dataGridView1
+            // dataGridViewActivity
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(29, 46);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(542, 283);
-            dataGridView1.TabIndex = 10;
+            dataGridViewActivity.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewActivity.Location = new Point(29, 46);
+            dataGridViewActivity.Name = "dataGridViewActivity";
+            dataGridViewActivity.RowHeadersWidth = 51;
+            dataGridViewActivity.Size = new Size(542, 283);
+            dataGridViewActivity.TabIndex = 10;
             // 
             // ActivitiesForm
             // 
@@ -193,12 +193,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(988, 546);
             Controls.Add(panelPlayers);
-            Controls.Add(dataGridView1);
+            Controls.Add(dataGridViewActivity);
             Name = "ActivitiesForm";
             Text = "ActivitiesForm";
             panelPlayers.ResumeLayout(false);
             panelPlayers.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewActivity).EndInit();
             ResumeLayout(false);
         }
 
@@ -215,6 +215,6 @@
         private TextBox textBoxName;
         private Label labelName;
         private Label labelDescrition;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridViewActivity;
     }
 }

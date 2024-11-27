@@ -30,19 +30,19 @@
         {
             textBoxName = new TextBox();
             labelPlayers = new Label();
-            dataGridView1 = new DataGridView();
+            dataGridViewPlayers = new DataGridView();
             labelName = new Label();
             labelLastname = new Label();
             textBoxLastname = new TextBox();
             panelPlayers = new Panel();
+            textBox1 = new TextBox();
+            labelPosition = new Label();
             btnEditPlayer = new FontAwesome.Sharp.IconButton();
             btnDeletePlayer = new FontAwesome.Sharp.IconButton();
             btnAddPlayer = new FontAwesome.Sharp.IconButton();
             textBoxAge = new TextBox();
             labelAge = new Label();
-            textBox1 = new TextBox();
-            labelPosition = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).BeginInit();
             panelPlayers.SuspendLayout();
             SuspendLayout();
             // 
@@ -64,14 +64,14 @@
             labelPlayers.TabIndex = 2;
             labelPlayers.Text = "Players Information";
             // 
-            // dataGridView1
+            // dataGridViewPlayers
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(35, 35);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(542, 283);
-            dataGridView1.TabIndex = 4;
+            dataGridViewPlayers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewPlayers.Location = new Point(35, 35);
+            dataGridViewPlayers.Name = "dataGridViewPlayers";
+            dataGridViewPlayers.RowHeadersWidth = 51;
+            dataGridViewPlayers.Size = new Size(542, 283);
+            dataGridViewPlayers.TabIndex = 4;
             // 
             // labelName
             // 
@@ -121,6 +121,24 @@
             panelPlayers.Name = "panelPlayers";
             panelPlayers.Size = new Size(323, 500);
             panelPlayers.TabIndex = 9;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(101, 279);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(166, 27);
+            textBox1.TabIndex = 15;
+            // 
+            // labelPosition
+            // 
+            labelPosition.AutoSize = true;
+            labelPosition.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelPosition.ForeColor = Color.White;
+            labelPosition.Location = new Point(20, 288);
+            labelPosition.Name = "labelPosition";
+            labelPosition.Size = new Size(63, 18);
+            labelPosition.TabIndex = 14;
+            labelPosition.Text = "Position";
             // 
             // btnEditPlayer
             // 
@@ -191,34 +209,16 @@
             labelAge.TabIndex = 9;
             labelAge.Text = "Age";
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(101, 279);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(166, 27);
-            textBox1.TabIndex = 15;
-            // 
-            // labelPosition
-            // 
-            labelPosition.AutoSize = true;
-            labelPosition.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelPosition.ForeColor = Color.White;
-            labelPosition.Location = new Point(20, 288);
-            labelPosition.Name = "labelPosition";
-            labelPosition.Size = new Size(63, 18);
-            labelPosition.TabIndex = 14;
-            labelPosition.Text = "Position";
-            // 
             // PlayersForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1265, 574);
             Controls.Add(panelPlayers);
-            Controls.Add(dataGridView1);
+            Controls.Add(dataGridViewPlayers);
             Name = "PlayersForm";
             Text = "PlayersForm";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).EndInit();
             panelPlayers.ResumeLayout(false);
             panelPlayers.PerformLayout();
             ResumeLayout(false);
@@ -227,7 +227,7 @@
         #endregion
         private TextBox textBoxName;
         private Label labelPlayers;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridViewPlayers;
         private Label labelName;
         private Label labelLastname;
         private TextBox textBoxLastname;

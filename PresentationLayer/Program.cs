@@ -49,13 +49,10 @@ namespace PresentationLayer
                         reloadOnChange: true
                      );
                 })
-                .ConfigureServices((context, services) => {
-
-                    //Forms
-                    services.AddTransient<dashboardAdmin>();
-                    services.AddTransient<LoginForms>();
-                    services.AddTransient<ManagerForm>();
-                    services.AddTransient<playerSportForm>();
+                .ConfigureServices((context, services) =>
+                {
+                    //Connection
+                    services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
 
                     //Repositories
                     services.AddScoped<IMatchRepository, MatchRepository>();
@@ -64,15 +61,23 @@ namespace PresentationLayer
 
                     //services.AddScoped<IEmailQueueRepository, EmailQueueRepository>();
                     services.AddScoped<IUserRepository, UserRepository>();
+
                     //Services
-
-
                     services.AddScoped<IMatchService, MatchService>();
                     services.AddScoped<ITeamService, TeamService>();
                     services.AddScoped<IUserService, UserService>();
                     services.AddScoped<IPlayerService, PlayerService>();
 
                     //services.AddScoped<IEmailService, EmailService>();
+
+                    //Forms
+                    services.AddTransient<dashboardAdmin>();
+                    services.AddTransient<LoginForms>();
+                    services.AddTransient<ManagerForm>();
+                    services.AddTransient<playerSportForm>();
+
+                    
+                    
 
                     //Notifications
                     //services.AddScoped<IEmailNotification, EmailNotification>();
@@ -81,7 +86,7 @@ namespace PresentationLayer
                     //services.AddScoped<ICategoryReport, CategoryReport>();
 
                     //Connection
-                    services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
+                    //services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
                 });
         }
     }

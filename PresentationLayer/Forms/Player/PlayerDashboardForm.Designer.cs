@@ -51,7 +51,7 @@
             // 
             // dashboardPlayerPanel
             // 
-            dashboardPlayerPanel.BackColor = Color.White;
+            dashboardPlayerPanel.BackColor = Color.Snow;
             dashboardPlayerPanel.Controls.Add(dashboardBtn);
             dashboardPlayerPanel.Controls.Add(panel2);
             dashboardPlayerPanel.Controls.Add(calendarBtn);
@@ -174,13 +174,14 @@
             // 
             // contentPanel
             // 
+            contentPanel.BackColor = SystemColors.ControlLightLight;
             contentPanel.Controls.Add(playerDataGrip);
             contentPanel.Controls.Add(playerSportInformation);
             contentPanel.Controls.Add(playerInformationLabel);
             contentPanel.Controls.Add(titlePlayerLabel);
             contentPanel.Location = new Point(263, 3);
             contentPanel.Name = "contentPanel";
-            contentPanel.Size = new Size(1060, 632);
+            contentPanel.Size = new Size(1060, 694);
             contentPanel.TabIndex = 3;
             // 
             // playerDataGrip
@@ -194,7 +195,7 @@
             // 
             // playerSportInformation
             // 
-            playerSportInformation.BackgroundColor = SystemColors.GradientInactiveCaption;
+            playerSportInformation.BackgroundColor = Color.White;
             playerSportInformation.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             playerSportInformation.GridColor = SystemColors.GradientInactiveCaption;
             playerSportInformation.Location = new Point(55, 199);

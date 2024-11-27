@@ -33,10 +33,12 @@
             trophieIcon = new FontAwesome.Sharp.IconPictureBox();
             positionGroupBox = new GroupBox();
             leaguePositionDataGrip = new DataGridView();
+            positionContentPanel = new Panel();
             headerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)trophieIcon).BeginInit();
             positionGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)leaguePositionDataGrip).BeginInit();
+            positionContentPanel.SuspendLayout();
             SuspendLayout();
             // 
             // headerPanel
@@ -80,7 +82,7 @@
             positionGroupBox.BackColor = Color.White;
             positionGroupBox.Controls.Add(leaguePositionDataGrip);
             positionGroupBox.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            positionGroupBox.Location = new Point(71, 154);
+            positionGroupBox.Location = new Point(61, 41);
             positionGroupBox.Name = "positionGroupBox";
             positionGroupBox.Size = new Size(936, 474);
             positionGroupBox.TabIndex = 1;
@@ -96,12 +98,22 @@
             leaguePositionDataGrip.Size = new Size(849, 316);
             leaguePositionDataGrip.TabIndex = 0;
             // 
+            // positionContentPanel
+            // 
+            positionContentPanel.BackColor = SystemColors.ControlLightLight;
+            positionContentPanel.Controls.Add(positionGroupBox);
+            positionContentPanel.Dock = DockStyle.Fill;
+            positionContentPanel.Location = new Point(0, 100);
+            positionContentPanel.Name = "positionContentPanel";
+            positionContentPanel.Size = new Size(1227, 621);
+            positionContentPanel.TabIndex = 2;
+            // 
             // PositionForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1227, 721);
-            Controls.Add(positionGroupBox);
+            Controls.Add(positionContentPanel);
             Controls.Add(headerPanel);
             Name = "PositionForm";
             Text = "PositionForm";
@@ -110,6 +122,7 @@
             ((System.ComponentModel.ISupportInitialize)trophieIcon).EndInit();
             positionGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)leaguePositionDataGrip).EndInit();
+            positionContentPanel.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -120,5 +133,6 @@
         private Label leaguePositionLabel;
         private GroupBox positionGroupBox;
         private DataGridView leaguePositionDataGrip;
+        private Panel positionContentPanel;
     }
 }

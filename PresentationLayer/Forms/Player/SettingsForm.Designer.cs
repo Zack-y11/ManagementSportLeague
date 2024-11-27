@@ -35,9 +35,11 @@
             contentGroupBox = new GroupBox();
             label1 = new Label();
             PDFButton = new FontAwesome.Sharp.IconButton();
+            settingsContentPanel = new Panel();
             headerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)shildIcon).BeginInit();
             contentGroupBox.SuspendLayout();
+            settingsContentPanel.SuspendLayout();
             SuspendLayout();
             // 
             // headerPanel
@@ -99,7 +101,7 @@
             contentGroupBox.Controls.Add(PDFButton);
             contentGroupBox.Controls.Add(logOutBtn);
             contentGroupBox.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            contentGroupBox.Location = new Point(165, 202);
+            contentGroupBox.Location = new Point(79, 85);
             contentGroupBox.Name = "contentGroupBox";
             contentGroupBox.Size = new Size(701, 416);
             contentGroupBox.TabIndex = 8;
@@ -132,12 +134,22 @@
             PDFButton.Text = "Generate PDF";
             PDFButton.UseVisualStyleBackColor = false;
             // 
+            // settingsContentPanel
+            // 
+            settingsContentPanel.BackColor = SystemColors.ControlLightLight;
+            settingsContentPanel.Controls.Add(contentGroupBox);
+            settingsContentPanel.Dock = DockStyle.Fill;
+            settingsContentPanel.Location = new Point(0, 100);
+            settingsContentPanel.Name = "settingsContentPanel";
+            settingsContentPanel.Size = new Size(1331, 654);
+            settingsContentPanel.TabIndex = 8;
+            // 
             // SettingsForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1331, 754);
-            Controls.Add(contentGroupBox);
+            Controls.Add(settingsContentPanel);
             Controls.Add(headerPanel);
             Name = "SettingsForm";
             Text = "SettingsForm";
@@ -147,6 +159,7 @@
             ((System.ComponentModel.ISupportInitialize)shildIcon).EndInit();
             contentGroupBox.ResumeLayout(false);
             contentGroupBox.PerformLayout();
+            settingsContentPanel.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -158,5 +171,6 @@
         private GroupBox contentGroupBox;
         private FontAwesome.Sharp.IconButton PDFButton;
         private Label label1;
+        private Panel settingsContentPanel;
     }
 }

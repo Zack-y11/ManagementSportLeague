@@ -37,10 +37,12 @@
             calendarLabel = new Label();
             calendarIcon = new FontAwesome.Sharp.IconPictureBox();
             headerPanel = new Panel();
+            contentCalendarPanel = new Panel();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)calendarIcon).BeginInit();
             headerPanel.SuspendLayout();
+            contentCalendarPanel.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
@@ -52,7 +54,7 @@
             groupBox1.Controls.Add(monthLabel);
             groupBox1.Controls.Add(comboBox1);
             groupBox1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(57, 136);
+            groupBox1.Location = new Point(60, 33);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(945, 550);
             groupBox1.TabIndex = 0;
@@ -138,13 +140,23 @@
             headerPanel.Size = new Size(1223, 100);
             headerPanel.TabIndex = 3;
             // 
+            // contentCalendarPanel
+            // 
+            contentCalendarPanel.BackColor = SystemColors.HighlightText;
+            contentCalendarPanel.Controls.Add(groupBox1);
+            contentCalendarPanel.Dock = DockStyle.Fill;
+            contentCalendarPanel.Location = new Point(0, 100);
+            contentCalendarPanel.Name = "contentCalendarPanel";
+            contentCalendarPanel.Size = new Size(1223, 606);
+            contentCalendarPanel.TabIndex = 4;
+            // 
             // CalendarForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1223, 706);
+            Controls.Add(contentCalendarPanel);
             Controls.Add(headerPanel);
-            Controls.Add(groupBox1);
             Name = "CalendarForm";
             Text = "CalendarForm";
             groupBox1.ResumeLayout(false);
@@ -153,6 +165,7 @@
             ((System.ComponentModel.ISupportInitialize)calendarIcon).EndInit();
             headerPanel.ResumeLayout(false);
             headerPanel.PerformLayout();
+            contentCalendarPanel.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -167,5 +180,6 @@
         private DataGridView dataGridView1;
         private ComboBox comboBox2;
         private Panel headerPanel;
+        private Panel contentCalendarPanel;
     }
 }

@@ -160,9 +160,11 @@ namespace PresentationLayer.Forms
                     case "matchesbtn":
                         LoadDashboardContent();
                         break;
+
                     case "usersbtn":
                         LoadUserContent();
                         break;
+
                     case "teamsbtn":
                         LoadTeamsContent();
                         break;
@@ -196,7 +198,7 @@ namespace PresentationLayer.Forms
             }
 
         }
-
+        
         private void LoadUserContent()
         {
             try

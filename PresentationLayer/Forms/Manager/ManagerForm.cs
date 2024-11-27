@@ -19,10 +19,12 @@ namespace PresentationLayer.ManagerForms
         private Form activeChildForm;
         private readonly IMatchService _matchService;
         private readonly ITeamService _teamService;
-        public ManagerForm(IMatchService matchService, ITeamService teamService)
+        private readonly IPlayerService _playerService;
+        public ManagerForm(IMatchService matchService, ITeamService teamService, IPlayerService playerService)
         {
             InitializeComponent();
             _matchService = matchService;
+            _playerService = playerService;
             _teamService = teamService;
             LoadDashboardContent();
 
@@ -131,9 +133,8 @@ namespace PresentationLayer.ManagerForms
         {
             try
             {
-                var playersForm = new PlayersForm();
+                var playersForm = new PlayersForm(_playerService, AuthenticatedUser.UserId);
                 OpenChildForm(playersForm);
-
             }
             catch (Exception ex)
             {

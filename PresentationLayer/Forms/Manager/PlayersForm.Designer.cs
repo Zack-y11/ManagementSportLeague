@@ -183,6 +183,7 @@
             btnAddPlayer.TabIndex = 11;
             btnAddPlayer.Text = "Add Player";
             btnAddPlayer.UseVisualStyleBackColor = true;
+            btnAddPlayer.Click += btnAddPlayer_Click;
             // 
             // playerBirthdateLabel
             // 

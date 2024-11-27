@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessLayer.Services;
+using CommonLayer.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,42 @@ namespace PresentationLayer.ManagerForms
 {
     public partial class PlayersForm : Form
     {
-        public PlayersForm()
+        private readonly IPlayerService _playerService;
+        private readonly int _userId;
+        public PlayersForm(IPlayerService playerService, int userId)
         {
             InitializeComponent();
+            _playerService = playerService;
+            _userId = userId;
+        }
+
+        private void btnAddPlayer_Click(object sender, EventArgs e)
+        {
+            // get data from 
+            // playerEmailTextBox
+            // playerPasswordTextBox
+            // textBoxName
+            // playerBirthdateDateTimePicker
+            // positionTextbox
+
+            string email = playerEmailTextBox.Text;
+            string password = playerPasswordTextBox.Text;
+            string name = textBoxName.Text;
+            DateTime birthdate = playerBirthdateDateTimePicker.Value;
+            string position = positionTextbox.Text;
+
+            // create player
+            if (_userId == null)
+            {
+
+               MessageBox.Show("User not found");
+                return;
+            } else if (_playerService == null)
+            {
+                MessageBox.Show("Player service not found");
+                return;
+            }
+            _playerService.CreateUserPlayer(_userId, email, password, name, position, birthdate);
         }
     }
 }

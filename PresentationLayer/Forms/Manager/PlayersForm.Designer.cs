@@ -30,25 +30,27 @@
         {
             textBoxName = new TextBox();
             labelPlayers = new Label();
-            dataGridView1 = new DataGridView();
+            playersDataGridView = new DataGridView();
             labelName = new Label();
-            labelLastname = new Label();
-            textBoxLastname = new TextBox();
             panelPlayers = new Panel();
+            playerBirthdateDateTimePicker = new DateTimePicker();
+            playerPasswordTextBox = new TextBox();
+            playerPasswordLabel = new Label();
+            playerEmailTextBox = new TextBox();
+            playerEmailLabel = new Label();
+            positionTextbox = new TextBox();
+            PositionLabel = new Label();
+            btnAddPlayer = new FontAwesome.Sharp.IconButton();
+            playerBirthdateLabel = new Label();
             btnEditPlayer = new FontAwesome.Sharp.IconButton();
             btnDeletePlayer = new FontAwesome.Sharp.IconButton();
-            btnAddPlayer = new FontAwesome.Sharp.IconButton();
-            textBoxAge = new TextBox();
-            labelAge = new Label();
-            textBox1 = new TextBox();
-            labelPosition = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)playersDataGridView).BeginInit();
             panelPlayers.SuspendLayout();
             SuspendLayout();
             // 
             // textBoxName
             // 
-            textBoxName.Location = new Point(101, 114);
+            textBoxName.Location = new Point(101, 180);
             textBoxName.Name = "textBoxName";
             textBoxName.Size = new Size(166, 27);
             textBoxName.TabIndex = 1;
@@ -56,82 +58,153 @@
             // labelPlayers
             // 
             labelPlayers.AutoSize = true;
-            labelPlayers.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelPlayers.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelPlayers.ForeColor = Color.White;
             labelPlayers.Location = new Point(20, 35);
             labelPlayers.Name = "labelPlayers";
-            labelPlayers.Size = new Size(292, 37);
+            labelPlayers.Size = new Size(262, 36);
             labelPlayers.TabIndex = 2;
-            labelPlayers.Text = "Players Information";
+            labelPlayers.Text = "Add a new player";
             // 
-            // dataGridView1
+            // playersDataGridView
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(35, 35);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(542, 283);
-            dataGridView1.TabIndex = 4;
+            playersDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            playersDataGridView.Location = new Point(35, 35);
+            playersDataGridView.Name = "playersDataGridView";
+            playersDataGridView.RowHeadersWidth = 51;
+            playersDataGridView.Size = new Size(542, 283);
+            playersDataGridView.TabIndex = 4;
             // 
             // labelName
             // 
             labelName.AutoSize = true;
-            labelName.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelName.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelName.ForeColor = Color.White;
-            labelName.Location = new Point(15, 118);
+            labelName.Location = new Point(15, 184);
             labelName.Name = "labelName";
-            labelName.Size = new Size(53, 18);
+            labelName.Size = new Size(52, 18);
             labelName.TabIndex = 5;
             labelName.Text = "Name";
-            // 
-            // labelLastname
-            // 
-            labelLastname.AutoSize = true;
-            labelLastname.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelLastname.ForeColor = Color.White;
-            labelLastname.Location = new Point(15, 172);
-            labelLastname.Name = "labelLastname";
-            labelLastname.Size = new Size(80, 18);
-            labelLastname.TabIndex = 6;
-            labelLastname.Text = "LastName";
-            // 
-            // textBoxLastname
-            // 
-            textBoxLastname.Location = new Point(101, 172);
-            textBoxLastname.Name = "textBoxLastname";
-            textBoxLastname.Size = new Size(166, 27);
-            textBoxLastname.TabIndex = 8;
             // 
             // panelPlayers
             // 
             panelPlayers.BackColor = Color.FromArgb(202, 138, 4);
-            panelPlayers.Controls.Add(textBox1);
-            panelPlayers.Controls.Add(labelPosition);
-            panelPlayers.Controls.Add(btnEditPlayer);
-            panelPlayers.Controls.Add(btnDeletePlayer);
+            panelPlayers.Controls.Add(playerBirthdateDateTimePicker);
+            panelPlayers.Controls.Add(playerPasswordTextBox);
+            panelPlayers.Controls.Add(playerPasswordLabel);
+            panelPlayers.Controls.Add(playerEmailTextBox);
+            panelPlayers.Controls.Add(playerEmailLabel);
+            panelPlayers.Controls.Add(positionTextbox);
+            panelPlayers.Controls.Add(PositionLabel);
             panelPlayers.Controls.Add(btnAddPlayer);
-            panelPlayers.Controls.Add(textBoxAge);
-            panelPlayers.Controls.Add(labelAge);
+            panelPlayers.Controls.Add(playerBirthdateLabel);
             panelPlayers.Controls.Add(labelPlayers);
-            panelPlayers.Controls.Add(textBoxLastname);
             panelPlayers.Controls.Add(textBoxName);
             panelPlayers.Controls.Add(labelName);
-            panelPlayers.Controls.Add(labelLastname);
-            panelPlayers.Location = new Point(642, 12);
+            panelPlayers.Location = new Point(600, 12);
             panelPlayers.Name = "panelPlayers";
-            panelPlayers.Size = new Size(323, 500);
+            panelPlayers.Size = new Size(421, 429);
             panelPlayers.TabIndex = 9;
+            // 
+            // playerBirthdateDateTimePicker
+            // 
+            playerBirthdateDateTimePicker.Location = new Point(188, 230);
+            playerBirthdateDateTimePicker.Name = "playerBirthdateDateTimePicker";
+            playerBirthdateDateTimePicker.Size = new Size(186, 27);
+            playerBirthdateDateTimePicker.TabIndex = 20;
+            // 
+            // playerPasswordTextBox
+            // 
+            playerPasswordTextBox.Location = new Point(101, 124);
+            playerPasswordTextBox.Name = "playerPasswordTextBox";
+            playerPasswordTextBox.Size = new Size(166, 27);
+            playerPasswordTextBox.TabIndex = 18;
+            // 
+            // playerPasswordLabel
+            // 
+            playerPasswordLabel.AutoSize = true;
+            playerPasswordLabel.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            playerPasswordLabel.ForeColor = Color.White;
+            playerPasswordLabel.Location = new Point(15, 128);
+            playerPasswordLabel.Name = "playerPasswordLabel";
+            playerPasswordLabel.Size = new Size(83, 18);
+            playerPasswordLabel.TabIndex = 19;
+            playerPasswordLabel.Text = "Password";
+            // 
+            // playerEmailTextBox
+            // 
+            playerEmailTextBox.Location = new Point(101, 81);
+            playerEmailTextBox.Name = "playerEmailTextBox";
+            playerEmailTextBox.Size = new Size(166, 27);
+            playerEmailTextBox.TabIndex = 16;
+            // 
+            // playerEmailLabel
+            // 
+            playerEmailLabel.AutoSize = true;
+            playerEmailLabel.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            playerEmailLabel.ForeColor = Color.White;
+            playerEmailLabel.Location = new Point(15, 85);
+            playerEmailLabel.Name = "playerEmailLabel";
+            playerEmailLabel.Size = new Size(50, 18);
+            playerEmailLabel.TabIndex = 17;
+            playerEmailLabel.Text = "Email";
+            // 
+            // positionTextbox
+            // 
+            positionTextbox.Location = new Point(101, 279);
+            positionTextbox.Name = "positionTextbox";
+            positionTextbox.Size = new Size(166, 27);
+            positionTextbox.TabIndex = 15;
+            // 
+            // PositionLabel
+            // 
+            PositionLabel.AutoSize = true;
+            PositionLabel.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            PositionLabel.ForeColor = Color.White;
+            PositionLabel.Location = new Point(20, 288);
+            PositionLabel.Name = "PositionLabel";
+            PositionLabel.Size = new Size(70, 18);
+            PositionLabel.TabIndex = 14;
+            PositionLabel.Text = "Position";
+            // 
+            // btnAddPlayer
+            // 
+            btnAddPlayer.FlatAppearance.BorderSize = 0;
+            btnAddPlayer.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAddPlayer.ForeColor = Color.Black;
+            btnAddPlayer.IconChar = FontAwesome.Sharp.IconChar.PersonCirclePlus;
+            btnAddPlayer.IconColor = Color.Black;
+            btnAddPlayer.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnAddPlayer.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAddPlayer.Location = new Point(15, 329);
+            btnAddPlayer.Name = "btnAddPlayer";
+            btnAddPlayer.Padding = new Padding(12, 0, 0, 0);
+            btnAddPlayer.Size = new Size(248, 46);
+            btnAddPlayer.TabIndex = 11;
+            btnAddPlayer.Text = "Add Player";
+            btnAddPlayer.UseVisualStyleBackColor = true;
+            // 
+            // playerBirthdateLabel
+            // 
+            playerBirthdateLabel.AutoSize = true;
+            playerBirthdateLabel.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            playerBirthdateLabel.ForeColor = Color.White;
+            playerBirthdateLabel.Location = new Point(18, 236);
+            playerBirthdateLabel.Name = "playerBirthdateLabel";
+            playerBirthdateLabel.Size = new Size(164, 18);
+            playerBirthdateLabel.TabIndex = 9;
+            playerBirthdateLabel.Text = "Fecha de nacimiento";
             // 
             // btnEditPlayer
             // 
             btnEditPlayer.FlatAppearance.BorderSize = 0;
-            btnEditPlayer.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEditPlayer.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEditPlayer.ForeColor = Color.Black;
             btnEditPlayer.IconChar = FontAwesome.Sharp.IconChar.PersonCircleExclamation;
             btnEditPlayer.IconColor = Color.Black;
             btnEditPlayer.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnEditPlayer.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEditPlayer.Location = new Point(40, 381);
+            btnEditPlayer.Location = new Point(329, 341);
             btnEditPlayer.Name = "btnEditPlayer";
             btnEditPlayer.Padding = new Padding(12, 0, 0, 0);
             btnEditPlayer.Size = new Size(248, 46);
@@ -142,13 +215,13 @@
             // btnDeletePlayer
             // 
             btnDeletePlayer.FlatAppearance.BorderSize = 0;
-            btnDeletePlayer.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDeletePlayer.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnDeletePlayer.ForeColor = Color.Black;
             btnDeletePlayer.IconChar = FontAwesome.Sharp.IconChar.PersonCircleMinus;
             btnDeletePlayer.IconColor = Color.Black;
             btnDeletePlayer.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnDeletePlayer.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDeletePlayer.Location = new Point(40, 433);
+            btnDeletePlayer.Location = new Point(35, 341);
             btnDeletePlayer.Name = "btnDeletePlayer";
             btnDeletePlayer.Padding = new Padding(12, 0, 0, 0);
             btnDeletePlayer.Size = new Size(248, 46);
@@ -156,69 +229,18 @@
             btnDeletePlayer.Text = "Delete Player";
             btnDeletePlayer.UseVisualStyleBackColor = true;
             // 
-            // btnAddPlayer
-            // 
-            btnAddPlayer.FlatAppearance.BorderSize = 0;
-            btnAddPlayer.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAddPlayer.ForeColor = Color.Black;
-            btnAddPlayer.IconChar = FontAwesome.Sharp.IconChar.PersonCirclePlus;
-            btnAddPlayer.IconColor = Color.Black;
-            btnAddPlayer.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnAddPlayer.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAddPlayer.Location = new Point(40, 329);
-            btnAddPlayer.Name = "btnAddPlayer";
-            btnAddPlayer.Padding = new Padding(12, 0, 0, 0);
-            btnAddPlayer.Size = new Size(248, 46);
-            btnAddPlayer.TabIndex = 11;
-            btnAddPlayer.Text = "Add Player";
-            btnAddPlayer.UseVisualStyleBackColor = true;
-            // 
-            // textBoxAge
-            // 
-            textBoxAge.Location = new Point(101, 227);
-            textBoxAge.Name = "textBoxAge";
-            textBoxAge.Size = new Size(166, 27);
-            textBoxAge.TabIndex = 10;
-            // 
-            // labelAge
-            // 
-            labelAge.AutoSize = true;
-            labelAge.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelAge.ForeColor = Color.White;
-            labelAge.Location = new Point(20, 236);
-            labelAge.Name = "labelAge";
-            labelAge.Size = new Size(39, 18);
-            labelAge.TabIndex = 9;
-            labelAge.Text = "Age";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(101, 279);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(166, 27);
-            textBox1.TabIndex = 15;
-            // 
-            // labelPosition
-            // 
-            labelPosition.AutoSize = true;
-            labelPosition.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelPosition.ForeColor = Color.White;
-            labelPosition.Location = new Point(20, 288);
-            labelPosition.Name = "labelPosition";
-            labelPosition.Size = new Size(63, 18);
-            labelPosition.TabIndex = 14;
-            labelPosition.Text = "Position";
-            // 
             // PlayersForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1265, 574);
             Controls.Add(panelPlayers);
-            Controls.Add(dataGridView1);
+            Controls.Add(playersDataGridView);
+            Controls.Add(btnDeletePlayer);
+            Controls.Add(btnEditPlayer);
             Name = "PlayersForm";
             Text = "PlayersForm";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)playersDataGridView).EndInit();
             panelPlayers.ResumeLayout(false);
             panelPlayers.PerformLayout();
             ResumeLayout(false);
@@ -227,17 +249,22 @@
         #endregion
         private TextBox textBoxName;
         private Label labelPlayers;
-        private DataGridView dataGridView1;
+        private DataGridView playersDataGridView;
         private Label labelName;
         private Label labelLastname;
         private TextBox textBoxLastname;
         private Panel panelPlayers;
         private TextBox textBoxAge;
-        private Label labelAge;
+        private Label playerBirthdateLabel;
         private FontAwesome.Sharp.IconButton btnAddPlayer;
         private FontAwesome.Sharp.IconButton btnEditPlayer;
         private FontAwesome.Sharp.IconButton btnDeletePlayer;
-        private TextBox textBox1;
-        private Label labelPosition;
+        private TextBox positionTextbox;
+        private Label PositionLabel;
+        private TextBox playerEmailTextBox;
+        private Label playerEmailLabel;
+        private TextBox playerPasswordTextBox;
+        private Label playerPasswordLabel;
+        private DateTimePicker playerBirthdateDateTimePicker;
     }
 }

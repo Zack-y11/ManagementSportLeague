@@ -26,8 +26,7 @@ namespace PresentationLayer.ManagerForms
             _teamService = teamService;
             LoadDashboardContent();
 
-            SetUpButtons();
-            
+            SetUpButtons();   
         }
 
         private void ibtnCerrar_Click(object sender, EventArgs e)
@@ -112,13 +111,6 @@ namespace PresentationLayer.ManagerForms
                     LoadPlayersContent();
                     break;
 
-                case "btnstats":
-                    LoadStatsContent();
-                    break;
-
-                case "btnpositiontable":
-                    LoadPositionTableContent();
-                    break;
             }
         }
 
@@ -149,35 +141,7 @@ namespace PresentationLayer.ManagerForms
                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void LoadStatsContent()
-        {
-            try
-            {
-                var statsForm = new StatsForm();
-                OpenChildForm(statsForm);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred while loading the stats: {ex.Message}",
-                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void LoadPositionTableContent()
-        {
-            try
-            {
-                var positionTableForm = new PositionForm();
-
-                OpenChildForm(positionTableForm);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred while loading the position table: {ex.Message}",
-                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
+        
         private void LoadDashboardContent()
         {
             try

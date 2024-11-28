@@ -30,41 +30,41 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(playerSportForm));
             dashboardPlayerPanel = new Panel();
-            nuceringBtn = new FontAwesome.Sharp.IconButton();
+            nuceringButtom = new FontAwesome.Sharp.IconButton();
             panel2 = new Panel();
-            CalendarBtn = new FontAwesome.Sharp.IconButton();
-            settingsPlayerBtn = new FontAwesome.Sharp.IconButton();
-            logOutBtn = new FontAwesome.Sharp.IconButton();
-            positionTablePlayerBtn = new FontAwesome.Sharp.IconButton();
-            playerSportTeamBtn = new FontAwesome.Sharp.IconButton();
+            CalendarButtom = new FontAwesome.Sharp.IconButton();
+            settingsPlayerButtom = new FontAwesome.Sharp.IconButton();
+            logOutButtom = new FontAwesome.Sharp.IconButton();
+            positionTablePlayerButtom = new FontAwesome.Sharp.IconButton();
+            playerSportTeamButtom = new FontAwesome.Sharp.IconButton();
             soccerIconPictureBox = new FontAwesome.Sharp.IconPictureBox();
             dashboardPlayerLabel = new Label();
-            panel1 = new Panel();
-            BannerPictureBox = new PictureBox();
-            titlePlayerLabel = new Label();
-            searchPlayerComboBox = new ComboBox();
-            searchPlayerLabel = new Label();
-            searchIconPictureBox = new FontAwesome.Sharp.IconPictureBox();
+            playerSearchStatsPanel = new Panel();
             playerSportInformation = new DataGridView();
             playerInformationLabel = new Label();
+            searchIconPictureBox = new FontAwesome.Sharp.IconPictureBox();
+            searchPlayerLabel = new Label();
+            searchPlayerComboBox = new ComboBox();
+            titlePlayerLabel = new Label();
+            BannerPictureBox = new PictureBox();
             dashboardPlayerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)soccerIconPictureBox).BeginInit();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)BannerPictureBox).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)searchIconPictureBox).BeginInit();
+            playerSearchStatsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)playerSportInformation).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)searchIconPictureBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)BannerPictureBox).BeginInit();
             SuspendLayout();
             // 
             // dashboardPlayerPanel
             // 
             dashboardPlayerPanel.BackColor = Color.White;
-            dashboardPlayerPanel.Controls.Add(nuceringBtn);
+            dashboardPlayerPanel.Controls.Add(nuceringButtom);
             dashboardPlayerPanel.Controls.Add(panel2);
-            dashboardPlayerPanel.Controls.Add(CalendarBtn);
-            dashboardPlayerPanel.Controls.Add(settingsPlayerBtn);
-            dashboardPlayerPanel.Controls.Add(logOutBtn);
-            dashboardPlayerPanel.Controls.Add(positionTablePlayerBtn);
-            dashboardPlayerPanel.Controls.Add(playerSportTeamBtn);
+            dashboardPlayerPanel.Controls.Add(CalendarButtom);
+            dashboardPlayerPanel.Controls.Add(settingsPlayerButtom);
+            dashboardPlayerPanel.Controls.Add(logOutButtom);
+            dashboardPlayerPanel.Controls.Add(positionTablePlayerButtom);
+            dashboardPlayerPanel.Controls.Add(playerSportTeamButtom);
             dashboardPlayerPanel.Controls.Add(soccerIconPictureBox);
             dashboardPlayerPanel.Controls.Add(dashboardPlayerLabel);
             dashboardPlayerPanel.Dock = DockStyle.Left;
@@ -73,20 +73,20 @@
             dashboardPlayerPanel.Size = new Size(263, 584);
             dashboardPlayerPanel.TabIndex = 2;
             // 
-            // nuceringBtn
+            // nuceringButtom
             // 
-            nuceringBtn.FlatStyle = FlatStyle.Flat;
-            nuceringBtn.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
-            nuceringBtn.IconChar = FontAwesome.Sharp.IconChar.NotesMedical;
-            nuceringBtn.IconColor = Color.Black;
-            nuceringBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            nuceringBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            nuceringBtn.Location = new Point(0, 160);
-            nuceringBtn.Name = "nuceringBtn";
-            nuceringBtn.Size = new Size(263, 59);
-            nuceringBtn.TabIndex = 8;
-            nuceringBtn.Text = "Nucering";
-            nuceringBtn.UseVisualStyleBackColor = true;
+            nuceringButtom.FlatStyle = FlatStyle.Flat;
+            nuceringButtom.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            nuceringButtom.IconChar = FontAwesome.Sharp.IconChar.NotesMedical;
+            nuceringButtom.IconColor = Color.Black;
+            nuceringButtom.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            nuceringButtom.ImageAlign = ContentAlignment.MiddleLeft;
+            nuceringButtom.Location = new Point(0, 160);
+            nuceringButtom.Name = "nuceringButtom";
+            nuceringButtom.Size = new Size(263, 59);
+            nuceringButtom.TabIndex = 8;
+            nuceringButtom.Text = "Nucering";
+            nuceringButtom.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -95,80 +95,80 @@
             panel2.Size = new Size(817, 139);
             panel2.TabIndex = 0;
             // 
-            // CalendarBtn
+            // CalendarButtom
             // 
-            CalendarBtn.FlatStyle = FlatStyle.Flat;
-            CalendarBtn.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
-            CalendarBtn.IconChar = FontAwesome.Sharp.IconChar.CalendarWeek;
-            CalendarBtn.IconColor = Color.Black;
-            CalendarBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            CalendarBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            CalendarBtn.Location = new Point(0, 106);
-            CalendarBtn.Name = "CalendarBtn";
-            CalendarBtn.Size = new Size(263, 59);
-            CalendarBtn.TabIndex = 7;
-            CalendarBtn.Text = "Calendar";
-            CalendarBtn.UseVisualStyleBackColor = true;
+            CalendarButtom.FlatStyle = FlatStyle.Flat;
+            CalendarButtom.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            CalendarButtom.IconChar = FontAwesome.Sharp.IconChar.CalendarWeek;
+            CalendarButtom.IconColor = Color.Black;
+            CalendarButtom.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            CalendarButtom.ImageAlign = ContentAlignment.MiddleLeft;
+            CalendarButtom.Location = new Point(0, 106);
+            CalendarButtom.Name = "CalendarButtom";
+            CalendarButtom.Size = new Size(263, 59);
+            CalendarButtom.TabIndex = 7;
+            CalendarButtom.Text = "Calendar";
+            CalendarButtom.UseVisualStyleBackColor = true;
             // 
-            // settingsPlayerBtn
+            // settingsPlayerButtom
             // 
-            settingsPlayerBtn.FlatStyle = FlatStyle.Flat;
-            settingsPlayerBtn.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
-            settingsPlayerBtn.IconChar = FontAwesome.Sharp.IconChar.Cogs;
-            settingsPlayerBtn.IconColor = Color.Black;
-            settingsPlayerBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            settingsPlayerBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            settingsPlayerBtn.Location = new Point(0, 325);
-            settingsPlayerBtn.Name = "settingsPlayerBtn";
-            settingsPlayerBtn.Size = new Size(263, 59);
-            settingsPlayerBtn.TabIndex = 6;
-            settingsPlayerBtn.Text = "Settings";
-            settingsPlayerBtn.UseVisualStyleBackColor = true;
+            settingsPlayerButtom.FlatStyle = FlatStyle.Flat;
+            settingsPlayerButtom.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            settingsPlayerButtom.IconChar = FontAwesome.Sharp.IconChar.Cogs;
+            settingsPlayerButtom.IconColor = Color.Black;
+            settingsPlayerButtom.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            settingsPlayerButtom.ImageAlign = ContentAlignment.MiddleLeft;
+            settingsPlayerButtom.Location = new Point(0, 325);
+            settingsPlayerButtom.Name = "settingsPlayerButtom";
+            settingsPlayerButtom.Size = new Size(263, 59);
+            settingsPlayerButtom.TabIndex = 6;
+            settingsPlayerButtom.Text = "Settings";
+            settingsPlayerButtom.UseVisualStyleBackColor = true;
             // 
-            // logOutBtn
+            // logOutButtom
             // 
-            logOutBtn.FlatStyle = FlatStyle.Flat;
-            logOutBtn.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
-            logOutBtn.IconChar = FontAwesome.Sharp.IconChar.RightToBracket;
-            logOutBtn.IconColor = Color.Black;
-            logOutBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            logOutBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            logOutBtn.Location = new Point(0, 381);
-            logOutBtn.Name = "logOutBtn";
-            logOutBtn.Size = new Size(263, 59);
-            logOutBtn.TabIndex = 5;
-            logOutBtn.Text = "Log Out";
-            logOutBtn.UseVisualStyleBackColor = true;
+            logOutButtom.FlatStyle = FlatStyle.Flat;
+            logOutButtom.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            logOutButtom.IconChar = FontAwesome.Sharp.IconChar.RightToBracket;
+            logOutButtom.IconColor = Color.Black;
+            logOutButtom.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            logOutButtom.ImageAlign = ContentAlignment.MiddleLeft;
+            logOutButtom.Location = new Point(0, 381);
+            logOutButtom.Name = "logOutButtom";
+            logOutButtom.Size = new Size(263, 59);
+            logOutButtom.TabIndex = 5;
+            logOutButtom.Text = "Log Out";
+            logOutButtom.UseVisualStyleBackColor = true;
             // 
-            // positionTablePlayerBtn
+            // positionTablePlayerButtom
             // 
-            positionTablePlayerBtn.FlatStyle = FlatStyle.Flat;
-            positionTablePlayerBtn.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
-            positionTablePlayerBtn.IconChar = FontAwesome.Sharp.IconChar.Star;
-            positionTablePlayerBtn.IconColor = Color.Gold;
-            positionTablePlayerBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            positionTablePlayerBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            positionTablePlayerBtn.Location = new Point(0, 269);
-            positionTablePlayerBtn.Name = "positionTablePlayerBtn";
-            positionTablePlayerBtn.Size = new Size(263, 59);
-            positionTablePlayerBtn.TabIndex = 4;
-            positionTablePlayerBtn.Text = "Position Table";
-            positionTablePlayerBtn.UseVisualStyleBackColor = true;
+            positionTablePlayerButtom.FlatStyle = FlatStyle.Flat;
+            positionTablePlayerButtom.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            positionTablePlayerButtom.IconChar = FontAwesome.Sharp.IconChar.Star;
+            positionTablePlayerButtom.IconColor = Color.Gold;
+            positionTablePlayerButtom.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            positionTablePlayerButtom.ImageAlign = ContentAlignment.MiddleLeft;
+            positionTablePlayerButtom.Location = new Point(0, 269);
+            positionTablePlayerButtom.Name = "positionTablePlayerButtom";
+            positionTablePlayerButtom.Size = new Size(263, 59);
+            positionTablePlayerButtom.TabIndex = 4;
+            positionTablePlayerButtom.Text = "Position Table";
+            positionTablePlayerButtom.UseVisualStyleBackColor = true;
             // 
-            // playerSportTeamBtn
+            // playerSportTeamButtom
             // 
-            playerSportTeamBtn.FlatStyle = FlatStyle.Flat;
-            playerSportTeamBtn.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
-            playerSportTeamBtn.IconChar = FontAwesome.Sharp.IconChar.Users;
-            playerSportTeamBtn.IconColor = Color.Black;
-            playerSportTeamBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            playerSportTeamBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            playerSportTeamBtn.Location = new Point(0, 213);
-            playerSportTeamBtn.Name = "playerSportTeamBtn";
-            playerSportTeamBtn.Size = new Size(263, 59);
-            playerSportTeamBtn.TabIndex = 3;
-            playerSportTeamBtn.Text = "Player's Team";
-            playerSportTeamBtn.UseVisualStyleBackColor = true;
+            playerSportTeamButtom.FlatStyle = FlatStyle.Flat;
+            playerSportTeamButtom.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            playerSportTeamButtom.IconChar = FontAwesome.Sharp.IconChar.Users;
+            playerSportTeamButtom.IconColor = Color.Black;
+            playerSportTeamButtom.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            playerSportTeamButtom.ImageAlign = ContentAlignment.MiddleLeft;
+            playerSportTeamButtom.Location = new Point(0, 213);
+            playerSportTeamButtom.Name = "playerSportTeamButtom";
+            playerSportTeamButtom.Size = new Size(263, 59);
+            playerSportTeamButtom.TabIndex = 3;
+            playerSportTeamButtom.Text = "Player's Team";
+            playerSportTeamButtom.UseVisualStyleBackColor = true;
             // 
             // soccerIconPictureBox
             // 
@@ -194,70 +194,18 @@
             dashboardPlayerLabel.TabIndex = 2;
             dashboardPlayerLabel.Text = "Dashboard\r\nPlayer";
             // 
-            // panel1
+            // playerSearchStatsPanel
             // 
-            panel1.Controls.Add(playerSportInformation);
-            panel1.Controls.Add(playerInformationLabel);
-            panel1.Controls.Add(searchIconPictureBox);
-            panel1.Controls.Add(searchPlayerLabel);
-            panel1.Controls.Add(searchPlayerComboBox);
-            panel1.Controls.Add(titlePlayerLabel);
-            panel1.Location = new Point(263, 81);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1006, 507);
-            panel1.TabIndex = 3;
-            // 
-            // BannerPictureBox
-            // 
-            BannerPictureBox.BackgroundImage = (Image)resources.GetObject("BannerPictureBox.BackgroundImage");
-            BannerPictureBox.Location = new Point(264, 1);
-            BannerPictureBox.Name = "BannerPictureBox";
-            BannerPictureBox.Size = new Size(1005, 84);
-            BannerPictureBox.TabIndex = 4;
-            BannerPictureBox.TabStop = false;
-            // 
-            // titlePlayerLabel
-            // 
-            titlePlayerLabel.AutoSize = true;
-            titlePlayerLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            titlePlayerLabel.ForeColor = SystemColors.HotTrack;
-            titlePlayerLabel.Location = new Point(55, 34);
-            titlePlayerLabel.Name = "titlePlayerLabel";
-            titlePlayerLabel.Size = new Size(499, 23);
-            titlePlayerLabel.TabIndex = 11;
-            titlePlayerLabel.Text = "\"Player Stats: Rankings, Wins, Upcoming Matches \"";
-            // 
-            // searchPlayerComboBox
-            // 
-            searchPlayerComboBox.FormattingEnabled = true;
-            searchPlayerComboBox.Location = new Point(93, 110);
-            searchPlayerComboBox.Name = "searchPlayerComboBox";
-            searchPlayerComboBox.Size = new Size(253, 28);
-            searchPlayerComboBox.TabIndex = 15;
-            // 
-            // searchPlayerLabel
-            // 
-            searchPlayerLabel.AutoSize = true;
-            searchPlayerLabel.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
-            searchPlayerLabel.Location = new Point(55, 79);
-            searchPlayerLabel.Name = "searchPlayerLabel";
-            searchPlayerLabel.Size = new Size(135, 19);
-            searchPlayerLabel.TabIndex = 16;
-            searchPlayerLabel.Text = "Search Players:";
-            // 
-            // searchIconPictureBox
-            // 
-            searchIconPictureBox.BackColor = Color.Transparent;
-            searchIconPictureBox.ForeColor = SystemColors.HotTrack;
-            searchIconPictureBox.IconChar = FontAwesome.Sharp.IconChar.Search;
-            searchIconPictureBox.IconColor = SystemColors.HotTrack;
-            searchIconPictureBox.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            searchIconPictureBox.IconSize = 28;
-            searchIconPictureBox.Location = new Point(55, 110);
-            searchIconPictureBox.Name = "searchIconPictureBox";
-            searchIconPictureBox.Size = new Size(32, 28);
-            searchIconPictureBox.TabIndex = 9;
-            searchIconPictureBox.TabStop = false;
+            playerSearchStatsPanel.Controls.Add(playerSportInformation);
+            playerSearchStatsPanel.Controls.Add(playerInformationLabel);
+            playerSearchStatsPanel.Controls.Add(searchIconPictureBox);
+            playerSearchStatsPanel.Controls.Add(searchPlayerLabel);
+            playerSearchStatsPanel.Controls.Add(searchPlayerComboBox);
+            playerSearchStatsPanel.Controls.Add(titlePlayerLabel);
+            playerSearchStatsPanel.Location = new Point(263, 81);
+            playerSearchStatsPanel.Name = "playerSearchStatsPanel";
+            playerSearchStatsPanel.Size = new Size(1006, 507);
+            playerSearchStatsPanel.TabIndex = 3;
             // 
             // playerSportInformation
             // 
@@ -280,40 +228,92 @@
             playerInformationLabel.TabIndex = 17;
             playerInformationLabel.Text = "Player Information:";
             // 
+            // searchIconPictureBox
+            // 
+            searchIconPictureBox.BackColor = Color.Transparent;
+            searchIconPictureBox.ForeColor = SystemColors.HotTrack;
+            searchIconPictureBox.IconChar = FontAwesome.Sharp.IconChar.Search;
+            searchIconPictureBox.IconColor = SystemColors.HotTrack;
+            searchIconPictureBox.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            searchIconPictureBox.IconSize = 28;
+            searchIconPictureBox.Location = new Point(55, 110);
+            searchIconPictureBox.Name = "searchIconPictureBox";
+            searchIconPictureBox.Size = new Size(32, 28);
+            searchIconPictureBox.TabIndex = 9;
+            searchIconPictureBox.TabStop = false;
+            // 
+            // searchPlayerLabel
+            // 
+            searchPlayerLabel.AutoSize = true;
+            searchPlayerLabel.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
+            searchPlayerLabel.Location = new Point(55, 79);
+            searchPlayerLabel.Name = "searchPlayerLabel";
+            searchPlayerLabel.Size = new Size(135, 19);
+            searchPlayerLabel.TabIndex = 16;
+            searchPlayerLabel.Text = "Search Players:";
+            // 
+            // searchPlayerComboBox
+            // 
+            searchPlayerComboBox.FormattingEnabled = true;
+            searchPlayerComboBox.Location = new Point(93, 110);
+            searchPlayerComboBox.Name = "searchPlayerComboBox";
+            searchPlayerComboBox.Size = new Size(253, 28);
+            searchPlayerComboBox.TabIndex = 15;
+            // 
+            // titlePlayerLabel
+            // 
+            titlePlayerLabel.AutoSize = true;
+            titlePlayerLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            titlePlayerLabel.ForeColor = SystemColors.HotTrack;
+            titlePlayerLabel.Location = new Point(55, 34);
+            titlePlayerLabel.Name = "titlePlayerLabel";
+            titlePlayerLabel.Size = new Size(499, 23);
+            titlePlayerLabel.TabIndex = 11;
+            titlePlayerLabel.Text = "\"Player Stats: Rankings, Wins, Upcoming Matches \"";
+            // 
+            // BannerPictureBox
+            // 
+            BannerPictureBox.BackgroundImage = (Image)resources.GetObject("BannerPictureBox.BackgroundImage");
+            BannerPictureBox.Location = new Point(264, 1);
+            BannerPictureBox.Name = "BannerPictureBox";
+            BannerPictureBox.Size = new Size(1005, 84);
+            BannerPictureBox.TabIndex = 4;
+            BannerPictureBox.TabStop = false;
+            // 
             // playerSportForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1269, 584);
             Controls.Add(BannerPictureBox);
-            Controls.Add(panel1);
+            Controls.Add(playerSearchStatsPanel);
             Controls.Add(dashboardPlayerPanel);
             Name = "playerSportForm";
             Text = "playerSportForm";
             dashboardPlayerPanel.ResumeLayout(false);
             dashboardPlayerPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)soccerIconPictureBox).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)BannerPictureBox).EndInit();
-            ((System.ComponentModel.ISupportInitialize)searchIconPictureBox).EndInit();
+            playerSearchStatsPanel.ResumeLayout(false);
+            playerSearchStatsPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)playerSportInformation).EndInit();
+            ((System.ComponentModel.ISupportInitialize)searchIconPictureBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)BannerPictureBox).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel dashboardPlayerPanel;
-        private FontAwesome.Sharp.IconButton nuceringBtn;
+        private FontAwesome.Sharp.IconButton nuceringButtom;
         private Panel panel2;
-        private FontAwesome.Sharp.IconButton CalendarBtn;
-        private FontAwesome.Sharp.IconButton settingsPlayerBtn;
-        private FontAwesome.Sharp.IconButton logOutBtn;
-        private FontAwesome.Sharp.IconButton positionTablePlayerBtn;
-        private FontAwesome.Sharp.IconButton playerSportTeamBtn;
+        private FontAwesome.Sharp.IconButton CalendarButtom;
+        private FontAwesome.Sharp.IconButton settingsPlayerButtom;
+        private FontAwesome.Sharp.IconButton logOutButtom;
+        private FontAwesome.Sharp.IconButton positionTablePlayerButtom;
+        private FontAwesome.Sharp.IconButton playerSportTeamButtom;
         private FontAwesome.Sharp.IconPictureBox soccerIconPictureBox;
         private Label dashboardPlayerLabel;
-        private Panel panel1;
+        private Panel playerSearchStatsPanel;
         private PictureBox BannerPictureBox;
         private Label titlePlayerLabel;
         private ComboBox searchPlayerComboBox;

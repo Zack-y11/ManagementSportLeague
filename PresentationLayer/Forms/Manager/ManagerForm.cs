@@ -27,7 +27,7 @@ namespace PresentationLayer.ManagerForms
             LoadDashboardContent();
 
             SetUpButtons();
-            
+
         }
 
         private void ibtnCerrar_Click(object sender, EventArgs e)
@@ -44,24 +44,24 @@ namespace PresentationLayer.ManagerForms
         private void ibtnRestaurar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
-            ibtnRestaurar.Visible = false;
-            ibtnMaximizar.Visible = true;
+            ibuttonRestaurar.Visible = false;
+            ibuttonMaximizar.Visible = true;
             UpdateWindowButtons();
         }
 
         private void UpdateWindowButtons()
         {
-            ibtnMaximizar.Visible = (this.WindowState != FormWindowState.Maximized);
-            ibtnRestaurar.Visible = (this.WindowState == FormWindowState.Maximized);
+            ibuttonMaximizar.Visible = (this.WindowState != FormWindowState.Maximized);
+            ibuttonRestaurar.Visible = (this.WindowState == FormWindowState.Maximized);
         }
 
         private void SetUpButtons()
         {
-            btnDashboard.Click += ButtonClickHandler;
-            btnActivities.Click += ButtonClickHandler;
-            btnPlayers.Click += ButtonClickHandler;
-            btnStats.Click += ButtonClickHandler;
-            btnPositionTable.Click += ButtonClickHandler;
+            buttomDashboard.Click += ButtonClickHandler;
+            buttomActivities.Click += ButtonClickHandler;
+            buttomPlayers.Click += ButtonClickHandler;
+            buttomStats.Click += ButtonClickHandler;
+            buttomPositionTable.Click += ButtonClickHandler;
 
 
 
@@ -198,7 +198,6 @@ namespace PresentationLayer.ManagerForms
                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
     }
 }
 

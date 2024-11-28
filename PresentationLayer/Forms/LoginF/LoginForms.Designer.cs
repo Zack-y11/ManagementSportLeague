@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForms));
-            LoginLabel = new Label();
+            SignInLabel = new Label();
             YourAccountGroupBox = new GroupBox();
             SignInButtom = new Button();
             passwordTextBox = new TextBox();
@@ -38,28 +38,33 @@
             EmailLabel = new Label();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
+            presentationLoginPanel = new Panel();
+            titleWelcomeLabel = new Label();
+            welcomeAccessLabel = new Label();
             YourAccountGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            presentationLoginPanel.SuspendLayout();
             SuspendLayout();
             // 
-            // LoginLabel
+            // SignInLabel
             // 
-            LoginLabel.AutoSize = true;
-            LoginLabel.BackColor = Color.Transparent;
-            LoginLabel.FlatStyle = FlatStyle.Flat;
-            LoginLabel.Font = new Font("Tahoma", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            LoginLabel.ForeColor = Color.White;
-            LoginLabel.Location = new Point(525, 67);
-            LoginLabel.Name = "LoginLabel";
-            LoginLabel.Size = new Size(155, 57);
-            LoginLabel.TabIndex = 0;
-            LoginLabel.Text = "Login";
+            SignInLabel.AutoSize = true;
+            SignInLabel.BackColor = Color.Transparent;
+            SignInLabel.FlatStyle = FlatStyle.Flat;
+            SignInLabel.Font = new Font("Century Gothic", 28.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            SignInLabel.ForeColor = SystemColors.HotTrack;
+            SignInLabel.Location = new Point(220, 43);
+            SignInLabel.Name = "SignInLabel";
+            SignInLabel.Size = new Size(173, 57);
+            SignInLabel.TabIndex = 0;
+            SignInLabel.Text = "Sign In";
             // 
             // YourAccountGroupBox
             // 
-            YourAccountGroupBox.BackColor = Color.Transparent;
+            YourAccountGroupBox.BackColor = Color.White;
             YourAccountGroupBox.Controls.Add(SignInButtom);
+            YourAccountGroupBox.Controls.Add(SignInLabel);
             YourAccountGroupBox.Controls.Add(passwordTextBox);
             YourAccountGroupBox.Controls.Add(emailTextBox);
             YourAccountGroupBox.Controls.Add(PasswordLabel);
@@ -68,20 +73,19 @@
             YourAccountGroupBox.Controls.Add(pictureBox1);
             YourAccountGroupBox.Font = new Font("Segoe UI Symbol", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
             YourAccountGroupBox.ForeColor = Color.White;
-            YourAccountGroupBox.Location = new Point(281, 159);
+            YourAccountGroupBox.Location = new Point(601, 152);
             YourAccountGroupBox.Name = "YourAccountGroupBox";
-            YourAccountGroupBox.Size = new Size(661, 396);
+            YourAccountGroupBox.Size = new Size(590, 435);
             YourAccountGroupBox.TabIndex = 1;
             YourAccountGroupBox.TabStop = false;
-            YourAccountGroupBox.Text = "Your Account";
             // 
             // SignInButtom
             // 
-            SignInButtom.BackColor = Color.DodgerBlue;
-            SignInButtom.Font = new Font("Segoe UI Symbol", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            SignInButtom.Location = new Point(263, 305);
+            SignInButtom.BackColor = SystemColors.HotTrack;
+            SignInButtom.Font = new Font("Century Gothic", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            SignInButtom.Location = new Point(171, 340);
             SignInButtom.Name = "SignInButtom";
-            SignInButtom.Size = new Size(114, 44);
+            SignInButtom.Size = new Size(283, 44);
             SignInButtom.TabIndex = 6;
             SignInButtom.Text = "Sign in";
             SignInButtom.UseVisualStyleBackColor = false;
@@ -89,14 +93,14 @@
             // 
             // passwordTextBox
             // 
-            passwordTextBox.Location = new Point(195, 231);
+            passwordTextBox.Location = new Point(188, 257);
             passwordTextBox.Name = "passwordTextBox";
             passwordTextBox.Size = new Size(283, 34);
             passwordTextBox.TabIndex = 5;
             // 
             // emailTextBox
             // 
-            emailTextBox.Location = new Point(196, 121);
+            emailTextBox.Location = new Point(188, 147);
             emailTextBox.Name = "emailTextBox";
             emailTextBox.Size = new Size(283, 34);
             emailTextBox.TabIndex = 4;
@@ -104,25 +108,29 @@
             // PasswordLabel
             // 
             PasswordLabel.AutoSize = true;
-            PasswordLabel.Location = new Point(195, 200);
+            PasswordLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            PasswordLabel.ForeColor = SystemColors.HotTrack;
+            PasswordLabel.Location = new Point(188, 231);
             PasswordLabel.Name = "PasswordLabel";
-            PasswordLabel.Size = new Size(94, 28);
+            PasswordLabel.Size = new Size(100, 23);
             PasswordLabel.TabIndex = 3;
             PasswordLabel.Text = "Password";
             // 
             // EmailLabel
             // 
             EmailLabel.AutoSize = true;
-            EmailLabel.Location = new Point(195, 90);
+            EmailLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            EmailLabel.ForeColor = SystemColors.HotTrack;
+            EmailLabel.Location = new Point(188, 121);
             EmailLabel.Name = "EmailLabel";
-            EmailLabel.Size = new Size(59, 28);
+            EmailLabel.Size = new Size(144, 23);
             EmailLabel.TabIndex = 2;
-            EmailLabel.Text = "Email";
+            EmailLabel.Text = "Email address";
             // 
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(125, 219);
+            pictureBox2.Location = new Point(112, 236);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(55, 55);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -132,12 +140,48 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(125, 112);
+            pictureBox1.Location = new Point(112, 131);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(55, 52);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            // 
+            // presentationLoginPanel
+            // 
+            presentationLoginPanel.BackColor = SystemColors.HotTrack;
+            presentationLoginPanel.Controls.Add(welcomeAccessLabel);
+            presentationLoginPanel.Controls.Add(titleWelcomeLabel);
+            presentationLoginPanel.Location = new Point(44, 152);
+            presentationLoginPanel.Name = "presentationLoginPanel";
+            presentationLoginPanel.Size = new Size(562, 435);
+            presentationLoginPanel.TabIndex = 2;
+            // 
+            // titleWelcomeLabel
+            // 
+            titleWelcomeLabel.AutoSize = true;
+            titleWelcomeLabel.BackColor = Color.Transparent;
+            titleWelcomeLabel.FlatStyle = FlatStyle.Flat;
+            titleWelcomeLabel.Font = new Font("Century Gothic", 28.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            titleWelcomeLabel.ForeColor = Color.White;
+            titleWelcomeLabel.Location = new Point(85, 159);
+            titleWelcomeLabel.Name = "titleWelcomeLabel";
+            titleWelcomeLabel.Size = new Size(383, 57);
+            titleWelcomeLabel.TabIndex = 7;
+            titleWelcomeLabel.Text = "Welcome Back!";
+            // 
+            // welcomeAccessLabel
+            // 
+            welcomeAccessLabel.AutoSize = true;
+            welcomeAccessLabel.BackColor = Color.Transparent;
+            welcomeAccessLabel.FlatStyle = FlatStyle.Flat;
+            welcomeAccessLabel.Font = new Font("Century Gothic", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            welcomeAccessLabel.ForeColor = Color.White;
+            welcomeAccessLabel.Location = new Point(100, 225);
+            welcomeAccessLabel.Name = "welcomeAccessLabel";
+            welcomeAccessLabel.Size = new Size(357, 26);
+            welcomeAccessLabel.TabIndex = 8;
+            welcomeAccessLabel.Text = "Sign in to access your account";
             // 
             // LoginForms
             // 
@@ -145,22 +189,23 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(1183, 642);
+            ClientSize = new Size(1242, 730);
+            Controls.Add(presentationLoginPanel);
             Controls.Add(YourAccountGroupBox);
-            Controls.Add(LoginLabel);
             Name = "LoginForms";
             Text = "LoginForms";
             YourAccountGroupBox.ResumeLayout(false);
             YourAccountGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            presentationLoginPanel.ResumeLayout(false);
+            presentationLoginPanel.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Label LoginLabel;
+        private Label SignInLabel;
         private GroupBox YourAccountGroupBox;
         private TextBox passwordTextBox;
         private TextBox emailTextBox;
@@ -169,5 +214,8 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
         private Button SignInButtom;
+        private Panel presentationLoginPanel;
+        private Label welcomeAccessLabel;
+        private Label titleWelcomeLabel;
     }
 }

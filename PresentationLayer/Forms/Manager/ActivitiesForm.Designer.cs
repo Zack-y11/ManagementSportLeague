@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             panelPlayers = new Panel();
-            btnEditActivity = new FontAwesome.Sharp.IconButton();
-            btnDeleteActivity = new FontAwesome.Sharp.IconButton();
-            btnAddActivity = new FontAwesome.Sharp.IconButton();
+            buttomEditActivity = new FontAwesome.Sharp.IconButton();
+            buttomDeleteActivity = new FontAwesome.Sharp.IconButton();
+            buttomAddActivity = new FontAwesome.Sharp.IconButton();
             textBoxDay = new TextBox();
             labelDay = new Label();
             labelPlayers = new Label();
@@ -39,17 +39,17 @@
             textBoxName = new TextBox();
             labelName = new Label();
             labelDescrition = new Label();
-            dataGridView1 = new DataGridView();
+            ActivityInformationDataGridView = new DataGridView();
             panelPlayers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ActivityInformationDataGridView).BeginInit();
             SuspendLayout();
             // 
             // panelPlayers
             // 
             panelPlayers.BackColor = Color.FromArgb(37, 99, 235);
-            panelPlayers.Controls.Add(btnEditActivity);
-            panelPlayers.Controls.Add(btnDeleteActivity);
-            panelPlayers.Controls.Add(btnAddActivity);
+            panelPlayers.Controls.Add(buttomEditActivity);
+            panelPlayers.Controls.Add(buttomDeleteActivity);
+            panelPlayers.Controls.Add(buttomAddActivity);
             panelPlayers.Controls.Add(textBoxDay);
             panelPlayers.Controls.Add(labelDay);
             panelPlayers.Controls.Add(labelPlayers);
@@ -62,56 +62,56 @@
             panelPlayers.Size = new Size(323, 500);
             panelPlayers.TabIndex = 12;
             // 
-            // btnEditActivity
+            // buttomEditActivity
             // 
-            btnEditActivity.FlatAppearance.BorderSize = 0;
-            btnEditActivity.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEditActivity.ForeColor = Color.Black;
-            btnEditActivity.IconChar = FontAwesome.Sharp.IconChar.PersonCircleExclamation;
-            btnEditActivity.IconColor = Color.Black;
-            btnEditActivity.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnEditActivity.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEditActivity.Location = new Point(40, 373);
-            btnEditActivity.Name = "btnEditActivity";
-            btnEditActivity.Padding = new Padding(12, 0, 0, 0);
-            btnEditActivity.Size = new Size(248, 46);
-            btnEditActivity.TabIndex = 13;
-            btnEditActivity.Text = "Edit Activity";
-            btnEditActivity.UseVisualStyleBackColor = true;
+            buttomEditActivity.FlatAppearance.BorderSize = 0;
+            buttomEditActivity.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttomEditActivity.ForeColor = Color.Black;
+            buttomEditActivity.IconChar = FontAwesome.Sharp.IconChar.PersonCircleExclamation;
+            buttomEditActivity.IconColor = Color.Black;
+            buttomEditActivity.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            buttomEditActivity.ImageAlign = ContentAlignment.MiddleLeft;
+            buttomEditActivity.Location = new Point(40, 373);
+            buttomEditActivity.Name = "buttomEditActivity";
+            buttomEditActivity.Padding = new Padding(12, 0, 0, 0);
+            buttomEditActivity.Size = new Size(248, 46);
+            buttomEditActivity.TabIndex = 13;
+            buttomEditActivity.Text = "Edit Activity";
+            buttomEditActivity.UseVisualStyleBackColor = true;
             // 
-            // btnDeleteActivity
+            // buttomDeleteActivity
             // 
-            btnDeleteActivity.FlatAppearance.BorderSize = 0;
-            btnDeleteActivity.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnDeleteActivity.ForeColor = Color.Black;
-            btnDeleteActivity.IconChar = FontAwesome.Sharp.IconChar.PersonCircleMinus;
-            btnDeleteActivity.IconColor = Color.Black;
-            btnDeleteActivity.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnDeleteActivity.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDeleteActivity.Location = new Point(40, 425);
-            btnDeleteActivity.Name = "btnDeleteActivity";
-            btnDeleteActivity.Padding = new Padding(12, 0, 0, 0);
-            btnDeleteActivity.Size = new Size(248, 46);
-            btnDeleteActivity.TabIndex = 12;
-            btnDeleteActivity.Text = "Delete Activity";
-            btnDeleteActivity.UseVisualStyleBackColor = true;
+            buttomDeleteActivity.FlatAppearance.BorderSize = 0;
+            buttomDeleteActivity.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttomDeleteActivity.ForeColor = Color.Black;
+            buttomDeleteActivity.IconChar = FontAwesome.Sharp.IconChar.PersonCircleMinus;
+            buttomDeleteActivity.IconColor = Color.Black;
+            buttomDeleteActivity.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            buttomDeleteActivity.ImageAlign = ContentAlignment.MiddleLeft;
+            buttomDeleteActivity.Location = new Point(40, 425);
+            buttomDeleteActivity.Name = "buttomDeleteActivity";
+            buttomDeleteActivity.Padding = new Padding(12, 0, 0, 0);
+            buttomDeleteActivity.Size = new Size(248, 46);
+            buttomDeleteActivity.TabIndex = 12;
+            buttomDeleteActivity.Text = "Delete Activity";
+            buttomDeleteActivity.UseVisualStyleBackColor = true;
             // 
-            // btnAddActivity
+            // buttomAddActivity
             // 
-            btnAddActivity.FlatAppearance.BorderSize = 0;
-            btnAddActivity.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAddActivity.ForeColor = Color.Black;
-            btnAddActivity.IconChar = FontAwesome.Sharp.IconChar.PersonCirclePlus;
-            btnAddActivity.IconColor = Color.Black;
-            btnAddActivity.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnAddActivity.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAddActivity.Location = new Point(40, 318);
-            btnAddActivity.Name = "btnAddActivity";
-            btnAddActivity.Padding = new Padding(12, 0, 0, 0);
-            btnAddActivity.Size = new Size(248, 46);
-            btnAddActivity.TabIndex = 11;
-            btnAddActivity.Text = "Add Activity";
-            btnAddActivity.UseVisualStyleBackColor = true;
+            buttomAddActivity.FlatAppearance.BorderSize = 0;
+            buttomAddActivity.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttomAddActivity.ForeColor = Color.Black;
+            buttomAddActivity.IconChar = FontAwesome.Sharp.IconChar.PersonCirclePlus;
+            buttomAddActivity.IconColor = Color.Black;
+            buttomAddActivity.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            buttomAddActivity.ImageAlign = ContentAlignment.MiddleLeft;
+            buttomAddActivity.Location = new Point(40, 318);
+            buttomAddActivity.Name = "buttomAddActivity";
+            buttomAddActivity.Padding = new Padding(12, 0, 0, 0);
+            buttomAddActivity.Size = new Size(248, 46);
+            buttomAddActivity.TabIndex = 11;
+            buttomAddActivity.Text = "Add Activity";
+            buttomAddActivity.UseVisualStyleBackColor = true;
             // 
             // textBoxDay
             // 
@@ -178,14 +178,14 @@
             labelDescrition.TabIndex = 6;
             labelDescrition.Text = "Description";
             // 
-            // dataGridView1
+            // ActivityInformationDataGridView
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(29, 46);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(542, 283);
-            dataGridView1.TabIndex = 10;
+            ActivityInformationDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            ActivityInformationDataGridView.Location = new Point(29, 46);
+            ActivityInformationDataGridView.Name = "ActivityInformationDataGridView";
+            ActivityInformationDataGridView.RowHeadersWidth = 51;
+            ActivityInformationDataGridView.Size = new Size(542, 283);
+            ActivityInformationDataGridView.TabIndex = 10;
             // 
             // ActivitiesForm
             // 
@@ -193,21 +193,21 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(988, 546);
             Controls.Add(panelPlayers);
-            Controls.Add(dataGridView1);
+            Controls.Add(ActivityInformationDataGridView);
             Name = "ActivitiesForm";
             Text = "ActivitiesForm";
             panelPlayers.ResumeLayout(false);
             panelPlayers.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ActivityInformationDataGridView).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel panelPlayers;
-        private FontAwesome.Sharp.IconButton btnEditActivity;
-        private FontAwesome.Sharp.IconButton btnDeleteActivity;
-        private FontAwesome.Sharp.IconButton btnAddActivity;
+        private FontAwesome.Sharp.IconButton buttomEditActivity;
+        private FontAwesome.Sharp.IconButton buttomDeleteActivity;
+        private FontAwesome.Sharp.IconButton buttomAddActivity;
         private TextBox textBoxDay;
         private Label labelDay;
         private Label labelPlayers;
@@ -215,6 +215,6 @@
         private TextBox textBoxName;
         private Label labelName;
         private Label labelDescrition;
-        private DataGridView dataGridView1;
+        private DataGridView ActivityInformationDataGridView;
     }
 }

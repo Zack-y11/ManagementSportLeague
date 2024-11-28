@@ -41,20 +41,23 @@ namespace PresentationLayer.LoginF
                 {
                     this.Hide();
                     _serviceProvider.GetRequiredService<dashboardAdmin>().ShowDialog();
-                } else if (AuthenticatedUser.RoleId == (int)Roles.Manager)
+                }
+                else if (AuthenticatedUser.RoleId == (int)Roles.Manager)
                 {
                     // manager o coach
                     this.Hide();
                     _serviceProvider.GetRequiredService<ManagerForm>().ShowDialog();
 
-                } else if (AuthenticatedUser.RoleId == (int)Roles.Player)
+                }
+                else if (AuthenticatedUser.RoleId == (int)Roles.Player)
                 {
                     // player
 
                 }
-            }else
+            }
+            else
             {
-                
+
                 MessageBox.Show("Invalid email or password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

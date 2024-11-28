@@ -21,8 +21,18 @@ namespace PresentationLayer.ManagerForms
             InitializeComponent();
             _playerService = playerService;
             _userId = userId;
+            // load players for this coach's team
+            LoadPlayers();
         }
 
+        private void LoadPlayers()
+        {
+            // get players for this coach's team
+            var players = _playerService.GetCoachPlayers(_userId);
+            // put these players to datagridview
+            playersDataGridView.DataSource = players;
+        }
+        
         private void btnAddPlayer_Click(object sender, EventArgs e)
         {
             // get data from 

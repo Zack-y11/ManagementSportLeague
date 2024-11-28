@@ -1,5 +1,7 @@
 ﻿using BusinessLayer.Services;
 using CommonLayer.Models;
+using FluentValidation.Results;
+using PresentationLayer.Validations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,9 +52,17 @@ namespace PresentationLayer.Forms
                         Points = int.Parse(pointsTextBox.Text),
                         TeamId = (int)activeTeamsDataGrip.CurrentRow.Cells["TeamId"].Value
                     };
-                    _teamService.UpdateTeam(team);
-                    isUpdating = false;
-                    LoadData();
+                    TeamValidation teamValidations = new TeamValidation();
+                    ValidationResult result = teamValidations.Validate(team);
+                    if (!result.IsValid)
+                    {
+                        DisplayValidatorTeam(result);
+                    }
+                    else
+                    {
+                        _teamService.UpdateTeam(team);
+                        isUpdating = false;
+                    }
                 }
                 else
                 {
@@ -64,9 +74,19 @@ namespace PresentationLayer.Forms
                         Loses = 0,
                         Points = 0
                     };
-                    _teamService.AddTeam(team);
-                    LoadData();
+                    TeamValidation teamValidations = new TeamValidation();
+                    ValidationResult result = teamValidations.Validate(team);
+                    if (!result.IsValid)
+                    {
+                        DisplayValidatorTeam(result);
+                    }
+                    else
+                    {
+                        _teamService.AddTeam(team);
+                    }
+
                 }
+                LoadData();
             }
             catch (ArgumentNullException ex)
             {
@@ -115,6 +135,31 @@ namespace PresentationLayer.Forms
                     int id= Convert.ToInt32(activeTeamsDataGrip.CurrentRow.Cells["Id"].Value);
                     _teamService.DeleteTeam(id);
                     LoadData();
+                }
+            }
+        }
+        private void DisplayValidatorTeam(ValidationResult result)
+        {
+            teamErrorProvider.Clear();
+            foreach(var failure in result.Errors)
+            {
+                switch (failure.PropertyName)
+                {
+                    case "ManagerId":
+                        teamErrorProvider.SetError(coachComboBox, failure.ErrorMessage); 
+                        break;
+                    case "TeamName":
+                        teamErrorProvider.SetError(teamNameTextBox, failure.ErrorMessage);
+                        break;
+                    case "Wins":
+                        teamErrorProvider.SetError(winsTextBox, failure.ErrorMessage);
+                        break;
+                    case "Loses":
+                        teamErrorProvider.SetError(loosesTextBox, failure.ErrorMessage);
+                        break;
+                    case "Points":
+                        teamErrorProvider.SetError(pointsTextBox, failure.ErrorMessage);
+                        break;
                 }
             }
         }

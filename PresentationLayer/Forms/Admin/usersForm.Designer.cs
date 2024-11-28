@@ -154,7 +154,7 @@
             deleteUserBtn.Name = "deleteUserBtn";
             deleteUserBtn.Size = new Size(210, 31);
             deleteUserBtn.TabIndex = 11;
-            deleteUserBtn.Text = "Edit Permisson";
+            deleteUserBtn.Text = "Delete User";
             deleteUserBtn.UseVisualStyleBackColor = false;
             deleteUserBtn.Click += deleteUserBtn_Click;
             // 

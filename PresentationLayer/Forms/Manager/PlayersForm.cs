@@ -32,34 +32,56 @@ namespace PresentationLayer.ManagerForms
             // put these players to datagridview
             playersDataGridView.DataSource = players;
         }
-        
+
         private void btnAddPlayer_Click(object sender, EventArgs e)
         {
-            // get data from 
-            // playerEmailTextBox
-            // playerPasswordTextBox
-            // textBoxName
-            // playerBirthdateDateTimePicker
-            // positionTextbox
-
             string email = playerEmailTextBox.Text;
             string password = playerPasswordTextBox.Text;
             string name = textBoxName.Text;
             DateTime birthdate = playerBirthdateDateTimePicker.Value;
             string position = positionTextbox.Text;
+            int goals = (int)Math.Round(goalsNumeric.Value);
+            int assists = (int)Math.Round(assistsNumeric.Value);
 
             // create player
             if (_userId == null)
             {
-
-               MessageBox.Show("User not found");
+                MessageBox.Show("User not found");
                 return;
-            } else if (_playerService == null)
+            }
+            else if (_playerService == null)
             {
                 MessageBox.Show("Player service not found");
                 return;
             }
-            _playerService.CreateUserPlayer(_userId, email, password, name, position, birthdate);
+            
+            _playerService.CreateUserPlayer(_userId, email, password, name, position, birthdate, goals, assists);
+            playerEmailTextBox.Text = "";
+            playerPasswordTextBox.Text = "";
+            textBoxName.Text = "";
+            positionTextbox.Text = "";
+            goalsNumeric.Value = 0;
+            assistsNumeric.Value = 0;
+            LoadPlayers();
+        }
+
+        private void btnEditPlayer_Click(object sender, EventArgs e)
+        {
+            if (playersDataGridView.SelectedRows.Count > 0)
+            {
+                textBoxName.Text = playersDataGridView.CurrentRow.Cells["PlayerName"].Value.ToString();
+                /*
+                playerEmailTextBox.Text = playersDataGridView.CurrentRow.Cells["Email"].Value.ToString();
+                winsTextBox.Text = activeTeamsDataGrip.SelectedRows[0].Cells["Wins"].Value.ToString();
+                loosesTextBox.Text = activeTeamsDataGrip.SelectedRows[0].Cells["Loses"].Value.ToString();
+                pointsTextBox.Text = activeTeamsDataGrip.SelectedRows[0].Cells["Points"].Value.ToString();
+                isUpdating = true;
+                */
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una categoria para editar");
+            }
         }
     }
 }

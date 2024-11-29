@@ -33,6 +33,10 @@
             playersDataGridView = new DataGridView();
             labelName = new Label();
             panelPlayers = new Panel();
+            assistsNumeric = new NumericUpDown();
+            assistLabel = new Label();
+            goalsNumeric = new NumericUpDown();
+            goalsLabel = new Label();
             playerBirthdateDateTimePicker = new DateTimePicker();
             playerPasswordTextBox = new TextBox();
             playerPasswordLabel = new Label();
@@ -46,6 +50,8 @@
             btnDeletePlayer = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)playersDataGridView).BeginInit();
             panelPlayers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)assistsNumeric).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)goalsNumeric).BeginInit();
             SuspendLayout();
             // 
             // textBoxName
@@ -89,6 +95,10 @@
             // panelPlayers
             // 
             panelPlayers.BackColor = Color.FromArgb(202, 138, 4);
+            panelPlayers.Controls.Add(assistsNumeric);
+            panelPlayers.Controls.Add(assistLabel);
+            panelPlayers.Controls.Add(goalsNumeric);
+            panelPlayers.Controls.Add(goalsLabel);
             panelPlayers.Controls.Add(playerBirthdateDateTimePicker);
             panelPlayers.Controls.Add(playerPasswordTextBox);
             panelPlayers.Controls.Add(playerPasswordLabel);
@@ -103,8 +113,44 @@
             panelPlayers.Controls.Add(labelName);
             panelPlayers.Location = new Point(600, 12);
             panelPlayers.Name = "panelPlayers";
-            panelPlayers.Size = new Size(421, 429);
+            panelPlayers.Size = new Size(421, 503);
             panelPlayers.TabIndex = 9;
+            // 
+            // assistsNumeric
+            // 
+            assistsNumeric.Location = new Point(101, 369);
+            assistsNumeric.Name = "assistsNumeric";
+            assistsNumeric.Size = new Size(116, 27);
+            assistsNumeric.TabIndex = 24;
+            // 
+            // assistLabel
+            // 
+            assistLabel.AutoSize = true;
+            assistLabel.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            assistLabel.ForeColor = Color.White;
+            assistLabel.Location = new Point(20, 372);
+            assistLabel.Name = "assistLabel";
+            assistLabel.Size = new Size(63, 18);
+            assistLabel.TabIndex = 23;
+            assistLabel.Text = "Assists";
+            // 
+            // goalsNumeric
+            // 
+            goalsNumeric.Location = new Point(101, 326);
+            goalsNumeric.Name = "goalsNumeric";
+            goalsNumeric.Size = new Size(116, 27);
+            goalsNumeric.TabIndex = 22;
+            // 
+            // goalsLabel
+            // 
+            goalsLabel.AutoSize = true;
+            goalsLabel.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            goalsLabel.ForeColor = Color.White;
+            goalsLabel.Location = new Point(20, 329);
+            goalsLabel.Name = "goalsLabel";
+            goalsLabel.Size = new Size(53, 18);
+            goalsLabel.TabIndex = 21;
+            goalsLabel.Text = "Goals";
             // 
             // playerBirthdateDateTimePicker
             // 
@@ -176,7 +222,7 @@
             btnAddPlayer.IconColor = Color.Black;
             btnAddPlayer.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnAddPlayer.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAddPlayer.Location = new Point(15, 329);
+            btnAddPlayer.Location = new Point(20, 423);
             btnAddPlayer.Name = "btnAddPlayer";
             btnAddPlayer.Padding = new Padding(12, 0, 0, 0);
             btnAddPlayer.Size = new Size(248, 46);
@@ -212,6 +258,7 @@
             btnEditPlayer.TabIndex = 13;
             btnEditPlayer.Text = "Edit Player";
             btnEditPlayer.UseVisualStyleBackColor = true;
+            btnEditPlayer.Click += btnEditPlayer_Click;
             // 
             // btnDeletePlayer
             // 
@@ -244,6 +291,8 @@
             ((System.ComponentModel.ISupportInitialize)playersDataGridView).EndInit();
             panelPlayers.ResumeLayout(false);
             panelPlayers.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)assistsNumeric).EndInit();
+            ((System.ComponentModel.ISupportInitialize)goalsNumeric).EndInit();
             ResumeLayout(false);
         }
 
@@ -267,5 +316,9 @@
         private TextBox playerPasswordTextBox;
         private Label playerPasswordLabel;
         private DateTimePicker playerBirthdateDateTimePicker;
+        private NumericUpDown assistsNumeric;
+        private Label assistLabel;
+        private NumericUpDown goalsNumeric;
+        private Label goalsLabel;
     }
 }

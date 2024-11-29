@@ -60,21 +60,21 @@ namespace DataLayer.Repositories
                 return connection.Query<CoachPlayer>(query, new { UserId = _userId });
             }
         }
-        public void CreateUserPlayer(int creatorId, string email, string password, string name, string position, DateTime birthDate)
+        public void CreateUserPlayer(int creatorId, string email, string password, string name, string position, DateTime birthDate, int goals, int assists)
         {
             using (var connection = _dbConnection.GetConnection())
             {
                 string query = @"INSERT INTO Users (Email, Password, Name, RoleId)
                         VALUES (@Email, @Password, @Name, @RoleId);
                         SELECT CAST(SCOPE_IDENTITY() as int);";
-                int userId = connection.QuerySingle<int>(query, new { Email = email, Password = password, Name = name, RoleId = Roles.Player });
+                connection.QuerySingle<int>(query, new { Email = email, Password = password, Name = name, RoleId = Roles.Player});
 
                 query = @"SELECT TeamId FROM Teams WHERE ManagerId = @ManagerId;";
                 int newTeamId = connection.QuerySingle<int>(query, new { ManagerId = creatorId });
 
                 query = @"INSERT INTO Players (UserId, TeamId, Position, Birthdate, Goals, Assists)
-                        VALUES ((SELECT UserId FROM Users WHERE Email = @Email), @TeamId, @Position, @Birthdate, 0, 0);";
-                connection.Execute(query, new { Email = email, TeamId = newTeamId, Position = position, Birthdate = birthDate });
+                        VALUES ((SELECT UserId FROM Users WHERE Email = @Email), @TeamId, @Position, @Birthdate, @Goals, @Assists);";
+                connection.Execute(query, new { Email = email, TeamId = newTeamId, Position = position, Birthdate = birthDate, Goals = goals, Assists = assists });
             }
         }
         public void Add(Player player)

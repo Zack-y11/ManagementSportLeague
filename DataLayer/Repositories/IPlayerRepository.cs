@@ -10,6 +10,6 @@ namespace DataLayer.Repositories
         IEnumerable<Player> GetAll();
         IEnumerable<CoachPlayer> GetCoachPlayers(int _userId);
         void Update(Player player);
-        void CreateUserPlayer(int creatorId, string email, string password, string name, string position, DateTime birthDate);
+        void CreateUserPlayer(int creatorId, string email, string password, string name, string position, DateTime birthDate, int goals, int assists);
     }
 }

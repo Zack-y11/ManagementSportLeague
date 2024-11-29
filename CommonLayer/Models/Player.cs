@@ -12,7 +12,7 @@ namespace CommonLayer.Models
         public int TeamId { get; set; }
         public int TeamName { get; set; }
         public int UserName { get; set; }
-        public int Position { get; set; }
+        public string Position { get; set; }
         public DateTime Birthdate { get; set; }
         public int Goals { get; set; }
         public int Assists { get; set; }

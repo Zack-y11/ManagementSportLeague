@@ -25,7 +25,6 @@ namespace PresentationLayer.Forms
             _teamService = teamService;
             LoadData();
             this.activeTeamsDataGrip.Columns["ManagerId"].Visible = false;
-            //this.activeTeamsDataGrip.Columns["TeamId"].Visible = false;
         }
         public void LoadData()
         {

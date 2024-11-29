@@ -52,18 +52,19 @@
             ipbGoals = new FontAwesome.Sharp.IconPictureBox();
             labelGoals = new Label();
             sidePanel = new Panel();
-            buttomActivities = new FontAwesome.Sharp.IconButton();
-            buttomDashboard = new FontAwesome.Sharp.IconButton();
-            buttomPositionTable = new FontAwesome.Sharp.IconButton();
-            buttomStats = new FontAwesome.Sharp.IconButton();
-            buttomPlayers = new FontAwesome.Sharp.IconButton();
+            activitiesBtn = new FontAwesome.Sharp.IconButton();
+            dashboardBtn = new FontAwesome.Sharp.IconButton();
+            positiontablebtn = new FontAwesome.Sharp.IconButton();
+            statsBtn = new FontAwesome.Sharp.IconButton();
+            playersBtn = new FontAwesome.Sharp.IconButton();
             panelLogo = new Panel();
             coachLabel = new Label();
             ipbManager = new FontAwesome.Sharp.IconPictureBox();
             panelHeader = new Panel();
-            ibuttonRestaurar = new FontAwesome.Sharp.IconButton();
-            ibuttonMaximizar = new FontAwesome.Sharp.IconButton();
-            ibuttonCerrar = new FontAwesome.Sharp.IconButton();
+            IconsPanel = new Panel();
+            resetBtn = new FontAwesome.Sharp.IconButton();
+            maximizeBtn = new FontAwesome.Sharp.IconButton();
+            closeBtn = new FontAwesome.Sharp.IconButton();
             contentPanel = new Panel();
             panelNextMach.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ipbActivities).BeginInit();
@@ -80,6 +81,7 @@
             panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ipbManager).BeginInit();
             panelHeader.SuspendLayout();
+            IconsPanel.SuspendLayout();
             contentPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -351,11 +353,11 @@
             // sidePanel
             // 
             sidePanel.BackColor = Color.WhiteSmoke;
-            sidePanel.Controls.Add(buttomActivities);
-            sidePanel.Controls.Add(buttomDashboard);
-            sidePanel.Controls.Add(buttomPositionTable);
-            sidePanel.Controls.Add(buttomStats);
-            sidePanel.Controls.Add(buttomPlayers);
+            sidePanel.Controls.Add(activitiesBtn);
+            sidePanel.Controls.Add(dashboardBtn);
+            sidePanel.Controls.Add(positiontablebtn);
+            sidePanel.Controls.Add(statsBtn);
+            sidePanel.Controls.Add(playersBtn);
             sidePanel.Controls.Add(panelLogo);
             sidePanel.Dock = DockStyle.Left;
             sidePanel.ForeColor = Color.White;
@@ -364,95 +366,95 @@
             sidePanel.Size = new Size(302, 754);
             sidePanel.TabIndex = 7;
             // 
-            // buttomActivities
+            // activitiesBtn
             // 
-            buttomActivities.FlatAppearance.BorderSize = 0;
-            buttomActivities.FlatStyle = FlatStyle.Flat;
-            buttomActivities.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttomActivities.ForeColor = Color.Black;
-            buttomActivities.IconChar = FontAwesome.Sharp.IconChar.Calendar;
-            buttomActivities.IconColor = Color.Black;
-            buttomActivities.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            buttomActivities.ImageAlign = ContentAlignment.MiddleLeft;
-            buttomActivities.Location = new Point(0, 179);
-            buttomActivities.Name = "buttomActivities";
-            buttomActivities.Padding = new Padding(12, 0, 0, 0);
-            buttomActivities.Size = new Size(302, 60);
-            buttomActivities.TabIndex = 9;
-            buttomActivities.Text = "Activities";
-            buttomActivities.UseVisualStyleBackColor = true;
+            activitiesBtn.FlatAppearance.BorderSize = 0;
+            activitiesBtn.FlatStyle = FlatStyle.Flat;
+            activitiesBtn.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            activitiesBtn.ForeColor = Color.Black;
+            activitiesBtn.IconChar = FontAwesome.Sharp.IconChar.Calendar;
+            activitiesBtn.IconColor = Color.Black;
+            activitiesBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            activitiesBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            activitiesBtn.Location = new Point(0, 179);
+            activitiesBtn.Name = "activitiesBtn";
+            activitiesBtn.Padding = new Padding(12, 0, 0, 0);
+            activitiesBtn.Size = new Size(302, 60);
+            activitiesBtn.TabIndex = 9;
+            activitiesBtn.Text = "Activities";
+            activitiesBtn.UseVisualStyleBackColor = true;
             // 
-            // buttomDashboard
+            // dashboardBtn
             // 
-            buttomDashboard.FlatAppearance.BorderSize = 0;
-            buttomDashboard.FlatStyle = FlatStyle.Flat;
-            buttomDashboard.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttomDashboard.ForeColor = Color.Black;
-            buttomDashboard.IconChar = FontAwesome.Sharp.IconChar.DriversLicense;
-            buttomDashboard.IconColor = Color.Black;
-            buttomDashboard.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            buttomDashboard.ImageAlign = ContentAlignment.MiddleLeft;
-            buttomDashboard.Location = new Point(0, 122);
-            buttomDashboard.Name = "buttomDashboard";
-            buttomDashboard.Padding = new Padding(12, 0, 0, 0);
-            buttomDashboard.Size = new Size(302, 60);
-            buttomDashboard.TabIndex = 8;
-            buttomDashboard.Text = "Dashboard";
-            buttomDashboard.UseVisualStyleBackColor = true;
+            dashboardBtn.FlatAppearance.BorderSize = 0;
+            dashboardBtn.FlatStyle = FlatStyle.Flat;
+            dashboardBtn.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dashboardBtn.ForeColor = Color.Black;
+            dashboardBtn.IconChar = FontAwesome.Sharp.IconChar.DriversLicense;
+            dashboardBtn.IconColor = Color.Black;
+            dashboardBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            dashboardBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            dashboardBtn.Location = new Point(0, 122);
+            dashboardBtn.Name = "dashboardBtn";
+            dashboardBtn.Padding = new Padding(12, 0, 0, 0);
+            dashboardBtn.Size = new Size(302, 60);
+            dashboardBtn.TabIndex = 8;
+            dashboardBtn.Text = "Dashboard";
+            dashboardBtn.UseVisualStyleBackColor = true;
             // 
-            // buttomPositionTable
+            // positiontablebtn
             // 
-            buttomPositionTable.FlatAppearance.BorderSize = 0;
-            buttomPositionTable.FlatStyle = FlatStyle.Flat;
-            buttomPositionTable.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttomPositionTable.ForeColor = Color.Black;
-            buttomPositionTable.IconChar = FontAwesome.Sharp.IconChar.RankingStar;
-            buttomPositionTable.IconColor = Color.Black;
-            buttomPositionTable.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            buttomPositionTable.ImageAlign = ContentAlignment.MiddleLeft;
-            buttomPositionTable.Location = new Point(0, 386);
-            buttomPositionTable.Name = "buttomPositionTable";
-            buttomPositionTable.Padding = new Padding(12, 0, 0, 0);
-            buttomPositionTable.Size = new Size(302, 66);
-            buttomPositionTable.TabIndex = 7;
-            buttomPositionTable.Text = "Position Table";
-            buttomPositionTable.UseVisualStyleBackColor = true;
+            positiontablebtn.FlatAppearance.BorderSize = 0;
+            positiontablebtn.FlatStyle = FlatStyle.Flat;
+            positiontablebtn.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            positiontablebtn.ForeColor = Color.Black;
+            positiontablebtn.IconChar = FontAwesome.Sharp.IconChar.RankingStar;
+            positiontablebtn.IconColor = Color.Black;
+            positiontablebtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            positiontablebtn.ImageAlign = ContentAlignment.MiddleLeft;
+            positiontablebtn.Location = new Point(0, 386);
+            positiontablebtn.Name = "positiontablebtn";
+            positiontablebtn.Padding = new Padding(12, 0, 0, 0);
+            positiontablebtn.Size = new Size(302, 66);
+            positiontablebtn.TabIndex = 7;
+            positiontablebtn.Text = "Position Table";
+            positiontablebtn.UseVisualStyleBackColor = true;
             // 
-            // buttomStats
+            // statsBtn
             // 
-            buttomStats.FlatAppearance.BorderSize = 0;
-            buttomStats.FlatStyle = FlatStyle.Flat;
-            buttomStats.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttomStats.ForeColor = Color.Black;
-            buttomStats.IconChar = FontAwesome.Sharp.IconChar.SoccerBall;
-            buttomStats.IconColor = Color.Black;
-            buttomStats.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            buttomStats.ImageAlign = ContentAlignment.MiddleLeft;
-            buttomStats.Location = new Point(0, 323);
-            buttomStats.Name = "buttomStats";
-            buttomStats.Padding = new Padding(12, 0, 0, 0);
-            buttomStats.Size = new Size(302, 60);
-            buttomStats.TabIndex = 6;
-            buttomStats.Text = "Stats";
-            buttomStats.UseVisualStyleBackColor = true;
+            statsBtn.FlatAppearance.BorderSize = 0;
+            statsBtn.FlatStyle = FlatStyle.Flat;
+            statsBtn.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            statsBtn.ForeColor = Color.Black;
+            statsBtn.IconChar = FontAwesome.Sharp.IconChar.SoccerBall;
+            statsBtn.IconColor = Color.Black;
+            statsBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            statsBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            statsBtn.Location = new Point(0, 323);
+            statsBtn.Name = "statsBtn";
+            statsBtn.Padding = new Padding(12, 0, 0, 0);
+            statsBtn.Size = new Size(302, 60);
+            statsBtn.TabIndex = 6;
+            statsBtn.Text = "Stats";
+            statsBtn.UseVisualStyleBackColor = true;
             // 
-            // buttomPlayers
+            // playersBtn
             // 
-            buttomPlayers.FlatAppearance.BorderSize = 0;
-            buttomPlayers.FlatStyle = FlatStyle.Flat;
-            buttomPlayers.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttomPlayers.ForeColor = Color.Black;
-            buttomPlayers.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
-            buttomPlayers.IconColor = Color.Black;
-            buttomPlayers.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            buttomPlayers.ImageAlign = ContentAlignment.MiddleLeft;
-            buttomPlayers.Location = new Point(0, 257);
-            buttomPlayers.Name = "buttomPlayers";
-            buttomPlayers.Padding = new Padding(12, 0, 0, 0);
-            buttomPlayers.Size = new Size(302, 60);
-            buttomPlayers.TabIndex = 5;
-            buttomPlayers.Text = "Players";
-            buttomPlayers.UseVisualStyleBackColor = true;
+            playersBtn.FlatAppearance.BorderSize = 0;
+            playersBtn.FlatStyle = FlatStyle.Flat;
+            playersBtn.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            playersBtn.ForeColor = Color.Black;
+            playersBtn.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
+            playersBtn.IconColor = Color.Black;
+            playersBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            playersBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            playersBtn.Location = new Point(0, 257);
+            playersBtn.Name = "playersBtn";
+            playersBtn.Padding = new Padding(12, 0, 0, 0);
+            playersBtn.Size = new Size(302, 60);
+            playersBtn.TabIndex = 5;
+            playersBtn.Text = "Players";
+            playersBtn.UseVisualStyleBackColor = true;
             // 
             // panelLogo
             // 
@@ -493,59 +495,68 @@
             // panelHeader
             // 
             panelHeader.BackColor = Color.FromArgb(0, 123, 250);
-            panelHeader.Controls.Add(ibuttonRestaurar);
-            panelHeader.Controls.Add(ibuttonMaximizar);
-            panelHeader.Controls.Add(ibuttonCerrar);
+            panelHeader.Controls.Add(IconsPanel);
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(302, 0);
             panelHeader.Name = "panelHeader";
-            panelHeader.Size = new Size(1046, 52);
+            panelHeader.Size = new Size(1046, 100);
             panelHeader.TabIndex = 8;
             // 
-            // ibuttonRestaurar
+            // IconsPanel
             // 
-            ibuttonRestaurar.Dock = DockStyle.Right;
-            ibuttonRestaurar.FlatStyle = FlatStyle.Flat;
-            ibuttonRestaurar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ibuttonRestaurar.IconChar = FontAwesome.Sharp.IconChar.Clone;
-            ibuttonRestaurar.IconColor = Color.White;
-            ibuttonRestaurar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            ibuttonRestaurar.Location = new Point(899, 0);
-            ibuttonRestaurar.Name = "ibuttonRestaurar";
-            ibuttonRestaurar.Size = new Size(49, 52);
-            ibuttonRestaurar.TabIndex = 2;
-            ibuttonRestaurar.UseVisualStyleBackColor = true;
-            ibuttonRestaurar.Click += ibtnRestaurar_Click;
+            IconsPanel.Controls.Add(resetBtn);
+            IconsPanel.Controls.Add(maximizeBtn);
+            IconsPanel.Controls.Add(closeBtn);
+            IconsPanel.Dock = DockStyle.Right;
+            IconsPanel.Location = new Point(875, 0);
+            IconsPanel.Name = "IconsPanel";
+            IconsPanel.Size = new Size(171, 100);
+            IconsPanel.TabIndex = 7;
             // 
-            // ibuttonMaximizar
+            // resetBtn
             // 
-            ibuttonMaximizar.Dock = DockStyle.Right;
-            ibuttonMaximizar.FlatStyle = FlatStyle.Flat;
-            ibuttonMaximizar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ibuttonMaximizar.IconChar = FontAwesome.Sharp.IconChar.Expand;
-            ibuttonMaximizar.IconColor = Color.White;
-            ibuttonMaximizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            ibuttonMaximizar.Location = new Point(948, 0);
-            ibuttonMaximizar.Name = "ibuttonMaximizar";
-            ibuttonMaximizar.Size = new Size(49, 52);
-            ibuttonMaximizar.TabIndex = 1;
-            ibuttonMaximizar.UseVisualStyleBackColor = true;
-            ibuttonMaximizar.Click += ibtnMaximizar_Click;
+            resetBtn.Dock = DockStyle.Right;
+            resetBtn.FlatStyle = FlatStyle.Popup;
+            resetBtn.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            resetBtn.IconChar = FontAwesome.Sharp.IconChar.Subtract;
+            resetBtn.IconColor = Color.White;
+            resetBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            resetBtn.Location = new Point(4, 0);
+            resetBtn.Name = "resetBtn";
+            resetBtn.Size = new Size(58, 100);
+            resetBtn.TabIndex = 4;
+            resetBtn.UseVisualStyleBackColor = true;
+            resetBtn.Click += resetBtn_Click;
             // 
-            // ibuttonCerrar
+            // maximizeBtn
             // 
-            ibuttonCerrar.Dock = DockStyle.Right;
-            ibuttonCerrar.FlatStyle = FlatStyle.Flat;
-            ibuttonCerrar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ibuttonCerrar.IconChar = FontAwesome.Sharp.IconChar.Close;
-            ibuttonCerrar.IconColor = Color.White;
-            ibuttonCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            ibuttonCerrar.Location = new Point(997, 0);
-            ibuttonCerrar.Name = "ibuttonCerrar";
-            ibuttonCerrar.Size = new Size(49, 52);
-            ibuttonCerrar.TabIndex = 0;
-            ibuttonCerrar.UseVisualStyleBackColor = true;
-            ibuttonCerrar.Click += ibtnCerrar_Click;
+            maximizeBtn.Dock = DockStyle.Right;
+            maximizeBtn.FlatStyle = FlatStyle.Popup;
+            maximizeBtn.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            maximizeBtn.IconChar = FontAwesome.Sharp.IconChar.Clone;
+            maximizeBtn.IconColor = Color.White;
+            maximizeBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            maximizeBtn.Location = new Point(62, 0);
+            maximizeBtn.Name = "maximizeBtn";
+            maximizeBtn.Size = new Size(58, 100);
+            maximizeBtn.TabIndex = 3;
+            maximizeBtn.UseVisualStyleBackColor = true;
+            maximizeBtn.Click += maximizeBtn_Click;
+            // 
+            // closeBtn
+            // 
+            closeBtn.Dock = DockStyle.Right;
+            closeBtn.FlatStyle = FlatStyle.Popup;
+            closeBtn.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            closeBtn.IconChar = FontAwesome.Sharp.IconChar.Close;
+            closeBtn.IconColor = Color.White;
+            closeBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            closeBtn.Location = new Point(120, 0);
+            closeBtn.Name = "closeBtn";
+            closeBtn.Size = new Size(51, 100);
+            closeBtn.TabIndex = 5;
+            closeBtn.UseVisualStyleBackColor = true;
+            closeBtn.Click += closeBtn_Click;
             // 
             // contentPanel
             // 
@@ -555,9 +566,9 @@
             contentPanel.Controls.Add(panelNextMach);
             contentPanel.Controls.Add(panelObjetiveSeason);
             contentPanel.Dock = DockStyle.Fill;
-            contentPanel.Location = new Point(302, 52);
+            contentPanel.Location = new Point(302, 100);
             contentPanel.Name = "contentPanel";
-            contentPanel.Size = new Size(1046, 702);
+            contentPanel.Size = new Size(1046, 654);
             contentPanel.TabIndex = 9;
             // 
             // ManagerForm
@@ -593,6 +604,7 @@
             panelLogo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)ipbManager).EndInit();
             panelHeader.ResumeLayout(false);
+            IconsPanel.ResumeLayout(false);
             contentPanel.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -624,18 +636,19 @@
         private FontAwesome.Sharp.IconPictureBox ipbPositionTable;
         private Panel sidePanel;
         private Panel panelLogo;
-        private FontAwesome.Sharp.IconButton buttomPositionTable;
-        private FontAwesome.Sharp.IconButton buttomStats;
-        private FontAwesome.Sharp.IconButton buttomPlayers;
+        private FontAwesome.Sharp.IconButton positiontablebtn;
+        private FontAwesome.Sharp.IconButton statsBtn;
+        private FontAwesome.Sharp.IconButton playersBtn;
         private FontAwesome.Sharp.IconPictureBox ipbManager;
         private Panel panelHeader;
-        private FontAwesome.Sharp.IconButton ibuttonCerrar;
-        private FontAwesome.Sharp.IconButton ibuttonRestaurar;
-        private FontAwesome.Sharp.IconButton ibuttonMaximizar;
         private Label coachLabel;
         private Panel contentPanel;
-        private FontAwesome.Sharp.IconButton buttomDashboard;
+        private FontAwesome.Sharp.IconButton dashboardBtn;
         private Label labelGoalsStatus;
-        private FontAwesome.Sharp.IconButton buttomActivities;
+        private FontAwesome.Sharp.IconButton activitiesBtn;
+        private Panel IconsPanel;
+        private FontAwesome.Sharp.IconButton resetBtn;
+        private FontAwesome.Sharp.IconButton maximizeBtn;
+        private FontAwesome.Sharp.IconButton closeBtn;
     }
 }

@@ -30,52 +30,55 @@
         {
             panelPositionTable = new Panel();
             ipbPositionTable = new FontAwesome.Sharp.IconPictureBox();
-            dataGridView1 = new DataGridView();
+            positionTableDataGrip = new DataGridView();
             labelPositionTable = new Label();
             panelPositionTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ipbPositionTable).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)positionTableDataGrip).BeginInit();
             SuspendLayout();
             // 
             // panelPositionTable
             // 
+            panelPositionTable.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelPositionTable.BackColor = Color.FromArgb(147, 51, 234);
             panelPositionTable.Controls.Add(ipbPositionTable);
-            panelPositionTable.Controls.Add(dataGridView1);
+            panelPositionTable.Controls.Add(positionTableDataGrip);
             panelPositionTable.Controls.Add(labelPositionTable);
-            panelPositionTable.Location = new Point(197, 52);
+            panelPositionTable.Location = new Point(211, 52);
             panelPositionTable.Name = "panelPositionTable";
-            panelPositionTable.Size = new Size(505, 588);
+            panelPositionTable.Size = new Size(981, 588);
             panelPositionTable.TabIndex = 6;
             // 
             // ipbPositionTable
             // 
+            ipbPositionTable.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             ipbPositionTable.BackColor = Color.FromArgb(147, 51, 234);
             ipbPositionTable.IconChar = FontAwesome.Sharp.IconChar.RankingStar;
             ipbPositionTable.IconColor = Color.White;
             ipbPositionTable.IconFont = FontAwesome.Sharp.IconFont.Auto;
             ipbPositionTable.IconSize = 40;
-            ipbPositionTable.Location = new Point(354, 9);
+            ipbPositionTable.Location = new Point(925, 6);
             ipbPositionTable.Name = "ipbPositionTable";
             ipbPositionTable.Size = new Size(40, 40);
             ipbPositionTable.TabIndex = 2;
             ipbPositionTable.TabStop = false;
             // 
-            // dataGridView1
+            // positionTableDataGrip
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(35, 63);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(431, 473);
-            dataGridView1.TabIndex = 1;
+            positionTableDataGrip.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            positionTableDataGrip.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            positionTableDataGrip.Location = new Point(59, 68);
+            positionTableDataGrip.Name = "positionTableDataGrip";
+            positionTableDataGrip.RowHeadersWidth = 51;
+            positionTableDataGrip.Size = new Size(867, 473);
+            positionTableDataGrip.TabIndex = 1;
             // 
             // labelPositionTable
             // 
             labelPositionTable.AutoSize = true;
             labelPositionTable.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelPositionTable.ForeColor = Color.White;
-            labelPositionTable.Location = new Point(120, 6);
+            labelPositionTable.Location = new Point(59, 6);
             labelPositionTable.Name = "labelPositionTable";
             labelPositionTable.Size = new Size(165, 27);
             labelPositionTable.TabIndex = 0;
@@ -92,7 +95,7 @@
             panelPositionTable.ResumeLayout(false);
             panelPositionTable.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)ipbPositionTable).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)positionTableDataGrip).EndInit();
             ResumeLayout(false);
         }
 
@@ -100,7 +103,7 @@
 
         private Panel panelPositionTable;
         private FontAwesome.Sharp.IconPictureBox ipbPositionTable;
-        private DataGridView dataGridView1;
+        private DataGridView positionTableDataGrip;
         private Label labelPositionTable;
     }
 }

@@ -70,5 +70,7 @@ namespace PresentationLayer.ManagerForms
                 labelRival.Text = "No match scheduled";
             }
         }
+
+    
     }
 }

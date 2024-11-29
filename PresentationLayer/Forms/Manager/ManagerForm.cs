@@ -29,39 +29,13 @@ namespace PresentationLayer.ManagerForms
             SetUpButtons();
 
         }
-
-        private void ibtnCerrar_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void ibtnMaximizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-            UpdateWindowButtons();
-        }
-
-        private void ibtnRestaurar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Normal;
-            ibuttonRestaurar.Visible = false;
-            ibuttonMaximizar.Visible = true;
-            UpdateWindowButtons();
-        }
-
-        private void UpdateWindowButtons()
-        {
-            ibuttonMaximizar.Visible = (this.WindowState != FormWindowState.Maximized);
-            ibuttonRestaurar.Visible = (this.WindowState == FormWindowState.Maximized);
-        }
-
         private void SetUpButtons()
         {
-            buttomDashboard.Click += ButtonClickHandler;
-            buttomActivities.Click += ButtonClickHandler;
-            buttomPlayers.Click += ButtonClickHandler;
-            buttomStats.Click += ButtonClickHandler;
-            buttomPositionTable.Click += ButtonClickHandler;
+            dashboardBtn.Click += ButtonClickHandler;
+            activitiesBtn.Click += ButtonClickHandler;
+            playersBtn.Click += ButtonClickHandler;
+            statsBtn.Click += ButtonClickHandler;
+            positiontablebtn.Click += ButtonClickHandler;
 
 
 
@@ -102,26 +76,26 @@ namespace PresentationLayer.ManagerForms
             Button button = (Button)sender;
             switch (button.Name.ToLower())
             {
-                case "btndashboard":
+                case "dashboardbtn":
                     LoadDashboardContent();
                     break;
 
-                case "btnactivities":
+                case "activitiesbtn":
                     LoadActivitiesContent();
                     break;
                 default:
                     MessageBox.Show($"Unknown button: {button.Name}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
 
-                case "btnplayers":
+                case "playersbtn":
                     LoadPlayersContent();
                     break;
 
-                case "btnstats":
+                case "statsbtn":
                     LoadStatsContent();
                     break;
 
-                case "btnpositiontable":
+                case "positiontablebtn":
                     LoadPositionTableContent();
                     break;
             }
@@ -197,6 +171,30 @@ namespace PresentationLayer.ManagerForms
                 MessageBox.Show($"An error occurred while loading the dashboard: {ex.Message}",
                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void closeBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void maximizeBtn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            UpdateWindowButtons();
+        }
+
+        private void UpdateWindowButtons()
+        {
+
+            maximizeBtn.Visible = (this.WindowState != FormWindowState.Maximized);
+            resetBtn.Visible = (this.WindowState == FormWindowState.Maximized);
+        }
+
+        private void resetBtn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+            UpdateWindowButtons();
         }
     }
 }

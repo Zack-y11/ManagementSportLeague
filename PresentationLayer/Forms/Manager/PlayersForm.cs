@@ -55,7 +55,7 @@ namespace PresentationLayer.ManagerForms
                 MessageBox.Show("Player service not found");
                 return;
             }
-            
+
             _playerService.CreateUserPlayer(_userId, email, password, name, position, birthdate, goals, assists);
             playerEmailTextBox.Text = "";
             playerPasswordTextBox.Text = "";
@@ -81,6 +81,32 @@ namespace PresentationLayer.ManagerForms
             else
             {
                 MessageBox.Show("Seleccione una categoria para editar");
+            }
+        }
+
+        private void btnDeletePlayer_Click(object sender, EventArgs e)
+        {
+            if (playersDataGridView.SelectedRows.Count > 0)
+            {
+                int playerId = (int)playersDataGridView.CurrentRow.Cells["PlayerId"].Value;
+                var confirmResult = MessageBox.Show("Are you sure you want to delete this player?",
+                                                  "Confirm Delete",
+                                                  MessageBoxButtons.YesNo,
+                                                  MessageBoxIcon.Warning);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    try
+                    {
+                        _playerService.Delete(playerId);
+                        LoadPlayers();
+                        MessageBox.Show("Player deleted successfully!");
+                    } catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error deleting player: {ex.Message}", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                }
             }
         }
     }

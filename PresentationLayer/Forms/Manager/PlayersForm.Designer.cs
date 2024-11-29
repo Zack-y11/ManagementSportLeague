@@ -276,6 +276,7 @@
             btnDeletePlayer.TabIndex = 12;
             btnDeletePlayer.Text = "Delete Player";
             btnDeletePlayer.UseVisualStyleBackColor = true;
+            btnDeletePlayer.Click += btnDeletePlayer_Click;
             // 
             // PlayersForm
             // 

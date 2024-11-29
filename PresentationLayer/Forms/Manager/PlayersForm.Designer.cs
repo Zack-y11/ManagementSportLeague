@@ -227,7 +227,7 @@
             btnAddPlayer.Padding = new Padding(12, 0, 0, 0);
             btnAddPlayer.Size = new Size(248, 46);
             btnAddPlayer.TabIndex = 11;
-            btnAddPlayer.Text = "Add Player";
+            btnAddPlayer.Text = "Save Player";
             btnAddPlayer.UseVisualStyleBackColor = true;
             btnAddPlayer.Click += btnAddPlayer_Click;
             // 

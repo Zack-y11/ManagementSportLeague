@@ -49,7 +49,10 @@ namespace DataLayer.Repositories
                                     u.Name as PlayerName,
                                     p.Position,
                                     p.Goals,
-                                    p.Assists
+                                    p.Assists,
+                                    p.Birthdate,
+                                    u.Email,
+                                    u.Password
                                 FROM Teams t
                                 JOIN Players p ON t.TeamId = p.TeamId
                                 JOIN Users u ON p.UserId = u.UserId

@@ -36,6 +36,11 @@ namespace BusinessLayer.Services
             return _userRepository.GetUserByEmailAndPassword(email, password);
         }
 
+        public IEnumerable<User> SearchUser(string search)
+        {
+            return _userRepository.SearchUser(search);
+        }
+
         public void UpdateUser(User user)
         {
             _userRepository.UpdateUser(user);

@@ -15,5 +15,6 @@ namespace BusinessLayer.Services
         public void UpdateUser(User user);
         public void DeleteUser(int userId);
         IEnumerable<User> GetRoles();
+        IEnumerable<User> SearchUser(string search);
     }
 }

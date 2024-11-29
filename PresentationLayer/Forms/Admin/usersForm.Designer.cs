@@ -46,7 +46,7 @@
             usersDataGrip = new DataGridView();
             userManagementLabel = new Label();
             managementIcon = new FontAwesome.Sharp.IconPictureBox();
-            searchTeamTextBox = new TextBox();
+            searchUserTextBox = new TextBox();
             searchIcon = new FontAwesome.Sharp.IconPictureBox();
             searchUserBtn = new FontAwesome.Sharp.IconButton();
             userErrorProvider = new ErrorProvider(components);
@@ -266,15 +266,16 @@
             managementIcon.TabIndex = 3;
             managementIcon.TabStop = false;
             // 
-            // searchTeamTextBox
+            // searchUserTextBox
             // 
-            searchTeamTextBox.Location = new Point(140, 76);
-            searchTeamTextBox.Margin = new Padding(3, 2, 3, 2);
-            searchTeamTextBox.Multiline = true;
-            searchTeamTextBox.Name = "searchTeamTextBox";
-            searchTeamTextBox.PlaceholderText = "All Users";
-            searchTeamTextBox.Size = new Size(574, 26);
-            searchTeamTextBox.TabIndex = 4;
+            searchUserTextBox.Location = new Point(140, 76);
+            searchUserTextBox.Margin = new Padding(3, 2, 3, 2);
+            searchUserTextBox.Multiline = true;
+            searchUserTextBox.Name = "searchUserTextBox";
+            searchUserTextBox.PlaceholderText = "All Users";
+            searchUserTextBox.Size = new Size(574, 26);
+            searchUserTextBox.TabIndex = 4;
+            searchUserTextBox.TextChanged += searchUserTextBox_TextChanged;
             // 
             // searchIcon
             // 
@@ -317,7 +318,7 @@
             ClientSize = new Size(1199, 537);
             Controls.Add(searchUserBtn);
             Controls.Add(searchIcon);
-            Controls.Add(searchTeamTextBox);
+            Controls.Add(searchUserTextBox);
             Controls.Add(managementIcon);
             Controls.Add(userManagementLabel);
             Controls.Add(administrationGroupBox);
@@ -355,7 +356,7 @@
         private ComboBox rolComboBox;
         private TextBox userMailTextBox;
         private TextBox userPasswordTextBox;
-        private TextBox searchTeamTextBox;
+        private TextBox searchUserTextBox;
         private FontAwesome.Sharp.IconPictureBox searchIcon;
         private FontAwesome.Sharp.IconButton searchUserBtn;
         private ErrorProvider userErrorProvider;

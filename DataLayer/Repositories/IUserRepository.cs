@@ -14,7 +14,7 @@ namespace DataLayer.Repositories
         public void CreateUser(User user);
         public void UpdateUser(User user);
         public void DeleteUser(int userId);
-        //get roles
         IEnumerable<User> GetRoles();
+        IEnumerable<User> SearchUser(string search);
     }
 }

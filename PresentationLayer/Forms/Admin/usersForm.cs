@@ -167,5 +167,14 @@ namespace PresentationLayer.Forms
             userMailTextBox.Text = "";
             rolComboBox.SelectedIndex = 0;
         }
+
+        private void searchUserTextBox_TextChanged(object sender, EventArgs e)
+        {
+            usersDataGrip.DataSource = _userService.SearchUser(searchUserTextBox.Text);
+            if(searchUserTextBox.Text == "")
+            {
+                LoadData();
+            }
+        }
     }
 }

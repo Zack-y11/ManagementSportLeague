@@ -57,11 +57,14 @@ namespace PresentationLayer.Forms
                     if (!result.IsValid)
                     {
                         DisplayValidatorTeam(result);
+                        MessageBox.Show("The team has not been created.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
                         _teamService.UpdateTeam(team);
                         isUpdating = false;
+                        MessageBox.Show("Team created successfully");
+                        ClearData();
                     }
                 }
                 else
@@ -79,10 +82,13 @@ namespace PresentationLayer.Forms
                     if (!result.IsValid)
                     {
                         DisplayValidatorTeam(result);
+                        MessageBox.Show("The team has not been created.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
                         _teamService.AddTeam(team);
+                        MessageBox.Show("Team created successfully");
+                        ClearData();
                     }
 
                 }
@@ -90,15 +96,15 @@ namespace PresentationLayer.Forms
             }
             catch (ArgumentNullException ex)
             {
-                MessageBox.Show("Uno de los valores proporcionados es nulo: " + ex.Message);
+                MessageBox.Show("One of the provided values ​​is null:   " + ex.Message);
             }
             catch (InvalidOperationException ex)
             {
-                MessageBox.Show("Operación inválida: " + ex.Message);
+                MessageBox.Show("Non valid operation: " + ex.Message);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocurrió un error: " + ex.Message);
+                MessageBox.Show("An error ocurred" + ex.Message);
             }
 
         }
@@ -116,7 +122,7 @@ namespace PresentationLayer.Forms
             }
             else
             {
-                MessageBox.Show("Seleccione una categoria para editar");
+                MessageBox.Show("Select a category to edit");
             }
         }
 
@@ -124,15 +130,15 @@ namespace PresentationLayer.Forms
         {
             if (activeTeamsDataGrip.SelectedRows.Count < 1)
             {
-                MessageBox.Show("Debe seleccionar una fila para eliminar", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("You must select a row to delete", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
                 var delete = new DialogResult();
-                delete = MessageBox.Show("¿Está seguro de que desea eliminar este equipo?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                delete = MessageBox.Show("Are you sure you want to delete this Team?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (delete == DialogResult.Yes)
                 {
-                    int id= Convert.ToInt32(activeTeamsDataGrip.CurrentRow.Cells["Id"].Value);
+                    int id = Convert.ToInt32(activeTeamsDataGrip.CurrentRow.Cells["Id"].Value);
                     _teamService.DeleteTeam(id);
                     LoadData();
                 }
@@ -141,12 +147,12 @@ namespace PresentationLayer.Forms
         private void DisplayValidatorTeam(ValidationResult result)
         {
             teamErrorProvider.Clear();
-            foreach(var failure in result.Errors)
+            foreach (var failure in result.Errors)
             {
                 switch (failure.PropertyName)
                 {
                     case "ManagerId":
-                        teamErrorProvider.SetError(coachComboBox, failure.ErrorMessage); 
+                        teamErrorProvider.SetError(coachComboBox, failure.ErrorMessage);
                         break;
                     case "TeamName":
                         teamErrorProvider.SetError(teamNameTextBox, failure.ErrorMessage);
@@ -161,6 +167,23 @@ namespace PresentationLayer.Forms
                         teamErrorProvider.SetError(pointsTextBox, failure.ErrorMessage);
                         break;
                 }
+            }
+        }
+        public void ClearData()
+        {
+            teamNameTextBox.Text = string.Empty;
+            coachComboBox.SelectedIndex = -1;
+            winsTextBox.Text = string.Empty;
+            loosesTextBox.Text = string.Empty;
+            pointsTextBox.Text = string.Empty;
+        }
+
+        private void searchTeamTextBox_TextChanged(object sender, EventArgs e)
+        {
+            activeTeamsDataGrip.DataSource = _teamService.SearchTeam(searchTeamTextBox.Text);
+            if(searchTeamTextBox.Text == "")
+            {
+                LoadData();
             }
         }
     }

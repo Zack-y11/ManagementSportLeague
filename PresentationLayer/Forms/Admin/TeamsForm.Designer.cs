@@ -102,6 +102,7 @@
             searchTeamTextBox.PlaceholderText = "All teams";
             searchTeamTextBox.Size = new Size(574, 26);
             searchTeamTextBox.TabIndex = 2;
+            searchTeamTextBox.TextChanged += searchTeamTextBox_TextChanged;
             // 
             // searchIcon
             // 

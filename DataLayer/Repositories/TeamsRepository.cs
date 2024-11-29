@@ -71,16 +71,19 @@ namespace DataLayer.Repositories
         {
             using(var connection = _dbConnection.GetConnection())
             {
-                string query = @"SELECT 
-                            t.TeamName AS Name,
-                            u.UserId AS Manager,
-                            t.Wins,
-                            t.Loses,
-                            t.Points
-                            FROM Teams t
-                            JOIN Users u ON t.ManagerId = u.UserId
-                            WHERE t.TeamName LIKE @search;";
-                return connection.Query<Team>(query, new { search });
+                string query = @"
+                                SELECT
+                                u.UserId AS ManagerId,
+                                t.TeamName AS TeamName,
+                                t.Wins,
+                                t.Loses,
+                                t.Points,
+                                u.Name AS Manager,
+                                t.TeamId AS TeamId
+                                FROM Teams t
+                                JOIN Users u ON t.ManagerId = u.UserId
+                                WHERE t.TeamName LIKE @TeamName;";
+                return connection.Query<Team>(query, new { TeamName = "%" + search + "%" });
             }
         }
         public IEnumerable<User> GetManagers()

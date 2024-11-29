@@ -37,52 +37,63 @@ namespace PresentationLayer.Forms
 
         private void addUserBtn_Click(object sender, EventArgs e)
         {
-            if (isUpdating)
+            try
             {
-                var user = new User
+                if (isUpdating)
                 {
-                    UserId = (int)usersDataGrip.SelectedRows[0].Cells["UserId"].Value,
-                    Name = addUserTextBox.Text,
-                    Password = userPasswordTextBox.Text,
-                    Email = userMailTextBox.Text,
-                    RoleId = Convert.ToInt32(rolComboBox.SelectedValue)
-
-                };
-                UserValidation userValidation = new UserValidation();
-                ValidationResult result = userValidation.Validate(user);
-                if (!result.IsValid)
-                {
-                    DisplayValidateErrors(result);
+                    var user = new User
+                    {
+                        UserId = (int)usersDataGrip.SelectedRows[0].Cells["UserId"].Value,
+                        Name = addUserTextBox.Text,
+                        Password = userPasswordTextBox.Text,
+                        Email = userMailTextBox.Text,
+                        RoleId = Convert.ToInt32(rolComboBox.SelectedValue)
+                    };
+                    UserValidation userValidation = new UserValidation();
+                    ValidationResult result = userValidation.Validate(user);
+                    if (!result.IsValid)
+                    {
+                        DisplayValidateErrors(result);
+                        MessageBox.Show("User have don't be updated", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        _userService.UpdateUser(user);
+                        isUpdating = false;
+                        MessageBox.Show("User Updated Successfully");
+                        LoadData();
+                        clearData();
+                    }
                 }
                 else
                 {
-                    _userService.UpdateUser(user);
-                    isUpdating = false;
+                    var user = new User
+                    {
+                        Name = addUserTextBox.Text,
+                        Password = userPasswordTextBox.Text,
+                        Email = userMailTextBox.Text,
+                        RoleId = Convert.ToInt32(rolComboBox.SelectedValue)
+                    };
+                    UserValidation userValidation = new UserValidation();
+                    ValidationResult result = userValidation.Validate(user);
+                    if (!result.IsValid)
+                    {
+                        DisplayValidateErrors(result);
+                        MessageBox.Show("User have don't be created", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        _userService.CreateUser(user);
+                        MessageBox.Show("User Created Successfully");
+                        LoadData();
+                        clearData();
+                    }
                 }
-
             }
-            else
+            catch (Exception ex)
             {
-                var user = new User
-                {
-                    Name = addUserTextBox.Text,
-                    Password = userPasswordTextBox.Text,
-                    Email = userMailTextBox.Text,
-                    RoleId = Convert.ToInt32(rolComboBox.SelectedValue)
-                };
-                UserValidation userValidation = new UserValidation();
-                ValidationResult result = userValidation.Validate(user);
-                if (!result.IsValid)
-                {
-                    DisplayValidateErrors(result);
-                }
-                else
-                {
-                    _userService.CreateUser(user);
-                    MessageBox.Show("User Created Successfully");
-                }
+                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            LoadData();
         }
 
         private void editPermissonBtn_Click(object sender, EventArgs e)
@@ -103,21 +114,28 @@ namespace PresentationLayer.Forms
 
         private void deleteUserBtn_Click(object sender, EventArgs e)
         {
-            if (usersDataGrip.SelectedRows.Count < 1)
+            try
             {
-                MessageBox.Show("You have to select a row", "Beware", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                var delete = new DialogResult();
-                delete = MessageBox.Show("¿Are you sure to delete an User?", "Beware", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (delete == DialogResult.Yes)
+                if (usersDataGrip.SelectedRows.Count < 1)
                 {
-                    int id = Convert.ToInt32(usersDataGrip.SelectedRows[0].Cells["UserId"].Value);
-                    _userService.DeleteUser(id);
-                    MessageBox.Show("User Deleted Successfully");
-                    LoadData();
+                    MessageBox.Show("You have to select a row", "Beware", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+                else
+                {
+                    var delete = new DialogResult();
+                    delete = MessageBox.Show("¿Are you sure to delete an User?", "Beware", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (delete == DialogResult.Yes)
+                    {
+                        int id = Convert.ToInt32(usersDataGrip.SelectedRows[0].Cells["UserId"].Value);
+                        _userService.DeleteUser(id);
+                        MessageBox.Show("User Deleted Successfully");
+                        LoadData();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void DisplayValidateErrors(ValidationResult result)
@@ -141,6 +159,13 @@ namespace PresentationLayer.Forms
                         break;
                 }
             }
+        }
+        private void clearData()
+        {
+            addUserTextBox.Text = "";
+            userPasswordTextBox.Text = "";
+            userMailTextBox.Text = "";
+            rolComboBox.SelectedIndex = 0;
         }
     }
 }

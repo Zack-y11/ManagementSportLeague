@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             centerPanel = new Panel();
             contentPanel = new Panel();
             matchInformation = new DataGridView();
@@ -54,9 +55,11 @@
             homeTeamLabels = new Label();
             homeTeamComboBox = new ComboBox();
             createMatchLabel = new Label();
+            matchErrorProvider = new ErrorProvider(components);
             contentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)matchInformation).BeginInit();
             matchPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)matchErrorProvider).BeginInit();
             SuspendLayout();
             // 
             // centerPanel
@@ -357,6 +360,10 @@
             createMatchLabel.TabIndex = 10;
             createMatchLabel.Text = "Create Match";
             // 
+            // matchErrorProvider
+            // 
+            matchErrorProvider.ContainerControl = this;
+            // 
             // MatchesListForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -372,6 +379,7 @@
             ((System.ComponentModel.ISupportInitialize)matchInformation).EndInit();
             matchPanel.ResumeLayout(false);
             matchPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)matchErrorProvider).EndInit();
             ResumeLayout(false);
         }
 
@@ -402,5 +410,6 @@
         private Label matchStatusLabel;
         private DateTimePicker matchDateTimePicker;
         private Label timeLabel;
+        private ErrorProvider matchErrorProvider;
     }
 }

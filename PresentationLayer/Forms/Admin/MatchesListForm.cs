@@ -1,5 +1,7 @@
 ﻿using BusinessLayer.Services;
 using CommonLayer.Models;
+using FluentValidation.Results;
+using PresentationLayer.Validations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,37 +48,70 @@ namespace PresentationLayer.Forms
 
         private void addMatchBtn_Click(object sender, EventArgs e)
         {
-            if (isUpdating)
+            try
             {
-                var match = new Match
+                if (isUpdating)
                 {
-                    HomeTeamId = Convert.ToInt32(homeTeamComboBox.SelectedValue),
-                    AwayTeamId = Convert.ToInt32(awayTeamComboBox.SelectedValue),
-                    StatusId = Convert.ToInt32(statusComboBox.SelectedValue),
-                    Score = scoreTextBox.Text,
-                    MatchDate = matchDateTimePicker.Value,
-                    Fouls = int.Parse(foulsTextBox.Text),
-                    Corners = int.Parse(cornersTextBox.Text),
-                    MatchId = (int)matchInformation.SelectedRows[0].Cells["MatchId"].Value
-                };
-                _matchService.UpdateMatch(match);
-                isUpdating = false;
+                    var match = new Match
+                    {
+                        HomeTeamId = Convert.ToInt32(homeTeamComboBox.SelectedValue),
+                        AwayTeamId = Convert.ToInt32(awayTeamComboBox.SelectedValue),
+                        StatusId = Convert.ToInt32(statusComboBox.SelectedValue),
+                        Score = scoreTextBox.Text,
+                        MatchDate = matchDateTimePicker.Value,
+                        Fouls = int.Parse(foulsTextBox.Text),
+                        Corners = int.Parse(cornersTextBox.Text),
+                        MatchId = (int)matchInformation.SelectedRows[0].Cells["MatchId"].Value
+                    };
+                    MatchValidation matchValidation = new MatchValidation();
+                    var result = matchValidation.Validate(match);
+                    if (!result.IsValid)
+                    {
+                        DisplayMatchValidation(result);
+                        MessageBox.Show("Match have don't be updated", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        _matchService.UpdateMatch(match);
+                        isUpdating = false;
+                        MessageBox.Show("Match updated successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadData();
+                        ClearData();
+                    }
+                }
+                else
+                {
+                    var match = new Match
+                    {
+                        HomeTeamId = Convert.ToInt32(homeTeamComboBox.SelectedValue),
+                        AwayTeamId = Convert.ToInt32(awayTeamComboBox.SelectedValue),
+                        StatusId = Convert.ToInt32(statusComboBox.SelectedValue),
+                        Score = scoreTextBox.Text,
+                        MatchDate = matchDateTimePicker.Value,
+                        Fouls = 0,
+                        Corners = 0
+                    };
+                    MatchValidation matchValidation = new MatchValidation();
+                    var result = matchValidation.Validate(match);
+                    if (!result.IsValid)
+                    {
+                        DisplayMatchValidation(result);
+                        MessageBox.Show("Match have don't be added", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        _matchService.AddMatch(match);
+                        MessageBox.Show("Match added successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadData();
+                        ClearData();
+                    }
+                }
+
             }
-            else
+            catch (Exception ex)
             {
-                var match = new Match
-                {
-                    HomeTeamId = Convert.ToInt32(homeTeamComboBox.SelectedValue),
-                    AwayTeamId = Convert.ToInt32(awayTeamComboBox.SelectedValue),
-                    StatusId = Convert.ToInt32(statusComboBox.SelectedValue),
-                    Score = scoreTextBox.Text,
-                    MatchDate = matchDateTimePicker.Value,
-                    Fouls = 0,
-                    Corners = 0
-                };
-                _matchService.AddMatch(match);
+                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            LoadData();
         }
 
         private void editMatchBtn_Click(object sender, EventArgs e)
@@ -116,6 +151,43 @@ namespace PresentationLayer.Forms
                     LoadData();
                 }
             }
+        }
+        private void DisplayMatchValidation(ValidationResult result)
+        {
+            matchErrorProvider.Clear();
+            foreach (var error in result.Errors)
+            {
+                switch (error.PropertyName)
+                {
+                    case "HomeTeamId":
+                        matchErrorProvider.SetError(homeTeamComboBox, error.ErrorMessage);
+                        break;
+                    case "AwayTeamId":
+                        matchErrorProvider.SetError(awayTeamComboBox, error.ErrorMessage);
+                        break;
+                    case "StatusId":
+                        matchErrorProvider.SetError(statusComboBox, error.ErrorMessage);
+                        break;
+                    case "Score":
+                        matchErrorProvider.SetError(scoreTextBox, error.ErrorMessage);
+                        break;
+                    case "MatchDate":
+                        matchErrorProvider.SetError(matchDateTimePicker, error.ErrorMessage);
+                        break;
+                    case "Fouls":
+                        matchErrorProvider.SetError(foulsTextBox, error.ErrorMessage);
+                        break;
+                    case "Corners":
+                        matchErrorProvider.SetError(cornersTextBox, error.ErrorMessage);
+                        break;
+                }
+            }
+        }
+        public void ClearData()
+        {
+            foulsTextBox.Text = string.Empty;
+            cornersTextBox.Text = string.Empty;
+            scoreTextBox.Text = string.Empty;
         }
     }
 }

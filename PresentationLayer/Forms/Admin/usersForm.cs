@@ -1,5 +1,7 @@
 ﻿using BusinessLayer.Services;
 using CommonLayer.Models;
+using FluentValidation.Results;
+using PresentationLayer.Validations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,8 +48,18 @@ namespace PresentationLayer.Forms
                     RoleId = Convert.ToInt32(rolComboBox.SelectedValue)
 
                 };
-                _userService.UpdateUser(user);
-                isUpdating = false;
+                UserValidation userValidation = new UserValidation();
+                ValidationResult result = userValidation.Validate(user);
+                if (!result.IsValid)
+                {
+                    DisplayValidateErrors(result);
+                }
+                else
+                {
+                    _userService.UpdateUser(user);
+                    isUpdating = false;
+                }
+
             }
             else
             {
@@ -58,7 +70,17 @@ namespace PresentationLayer.Forms
                     Email = userMailTextBox.Text,
                     RoleId = Convert.ToInt32(rolComboBox.SelectedValue)
                 };
-                _userService.CreateUser(user);
+                UserValidation userValidation = new UserValidation();
+                ValidationResult result = userValidation.Validate(user);
+                if (!result.IsValid)
+                {
+                    DisplayValidateErrors(result);
+                }
+                else
+                {
+                    _userService.CreateUser(user);
+                    MessageBox.Show("User Created Successfully");
+                }
             }
             LoadData();
         }
@@ -95,6 +117,28 @@ namespace PresentationLayer.Forms
                     _userService.DeleteUser(id);
                     MessageBox.Show("User Deleted Successfully");
                     LoadData();
+                }
+            }
+        }
+        private void DisplayValidateErrors(ValidationResult result)
+        {
+            userErrorProvider.Clear();
+            foreach (var failure in result.Errors)
+            {
+                switch (failure.PropertyName)
+                {
+                    case "Name":
+                        userErrorProvider.SetError(addUserTextBox, failure.ErrorMessage);
+                        break;
+                    case "Password":
+                        userErrorProvider.SetError(userPasswordTextBox, failure.ErrorMessage);
+                        break;
+                    case "Email":
+                        userErrorProvider.SetError(userMailTextBox, failure.ErrorMessage);
+                        break;
+                    case "RoleId":
+                        userErrorProvider.SetError(rolComboBox, failure.ErrorMessage);
+                        break;
                 }
             }
         }

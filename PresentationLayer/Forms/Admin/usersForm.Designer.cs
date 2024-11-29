@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             administrationGroupBox = new GroupBox();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
@@ -48,21 +49,25 @@
             searchTeamTextBox = new TextBox();
             searchIcon = new FontAwesome.Sharp.IconPictureBox();
             searchUserBtn = new FontAwesome.Sharp.IconButton();
+            userErrorProvider = new ErrorProvider(components);
             administrationGroupBox.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)usersDataGrip).BeginInit();
             ((System.ComponentModel.ISupportInitialize)managementIcon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)searchIcon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)userErrorProvider).BeginInit();
             SuspendLayout();
             // 
             // administrationGroupBox
             // 
             administrationGroupBox.Controls.Add(tabControl1);
             administrationGroupBox.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            administrationGroupBox.Location = new Point(21, 151);
+            administrationGroupBox.Location = new Point(18, 113);
+            administrationGroupBox.Margin = new Padding(3, 2, 3, 2);
             administrationGroupBox.Name = "administrationGroupBox";
-            administrationGroupBox.Size = new Size(1307, 509);
+            administrationGroupBox.Padding = new Padding(3, 2, 3, 2);
+            administrationGroupBox.Size = new Size(1144, 382);
             administrationGroupBox.TabIndex = 1;
             administrationGroupBox.TabStop = false;
             administrationGroupBox.Text = "Management";
@@ -70,10 +75,11 @@
             // tabControl1
             // 
             tabControl1.Controls.Add(tabPage1);
-            tabControl1.Location = new Point(13, 59);
+            tabControl1.Location = new Point(11, 44);
+            tabControl1.Margin = new Padding(3, 2, 3, 2);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1265, 427);
+            tabControl1.Size = new Size(1107, 320);
             tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -90,35 +96,38 @@
             tabPage1.Controls.Add(addUserLabel);
             tabPage1.Controls.Add(addUserBtn);
             tabPage1.Controls.Add(usersDataGrip);
-            tabPage1.Location = new Point(4, 32);
+            tabPage1.Location = new Point(4, 28);
+            tabPage1.Margin = new Padding(3, 2, 3, 2);
             tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3, 3, 3, 3);
-            tabPage1.Size = new Size(1257, 391);
+            tabPage1.Padding = new Padding(3, 2, 3, 2);
+            tabPage1.Size = new Size(1099, 288);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Users";
             tabPage1.UseVisualStyleBackColor = true;
             // 
             // userPasswordTextBox
             // 
-            userPasswordTextBox.Location = new Point(593, 325);
+            userPasswordTextBox.Location = new Point(519, 244);
+            userPasswordTextBox.Margin = new Padding(3, 2, 3, 2);
             userPasswordTextBox.Name = "userPasswordTextBox";
-            userPasswordTextBox.Size = new Size(217, 32);
+            userPasswordTextBox.Size = new Size(190, 27);
             userPasswordTextBox.TabIndex = 15;
             // 
             // userMailTextBox
             // 
-            userMailTextBox.Location = new Point(592, 221);
+            userMailTextBox.Location = new Point(518, 166);
+            userMailTextBox.Margin = new Padding(3, 2, 3, 2);
             userMailTextBox.Name = "userMailTextBox";
-            userMailTextBox.Size = new Size(217, 32);
+            userMailTextBox.Size = new Size(190, 27);
             userMailTextBox.TabIndex = 14;
             // 
             // userMailLabel
             // 
             userMailLabel.AutoSize = true;
             userMailLabel.ForeColor = Color.Black;
-            userMailLabel.Location = new Point(592, 184);
+            userMailLabel.Location = new Point(518, 138);
             userMailLabel.Name = "userMailLabel";
-            userMailLabel.Size = new Size(99, 23);
+            userMailLabel.Size = new Size(79, 19);
             userMailLabel.TabIndex = 13;
             userMailLabel.Text = "User mail";
             // 
@@ -126,9 +135,9 @@
             // 
             userPassword.AutoSize = true;
             userPassword.ForeColor = Color.Black;
-            userPassword.Location = new Point(592, 289);
+            userPassword.Location = new Point(518, 217);
             userPassword.Name = "userPassword";
-            userPassword.Size = new Size(147, 23);
+            userPassword.Size = new Size(115, 19);
             userPassword.TabIndex = 12;
             userPassword.Text = "User Password";
             // 
@@ -140,20 +149,22 @@
             deleteUserBtn.IconColor = Color.White;
             deleteUserBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             deleteUserBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            deleteUserBtn.Location = new Point(827, 317);
+            deleteUserBtn.Location = new Point(724, 238);
+            deleteUserBtn.Margin = new Padding(3, 2, 3, 2);
             deleteUserBtn.Name = "deleteUserBtn";
-            deleteUserBtn.Size = new Size(240, 41);
+            deleteUserBtn.Size = new Size(210, 31);
             deleteUserBtn.TabIndex = 11;
-            deleteUserBtn.Text = "Edit Permisson";
+            deleteUserBtn.Text = "Delete User";
             deleteUserBtn.UseVisualStyleBackColor = false;
             deleteUserBtn.Click += deleteUserBtn_Click;
             // 
             // rolComboBox
             // 
             rolComboBox.FormattingEnabled = true;
-            rolComboBox.Location = new Point(592, 139);
+            rolComboBox.Location = new Point(518, 104);
+            rolComboBox.Margin = new Padding(3, 2, 3, 2);
             rolComboBox.Name = "rolComboBox";
-            rolComboBox.Size = new Size(217, 31);
+            rolComboBox.Size = new Size(190, 27);
             rolComboBox.TabIndex = 10;
             // 
             // editPermissonBtn
@@ -164,9 +175,10 @@
             editPermissonBtn.IconColor = Color.White;
             editPermissonBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             editPermissonBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            editPermissonBtn.Location = new Point(827, 184);
+            editPermissonBtn.Location = new Point(724, 138);
+            editPermissonBtn.Margin = new Padding(3, 2, 3, 2);
             editPermissonBtn.Name = "editPermissonBtn";
-            editPermissonBtn.Size = new Size(240, 43);
+            editPermissonBtn.Size = new Size(210, 32);
             editPermissonBtn.TabIndex = 1;
             editPermissonBtn.Text = "Edit Permisson";
             editPermissonBtn.UseVisualStyleBackColor = false;
@@ -176,26 +188,27 @@
             // 
             roleLabel.AutoSize = true;
             roleLabel.ForeColor = Color.Black;
-            roleLabel.Location = new Point(592, 101);
+            roleLabel.Location = new Point(518, 76);
             roleLabel.Name = "roleLabel";
-            roleLabel.Size = new Size(53, 23);
+            roleLabel.Size = new Size(42, 19);
             roleLabel.TabIndex = 9;
             roleLabel.Text = "Role";
             // 
             // addUserTextBox
             // 
-            addUserTextBox.Location = new Point(592, 48);
+            addUserTextBox.Location = new Point(518, 36);
+            addUserTextBox.Margin = new Padding(3, 2, 3, 2);
             addUserTextBox.Name = "addUserTextBox";
-            addUserTextBox.Size = new Size(217, 32);
+            addUserTextBox.Size = new Size(190, 27);
             addUserTextBox.TabIndex = 7;
             // 
             // addUserLabel
             // 
             addUserLabel.AutoSize = true;
             addUserLabel.ForeColor = Color.Black;
-            addUserLabel.Location = new Point(592, 13);
+            addUserLabel.Location = new Point(518, 10);
             addUserLabel.Name = "addUserLabel";
-            addUserLabel.Size = new Size(108, 23);
+            addUserLabel.Size = new Size(87, 19);
             addUserLabel.TabIndex = 6;
             addUserLabel.Text = "Username";
             // 
@@ -207,9 +220,10 @@
             addUserBtn.IconColor = Color.White;
             addUserBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             addUserBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            addUserBtn.Location = new Point(827, 41);
+            addUserBtn.Location = new Point(724, 31);
+            addUserBtn.Margin = new Padding(3, 2, 3, 2);
             addUserBtn.Name = "addUserBtn";
-            addUserBtn.Size = new Size(240, 43);
+            addUserBtn.Size = new Size(210, 32);
             addUserBtn.TabIndex = 1;
             addUserBtn.Text = "Add User";
             addUserBtn.UseVisualStyleBackColor = false;
@@ -218,10 +232,11 @@
             // usersDataGrip
             // 
             usersDataGrip.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            usersDataGrip.Location = new Point(3, 3);
+            usersDataGrip.Location = new Point(3, 2);
+            usersDataGrip.Margin = new Padding(3, 2, 3, 2);
             usersDataGrip.Name = "usersDataGrip";
             usersDataGrip.RowHeadersWidth = 51;
-            usersDataGrip.Size = new Size(583, 381);
+            usersDataGrip.Size = new Size(510, 286);
             usersDataGrip.TabIndex = 0;
             // 
             // userManagementLabel
@@ -230,9 +245,9 @@
             userManagementLabel.BackColor = Color.Transparent;
             userManagementLabel.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             userManagementLabel.ForeColor = Color.Black;
-            userManagementLabel.Location = new Point(77, 32);
+            userManagementLabel.Location = new Point(67, 24);
             userManagementLabel.Name = "userManagementLabel";
-            userManagementLabel.Size = new Size(218, 27);
+            userManagementLabel.Size = new Size(180, 23);
             userManagementLabel.TabIndex = 2;
             userManagementLabel.Text = "User Management";
             // 
@@ -243,20 +258,22 @@
             managementIcon.IconChar = FontAwesome.Sharp.IconChar.UsersCog;
             managementIcon.IconColor = Color.FromArgb(0, 123, 250);
             managementIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            managementIcon.IconSize = 40;
-            managementIcon.Location = new Point(21, 19);
+            managementIcon.IconSize = 30;
+            managementIcon.Location = new Point(18, 14);
+            managementIcon.Margin = new Padding(3, 2, 3, 2);
             managementIcon.Name = "managementIcon";
-            managementIcon.Size = new Size(40, 40);
+            managementIcon.Size = new Size(35, 30);
             managementIcon.TabIndex = 3;
             managementIcon.TabStop = false;
             // 
             // searchTeamTextBox
             // 
-            searchTeamTextBox.Location = new Point(160, 102);
+            searchTeamTextBox.Location = new Point(140, 76);
+            searchTeamTextBox.Margin = new Padding(3, 2, 3, 2);
             searchTeamTextBox.Multiline = true;
             searchTeamTextBox.Name = "searchTeamTextBox";
             searchTeamTextBox.PlaceholderText = "All Users";
-            searchTeamTextBox.Size = new Size(655, 33);
+            searchTeamTextBox.Size = new Size(574, 26);
             searchTeamTextBox.TabIndex = 4;
             // 
             // searchIcon
@@ -266,10 +283,11 @@
             searchIcon.IconChar = FontAwesome.Sharp.IconChar.Search;
             searchIcon.IconColor = SystemColors.ControlText;
             searchIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            searchIcon.IconSize = 40;
-            searchIcon.Location = new Point(87, 95);
+            searchIcon.IconSize = 30;
+            searchIcon.Location = new Point(76, 71);
+            searchIcon.Margin = new Padding(3, 2, 3, 2);
             searchIcon.Name = "searchIcon";
-            searchIcon.Size = new Size(40, 40);
+            searchIcon.Size = new Size(35, 30);
             searchIcon.TabIndex = 5;
             searchIcon.TabStop = false;
             // 
@@ -280,24 +298,30 @@
             searchUserBtn.IconChar = FontAwesome.Sharp.IconChar.None;
             searchUserBtn.IconColor = Color.Black;
             searchUserBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            searchUserBtn.Location = new Point(865, 106);
+            searchUserBtn.Location = new Point(757, 80);
+            searchUserBtn.Margin = new Padding(3, 2, 3, 2);
             searchUserBtn.Name = "searchUserBtn";
-            searchUserBtn.Size = new Size(240, 39);
+            searchUserBtn.Size = new Size(210, 29);
             searchUserBtn.TabIndex = 6;
             searchUserBtn.Text = "Search";
             searchUserBtn.UseVisualStyleBackColor = false;
             // 
+            // userErrorProvider
+            // 
+            userErrorProvider.ContainerControl = this;
+            // 
             // usersForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1370, 716);
+            ClientSize = new Size(1199, 537);
             Controls.Add(searchUserBtn);
             Controls.Add(searchIcon);
             Controls.Add(searchTeamTextBox);
             Controls.Add(managementIcon);
             Controls.Add(userManagementLabel);
             Controls.Add(administrationGroupBox);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "usersForm";
             Text = "CoachForm";
             administrationGroupBox.ResumeLayout(false);
@@ -307,6 +331,7 @@
             ((System.ComponentModel.ISupportInitialize)usersDataGrip).EndInit();
             ((System.ComponentModel.ISupportInitialize)managementIcon).EndInit();
             ((System.ComponentModel.ISupportInitialize)searchIcon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)userErrorProvider).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -333,5 +358,6 @@
         private TextBox searchTeamTextBox;
         private FontAwesome.Sharp.IconPictureBox searchIcon;
         private FontAwesome.Sharp.IconButton searchUserBtn;
+        private ErrorProvider userErrorProvider;
     }
 }

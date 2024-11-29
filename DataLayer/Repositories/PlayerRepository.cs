@@ -64,17 +64,49 @@ namespace DataLayer.Repositories
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = @"INSERT INTO Users (Email, Password, Name, RoleId)
-                        VALUES (@Email, @Password, @Name, @RoleId);
-                        SELECT CAST(SCOPE_IDENTITY() as int);";
-                connection.QuerySingle<int>(query, new { Email = email, Password = password, Name = name, RoleId = Roles.Player});
+                // Get team ID first since we need it for both operations
+                string teamQuery = "SELECT TeamId FROM Teams WHERE ManagerId = @ManagerId;";
+                int teamId = connection.QuerySingle<int>(teamQuery, new { ManagerId = creatorId });
 
-                query = @"SELECT TeamId FROM Teams WHERE ManagerId = @ManagerId;";
-                int newTeamId = connection.QuerySingle<int>(query, new { ManagerId = creatorId });
+                // MERGE for Users and Players in one transaction
+                string query = @"
+            MERGE INTO Users AS target
+            USING (SELECT @Email AS Email) AS source
+            ON target.Email = source.Email
+            WHEN MATCHED THEN
+                UPDATE SET Password = @Password, Name = @Name
+            WHEN NOT MATCHED THEN
+                INSERT (Email, Password, Name, RoleId)
+                VALUES (@Email, @Password, @Name, @RoleId);
 
-                query = @"INSERT INTO Players (UserId, TeamId, Position, Birthdate, Goals, Assists)
-                        VALUES ((SELECT UserId FROM Users WHERE Email = @Email), @TeamId, @Position, @Birthdate, @Goals, @Assists);";
-                connection.Execute(query, new { Email = email, TeamId = newTeamId, Position = position, Birthdate = birthDate, Goals = goals, Assists = assists });
+            DECLARE @UserId int = (SELECT UserId FROM Users WHERE Email = @Email);
+
+            MERGE INTO Players AS target
+            USING (SELECT @UserId AS UserId) AS source
+            ON target.UserId = source.UserId
+            WHEN MATCHED THEN
+                UPDATE SET 
+                    TeamId = @TeamId,
+                    Position = @Position,
+                    Birthdate = @Birthdate,
+                    Goals = @Goals,
+                    Assists = @Assists
+            WHEN NOT MATCHED THEN
+                INSERT (UserId, TeamId, Position, Birthdate, Goals, Assists)
+                VALUES (@UserId, @TeamId, @Position, @Birthdate, @Goals, @Assists);";
+
+                connection.Execute(query, new
+                {
+                    Email = email,
+                    Password = password,
+                    Name = name,
+                    RoleId = Roles.Player,
+                    TeamId = teamId,
+                    Position = position,
+                    Birthdate = birthDate,
+                    Goals = goals,
+                    Assists = assists
+                });
             }
         }
         public void Add(Player player)

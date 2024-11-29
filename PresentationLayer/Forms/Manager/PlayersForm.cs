@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 
 namespace PresentationLayer.ManagerForms
@@ -70,13 +71,12 @@ namespace PresentationLayer.ManagerForms
             if (playersDataGridView.SelectedRows.Count > 0)
             {
                 textBoxName.Text = playersDataGridView.CurrentRow.Cells["PlayerName"].Value.ToString();
-                /*
                 playerEmailTextBox.Text = playersDataGridView.CurrentRow.Cells["Email"].Value.ToString();
-                winsTextBox.Text = activeTeamsDataGrip.SelectedRows[0].Cells["Wins"].Value.ToString();
-                loosesTextBox.Text = activeTeamsDataGrip.SelectedRows[0].Cells["Loses"].Value.ToString();
-                pointsTextBox.Text = activeTeamsDataGrip.SelectedRows[0].Cells["Points"].Value.ToString();
-                isUpdating = true;
-                */
+                positionTextbox.Text = playersDataGridView.CurrentRow.Cells["Position"].Value.ToString();
+                playerBirthdateDateTimePicker.Value = DateTime.Parse(playersDataGridView.CurrentRow.Cells["Birthdate"].Value.ToString());
+                goalsNumeric.Value = (int)playersDataGridView.CurrentRow.Cells["Goals"].Value;
+                assistsNumeric.Value = (int)playersDataGridView.CurrentRow.Cells["Assists"].Value;
+                playerPasswordTextBox.Text = playersDataGridView.CurrentRow.Cells["Password"].Value.ToString();
             }
             else
             {

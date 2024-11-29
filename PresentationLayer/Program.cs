@@ -33,7 +33,7 @@ namespace PresentationLayer
             var host = CreateHostBuilder().Build();
             ServiceProvider = host.Services;
 
-            Application.Run(ServiceProvider.GetRequiredService<dashboardAdmin>());
+            Application.Run(ServiceProvider.GetRequiredService<LoginForms>());
         }
 
         public static IServiceProvider ServiceProvider { get; private set; }

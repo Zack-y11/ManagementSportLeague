@@ -74,24 +74,26 @@
             // 
             // panelGoalsScored
             // 
+            panelGoalsScored.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             panelGoalsScored.BackColor = Color.FromArgb(202, 138, 4);
             panelGoalsScored.Controls.Add(ipbGoalsScored);
             panelGoalsScored.Controls.Add(labelGoalsScoredStatus);
             panelGoalsScored.Controls.Add(labelGoalsScoredCompetition);
             panelGoalsScored.Controls.Add(labelGoalsScored);
-            panelGoalsScored.Location = new Point(38, 268);
+            panelGoalsScored.Location = new Point(905, 77);
             panelGoalsScored.Name = "panelGoalsScored";
             panelGoalsScored.Size = new Size(312, 152);
             panelGoalsScored.TabIndex = 5;
             // 
             // ipbGoalsScored
             // 
+            ipbGoalsScored.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             ipbGoalsScored.BackColor = Color.Transparent;
             ipbGoalsScored.IconChar = FontAwesome.Sharp.IconChar.SoccerBall;
             ipbGoalsScored.IconColor = Color.White;
             ipbGoalsScored.IconFont = FontAwesome.Sharp.IconFont.Auto;
             ipbGoalsScored.IconSize = 40;
-            ipbGoalsScored.Location = new Point(201, 11);
+            ipbGoalsScored.Location = new Point(252, 11);
             ipbGoalsScored.Name = "ipbGoalsScored";
             ipbGoalsScored.Size = new Size(40, 40);
             ipbGoalsScored.TabIndex = 3;
@@ -110,6 +112,7 @@
             // 
             // labelGoalsScoredCompetition
             // 
+            labelGoalsScoredCompetition.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             labelGoalsScoredCompetition.AutoSize = true;
             labelGoalsScoredCompetition.Font = new Font("Century Gothic", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelGoalsScoredCompetition.ForeColor = Color.White;
@@ -132,18 +135,20 @@
             // 
             // panelGoalsConceded
             // 
+            panelGoalsConceded.Anchor = AnchorStyles.Right;
             panelGoalsConceded.BackColor = Color.FromArgb(37, 99, 235);
             panelGoalsConceded.Controls.Add(ipbGoalsConceded);
             panelGoalsConceded.Controls.Add(labelGoalsConcededStatus);
             panelGoalsConceded.Controls.Add(labelGoalsConcededNumber);
             panelGoalsConceded.Controls.Add(labelGoalsConceded);
-            panelGoalsConceded.Location = new Point(372, 268);
+            panelGoalsConceded.Location = new Point(905, 279);
             panelGoalsConceded.Name = "panelGoalsConceded";
             panelGoalsConceded.Size = new Size(311, 152);
             panelGoalsConceded.TabIndex = 6;
             // 
             // ipbGoalsConceded
             // 
+            ipbGoalsConceded.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             ipbGoalsConceded.BackColor = Color.Transparent;
             ipbGoalsConceded.IconChar = FontAwesome.Sharp.IconChar.SoccerBall;
             ipbGoalsConceded.IconColor = Color.White;
@@ -168,6 +173,7 @@
             // 
             // labelGoalsConcededNumber
             // 
+            labelGoalsConcededNumber.Anchor = AnchorStyles.Right;
             labelGoalsConcededNumber.AutoSize = true;
             labelGoalsConcededNumber.Font = new Font("Century Gothic", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelGoalsConcededNumber.ForeColor = Color.White;
@@ -195,13 +201,14 @@
             panelWins.Controls.Add(labelWinsStatus);
             panelWins.Controls.Add(labelNumberWins);
             panelWins.Controls.Add(labelWins);
-            panelWins.Location = new Point(38, 26);
+            panelWins.Location = new Point(130, 77);
             panelWins.Name = "panelWins";
             panelWins.Size = new Size(312, 152);
             panelWins.TabIndex = 7;
             // 
             // ipbWins
             // 
+            ipbWins.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             ipbWins.BackColor = Color.Transparent;
             ipbWins.IconChar = FontAwesome.Sharp.IconChar.Check;
             ipbWins.IconColor = Color.White;
@@ -229,7 +236,7 @@
             labelNumberWins.AutoSize = true;
             labelNumberWins.Font = new Font("Century Gothic", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelNumberWins.ForeColor = Color.White;
-            labelNumberWins.Location = new Point(105, 48);
+            labelNumberWins.Location = new Point(106, 48);
             labelNumberWins.Name = "labelNumberWins";
             labelNumberWins.Size = new Size(84, 51);
             labelNumberWins.TabIndex = 3;
@@ -248,18 +255,20 @@
             // 
             // panelDraw
             // 
+            panelDraw.Anchor = AnchorStyles.Left;
             panelDraw.BackColor = Color.FromArgb(64, 64, 64);
             panelDraw.Controls.Add(ipbDraw);
             panelDraw.Controls.Add(labelDrawStatus);
             panelDraw.Controls.Add(labelDrawNumber);
             panelDraw.Controls.Add(labelDraw);
-            panelDraw.Location = new Point(372, 26);
+            panelDraw.Location = new Point(130, 290);
             panelDraw.Name = "panelDraw";
             panelDraw.Size = new Size(311, 152);
             panelDraw.TabIndex = 8;
             // 
             // ipbDraw
             // 
+            ipbDraw.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             ipbDraw.BackColor = Color.Transparent;
             ipbDraw.IconChar = FontAwesome.Sharp.IconChar.MinusCircle;
             ipbDraw.IconColor = Color.White;
@@ -306,18 +315,20 @@
             // 
             // panelLoses
             // 
+            panelLoses.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             panelLoses.BackColor = Color.FromArgb(220, 38, 38);
             panelLoses.Controls.Add(ipbLoses);
             panelLoses.Controls.Add(labelLosesStatus);
             panelLoses.Controls.Add(labelLosesNumber);
             panelLoses.Controls.Add(labelLoses);
-            panelLoses.Location = new Point(702, 26);
+            panelLoses.Location = new Point(130, 494);
             panelLoses.Name = "panelLoses";
             panelLoses.Size = new Size(311, 152);
             panelLoses.TabIndex = 9;
             // 
             // ipbLoses
             // 
+            ipbLoses.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             ipbLoses.BackColor = Color.Transparent;
             ipbLoses.IconChar = FontAwesome.Sharp.IconChar.Cancel;
             ipbLoses.IconColor = Color.White;
@@ -364,18 +375,20 @@
             // 
             // panelPoints
             // 
+            panelPoints.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             panelPoints.BackColor = Color.FromArgb(147, 51, 234);
             panelPoints.Controls.Add(ipbPoints);
             panelPoints.Controls.Add(labelPointsStatus);
             panelPoints.Controls.Add(labelPointsNumber);
             panelPoints.Controls.Add(labelPoints);
-            panelPoints.Location = new Point(702, 268);
+            panelPoints.Location = new Point(905, 494);
             panelPoints.Name = "panelPoints";
             panelPoints.Size = new Size(311, 152);
             panelPoints.TabIndex = 10;
             // 
             // ipbPoints
             // 
+            ipbPoints.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             ipbPoints.BackColor = Color.Transparent;
             ipbPoints.IconChar = FontAwesome.Sharp.IconChar.RankingStar;
             ipbPoints.IconColor = Color.White;
@@ -424,7 +437,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1041, 575);
+            ClientSize = new Size(1384, 715);
             Controls.Add(panelPoints);
             Controls.Add(panelLoses);
             Controls.Add(panelDraw);

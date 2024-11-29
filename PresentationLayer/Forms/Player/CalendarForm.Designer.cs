@@ -38,16 +38,19 @@
             calendarIcon = new FontAwesome.Sharp.IconPictureBox();
             headerPanel = new Panel();
             contentCalendarPanel = new Panel();
+            agendaIconPictureBox = new FontAwesome.Sharp.IconPictureBox();
             calendarGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)calendarDataGrip).BeginInit();
             ((System.ComponentModel.ISupportInitialize)calendarIcon).BeginInit();
             headerPanel.SuspendLayout();
             contentCalendarPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)agendaIconPictureBox).BeginInit();
             SuspendLayout();
             // 
             // calendarGroupBox
             // 
             calendarGroupBox.BackColor = Color.White;
+            calendarGroupBox.Controls.Add(agendaIconPictureBox);
             calendarGroupBox.Controls.Add(calendarDataGrip);
             calendarGroupBox.Controls.Add(yearComboBox);
             calendarGroupBox.Controls.Add(yearLabel);
@@ -150,6 +153,20 @@
             contentCalendarPanel.Size = new Size(1223, 606);
             contentCalendarPanel.TabIndex = 4;
             // 
+            // agendaIconPictureBox
+            // 
+            agendaIconPictureBox.BackColor = Color.Transparent;
+            agendaIconPictureBox.ForeColor = SystemColors.HotTrack;
+            agendaIconPictureBox.IconChar = FontAwesome.Sharp.IconChar.ContactBook;
+            agendaIconPictureBox.IconColor = SystemColors.HotTrack;
+            agendaIconPictureBox.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            agendaIconPictureBox.IconSize = 57;
+            agendaIconPictureBox.Location = new Point(444, 48);
+            agendaIconPictureBox.Name = "agendaIconPictureBox";
+            agendaIconPictureBox.Size = new Size(61, 57);
+            agendaIconPictureBox.TabIndex = 5;
+            agendaIconPictureBox.TabStop = false;
+            // 
             // CalendarForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -166,6 +183,7 @@
             headerPanel.ResumeLayout(false);
             headerPanel.PerformLayout();
             contentCalendarPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)agendaIconPictureBox).EndInit();
             ResumeLayout(false);
         }
 
@@ -181,5 +199,6 @@
         private ComboBox yearComboBox;
         private Panel headerPanel;
         private Panel contentCalendarPanel;
+        private FontAwesome.Sharp.IconPictureBox agendaIconPictureBox;
     }
 }

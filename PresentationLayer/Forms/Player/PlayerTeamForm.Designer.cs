@@ -28,17 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlayerTeamForm));
             headerPanel = new Panel();
             titleIcon = new FontAwesome.Sharp.IconPictureBox();
             titleLabel = new Label();
             teamGroupBox = new GroupBox();
             teamDataGrip = new DataGridView();
             contentTeamPanel = new Panel();
+            soccerTeamspictureBox = new PictureBox();
             headerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)titleIcon).BeginInit();
             teamGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)teamDataGrip).BeginInit();
             contentTeamPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)soccerTeamspictureBox).BeginInit();
             SuspendLayout();
             // 
             // headerPanel
@@ -100,12 +103,23 @@
             // contentTeamPanel
             // 
             contentTeamPanel.BackColor = SystemColors.ControlLightLight;
+            contentTeamPanel.Controls.Add(soccerTeamspictureBox);
             contentTeamPanel.Controls.Add(teamGroupBox);
             contentTeamPanel.Dock = DockStyle.Fill;
             contentTeamPanel.Location = new Point(0, 100);
             contentTeamPanel.Name = "contentTeamPanel";
             contentTeamPanel.Size = new Size(1381, 595);
             contentTeamPanel.TabIndex = 2;
+            // 
+            // soccerTeamspictureBox
+            // 
+            soccerTeamspictureBox.Image = (Image)resources.GetObject("soccerTeamspictureBox.Image");
+            soccerTeamspictureBox.Location = new Point(1108, 390);
+            soccerTeamspictureBox.Name = "soccerTeamspictureBox";
+            soccerTeamspictureBox.Size = new Size(161, 152);
+            soccerTeamspictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            soccerTeamspictureBox.TabIndex = 2;
+            soccerTeamspictureBox.TabStop = false;
             // 
             // PlayerTeamForm
             // 
@@ -122,6 +136,7 @@
             teamGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)teamDataGrip).EndInit();
             contentTeamPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)soccerTeamspictureBox).EndInit();
             ResumeLayout(false);
         }
 
@@ -133,5 +148,6 @@
         private GroupBox teamGroupBox;
         private DataGridView teamDataGrip;
         private Panel contentTeamPanel;
+        private PictureBox soccerTeamspictureBox;
     }
 }

@@ -28,17 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PositionForm));
             headerPanel = new Panel();
             leaguePositionLabel = new Label();
             trophieIcon = new FontAwesome.Sharp.IconPictureBox();
             positionGroupBox = new GroupBox();
             leaguePositionDataGrip = new DataGridView();
             positionContentPanel = new Panel();
+            soccerFieldpictureBox = new PictureBox();
             headerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)trophieIcon).BeginInit();
             positionGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)leaguePositionDataGrip).BeginInit();
             positionContentPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)soccerFieldpictureBox).BeginInit();
             SuspendLayout();
             // 
             // headerPanel
@@ -101,12 +104,23 @@
             // positionContentPanel
             // 
             positionContentPanel.BackColor = SystemColors.ControlLightLight;
+            positionContentPanel.Controls.Add(soccerFieldpictureBox);
             positionContentPanel.Controls.Add(positionGroupBox);
             positionContentPanel.Dock = DockStyle.Fill;
             positionContentPanel.Location = new Point(0, 100);
             positionContentPanel.Name = "positionContentPanel";
             positionContentPanel.Size = new Size(1227, 621);
             positionContentPanel.TabIndex = 2;
+            // 
+            // soccerFieldpictureBox
+            // 
+            soccerFieldpictureBox.Image = (Image)resources.GetObject("soccerFieldpictureBox.Image");
+            soccerFieldpictureBox.Location = new Point(1039, 467);
+            soccerFieldpictureBox.Name = "soccerFieldpictureBox";
+            soccerFieldpictureBox.Size = new Size(176, 142);
+            soccerFieldpictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            soccerFieldpictureBox.TabIndex = 21;
+            soccerFieldpictureBox.TabStop = false;
             // 
             // PositionForm
             // 
@@ -123,6 +137,7 @@
             positionGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)leaguePositionDataGrip).EndInit();
             positionContentPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)soccerFieldpictureBox).EndInit();
             ResumeLayout(false);
         }
 
@@ -134,5 +149,6 @@
         private GroupBox positionGroupBox;
         private DataGridView leaguePositionDataGrip;
         private Panel positionContentPanel;
+        private PictureBox soccerFieldpictureBox;
     }
 }

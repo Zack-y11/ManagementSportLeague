@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsPlayerForm));
             headerPanel = new Panel();
             shildIcon = new FontAwesome.Sharp.IconPictureBox();
             label2 = new Label();
@@ -36,10 +37,12 @@
             pdfLabel = new Label();
             PDFButton = new FontAwesome.Sharp.IconButton();
             settingsContentPanel = new Panel();
+            reportStatuspictureBox = new PictureBox();
             headerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)shildIcon).BeginInit();
             contentGroupBox.SuspendLayout();
             settingsContentPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)reportStatuspictureBox).BeginInit();
             SuspendLayout();
             // 
             // headerPanel
@@ -137,6 +140,7 @@
             // settingsContentPanel
             // 
             settingsContentPanel.BackColor = SystemColors.ControlLightLight;
+            settingsContentPanel.Controls.Add(reportStatuspictureBox);
             settingsContentPanel.Controls.Add(contentGroupBox);
             settingsContentPanel.Dock = DockStyle.Fill;
             settingsContentPanel.Location = new Point(0, 100);
@@ -144,14 +148,24 @@
             settingsContentPanel.Size = new Size(1331, 654);
             settingsContentPanel.TabIndex = 8;
             // 
-            // SettingsForm
+            // reportStatuspictureBox
+            // 
+            reportStatuspictureBox.Image = (Image)resources.GetObject("reportStatuspictureBox.Image");
+            reportStatuspictureBox.Location = new Point(816, 222);
+            reportStatuspictureBox.Name = "reportStatuspictureBox";
+            reportStatuspictureBox.Size = new Size(174, 167);
+            reportStatuspictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            reportStatuspictureBox.TabIndex = 9;
+            reportStatuspictureBox.TabStop = false;
+            // 
+            // SettingsPlayerForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1331, 754);
             Controls.Add(settingsContentPanel);
             Controls.Add(headerPanel);
-            Name = "SettingsForm";
+            Name = "SettingsPlayerForm";
             Text = "SettingsForm";
             WindowState = FormWindowState.Maximized;
             headerPanel.ResumeLayout(false);
@@ -160,6 +174,7 @@
             contentGroupBox.ResumeLayout(false);
             contentGroupBox.PerformLayout();
             settingsContentPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)reportStatuspictureBox).EndInit();
             ResumeLayout(false);
         }
 
@@ -172,5 +187,6 @@
         private FontAwesome.Sharp.IconButton PDFButton;
         private Label pdfLabel;
         private Panel settingsContentPanel;
+        private PictureBox reportStatuspictureBox;
     }
 }

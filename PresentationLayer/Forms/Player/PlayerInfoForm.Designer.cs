@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlayerInfoForm));
             contentPanel = new Panel();
             playerDataGrip = new DataGridView();
             playerSportInformation = new DataGridView();
@@ -37,12 +38,14 @@
             statsIcon = new FontAwesome.Sharp.IconPictureBox();
             headerLabel = new Label();
             contentPlayerPanel = new Panel();
+            playerSoccerpictureBox = new PictureBox();
             contentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)playerDataGrip).BeginInit();
             ((System.ComponentModel.ISupportInitialize)playerSportInformation).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)statsIcon).BeginInit();
             contentPlayerPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)playerSoccerpictureBox).BeginInit();
             SuspendLayout();
             // 
             // contentPanel
@@ -135,12 +138,23 @@
             // 
             // contentPlayerPanel
             // 
+            contentPlayerPanel.Controls.Add(playerSoccerpictureBox);
             contentPlayerPanel.Controls.Add(contentPanel);
             contentPlayerPanel.Dock = DockStyle.Fill;
             contentPlayerPanel.Location = new Point(0, 100);
             contentPlayerPanel.Name = "contentPlayerPanel";
             contentPlayerPanel.Size = new Size(1362, 591);
             contentPlayerPanel.TabIndex = 6;
+            // 
+            // playerSoccerpictureBox
+            // 
+            playerSoccerpictureBox.Image = (Image)resources.GetObject("playerSoccerpictureBox.Image");
+            playerSoccerpictureBox.Location = new Point(1089, 287);
+            playerSoccerpictureBox.Name = "playerSoccerpictureBox";
+            playerSoccerpictureBox.Size = new Size(236, 258);
+            playerSoccerpictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            playerSoccerpictureBox.TabIndex = 5;
+            playerSoccerpictureBox.TabStop = false;
             // 
             // PlayerInfoForm
             // 
@@ -159,6 +173,7 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)statsIcon).EndInit();
             contentPlayerPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)playerSoccerpictureBox).EndInit();
             ResumeLayout(false);
         }
 
@@ -173,5 +188,6 @@
         private FontAwesome.Sharp.IconPictureBox statsIcon;
         private DataGridView playerDataGrip;
         private Panel contentPlayerPanel;
+        private PictureBox playerSoccerpictureBox;
     }
 }

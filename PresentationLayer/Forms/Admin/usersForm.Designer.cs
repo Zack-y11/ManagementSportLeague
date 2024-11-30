@@ -30,6 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             administrationGroupBox = new GroupBox();
+            PDFBtn = new FontAwesome.Sharp.IconButton();
             deleteUserBtn = new FontAwesome.Sharp.IconButton();
             editPermissonBtn = new FontAwesome.Sharp.IconButton();
             addUserBtn = new FontAwesome.Sharp.IconButton();
@@ -58,6 +59,7 @@
             // administrationGroupBox
             // 
             administrationGroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            administrationGroupBox.Controls.Add(PDFBtn);
             administrationGroupBox.Controls.Add(deleteUserBtn);
             administrationGroupBox.Controls.Add(editPermissonBtn);
             administrationGroupBox.Controls.Add(addUserBtn);
@@ -73,10 +75,27 @@
             administrationGroupBox.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             administrationGroupBox.Location = new Point(21, 151);
             administrationGroupBox.Name = "administrationGroupBox";
-            administrationGroupBox.Size = new Size(1295, 535);
+            administrationGroupBox.Size = new Size(1321, 535);
             administrationGroupBox.TabIndex = 1;
             administrationGroupBox.TabStop = false;
             administrationGroupBox.Text = "Management";
+            // 
+            // PDFBtn
+            // 
+            PDFBtn.BackColor = Color.YellowGreen;
+            PDFBtn.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
+            PDFBtn.ForeColor = Color.White;
+            PDFBtn.IconChar = FontAwesome.Sharp.IconChar.Newspaper;
+            PDFBtn.IconColor = Color.White;
+            PDFBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            PDFBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            PDFBtn.Location = new Point(818, 138);
+            PDFBtn.Name = "PDFBtn";
+            PDFBtn.Size = new Size(231, 40);
+            PDFBtn.TabIndex = 40;
+            PDFBtn.Text = "   Generate PDF";
+            PDFBtn.UseVisualStyleBackColor = false;
+            PDFBtn.Click += PDFBtn_Click;
             // 
             // deleteUserBtn
             // 
@@ -86,7 +105,7 @@
             deleteUserBtn.IconColor = Color.White;
             deleteUserBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             deleteUserBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            deleteUserBtn.Location = new Point(767, 131);
+            deleteUserBtn.Location = new Point(563, 137);
             deleteUserBtn.Name = "deleteUserBtn";
             deleteUserBtn.Size = new Size(240, 41);
             deleteUserBtn.TabIndex = 11;
@@ -102,7 +121,7 @@
             editPermissonBtn.IconColor = Color.White;
             editPermissonBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             editPermissonBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            editPermissonBtn.Location = new Point(384, 131);
+            editPermissonBtn.Location = new Point(286, 135);
             editPermissonBtn.Name = "editPermissonBtn";
             editPermissonBtn.Size = new Size(240, 43);
             editPermissonBtn.TabIndex = 1;
@@ -118,7 +137,7 @@
             addUserBtn.IconColor = Color.White;
             addUserBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             addUserBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            addUserBtn.Location = new Point(34, 131);
+            addUserBtn.Location = new Point(6, 135);
             addUserBtn.Name = "addUserBtn";
             addUserBtn.Size = new Size(240, 43);
             addUserBtn.TabIndex = 1;
@@ -133,7 +152,7 @@
             usersDataGrip.Location = new Point(84, 252);
             usersDataGrip.Name = "usersDataGrip";
             usersDataGrip.RowHeadersWidth = 51;
-            usersDataGrip.Size = new Size(1124, 250);
+            usersDataGrip.Size = new Size(1150, 250);
             usersDataGrip.TabIndex = 0;
             // 
             // userPassword
@@ -319,5 +338,6 @@
         private FontAwesome.Sharp.IconPictureBox searchIcon;
         private FontAwesome.Sharp.IconButton searchUserBtn;
         private ErrorProvider userErrorProvider;
+        private FontAwesome.Sharp.IconButton PDFBtn;
     }
 }

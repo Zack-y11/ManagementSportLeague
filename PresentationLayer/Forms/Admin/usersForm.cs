@@ -11,6 +11,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuestPDF.Fluent;
+using QuestPDF.Helpers;
+using QuestPDF.Infrastructure;
+
 
 namespace PresentationLayer.Forms
 {
@@ -176,6 +180,119 @@ namespace PresentationLayer.Forms
                 LoadData();
             }
         }
+
+        private void PDFBtn_Click(object sender, EventArgs e)
+        {
+            GeneratePDFAsync();
+        }
+
+        private async Task GeneratePDFAsync()
+        {
+            try
+            {
+                PDFBtn.Enabled = false;
+                Cursor = Cursors.WaitCursor;
+
+                var userList = new List<User>();
+
+                foreach (DataGridViewRow row in usersDataGrip.Rows)
+                {
+                    if (row.IsNewRow) continue;
+
+                    var user = new User
+                    {
+                        Name = row.Cells["Name"].Value?.ToString() ?? string.Empty,
+                        Password = row.Cells["Password"].Value?.ToString() ?? string.Empty,
+                        Email = row.Cells["Email"].Value?.ToString() ?? string.Empty,
+                        RolelName = row.Cells["RolelName"].Value?.ToString() ?? string.Empty,
+                    };
+
+                    userList.Add(user);
+                }
+
+                var document = Document.Create(container =>
+                {
+                    container.Page(page =>
+                    {
+                        page.Size(PageSizes.A3.Landscape());
+                        page.Margin(1, Unit.Centimetre);
+
+                        page.Header().Height(50).Background(Colors.Green.Accent4)
+                            .Text("List of Users Report")
+                            .Bold().AlignCenter().FontSize(24).FontColor(Colors.White);
+
+                        page.Content()
+                            .Column(column =>
+                            {
+                                column.Item().Padding(1, Unit.Centimetre).Table(table =>
+                                {
+                                    table.ColumnsDefinition(columns =>
+                                    {
+                                        columns.RelativeColumn(2);
+                                        columns.RelativeColumn(2);
+                                        columns.RelativeColumn(3);
+                                        columns.RelativeColumn(2);
+                                    });
+
+                                    table.Header(header =>
+                                    {
+                                        header.Cell().Element(x => CellStyle(x)).Background(Colors.Grey.Lighten1)
+                                            .Text("Name").Bold().FontColor(Colors.White);
+
+                                        header.Cell().Element(x => CellStyle(x)).Background(Colors.Grey.Lighten1)
+                                            .Text("Password").Bold().FontColor(Colors.White);
+
+                                        header.Cell().Element(x => CellStyle(x)).Background(Colors.Grey.Lighten1)
+                                            .Text("Email").Bold().FontColor(Colors.White);
+
+                                        header.Cell().Element(x => CellStyle(x)).Background(Colors.Grey.Lighten1)
+                                            .Text("Role ").Bold().FontColor(Colors.White);
+                                    });
+
+                                    bool isAlternate = false;
+                                    foreach (var user in userList)
+                                    {
+                                        var backgroundColor = isAlternate ? Colors.Grey.Lighten3 : Colors.White;
+                                        isAlternate = !isAlternate;
+
+                                        table.Cell().Element(x => CellStyle(x)).Background(backgroundColor)
+                                            .Text(user.Name)
+                                            .Style(TextStyle.Default.Size(12));
+
+                                        table.Cell().Element(x => CellStyle(x)).Background(backgroundColor)
+                                            .Text(user.Password)
+                                            .Style(TextStyle.Default.Size(12));
+
+                                        table.Cell().Element(x => CellStyle(x)).Background(backgroundColor)
+                                            .Text(user.Email)
+                                            .Style(TextStyle.Default.Size(12));
+
+                                        table.Cell().Element(x => CellStyle(x)).Background(backgroundColor)
+                                            .Text(user.RolelName)
+                                            .Style(TextStyle.Default.Size(12));
+                                    }
+                                });
+                            });
+                    });
+                });
+
+                await Task.Run(() => document.GeneratePdfAndShow());
+                MessageBox.Show("PDF report generated perfectly!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error generating PDF: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                PDFBtn.Enabled = true;
+                Cursor = Cursors.Default;
+            }
+        }
+
+        private QuestPDF.Infrastructure.IContainer CellStyle(QuestPDF.Infrastructure.IContainer container) => container
+            .Border(1)
+            .BorderColor(Colors.Grey.Darken1);
 
     }
 }

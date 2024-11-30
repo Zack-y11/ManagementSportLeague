@@ -33,8 +33,6 @@
             userManagementLabel = new Label();
             administrationGroupBox = new GroupBox();
             logOutLabel = new Label();
-            pdfLabel = new Label();
-            PDFBtn = new FontAwesome.Sharp.IconButton();
             logOutBtn = new FontAwesome.Sharp.IconButton();
             headerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)managementIcon).BeginInit();
@@ -83,8 +81,6 @@
             // 
             administrationGroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             administrationGroupBox.Controls.Add(logOutLabel);
-            administrationGroupBox.Controls.Add(pdfLabel);
-            administrationGroupBox.Controls.Add(PDFBtn);
             administrationGroupBox.Controls.Add(logOutBtn);
             administrationGroupBox.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             administrationGroupBox.Location = new Point(137, 164);
@@ -101,42 +97,11 @@
             logOutLabel.BackColor = Color.Transparent;
             logOutLabel.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             logOutLabel.ForeColor = Color.Black;
-            logOutLabel.Location = new Point(183, 266);
+            logOutLabel.Location = new Point(174, 104);
             logOutLabel.Name = "logOutLabel";
             logOutLabel.Size = new Size(94, 27);
             logOutLabel.TabIndex = 11;
             logOutLabel.Text = "Log out";
-            // 
-            // pdfLabel
-            // 
-            pdfLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            pdfLabel.AutoSize = true;
-            pdfLabel.BackColor = Color.Transparent;
-            pdfLabel.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            pdfLabel.ForeColor = Color.Black;
-            pdfLabel.Location = new Point(183, 49);
-            pdfLabel.Name = "pdfLabel";
-            pdfLabel.Size = new Size(165, 27);
-            pdfLabel.TabIndex = 3;
-            pdfLabel.Text = "Generate PDF";
-            // 
-            // PDFBtn
-            // 
-            PDFBtn.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            PDFBtn.BackColor = Color.YellowGreen;
-            PDFBtn.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
-            PDFBtn.ForeColor = Color.White;
-            PDFBtn.IconChar = FontAwesome.Sharp.IconChar.Newspaper;
-            PDFBtn.IconColor = Color.White;
-            PDFBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            PDFBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            PDFBtn.Location = new Point(174, 125);
-            PDFBtn.Name = "PDFBtn";
-            PDFBtn.Size = new Size(588, 71);
-            PDFBtn.TabIndex = 10;
-            PDFBtn.Text = "Generate PDF";
-            PDFBtn.UseVisualStyleBackColor = false;
-            //PDFBtn.Click += PDFBtn_Click;
             // 
             // logOutBtn
             // 
@@ -148,7 +113,7 @@
             logOutBtn.IconColor = Color.White;
             logOutBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             logOutBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            logOutBtn.Location = new Point(174, 349);
+            logOutBtn.Location = new Point(174, 173);
             logOutBtn.Name = "logOutBtn";
             logOutBtn.Size = new Size(588, 62);
             logOutBtn.TabIndex = 9;
@@ -178,8 +143,6 @@
         private Label userManagementLabel;
         private FontAwesome.Sharp.IconPictureBox managementIcon;
         private FontAwesome.Sharp.IconButton logOutBtn;
-        private FontAwesome.Sharp.IconButton PDFBtn;
-        private Label pdfLabel;
         private Label logOutLabel;
     }
 }

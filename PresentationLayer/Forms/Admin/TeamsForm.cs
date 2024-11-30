@@ -181,10 +181,12 @@ namespace PresentationLayer.Forms
         private void searchTeamTextBox_TextChanged(object sender, EventArgs e)
         {
             activeTeamsDataGrip.DataSource = _teamService.SearchTeam(searchTeamTextBox.Text);
-            if(searchTeamTextBox.Text == "")
+            if (searchTeamTextBox.Text == "")
             {
                 LoadData();
             }
         }
+
+        
     }
 }

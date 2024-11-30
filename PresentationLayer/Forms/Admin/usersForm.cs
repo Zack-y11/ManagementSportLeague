@@ -171,10 +171,11 @@ namespace PresentationLayer.Forms
         private void searchUserTextBox_TextChanged(object sender, EventArgs e)
         {
             usersDataGrip.DataSource = _userService.SearchUser(searchUserTextBox.Text);
-            if(searchUserTextBox.Text == "")
+            if (searchUserTextBox.Text == "")
             {
                 LoadData();
             }
         }
+
     }
 }

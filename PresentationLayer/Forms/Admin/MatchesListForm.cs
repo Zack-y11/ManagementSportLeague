@@ -189,5 +189,7 @@ namespace PresentationLayer.Forms
             cornersTextBox.Text = string.Empty;
             scoreTextBox.Text = string.Empty;
         }
+
+       
     }
 }

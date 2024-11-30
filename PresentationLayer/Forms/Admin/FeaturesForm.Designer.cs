@@ -86,7 +86,7 @@
             leagueGroupBox.Controls.Add(leagNameTextBox);
             leagueGroupBox.Controls.Add(leagueNameLabel);
             leagueGroupBox.Font = new Font("Century Gothic", 12.2F, FontStyle.Bold);
-            leagueGroupBox.Location = new Point(62, 81);
+            leagueGroupBox.Location = new Point(65, 75);
             leagueGroupBox.Name = "leagueGroupBox";
             leagueGroupBox.Size = new Size(449, 208);
             leagueGroupBox.TabIndex = 1;
@@ -130,12 +130,13 @@
             // 
             // teamSettingsGroupBox
             // 
+            teamSettingsGroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             teamSettingsGroupBox.Controls.Add(numberTeamComboBox);
             teamSettingsGroupBox.Controls.Add(playerComboBox);
             teamSettingsGroupBox.Controls.Add(teamPlayerLabel);
             teamSettingsGroupBox.Controls.Add(teamNumberLabel);
             teamSettingsGroupBox.Font = new Font("Century Gothic", 12.2F, FontStyle.Bold);
-            teamSettingsGroupBox.Location = new Point(642, 81);
+            teamSettingsGroupBox.Location = new Point(879, 75);
             teamSettingsGroupBox.Name = "teamSettingsGroupBox";
             teamSettingsGroupBox.Size = new Size(449, 208);
             teamSettingsGroupBox.TabIndex = 4;
@@ -180,12 +181,13 @@
             // 
             // matchRulesGroupBox
             // 
+            matchRulesGroupBox.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             matchRulesGroupBox.Controls.Add(matchDurationComboBox);
             matchRulesGroupBox.Controls.Add(substitutionsComboBox);
             matchRulesGroupBox.Controls.Add(substitutionLabel);
             matchRulesGroupBox.Controls.Add(matchDurationLabel);
             matchRulesGroupBox.Font = new Font("Century Gothic", 12.2F, FontStyle.Bold);
-            matchRulesGroupBox.Location = new Point(62, 352);
+            matchRulesGroupBox.Location = new Point(65, 338);
             matchRulesGroupBox.Name = "matchRulesGroupBox";
             matchRulesGroupBox.Size = new Size(449, 208);
             matchRulesGroupBox.TabIndex = 4;
@@ -230,6 +232,7 @@
             // 
             // pointsRulesGroupBox
             // 
+            pointsRulesGroupBox.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             pointsRulesGroupBox.Controls.Add(losePointsComboBox);
             pointsRulesGroupBox.Controls.Add(losePointsLabel);
             pointsRulesGroupBox.Controls.Add(pointsWinComboBox);
@@ -237,7 +240,7 @@
             pointsRulesGroupBox.Controls.Add(pointsDrawLabel);
             pointsRulesGroupBox.Controls.Add(pointsWinLabel);
             pointsRulesGroupBox.Font = new Font("Century Gothic", 12.2F, FontStyle.Bold);
-            pointsRulesGroupBox.Location = new Point(642, 352);
+            pointsRulesGroupBox.Location = new Point(879, 338);
             pointsRulesGroupBox.Name = "pointsRulesGroupBox";
             pointsRulesGroupBox.Size = new Size(449, 208);
             pointsRulesGroupBox.TabIndex = 5;
@@ -300,13 +303,14 @@
             // 
             // settingsLeagueBtn
             // 
+            settingsLeagueBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             settingsLeagueBtn.BackColor = Color.LawnGreen;
             settingsLeagueBtn.FlatStyle = FlatStyle.Popup;
             settingsLeagueBtn.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             settingsLeagueBtn.ForeColor = Color.Transparent;
-            settingsLeagueBtn.Location = new Point(432, 605);
+            settingsLeagueBtn.Location = new Point(440, 596);
             settingsLeagueBtn.Name = "settingsLeagueBtn";
-            settingsLeagueBtn.Size = new Size(276, 55);
+            settingsLeagueBtn.Size = new Size(509, 55);
             settingsLeagueBtn.TabIndex = 6;
             settingsLeagueBtn.Text = "Save League Settings";
             settingsLeagueBtn.UseVisualStyleBackColor = false;

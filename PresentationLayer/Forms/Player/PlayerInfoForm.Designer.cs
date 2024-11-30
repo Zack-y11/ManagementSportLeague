@@ -29,53 +29,80 @@
         private void InitializeComponent()
         {
             contentPanel = new Panel();
+            statsIcon = new FontAwesome.Sharp.IconPictureBox();
             playerDataGrip = new DataGridView();
             playerSportInformation = new DataGridView();
+            headerLabel = new Label();
             playerInformationLabel = new Label();
             titlePlayerLabel = new Label();
-            panel1 = new Panel();
-            statsIcon = new FontAwesome.Sharp.IconPictureBox();
-            headerLabel = new Label();
             contentPlayerPanel = new Panel();
             contentPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)statsIcon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)playerDataGrip).BeginInit();
             ((System.ComponentModel.ISupportInitialize)playerSportInformation).BeginInit();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)statsIcon).BeginInit();
             contentPlayerPanel.SuspendLayout();
             SuspendLayout();
             // 
             // contentPanel
             // 
+            contentPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             contentPanel.BackColor = SystemColors.ControlLightLight;
+            contentPanel.Controls.Add(statsIcon);
             contentPanel.Controls.Add(playerDataGrip);
             contentPanel.Controls.Add(playerSportInformation);
+            contentPanel.Controls.Add(headerLabel);
             contentPanel.Controls.Add(playerInformationLabel);
             contentPanel.Controls.Add(titlePlayerLabel);
-            contentPanel.Location = new Point(46, 6);
+            contentPanel.Location = new Point(3, 3);
             contentPanel.Name = "contentPanel";
-            contentPanel.Size = new Size(1000, 539);
+            contentPanel.Size = new Size(1339, 693);
             contentPanel.TabIndex = 4;
+            // 
+            // statsIcon
+            // 
+            statsIcon.BackColor = Color.FromArgb(0, 123, 252);
+            statsIcon.IconChar = FontAwesome.Sharp.IconChar.UniversalAccess;
+            statsIcon.IconColor = Color.White;
+            statsIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            statsIcon.IconSize = 40;
+            statsIcon.Location = new Point(25, 19);
+            statsIcon.Name = "statsIcon";
+            statsIcon.Size = new Size(40, 40);
+            statsIcon.TabIndex = 1;
+            statsIcon.TabStop = false;
             // 
             // playerDataGrip
             // 
+            playerDataGrip.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             playerDataGrip.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            playerDataGrip.Location = new Point(49, 144);
+            playerDataGrip.Location = new Point(209, 193);
             playerDataGrip.Name = "playerDataGrip";
             playerDataGrip.RowHeadersWidth = 51;
-            playerDataGrip.Size = new Size(893, 347);
+            playerDataGrip.Size = new Size(917, 376);
             playerDataGrip.TabIndex = 20;
             // 
             // playerSportInformation
             // 
+            playerSportInformation.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             playerSportInformation.BackgroundColor = Color.White;
             playerSportInformation.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             playerSportInformation.GridColor = SystemColors.GradientInactiveCaption;
-            playerSportInformation.Location = new Point(25, 115);
+            playerSportInformation.Location = new Point(145, 148);
             playerSportInformation.Name = "playerSportInformation";
             playerSportInformation.RowHeadersWidth = 51;
-            playerSportInformation.Size = new Size(946, 399);
+            playerSportInformation.Size = new Size(1028, 467);
             playerSportInformation.TabIndex = 18;
+            // 
+            // headerLabel
+            // 
+            headerLabel.AutoSize = true;
+            headerLabel.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            headerLabel.ForeColor = Color.FromArgb(0, 123, 252);
+            headerLabel.Location = new Point(112, 25);
+            headerLabel.Name = "headerLabel";
+            headerLabel.Size = new Size(168, 34);
+            headerLabel.TabIndex = 0;
+            headerLabel.Text = "Player Stats";
             // 
             // playerInformationLabel
             // 
@@ -92,72 +119,34 @@
             titlePlayerLabel.AutoSize = true;
             titlePlayerLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             titlePlayerLabel.ForeColor = SystemColors.HotTrack;
-            titlePlayerLabel.Location = new Point(25, 21);
+            titlePlayerLabel.Location = new Point(394, 36);
             titlePlayerLabel.Name = "titlePlayerLabel";
             titlePlayerLabel.Size = new Size(499, 23);
             titlePlayerLabel.TabIndex = 11;
             titlePlayerLabel.Text = "\"Player Stats: Rankings, Wins, Upcoming Matches \"";
             // 
-            // panel1
-            // 
-            panel1.BackColor = SystemColors.Highlight;
-            panel1.Controls.Add(statsIcon);
-            panel1.Controls.Add(headerLabel);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1362, 100);
-            panel1.TabIndex = 5;
-            // 
-            // statsIcon
-            // 
-            statsIcon.BackColor = Color.Transparent;
-            statsIcon.IconChar = FontAwesome.Sharp.IconChar.UniversalAccess;
-            statsIcon.IconColor = Color.White;
-            statsIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            statsIcon.IconSize = 40;
-            statsIcon.Location = new Point(46, 33);
-            statsIcon.Name = "statsIcon";
-            statsIcon.Size = new Size(40, 40);
-            statsIcon.TabIndex = 1;
-            statsIcon.TabStop = false;
-            // 
-            // headerLabel
-            // 
-            headerLabel.AutoSize = true;
-            headerLabel.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            headerLabel.ForeColor = Color.White;
-            headerLabel.Location = new Point(135, 39);
-            headerLabel.Name = "headerLabel";
-            headerLabel.Size = new Size(168, 34);
-            headerLabel.TabIndex = 0;
-            headerLabel.Text = "Player Stats";
-            // 
             // contentPlayerPanel
             // 
             contentPlayerPanel.Controls.Add(contentPanel);
             contentPlayerPanel.Dock = DockStyle.Fill;
-            contentPlayerPanel.Location = new Point(0, 100);
+            contentPlayerPanel.Location = new Point(0, 0);
             contentPlayerPanel.Name = "contentPlayerPanel";
-            contentPlayerPanel.Size = new Size(1362, 591);
+            contentPlayerPanel.Size = new Size(1340, 696);
             contentPlayerPanel.TabIndex = 6;
             // 
             // PlayerInfoForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1362, 691);
+            ClientSize = new Size(1340, 696);
             Controls.Add(contentPlayerPanel);
-            Controls.Add(panel1);
             Name = "PlayerInfoForm";
             Text = "PlayerInfo";
             contentPanel.ResumeLayout(false);
             contentPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)statsIcon).EndInit();
             ((System.ComponentModel.ISupportInitialize)playerDataGrip).EndInit();
             ((System.ComponentModel.ISupportInitialize)playerSportInformation).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)statsIcon).EndInit();
             contentPlayerPanel.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -168,7 +157,6 @@
         private DataGridView playerSportInformation;
         private Label playerInformationLabel;
         private Label titlePlayerLabel;
-        private Panel panel1;
         private Label headerLabel;
         private FontAwesome.Sharp.IconPictureBox statsIcon;
         private DataGridView playerDataGrip;

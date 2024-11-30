@@ -30,7 +30,6 @@
         {
             dashboardPlayerPanel = new Panel();
             dashboardBtn = new FontAwesome.Sharp.IconButton();
-            panel2 = new Panel();
             calendarBtn = new FontAwesome.Sharp.IconButton();
             settingsPlayerBtn = new FontAwesome.Sharp.IconButton();
             positionTableBtn = new FontAwesome.Sharp.IconButton();
@@ -38,22 +37,31 @@
             soccerIconPictureBox = new FontAwesome.Sharp.IconPictureBox();
             dashboardPlayerLabel = new Label();
             contentPanel = new Panel();
+            statsIcon = new FontAwesome.Sharp.IconPictureBox();
+            headerLabel = new Label();
             playerDataGrip = new DataGridView();
             playerSportInformation = new DataGridView();
             playerInformationLabel = new Label();
             titlePlayerLabel = new Label();
+            buttonsPanel = new Panel();
+            IconsPanel = new Panel();
+            resetBtn = new FontAwesome.Sharp.IconButton();
+            maximizeBtn = new FontAwesome.Sharp.IconButton();
+            closeBtn = new FontAwesome.Sharp.IconButton();
             dashboardPlayerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)soccerIconPictureBox).BeginInit();
             contentPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)statsIcon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)playerDataGrip).BeginInit();
             ((System.ComponentModel.ISupportInitialize)playerSportInformation).BeginInit();
+            buttonsPanel.SuspendLayout();
+            IconsPanel.SuspendLayout();
             SuspendLayout();
             // 
             // dashboardPlayerPanel
             // 
-            dashboardPlayerPanel.BackColor = Color.Snow;
+            dashboardPlayerPanel.BackColor = Color.WhiteSmoke;
             dashboardPlayerPanel.Controls.Add(dashboardBtn);
-            dashboardPlayerPanel.Controls.Add(panel2);
             dashboardPlayerPanel.Controls.Add(calendarBtn);
             dashboardPlayerPanel.Controls.Add(settingsPlayerBtn);
             dashboardPlayerPanel.Controls.Add(positionTableBtn);
@@ -63,7 +71,7 @@
             dashboardPlayerPanel.Dock = DockStyle.Left;
             dashboardPlayerPanel.Location = new Point(0, 0);
             dashboardPlayerPanel.Name = "dashboardPlayerPanel";
-            dashboardPlayerPanel.Size = new Size(263, 697);
+            dashboardPlayerPanel.Size = new Size(263, 682);
             dashboardPlayerPanel.TabIndex = 2;
             // 
             // dashboardBtn
@@ -80,13 +88,6 @@
             dashboardBtn.TabIndex = 8;
             dashboardBtn.Text = "Dashboard";
             dashboardBtn.UseVisualStyleBackColor = true;
-            // 
-            // panel2
-            // 
-            panel2.Location = new Point(263, 64);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(817, 139);
-            panel2.TabIndex = 0;
             // 
             // calendarBtn
             // 
@@ -174,41 +175,70 @@
             // 
             // contentPanel
             // 
+            contentPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             contentPanel.BackColor = SystemColors.ControlLightLight;
+            contentPanel.Controls.Add(statsIcon);
+            contentPanel.Controls.Add(headerLabel);
             contentPanel.Controls.Add(playerDataGrip);
             contentPanel.Controls.Add(playerSportInformation);
             contentPanel.Controls.Add(playerInformationLabel);
             contentPanel.Controls.Add(titlePlayerLabel);
-            contentPanel.Location = new Point(263, 3);
+            contentPanel.Location = new Point(263, 99);
             contentPanel.Name = "contentPanel";
-            contentPanel.Size = new Size(1060, 694);
+            contentPanel.Size = new Size(1118, 583);
             contentPanel.TabIndex = 3;
+            // 
+            // statsIcon
+            // 
+            statsIcon.BackColor = Color.FromArgb(0, 123, 252);
+            statsIcon.IconChar = FontAwesome.Sharp.IconChar.UniversalAccess;
+            statsIcon.IconColor = Color.White;
+            statsIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            statsIcon.IconSize = 40;
+            statsIcon.Location = new Point(55, 21);
+            statsIcon.Name = "statsIcon";
+            statsIcon.Size = new Size(42, 40);
+            statsIcon.TabIndex = 21;
+            statsIcon.TabStop = false;
+            // 
+            // headerLabel
+            // 
+            headerLabel.AutoSize = true;
+            headerLabel.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            headerLabel.ForeColor = Color.FromArgb(0, 123, 252);
+            headerLabel.Location = new Point(103, 27);
+            headerLabel.Name = "headerLabel";
+            headerLabel.Size = new Size(168, 34);
+            headerLabel.TabIndex = 20;
+            headerLabel.Text = "Player Stats";
             // 
             // playerDataGrip
             // 
+            playerDataGrip.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             playerDataGrip.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            playerDataGrip.Location = new Point(82, 243);
+            playerDataGrip.Location = new Point(81, 157);
             playerDataGrip.Name = "playerDataGrip";
             playerDataGrip.RowHeadersWidth = 51;
-            playerDataGrip.Size = new Size(907, 315);
+            playerDataGrip.Size = new Size(907, 351);
             playerDataGrip.TabIndex = 19;
             // 
             // playerSportInformation
             // 
+            playerSportInformation.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             playerSportInformation.BackgroundColor = Color.White;
             playerSportInformation.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             playerSportInformation.GridColor = SystemColors.GradientInactiveCaption;
-            playerSportInformation.Location = new Point(55, 199);
+            playerSportInformation.Location = new Point(55, 125);
             playerSportInformation.Name = "playerSportInformation";
             playerSportInformation.RowHeadersWidth = 51;
-            playerSportInformation.Size = new Size(956, 395);
+            playerSportInformation.Size = new Size(956, 414);
             playerSportInformation.TabIndex = 18;
             // 
             // playerInformationLabel
             // 
             playerInformationLabel.AutoSize = true;
             playerInformationLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            playerInformationLabel.Location = new Point(55, 168);
+            playerInformationLabel.Location = new Point(55, 81);
             playerInformationLabel.Name = "playerInformationLabel";
             playerInformationLabel.Size = new Size(193, 23);
             playerInformationLabel.TabIndex = 17;
@@ -219,17 +249,85 @@
             titlePlayerLabel.AutoSize = true;
             titlePlayerLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             titlePlayerLabel.ForeColor = SystemColors.HotTrack;
-            titlePlayerLabel.Location = new Point(55, 34);
+            titlePlayerLabel.Location = new Point(489, 34);
             titlePlayerLabel.Name = "titlePlayerLabel";
             titlePlayerLabel.Size = new Size(499, 23);
             titlePlayerLabel.TabIndex = 11;
             titlePlayerLabel.Text = "\"Player Stats: Rankings, Wins, Upcoming Matches \"";
             // 
+            // buttonsPanel
+            // 
+            buttonsPanel.BackColor = Color.FromArgb(0, 123, 253);
+            buttonsPanel.Controls.Add(IconsPanel);
+            buttonsPanel.Dock = DockStyle.Top;
+            buttonsPanel.Location = new Point(263, 0);
+            buttonsPanel.Name = "buttonsPanel";
+            buttonsPanel.Size = new Size(1120, 100);
+            buttonsPanel.TabIndex = 20;
+            // 
+            // IconsPanel
+            // 
+            IconsPanel.Controls.Add(resetBtn);
+            IconsPanel.Controls.Add(maximizeBtn);
+            IconsPanel.Controls.Add(closeBtn);
+            IconsPanel.Dock = DockStyle.Right;
+            IconsPanel.Location = new Point(949, 0);
+            IconsPanel.Name = "IconsPanel";
+            IconsPanel.Size = new Size(171, 100);
+            IconsPanel.TabIndex = 8;
+            // 
+            // resetBtn
+            // 
+            resetBtn.Dock = DockStyle.Right;
+            resetBtn.FlatStyle = FlatStyle.Popup;
+            resetBtn.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            resetBtn.IconChar = FontAwesome.Sharp.IconChar.Subtract;
+            resetBtn.IconColor = Color.White;
+            resetBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            resetBtn.Location = new Point(4, 0);
+            resetBtn.Name = "resetBtn";
+            resetBtn.Size = new Size(58, 100);
+            resetBtn.TabIndex = 4;
+            resetBtn.UseVisualStyleBackColor = true;
+            resetBtn.Click += resetBtn_Click;
+            // 
+            // maximizeBtn
+            // 
+            maximizeBtn.Dock = DockStyle.Right;
+            maximizeBtn.FlatStyle = FlatStyle.Popup;
+            maximizeBtn.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            maximizeBtn.IconChar = FontAwesome.Sharp.IconChar.Clone;
+            maximizeBtn.IconColor = Color.White;
+            maximizeBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            maximizeBtn.Location = new Point(62, 0);
+            maximizeBtn.Name = "maximizeBtn";
+            maximizeBtn.Size = new Size(58, 100);
+            maximizeBtn.TabIndex = 3;
+            maximizeBtn.UseVisualStyleBackColor = true;
+            maximizeBtn.Click += maximizeBtn_Click_1;
+            // 
+            // closeBtn
+            // 
+            closeBtn.Dock = DockStyle.Right;
+            closeBtn.FlatStyle = FlatStyle.Popup;
+            closeBtn.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            closeBtn.IconChar = FontAwesome.Sharp.IconChar.Close;
+            closeBtn.IconColor = Color.White;
+            closeBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            closeBtn.Location = new Point(120, 0);
+            closeBtn.Name = "closeBtn";
+            closeBtn.Size = new Size(51, 100);
+            closeBtn.TabIndex = 5;
+            closeBtn.UseVisualStyleBackColor = true;
+            closeBtn.Click += closeBtn_Click_1;
+            // 
             // PlayerDashboardForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1323, 697);
+            AutoScaleDimensions = new SizeF(120F, 120F);
+            AutoScaleMode = AutoScaleMode.Dpi;
+            ClientSize = new Size(1383, 682);
+            ControlBox = false;
+            Controls.Add(buttonsPanel);
             Controls.Add(contentPanel);
             Controls.Add(dashboardPlayerPanel);
             Name = "PlayerDashboardForm";
@@ -239,15 +337,17 @@
             ((System.ComponentModel.ISupportInitialize)soccerIconPictureBox).EndInit();
             contentPanel.ResumeLayout(false);
             contentPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)statsIcon).EndInit();
             ((System.ComponentModel.ISupportInitialize)playerDataGrip).EndInit();
             ((System.ComponentModel.ISupportInitialize)playerSportInformation).EndInit();
+            buttonsPanel.ResumeLayout(false);
+            IconsPanel.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel dashboardPlayerPanel;
-        private Panel panel2;
         private FontAwesome.Sharp.IconButton calendarBtn;
         private FontAwesome.Sharp.IconButton settingsPlayerBtn;
         private FontAwesome.Sharp.IconButton positionTableBtn;
@@ -260,5 +360,12 @@
         private Label playerInformationLabel;
         private FontAwesome.Sharp.IconButton dashboardBtn;
         private DataGridView playerDataGrip;
+        private Panel buttonsPanel;
+        private Panel IconsPanel;
+        private FontAwesome.Sharp.IconButton resetBtn;
+        private FontAwesome.Sharp.IconButton maximizeBtn;
+        private FontAwesome.Sharp.IconButton closeBtn;
+        private Label headerLabel;
+        private FontAwesome.Sharp.IconPictureBox statsIcon;
     }
 }

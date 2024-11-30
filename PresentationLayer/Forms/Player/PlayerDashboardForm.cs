@@ -146,8 +146,8 @@ namespace PresentationLayer.Forms.Player
         {
             try
             {
-                var setitngsPlayerForm = new SettingsPlayerForm();
-                OpenChildForm(setitngsPlayerForm);
+                var settingsPlayerForm = new SettingsPlayerForm();
+                OpenChildForm(settingsPlayerForm);
             }
             catch (Exception ex)
             {
@@ -156,7 +156,30 @@ namespace PresentationLayer.Forms.Player
             }
         }
 
-       
+
+
+        private void UpdateWindowButtons()
+        {
+            maximizeBtn.Visible = (this.WindowState != FormWindowState.Maximized);
+            resetBtn.Visible = (this.WindowState == FormWindowState.Maximized);
+        }
+
+        private void closeBtn_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void maximizeBtn_Click_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            UpdateWindowButtons();
+        }
+
+        private void resetBtn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+            UpdateWindowButtons();
+        }
     }
 
 }

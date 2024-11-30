@@ -36,17 +36,16 @@
             monthComboBox = new ComboBox();
             calendarLabel = new Label();
             calendarIcon = new FontAwesome.Sharp.IconPictureBox();
-            headerPanel = new Panel();
             contentCalendarPanel = new Panel();
             calendarGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)calendarDataGrip).BeginInit();
             ((System.ComponentModel.ISupportInitialize)calendarIcon).BeginInit();
-            headerPanel.SuspendLayout();
             contentCalendarPanel.SuspendLayout();
             SuspendLayout();
             // 
             // calendarGroupBox
             // 
+            calendarGroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             calendarGroupBox.BackColor = Color.White;
             calendarGroupBox.Controls.Add(calendarDataGrip);
             calendarGroupBox.Controls.Add(yearComboBox);
@@ -54,20 +53,21 @@
             calendarGroupBox.Controls.Add(monthLabel);
             calendarGroupBox.Controls.Add(monthComboBox);
             calendarGroupBox.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            calendarGroupBox.Location = new Point(60, 33);
+            calendarGroupBox.Location = new Point(167, 122);
             calendarGroupBox.Name = "calendarGroupBox";
-            calendarGroupBox.Size = new Size(945, 550);
+            calendarGroupBox.Size = new Size(945, 521);
             calendarGroupBox.TabIndex = 0;
             calendarGroupBox.TabStop = false;
             calendarGroupBox.Text = "Calendar Activities ";
             // 
             // calendarDataGrip
             // 
+            calendarDataGrip.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             calendarDataGrip.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            calendarDataGrip.Location = new Point(35, 129);
+            calendarDataGrip.Location = new Point(63, 131);
             calendarDataGrip.Name = "calendarDataGrip";
             calendarDataGrip.RowHeadersWidth = 51;
-            calendarDataGrip.Size = new Size(871, 356);
+            calendarDataGrip.Size = new Size(823, 331);
             calendarDataGrip.TabIndex = 4;
             // 
             // yearComboBox
@@ -109,8 +109,8 @@
             calendarLabel.AutoSize = true;
             calendarLabel.BackColor = Color.Transparent;
             calendarLabel.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            calendarLabel.ForeColor = Color.White;
-            calendarLabel.Location = new Point(118, 36);
+            calendarLabel.ForeColor = Color.FromArgb(0, 123, 252);
+            calendarLabel.Location = new Point(167, 30);
             calendarLabel.Name = "calendarLabel";
             calendarLabel.Size = new Size(236, 34);
             calendarLabel.TabIndex = 1;
@@ -118,36 +118,27 @@
             // 
             // calendarIcon
             // 
-            calendarIcon.BackColor = Color.Transparent;
+            calendarIcon.BackColor = Color.FromArgb(0, 123, 252);
             calendarIcon.IconChar = FontAwesome.Sharp.IconChar.Calendar;
             calendarIcon.IconColor = Color.White;
             calendarIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
             calendarIcon.IconSize = 48;
-            calendarIcon.Location = new Point(34, 21);
+            calendarIcon.Location = new Point(60, 15);
             calendarIcon.Name = "calendarIcon";
             calendarIcon.Size = new Size(48, 49);
             calendarIcon.TabIndex = 2;
             calendarIcon.TabStop = false;
             // 
-            // headerPanel
-            // 
-            headerPanel.BackColor = SystemColors.Highlight;
-            headerPanel.Controls.Add(calendarLabel);
-            headerPanel.Controls.Add(calendarIcon);
-            headerPanel.Dock = DockStyle.Top;
-            headerPanel.Location = new Point(0, 0);
-            headerPanel.Name = "headerPanel";
-            headerPanel.Size = new Size(1223, 100);
-            headerPanel.TabIndex = 3;
-            // 
             // contentCalendarPanel
             // 
             contentCalendarPanel.BackColor = SystemColors.HighlightText;
+            contentCalendarPanel.Controls.Add(calendarLabel);
             contentCalendarPanel.Controls.Add(calendarGroupBox);
+            contentCalendarPanel.Controls.Add(calendarIcon);
             contentCalendarPanel.Dock = DockStyle.Fill;
-            contentCalendarPanel.Location = new Point(0, 100);
+            contentCalendarPanel.Location = new Point(0, 0);
             contentCalendarPanel.Name = "contentCalendarPanel";
-            contentCalendarPanel.Size = new Size(1223, 606);
+            contentCalendarPanel.Size = new Size(1223, 706);
             contentCalendarPanel.TabIndex = 4;
             // 
             // CalendarForm
@@ -156,16 +147,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1223, 706);
             Controls.Add(contentCalendarPanel);
-            Controls.Add(headerPanel);
             Name = "CalendarForm";
             Text = "CalendarForm";
             calendarGroupBox.ResumeLayout(false);
             calendarGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)calendarDataGrip).EndInit();
             ((System.ComponentModel.ISupportInitialize)calendarIcon).EndInit();
-            headerPanel.ResumeLayout(false);
-            headerPanel.PerformLayout();
             contentCalendarPanel.ResumeLayout(false);
+            contentCalendarPanel.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -179,7 +168,6 @@
         private Label monthLabel;
         private DataGridView calendarDataGrip;
         private ComboBox yearComboBox;
-        private Panel headerPanel;
         private Panel contentCalendarPanel;
     }
 }

@@ -28,85 +28,77 @@
         /// </summary>
         private void InitializeComponent()
         {
-            headerPanel = new Panel();
-            leaguePositionLabel = new Label();
-            trophieIcon = new FontAwesome.Sharp.IconPictureBox();
             positionGroupBox = new GroupBox();
             leaguePositionDataGrip = new DataGridView();
             positionContentPanel = new Panel();
-            headerPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)trophieIcon).BeginInit();
+            positionLabel = new Label();
+            titleIcon = new FontAwesome.Sharp.IconPictureBox();
             positionGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)leaguePositionDataGrip).BeginInit();
             positionContentPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)titleIcon).BeginInit();
             SuspendLayout();
-            // 
-            // headerPanel
-            // 
-            headerPanel.BackColor = SystemColors.Highlight;
-            headerPanel.Controls.Add(leaguePositionLabel);
-            headerPanel.Controls.Add(trophieIcon);
-            headerPanel.Dock = DockStyle.Top;
-            headerPanel.Location = new Point(0, 0);
-            headerPanel.Name = "headerPanel";
-            headerPanel.Size = new Size(1227, 100);
-            headerPanel.TabIndex = 0;
-            // 
-            // leaguePositionLabel
-            // 
-            leaguePositionLabel.AutoSize = true;
-            leaguePositionLabel.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            leaguePositionLabel.ForeColor = Color.White;
-            leaguePositionLabel.Location = new Point(113, 39);
-            leaguePositionLabel.Name = "leaguePositionLabel";
-            leaguePositionLabel.Size = new Size(303, 34);
-            leaguePositionLabel.TabIndex = 4;
-            leaguePositionLabel.Text = "Sport League Position";
-            // 
-            // trophieIcon
-            // 
-            trophieIcon.BackColor = Color.Transparent;
-            trophieIcon.ForeColor = SystemColors.Control;
-            trophieIcon.IconChar = FontAwesome.Sharp.IconChar.Trophy;
-            trophieIcon.IconColor = SystemColors.Control;
-            trophieIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            trophieIcon.IconSize = 58;
-            trophieIcon.Location = new Point(21, 24);
-            trophieIcon.Name = "trophieIcon";
-            trophieIcon.Size = new Size(60, 58);
-            trophieIcon.TabIndex = 3;
-            trophieIcon.TabStop = false;
             // 
             // positionGroupBox
             // 
+            positionGroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             positionGroupBox.BackColor = Color.White;
             positionGroupBox.Controls.Add(leaguePositionDataGrip);
             positionGroupBox.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            positionGroupBox.Location = new Point(61, 41);
+            positionGroupBox.Location = new Point(153, 72);
             positionGroupBox.Name = "positionGroupBox";
-            positionGroupBox.Size = new Size(936, 474);
+            positionGroupBox.Size = new Size(936, 585);
             positionGroupBox.TabIndex = 1;
             positionGroupBox.TabStop = false;
             positionGroupBox.Text = "Position Table ";
             // 
             // leaguePositionDataGrip
             // 
+            leaguePositionDataGrip.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             leaguePositionDataGrip.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             leaguePositionDataGrip.Location = new Point(40, 57);
             leaguePositionDataGrip.Name = "leaguePositionDataGrip";
             leaguePositionDataGrip.RowHeadersWidth = 51;
-            leaguePositionDataGrip.Size = new Size(849, 316);
+            leaguePositionDataGrip.Size = new Size(849, 484);
             leaguePositionDataGrip.TabIndex = 0;
             // 
             // positionContentPanel
             // 
+            positionContentPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             positionContentPanel.BackColor = SystemColors.ControlLightLight;
+            positionContentPanel.Controls.Add(titleIcon);
+            positionContentPanel.Controls.Add(positionLabel);
             positionContentPanel.Controls.Add(positionGroupBox);
-            positionContentPanel.Dock = DockStyle.Fill;
-            positionContentPanel.Location = new Point(0, 100);
+            positionContentPanel.Location = new Point(0, 0);
             positionContentPanel.Name = "positionContentPanel";
-            positionContentPanel.Size = new Size(1227, 621);
+            positionContentPanel.Size = new Size(1227, 721);
             positionContentPanel.TabIndex = 2;
+            // 
+            // positionLabel
+            // 
+            positionLabel.AutoSize = true;
+            positionLabel.BackColor = Color.Transparent;
+            positionLabel.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            positionLabel.ForeColor = Color.FromArgb(0, 123, 252);
+            positionLabel.Location = new Point(118, 18);
+            positionLabel.Name = "positionLabel";
+            positionLabel.Size = new Size(299, 34);
+            positionLabel.TabIndex = 1;
+            positionLabel.Text = "Team's Table Position";
+            // 
+            // titleIcon
+            // 
+            titleIcon.BackColor = Color.Transparent;
+            titleIcon.ForeColor = Color.FromArgb(0, 123, 252);
+            titleIcon.IconChar = FontAwesome.Sharp.IconChar.Trophy;
+            titleIcon.IconColor = Color.FromArgb(0, 123, 252);
+            titleIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            titleIcon.IconSize = 40;
+            titleIcon.Location = new Point(24, 12);
+            titleIcon.Name = "titleIcon";
+            titleIcon.Size = new Size(40, 40);
+            titleIcon.TabIndex = 2;
+            titleIcon.TabStop = false;
             // 
             // PositionForm
             // 
@@ -114,25 +106,21 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1227, 721);
             Controls.Add(positionContentPanel);
-            Controls.Add(headerPanel);
             Name = "PositionForm";
             Text = "PositionForm";
-            headerPanel.ResumeLayout(false);
-            headerPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)trophieIcon).EndInit();
             positionGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)leaguePositionDataGrip).EndInit();
             positionContentPanel.ResumeLayout(false);
+            positionContentPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)titleIcon).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Panel headerPanel;
-        private FontAwesome.Sharp.IconPictureBox trophieIcon;
-        private Label leaguePositionLabel;
         private GroupBox positionGroupBox;
         private DataGridView leaguePositionDataGrip;
         private Panel positionContentPanel;
+        private Label positionLabel;
+        private FontAwesome.Sharp.IconPictureBox titleIcon;
     }
 }

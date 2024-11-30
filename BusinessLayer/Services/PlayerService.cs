@@ -19,6 +19,10 @@ namespace BusinessLayer.Services
         {
             return _playerRepository.GetAll();
         }
+        public IEnumerable<CoachPlayer> GetCoachPlayers(int _userId)
+        {
+            return _playerRepository.GetCoachPlayers(_userId);
+        }
         public void Add(Player player)
         {
             _playerRepository.Add(player);
@@ -30,6 +34,10 @@ namespace BusinessLayer.Services
         public void Delete(int playerId)
         {
             _playerRepository.Delete(playerId);
+        }
+        public void CreateUserPlayer(int creatorId, string email, string password, string name, string position, DateTime birthDate, int goals, int assists)
+        {
+            _playerRepository.CreateUserPlayer(creatorId, email, password, name, position, birthDate, goals, assists);
         }
     }
 }

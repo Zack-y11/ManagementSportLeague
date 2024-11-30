@@ -50,12 +50,13 @@ namespace PresentationLayer
                      );
                 })
                 .ConfigureServices((context, services) => {
-
+                    services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
                     //Forms
                     services.AddTransient<dashboardAdmin>();
                     services.AddTransient<LoginForms>();
                     services.AddTransient<ManagerForm>();
                     services.AddTransient<PlayerDashboardForm>();
+
 
 
                     //Repositories
@@ -65,15 +66,23 @@ namespace PresentationLayer
 
                     //services.AddScoped<IEmailQueueRepository, EmailQueueRepository>();
                     services.AddScoped<IUserRepository, UserRepository>();
+
                     //Services
-
-
                     services.AddScoped<IMatchService, MatchService>();
                     services.AddScoped<ITeamService, TeamService>();
                     services.AddScoped<IUserService, UserService>();
                     services.AddScoped<IPlayerService, PlayerService>();
 
                     //services.AddScoped<IEmailService, EmailService>();
+
+                    //Forms
+                    services.AddTransient<dashboardAdmin>();
+                    services.AddTransient<LoginForms>();
+                    services.AddTransient<ManagerForm>();
+                    services.AddTransient<playerSportForm>();
+
+                    
+                    
 
                     //Notifications
                     //services.AddScoped<IEmailNotification, EmailNotification>();
@@ -82,7 +91,7 @@ namespace PresentationLayer
                     //services.AddScoped<ICategoryReport, CategoryReport>();
 
                     //Connection
-                    services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
+                    //services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
                 });
         }
     }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             textBoxName = new TextBox();
             labelPlayers = new Label();
             playersDataGridView = new DataGridView();
@@ -49,11 +50,13 @@
             playerBirthdateLabel = new Label();
             btnEditPlayer = new FontAwesome.Sharp.IconButton();
             btnDeletePlayer = new FontAwesome.Sharp.IconButton();
+            playerErrorProvider = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)playersDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)playerInfoDataGrip).BeginInit();
             panelPlayers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)assistsNumeric).BeginInit();
             ((System.ComponentModel.ISupportInitialize)goalsNumeric).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)playerErrorProvider).BeginInit();
             SuspendLayout();
             // 
             // textBoxName
@@ -123,9 +126,9 @@
             panelPlayers.Controls.Add(labelPlayers);
             panelPlayers.Controls.Add(textBoxName);
             panelPlayers.Controls.Add(labelName);
-            panelPlayers.Location = new Point(819, 21);
+            panelPlayers.Location = new Point(820, 23);
             panelPlayers.Name = "panelPlayers";
-            panelPlayers.Size = new Size(421, 503);
+            panelPlayers.Size = new Size(433, 503);
             panelPlayers.TabIndex = 9;
             // 
             // assistsNumeric
@@ -290,6 +293,10 @@
             btnDeletePlayer.UseVisualStyleBackColor = true;
             btnDeletePlayer.Click += btnDeletePlayer_Click;
             // 
+            // playerErrorProvider
+            // 
+            playerErrorProvider.ContainerControl = this;
+            // 
             // PlayersForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -307,6 +314,7 @@
             panelPlayers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)assistsNumeric).EndInit();
             ((System.ComponentModel.ISupportInitialize)goalsNumeric).EndInit();
+            ((System.ComponentModel.ISupportInitialize)playerErrorProvider).EndInit();
             ResumeLayout(false);
         }
 
@@ -338,15 +346,16 @@
         private Label assistLabel;
         private NumericUpDown goalsNumeric;
         private Label goalsLabel;
-/*
-        private TextBox textBox1;
-        private Label labelPosition;
-        private Label teamLabel;
-        private ComboBox teamComboBox;
-        private Label birthdayLabel;
-        private Label label1;
-        private DateTimePicker dateTimePicker1;
-        private TextBox assistsTextBox;
+        private ErrorProvider playerErrorProvider;
+        /*
+private TextBox textBox1;
+private Label labelPosition;
+private Label teamLabel;
+private ComboBox teamComboBox;
+private Label birthdayLabel;
+private Label label1;
+private DateTimePicker dateTimePicker1;
+private TextBox assistsTextBox;
 */
     }
 }

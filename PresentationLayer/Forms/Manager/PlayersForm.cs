@@ -1,5 +1,7 @@
 ﻿using BusinessLayer.Services;
 using CommonLayer.Models;
+using PresentationLayer.Validations;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,7 +10,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Controls;
 using System.Windows.Forms;
 
 namespace PresentationLayer.ManagerForms
@@ -43,7 +44,7 @@ namespace PresentationLayer.ManagerForms
             string position = positionTextbox.Text;
             int goals = (int)Math.Round(goalsNumeric.Value);
             int assists = (int)Math.Round(assistsNumeric.Value);
-
+            
             // create player
             if (_userId == null)
             {
@@ -55,17 +56,67 @@ namespace PresentationLayer.ManagerForms
                 MessageBox.Show("Player service not found");
                 return;
             }
-
-            _playerService.CreateUserPlayer(_userId, email, password, name, position, birthdate, goals, assists);
-            playerEmailTextBox.Text = "";
-            playerPasswordTextBox.Text = "";
-            textBoxName.Text = "";
-            positionTextbox.Text = "";
-            goalsNumeric.Value = 0;
-            assistsNumeric.Value = 0;
-            LoadPlayers();
+            var player = new CoachPlayer
+            {
+                Email = email,
+                Password = password,
+                PlayerName = name,
+                Birthdate = birthdate.ToString(),
+                Position = position,
+                Goals = goals,
+                Assists = assists
+            };
+            var validator = new UserPlayerValidation();
+            var result = validator.Validate(player);
+            if (result.IsValid)
+            {
+                _playerService.CreateUserPlayer(_userId, email, password, name, position, birthdate, goals, assists);
+                playerEmailTextBox.Text = "";
+                playerPasswordTextBox.Text = "";
+                textBoxName.Text = "";
+                positionTextbox.Text = "";
+                goalsNumeric.Value = 0;
+                assistsNumeric.Value = 0;
+                LoadPlayers();
+            } else
+            {
+                DisplayValidatorPlayer(result);
+                MessageBox.Show("The player has not been created.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
         }
+        private void DisplayValidatorPlayer(ValidationResult result)
+        {
+            playerErrorProvider.Clear();
+            foreach (var failure in result.Errors)
+            {
+                switch (failure.PropertyName)
+                {
+                    case "Email":
+                        playerErrorProvider.SetError(playerEmailTextBox, failure.ErrorMessage);
+                        break;
+                    case "PlayerName":
+                        playerErrorProvider.SetError(textBoxName, failure.ErrorMessage);
+                        break;
+                    case "Position":
+                        playerErrorProvider.SetError(positionTextbox, failure.ErrorMessage);
+                        break;
+                    case "Goals":
+                        playerErrorProvider.SetError(goalsNumeric, failure.ErrorMessage);
+                        break;
+                    case "Assists":
+                        playerErrorProvider.SetError(assistsNumeric, failure.ErrorMessage);
+                        break;
+                    case "Birthdate":
+                        playerErrorProvider.SetError(playerBirthdateDateTimePicker, failure.ErrorMessage);
+                        break;
+                    case "Password":
+                        playerErrorProvider.SetError(playerPasswordTextBox, failure.ErrorMessage);
+                        break;
 
+                }
+            }
+        }
         private void btnEditPlayer_Click(object sender, EventArgs e)
         {
             if (playersDataGridView.SelectedRows.Count > 0)
@@ -93,7 +144,7 @@ namespace PresentationLayer.ManagerForms
                                                   "Confirm Delete",
                                                   MessageBoxButtons.YesNo,
                                                   MessageBoxIcon.Warning);
-                if (confirmResult == DialogResult.Yes)
+                if (confirmResult == DialogResult.Yes)  
                 {
                     try
                     {

@@ -36,11 +36,6 @@ namespace PresentationLayer.ManagerForms
             dashboardBtn.Click += ButtonClickHandler;
             activitiesBtn.Click += ButtonClickHandler;
             playersBtn.Click += ButtonClickHandler;
-            statsBtn.Click += ButtonClickHandler;
-            positiontablebtn.Click += ButtonClickHandler;
-
-
-
         }
 
         private void OpenChildForm(Form childForm)

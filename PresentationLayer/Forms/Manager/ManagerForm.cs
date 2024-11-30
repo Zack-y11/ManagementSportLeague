@@ -87,14 +87,6 @@ namespace PresentationLayer.ManagerForms
                 case "playersbtn":
                     LoadPlayersContent();
                     break;
-
-                case "statsbtn":
-                    //LoadStatsContent();
-                    break;
-
-                case "positiontablebtn":
-                    //LoadPositionTableContent();
-                    break;
             }
         }
 

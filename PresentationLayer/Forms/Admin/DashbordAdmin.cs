@@ -52,16 +52,15 @@ namespace PresentationLayer.Forms
                     activeForm.Dispose();
                 }
 
-                // Clear all controls at once
+
                 contentPanel.Controls.Clear();
 
-                // Set up the new form
                 activeForm = childForm;
                 childForm.TopLevel = false;
                 childForm.FormBorderStyle = FormBorderStyle.None;
                 childForm.Dock = DockStyle.Fill;
 
-                // Add new form and show it
+
                 contentPanel.Controls.Add(childForm);
                 contentPanel.Tag = childForm;
                 childForm.Show();
@@ -173,19 +172,6 @@ namespace PresentationLayer.Forms
             }
         }
 
-        private void LoadDashboardContent()
-        {
-            try
-            {
-                var form = new MatchesListForm(_matchService);
-                OpenChildForm(form);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error loading Dashboard form: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
 
         private void LoadUserContent()
         {
@@ -199,6 +185,21 @@ namespace PresentationLayer.Forms
             {
                 MessageBox.Show($"Error loading Coach form: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+
+        private void LoadDashboardContent()
+        {
+            try
+            {
+                var form = new MatchesListForm(_matchService, _teamService);
+                OpenChildForm(form);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading Dashboard form: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void LoadTeamsContent()
@@ -246,7 +247,7 @@ namespace PresentationLayer.Forms
         {
             try
             {
-                var form = new SettingsForm();
+                var form = new SettingsForm(_teamService);
                 OpenChildForm(form);
             }
             catch (Exception ex)
@@ -280,49 +281,48 @@ namespace PresentationLayer.Forms
 
         private void closeBtn_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show(
-        "Are you sure you want to exit?",
-        "Exit Confirmation",
-        MessageBoxButtons.YesNo,
-        MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
-            {
-
-                if (activeForm != null)
-                {
-                    activeForm.Hide();
-                    activeForm.Close();
-                    activeForm.Dispose();
-                    activeForm = null;
-                }
-
-                
-                this.Close();
-            }
+            this.Close();
 
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            base.OnFormClosing(e);
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult result = MessageBox.Show(
+                    "Are you sure you want to exit?",
+                    "Exit Confirmation",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
 
-         
+                if (result == DialogResult.No)
+                {
+                    e.Cancel = true;
+                    return;
+                }
+            }
+
+
             if (activeForm != null)
             {
-                activeForm.Hide();
-                activeForm.Close();
                 activeForm.Dispose();
+                activeForm = null;
             }
 
             contentPanel?.Controls.Clear();
 
-         
-            if (Application.OpenForms.Count == 1)
+            if (Application.MessageLoop)
             {
                 Application.Exit();
             }
+            else
+            {
+                Environment.Exit(0);
+            }
+
+            base.OnFormClosing(e);
         }
+
     }
 
- }
+}

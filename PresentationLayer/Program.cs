@@ -5,8 +5,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PresentationLayer.Forms;
 using BusinessLayer.Services;
-using DataLayer.Repositories;
+
 using DataLayer.DbConnection;
+
 using PresentationLayer.LoginF;
 using QuestPDF.Infrastructure;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -33,7 +34,7 @@ namespace PresentationLayer
             var host = CreateHostBuilder().Build();
             ServiceProvider = host.Services;
 
-            Application.Run(ServiceProvider.GetRequiredService<dashboardAdmin>());
+            Application.Run(ServiceProvider.GetRequiredService<LoginForms>());
         }
 
         public static IServiceProvider ServiceProvider { get; private set; }
@@ -79,7 +80,7 @@ namespace PresentationLayer
                     services.AddTransient<dashboardAdmin>();
                     services.AddTransient<LoginForms>();
                     services.AddTransient<ManagerForm>();
-                    services.AddTransient<playerSportForm>();
+                    
 
                     
                     

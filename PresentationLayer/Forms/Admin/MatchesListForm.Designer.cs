@@ -31,6 +31,8 @@
             components = new System.ComponentModel.Container();
             centerPanel = new Panel();
             matchPanel = new Panel();
+            pdfLabel = new Label();
+            PDFBtn = new FontAwesome.Sharp.IconButton();
             statusLabel = new Label();
             addMatch = new Label();
             matchDateTimePicker = new DateTimePicker();
@@ -76,6 +78,8 @@
             // matchPanel
             // 
             matchPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            matchPanel.Controls.Add(pdfLabel);
+            matchPanel.Controls.Add(PDFBtn);
             matchPanel.Controls.Add(statusLabel);
             matchPanel.Controls.Add(addMatch);
             matchPanel.Controls.Add(matchDateTimePicker);
@@ -103,6 +107,34 @@
             matchPanel.Name = "matchPanel";
             matchPanel.Size = new Size(1374, 353);
             matchPanel.TabIndex = 11;
+            // 
+            // pdfLabel
+            // 
+            pdfLabel.AutoSize = true;
+            pdfLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            pdfLabel.Location = new Point(847, 260);
+            pdfLabel.Name = "pdfLabel";
+            pdfLabel.Size = new Size(118, 23);
+            pdfLabel.TabIndex = 40;
+            pdfLabel.Text = "Create PDF";
+            // 
+            // PDFBtn
+            // 
+            PDFBtn.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            PDFBtn.BackColor = Color.YellowGreen;
+            PDFBtn.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
+            PDFBtn.ForeColor = Color.White;
+            PDFBtn.IconChar = FontAwesome.Sharp.IconChar.Newspaper;
+            PDFBtn.IconColor = Color.White;
+            PDFBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            PDFBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            PDFBtn.Location = new Point(847, 295);
+            PDFBtn.Name = "PDFBtn";
+            PDFBtn.Size = new Size(231, 43);
+            PDFBtn.TabIndex = 39;
+            PDFBtn.Text = "   Generate PDF";
+            PDFBtn.UseVisualStyleBackColor = false;
+            PDFBtn.Click += PDFBtn_Click;
             // 
             // statusLabel
             // 
@@ -220,7 +252,7 @@
             // 
             editMatchLabel.AutoSize = true;
             editMatchLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            editMatchLabel.Location = new Point(417, 260);
+            editMatchLabel.Location = new Point(317, 259);
             editMatchLabel.Name = "editMatchLabel";
             editMatchLabel.Size = new Size(112, 23);
             editMatchLabel.TabIndex = 15;
@@ -230,7 +262,7 @@
             // 
             deleteMatchLabel.AutoSize = true;
             deleteMatchLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            deleteMatchLabel.Location = new Point(837, 260);
+            deleteMatchLabel.Location = new Point(578, 260);
             deleteMatchLabel.Name = "deleteMatchLabel";
             deleteMatchLabel.Size = new Size(142, 23);
             deleteMatchLabel.TabIndex = 15;
@@ -256,7 +288,7 @@
             deleteMatchBtn.IconColor = Color.White;
             deleteMatchBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             deleteMatchBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            deleteMatchBtn.Location = new Point(837, 295);
+            deleteMatchBtn.Location = new Point(578, 295);
             deleteMatchBtn.Name = "deleteMatchBtn";
             deleteMatchBtn.Size = new Size(226, 43);
             deleteMatchBtn.TabIndex = 10;
@@ -274,7 +306,7 @@
             editMatchBtn.IconColor = Color.White;
             editMatchBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             editMatchBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            editMatchBtn.Location = new Point(417, 295);
+            editMatchBtn.Location = new Point(317, 295);
             editMatchBtn.Name = "editMatchBtn";
             editMatchBtn.Size = new Size(226, 43);
             editMatchBtn.TabIndex = 10;
@@ -430,5 +462,7 @@
         private ErrorProvider matchErrorProvider;
         private Label addMatch;
         private Label statusLabel;
+        private FontAwesome.Sharp.IconButton PDFBtn;
+        private Label pdfLabel;
     }
 }

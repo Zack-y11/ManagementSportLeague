@@ -136,6 +136,7 @@
             PDFBtn.TabIndex = 10;
             PDFBtn.Text = "Generate PDF";
             PDFBtn.UseVisualStyleBackColor = false;
+            //PDFBtn.Click += PDFBtn_Click;
             // 
             // logOutBtn
             // 

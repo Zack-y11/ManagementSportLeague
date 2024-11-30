@@ -59,17 +59,19 @@
             // 
             // panelPositionTable
             // 
+            panelPositionTable.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             panelPositionTable.BackColor = Color.FromArgb(147, 51, 234);
             panelPositionTable.Controls.Add(ipbPositionTable);
             panelPositionTable.Controls.Add(teamsStandingDGV);
             panelPositionTable.Controls.Add(labelPositionTable);
             panelPositionTable.Location = new Point(612, 39);
             panelPositionTable.Name = "panelPositionTable";
-            panelPositionTable.Size = new Size(406, 562);
+            panelPositionTable.Size = new Size(443, 562);
             panelPositionTable.TabIndex = 10;
             // 
             // ipbPositionTable
             // 
+            ipbPositionTable.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             ipbPositionTable.BackColor = Color.FromArgb(147, 51, 234);
             ipbPositionTable.IconChar = FontAwesome.Sharp.IconChar.RankingStar;
             ipbPositionTable.IconColor = Color.White;
@@ -83,11 +85,12 @@
             // 
             // teamsStandingDGV
             // 
+            teamsStandingDGV.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             teamsStandingDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            teamsStandingDGV.Location = new Point(35, 63);
+            teamsStandingDGV.Location = new Point(31, 63);
             teamsStandingDGV.Name = "teamsStandingDGV";
             teamsStandingDGV.RowHeadersWidth = 51;
-            teamsStandingDGV.Size = new Size(345, 469);
+            teamsStandingDGV.Size = new Size(386, 446);
             teamsStandingDGV.TabIndex = 1;
             // 
             // labelPositionTable
@@ -103,23 +106,25 @@
             // 
             // panelWins
             // 
+            panelWins.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelWins.BackColor = Color.FromArgb(22, 163, 74);
             panelWins.Controls.Add(ipbStar);
             panelWins.Controls.Add(labelWinsNumber);
             panelWins.Controls.Add(labelWins);
             panelWins.Location = new Point(43, 39);
             panelWins.Name = "panelWins";
-            panelWins.Size = new Size(505, 152);
+            panelWins.Size = new Size(529, 152);
             panelWins.TabIndex = 8;
             // 
             // ipbStar
             // 
+            ipbStar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             ipbStar.BackColor = Color.Transparent;
             ipbStar.IconChar = FontAwesome.Sharp.IconChar.Star;
             ipbStar.IconColor = Color.White;
             ipbStar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             ipbStar.IconSize = 40;
-            ipbStar.Location = new Point(454, 16);
+            ipbStar.Location = new Point(478, 16);
             ipbStar.Name = "ipbStar";
             ipbStar.Size = new Size(40, 40);
             ipbStar.TabIndex = 4;
@@ -138,17 +143,19 @@
             // 
             // labelWins
             // 
+            labelWins.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             labelWins.AutoSize = true;
             labelWins.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelWins.ForeColor = Color.White;
-            labelWins.Location = new Point(229, 16);
+            labelWins.Location = new Point(190, 10);
             labelWins.Name = "labelWins";
-            labelWins.Size = new Size(96, 25);
+            labelWins.Size = new Size(61, 25);
             labelWins.TabIndex = 0;
-            labelWins.Text = "Victorias";
+            labelWins.Text = "Wins";
             // 
             // panelNextMach
             // 
+            panelNextMach.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             panelNextMach.BackColor = Color.FromArgb(37, 99, 235);
             panelNextMach.Controls.Add(ipbActivities);
             panelNextMach.Controls.Add(labelTimeNextMatch);
@@ -156,17 +163,18 @@
             panelNextMach.Controls.Add(labelNextActivity);
             panelNextMach.Location = new Point(43, 234);
             panelNextMach.Name = "panelNextMach";
-            panelNextMach.Size = new Size(505, 152);
+            panelNextMach.Size = new Size(529, 152);
             panelNextMach.TabIndex = 7;
             // 
             // ipbActivities
             // 
+            ipbActivities.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             ipbActivities.BackColor = Color.Transparent;
             ipbActivities.IconChar = FontAwesome.Sharp.IconChar.Calendar;
             ipbActivities.IconColor = Color.White;
             ipbActivities.IconFont = FontAwesome.Sharp.IconFont.Auto;
             ipbActivities.IconSize = 40;
-            ipbActivities.Location = new Point(454, 9);
+            ipbActivities.Location = new Point(478, 9);
             ipbActivities.Name = "ipbActivities";
             ipbActivities.Size = new Size(40, 40);
             ipbActivities.TabIndex = 4;
@@ -196,11 +204,12 @@
             // 
             // labelNextActivity
             // 
+            labelNextActivity.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             labelNextActivity.AutoSize = true;
             labelNextActivity.BackColor = Color.FromArgb(37, 99, 235);
             labelNextActivity.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelNextActivity.ForeColor = Color.White;
-            labelNextActivity.Location = new Point(229, 9);
+            labelNextActivity.Location = new Point(190, 9);
             labelNextActivity.Name = "labelNextActivity";
             labelNextActivity.Size = new Size(121, 25);
             labelNextActivity.TabIndex = 0;
@@ -208,6 +217,7 @@
             // 
             // panelPlayers
             // 
+            panelPlayers.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelPlayers.BackColor = Color.FromArgb(202, 138, 4);
             panelPlayers.Controls.Add(ipbPlayers);
             panelPlayers.Controls.Add(labelPlayersStatus);
@@ -215,17 +225,18 @@
             panelPlayers.Controls.Add(labelPlayers);
             panelPlayers.Location = new Point(43, 449);
             panelPlayers.Name = "panelPlayers";
-            panelPlayers.Size = new Size(505, 152);
+            panelPlayers.Size = new Size(529, 152);
             panelPlayers.TabIndex = 9;
             // 
             // ipbPlayers
             // 
+            ipbPlayers.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             ipbPlayers.BackColor = Color.Transparent;
             ipbPlayers.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
             ipbPlayers.IconColor = Color.White;
             ipbPlayers.IconFont = FontAwesome.Sharp.IconFont.Auto;
             ipbPlayers.IconSize = 40;
-            ipbPlayers.Location = new Point(454, 11);
+            ipbPlayers.Location = new Point(478, 11);
             ipbPlayers.Name = "ipbPlayers";
             ipbPlayers.Size = new Size(40, 40);
             ipbPlayers.TabIndex = 3;
@@ -238,9 +249,9 @@
             labelPlayersStatus.ForeColor = Color.White;
             labelPlayersStatus.Location = new Point(23, 115);
             labelPlayersStatus.Name = "labelPlayersStatus";
-            labelPlayersStatus.Size = new Size(99, 25);
+            labelPlayersStatus.Size = new Size(83, 25);
             labelPlayersStatus.TabIndex = 4;
-            labelPlayersStatus.Text = "en activo";
+            labelPlayersStatus.Text = "Actives";
             // 
             // labelPlayersNumber
             // 
@@ -255,10 +266,11 @@
             // 
             // labelPlayers
             // 
+            labelPlayers.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             labelPlayers.AutoSize = true;
             labelPlayers.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelPlayers.ForeColor = Color.White;
-            labelPlayers.Location = new Point(134, 11);
+            labelPlayers.Location = new Point(190, 11);
             labelPlayers.Name = "labelPlayers";
             labelPlayers.Size = new Size(175, 25);
             labelPlayers.TabIndex = 0;

@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             headerTeamsPanel = new Panel();
+            searchTeamBtn = new FontAwesome.Sharp.IconButton();
             searchTeamTextBox = new TextBox();
             searchIcon = new FontAwesome.Sharp.IconPictureBox();
             teamsLabel = new Label();
@@ -52,6 +54,7 @@
             editTeamLabel = new Label();
             teamNameTextBox = new TextBox();
             teamNameLabel = new Label();
+            teamErrorProvider = new ErrorProvider(components);
             headerTeamsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)searchIcon).BeginInit();
             contentTeamsPanel.SuspendLayout();
@@ -59,10 +62,12 @@
             tapTeamsControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)activeTeamsDataGrip).BeginInit();
             teamPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)teamErrorProvider).BeginInit();
             SuspendLayout();
             // 
             // headerTeamsPanel
             // 
+            headerTeamsPanel.Controls.Add(searchTeamBtn);
             headerTeamsPanel.Controls.Add(searchTeamTextBox);
             headerTeamsPanel.Controls.Add(searchIcon);
             headerTeamsPanel.Controls.Add(teamsLabel);
@@ -73,6 +78,21 @@
             headerTeamsPanel.Size = new Size(1199, 94);
             headerTeamsPanel.TabIndex = 0;
             // 
+            // searchTeamBtn
+            // 
+            searchTeamBtn.BackColor = Color.YellowGreen;
+            searchTeamBtn.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            searchTeamBtn.IconChar = FontAwesome.Sharp.IconChar.None;
+            searchTeamBtn.IconColor = Color.Black;
+            searchTeamBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            searchTeamBtn.Location = new Point(686, 60);
+            searchTeamBtn.Margin = new Padding(3, 2, 3, 2);
+            searchTeamBtn.Name = "searchTeamBtn";
+            searchTeamBtn.Size = new Size(210, 29);
+            searchTeamBtn.TabIndex = 7;
+            searchTeamBtn.Text = "Search";
+            searchTeamBtn.UseVisualStyleBackColor = false;
+            // 
             // searchTeamTextBox
             // 
             searchTeamTextBox.Location = new Point(86, 62);
@@ -82,6 +102,7 @@
             searchTeamTextBox.PlaceholderText = "All teams";
             searchTeamTextBox.Size = new Size(574, 26);
             searchTeamTextBox.TabIndex = 2;
+            searchTeamTextBox.TextChanged += searchTeamTextBox_TextChanged;
             // 
             // searchIcon
             // 
@@ -233,6 +254,7 @@
             pointsTextBox.Location = new Point(14, 201);
             pointsTextBox.Margin = new Padding(3, 2, 3, 2);
             pointsTextBox.Name = "pointsTextBox";
+            pointsTextBox.PlaceholderText = "Default: 0";
             pointsTextBox.Size = new Size(170, 23);
             pointsTextBox.TabIndex = 17;
             // 
@@ -251,6 +273,7 @@
             loosesTextBox.Location = new Point(209, 130);
             loosesTextBox.Margin = new Padding(3, 2, 3, 2);
             loosesTextBox.Name = "loosesTextBox";
+            loosesTextBox.PlaceholderText = "Default: 0";
             loosesTextBox.Size = new Size(170, 23);
             loosesTextBox.TabIndex = 15;
             // 
@@ -269,6 +292,7 @@
             winsTextBox.Location = new Point(209, 57);
             winsTextBox.Margin = new Padding(3, 2, 3, 2);
             winsTextBox.Name = "winsTextBox";
+            winsTextBox.PlaceholderText = "Default: 0";
             winsTextBox.Size = new Size(170, 23);
             winsTextBox.TabIndex = 13;
             // 
@@ -339,6 +363,10 @@
             teamNameLabel.TabIndex = 6;
             teamNameLabel.Text = "Team Name";
             // 
+            // teamErrorProvider
+            // 
+            teamErrorProvider.ContainerControl = this;
+            // 
             // TeamsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -360,6 +388,7 @@
             ((System.ComponentModel.ISupportInitialize)activeTeamsDataGrip).EndInit();
             teamPanel.ResumeLayout(false);
             teamPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)teamErrorProvider).EndInit();
             ResumeLayout(false);
         }
 
@@ -395,5 +424,7 @@
         private TextBox loosesTextBox;
         private Label pointsLabel;
         private TextBox pointsTextBox;
+        private FontAwesome.Sharp.IconButton searchTeamBtn;
+        private ErrorProvider teamErrorProvider;
     }
 }

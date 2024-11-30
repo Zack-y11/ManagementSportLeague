@@ -1,5 +1,4 @@
-﻿using BusinessLayer.Services;
-using CommonLayer.Models;
+﻿using PresentationLayer.ManagerForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,36 +9,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
-
-namespace PresentationLayer.ManagerForms
+namespace PresentationLayer.Forms.Player
 {
-    public partial class ManagerForm : Form
+    public partial class PlayerDashboardForm : Form
     {
         private Form activeChildForm;
-        private readonly IMatchService _matchService;
-        private readonly ITeamService _teamService;
-        private readonly IPlayerService _playerService;
-        public ManagerForm(IMatchService matchService, ITeamService teamService, IPlayerService playerService)
+        public PlayerDashboardForm()
         {
             InitializeComponent();
-            _matchService = matchService;
-            _playerService = playerService;
-            _teamService = teamService;
-            LoadDashboardContent();
-
             SetUpButtons();
-
         }
+
+
         private void SetUpButtons()
         {
             dashboardBtn.Click += ButtonClickHandler;
-            activitiesBtn.Click += ButtonClickHandler;
-            playersBtn.Click += ButtonClickHandler;
-            statsBtn.Click += ButtonClickHandler;
-            positiontablebtn.Click += ButtonClickHandler;
-
-
+            calendarBtn.Click += ButtonClickHandler;
+            playerTeamBtn.Click += ButtonClickHandler;
+            positionTableBtn.Click += ButtonClickHandler;
+            settingsPlayerBtn.Click += ButtonClickHandler;
 
         }
 
@@ -78,36 +66,48 @@ namespace PresentationLayer.ManagerForms
             Button button = (Button)sender;
             switch (button.Name.ToLower())
             {
+
                 case "dashboardbtn":
                     LoadDashboardContent();
                     break;
+                case "calendarbtn":
+                    LoadCalendarContent();
+                    break;
 
-                case "activitiesbtn":
-                    LoadActivitiesContent();
+                case "playerteambtn":
+                    LoadPlayerTeamContent();
                     break;
                 default:
                     MessageBox.Show($"Unknown button: {button.Name}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
-
-                case "playersbtn":
-                    LoadPlayersContent();
-                    break;
-
-                case "statsbtn":
-                    //LoadStatsContent();
-                    break;
-
                 case "positiontablebtn":
-                    //LoadPositionTableContent();
+                    LoadPositionContent();
                     break;
+                case "settingsplayerbtn":
+                    LoadSettingsContent();
+                    break;
+
             }
         }
-
-        private void LoadActivitiesContent()
+        private void LoadDashboardContent()
         {
             try
             {
-                var activitiesForm = new ActivitiesForm();
+                var playerInfoForm = new PlayerInfoForm();
+                OpenChildForm(playerInfoForm);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while loading the activities: {ex.Message}",
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LoadCalendarContent()
+        {
+            try
+            {
+                var activitiesForm = new CalendarForm();
                 OpenChildForm(activitiesForm);
             }
             catch (Exception ex)
@@ -116,59 +116,47 @@ namespace PresentationLayer.ManagerForms
                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void LoadPlayersContent()
+        private void LoadPlayerTeamContent()
         {
             try
             {
-                var playersForm = new PlayersForm(_playerService, AuthenticatedUser.UserId);
-                OpenChildForm(playersForm);
+                var playerTeamForm = new PlayerTeamForm();
+                OpenChildForm(playerTeamForm);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred while loading the players: {ex.Message}",
+                MessageBox.Show($"An error occurred while loading the activities: {ex.Message}",
                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
-        private void LoadDashboardContent()
+        private void LoadPositionContent()
         {
             try
             {
-                // pass to dashboard the matches service
-                var dashboardForm = new DashboardForm(_matchService, _teamService, AuthenticatedUser.UserId);
-                OpenChildForm(dashboardForm);
-
+                var positionForm = new PositionForm();
+                OpenChildForm(positionForm);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred while loading the dashboard: {ex.Message}",
+                MessageBox.Show($"An error occurred while loading the activities: {ex.Message}",
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void LoadSettingsContent()
+        {
+            try
+            {
+                var setitngsPlayerForm = new SettingsPlayerForm();
+                OpenChildForm(setitngsPlayerForm);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while loading the activities: {ex.Message}",
                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void closeBtn_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void maximizeBtn_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-            UpdateWindowButtons();
-        }
-
-        private void UpdateWindowButtons()
-        {
-
-            maximizeBtn.Visible = (this.WindowState != FormWindowState.Maximized);
-            resetBtn.Visible = (this.WindowState == FormWindowState.Maximized);
-        }
-
-        private void resetBtn_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Normal;
-            UpdateWindowButtons();
-        }
+       
     }
-}
 
+}

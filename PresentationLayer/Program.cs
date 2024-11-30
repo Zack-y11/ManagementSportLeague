@@ -49,10 +49,15 @@ namespace PresentationLayer
                         reloadOnChange: true
                      );
                 })
-                .ConfigureServices((context, services) =>
-                {
-                    //Connection
+                .ConfigureServices((context, services) => {
                     services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
+                    //Forms
+                    services.AddTransient<dashboardAdmin>();
+                    services.AddTransient<LoginForms>();
+                    services.AddTransient<ManagerForm>();
+                    services.AddTransient<PlayerDashboardForm>();
+
+
 
                     //Repositories
                     services.AddScoped<IMatchRepository, MatchRepository>();

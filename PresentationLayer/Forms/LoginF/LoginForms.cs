@@ -26,6 +26,7 @@ namespace PresentationLayer.LoginF
             InitializeComponent();
             _userService = userService;
             _serviceProvider = serviceProvider;
+            resetBtn.Visible = false;
         }
 
         private void SignInButtom_Click(object sender, EventArgs e)
@@ -41,22 +42,49 @@ namespace PresentationLayer.LoginF
                 {
                     this.Hide();
                     _serviceProvider.GetRequiredService<dashboardAdmin>().ShowDialog();
-                } else if (AuthenticatedUser.RoleId == (int)Roles.Manager)
+                }
+                else if (AuthenticatedUser.RoleId == (int)Roles.Manager)
                 {
                     // manager o coach
                     this.Hide();
                     _serviceProvider.GetRequiredService<ManagerForm>().ShowDialog();
 
-                } else if (AuthenticatedUser.RoleId == (int)Roles.Player)
+                }
+                else if (AuthenticatedUser.RoleId == (int)Roles.Player)
                 {
                     // player
 
                 }
-            }else
+            }
+            else
             {
-                
+
                 MessageBox.Show("Invalid email or password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void closeBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void maximizeBtn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            UpdateWindowButtons();
+        }
+
+
+        private void UpdateWindowButtons()
+        {
+            maximizeBtn.Visible = (this.WindowState != FormWindowState.Maximized);
+            resetBtn.Visible = (this.WindowState == FormWindowState.Maximized);
+        }
+
+        private void resetBtn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+            UpdateWindowButtons();
         }
     }
 }

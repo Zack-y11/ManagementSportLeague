@@ -8,15 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PresentationLayer.ManagerForms
+namespace PresentationLayer.Forms.Player
 {
-    public partial class ActivitiesForm : Form
+    public partial class PlayerTeamForm : Form
     {
-        public ActivitiesForm()
+        public PlayerTeamForm()
         {
             InitializeComponent();
         }
-
-      
     }
 }

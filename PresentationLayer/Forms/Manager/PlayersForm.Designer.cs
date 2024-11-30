@@ -31,6 +31,7 @@
             textBoxName = new TextBox();
             labelPlayers = new Label();
             playersDataGridView = new DataGridView();
+            playerInfoDataGrip = new DataGridView();
             labelName = new Label();
             panelPlayers = new Panel();
             assistsNumeric = new NumericUpDown();
@@ -49,6 +50,7 @@
             btnEditPlayer = new FontAwesome.Sharp.IconButton();
             btnDeletePlayer = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)playersDataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)playerInfoDataGrip).BeginInit();
             panelPlayers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)assistsNumeric).BeginInit();
             ((System.ComponentModel.ISupportInitialize)goalsNumeric).BeginInit();
@@ -58,7 +60,7 @@
             // 
             textBoxName.Location = new Point(101, 180);
             textBoxName.Name = "textBoxName";
-            textBoxName.Size = new Size(166, 27);
+            textBoxName.Size = new Size(148, 27);
             textBoxName.TabIndex = 1;
             // 
             // labelPlayers
@@ -81,6 +83,15 @@
             playersDataGridView.Size = new Size(542, 283);
             playersDataGridView.TabIndex = 4;
             // 
+            // playerInfoDataGrip
+            // 
+            playerInfoDataGrip.ColumnHeadersHeight = 29;
+            playerInfoDataGrip.Location = new Point(0, 0);
+            playerInfoDataGrip.Name = "playerInfoDataGrip";
+            playerInfoDataGrip.RowHeadersWidth = 51;
+            playerInfoDataGrip.Size = new Size(240, 150);
+            playerInfoDataGrip.TabIndex = 0;
+            // 
             // labelName
             // 
             labelName.AutoSize = true;
@@ -94,6 +105,7 @@
             // 
             // panelPlayers
             // 
+            panelPlayers.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             panelPlayers.BackColor = Color.FromArgb(202, 138, 4);
             panelPlayers.Controls.Add(assistsNumeric);
             panelPlayers.Controls.Add(assistLabel);
@@ -111,7 +123,7 @@
             panelPlayers.Controls.Add(labelPlayers);
             panelPlayers.Controls.Add(textBoxName);
             panelPlayers.Controls.Add(labelName);
-            panelPlayers.Location = new Point(600, 12);
+            panelPlayers.Location = new Point(819, 21);
             panelPlayers.Name = "panelPlayers";
             panelPlayers.Size = new Size(421, 503);
             panelPlayers.TabIndex = 9;
@@ -254,9 +266,9 @@
             btnEditPlayer.Location = new Point(329, 341);
             btnEditPlayer.Name = "btnEditPlayer";
             btnEditPlayer.Padding = new Padding(12, 0, 0, 0);
-            btnEditPlayer.Size = new Size(248, 46);
+            btnEditPlayer.Size = new Size(225, 46);
             btnEditPlayer.TabIndex = 13;
-            btnEditPlayer.Text = "Edit Player";
+            btnEditPlayer.Text = "   Edit Player";
             btnEditPlayer.UseVisualStyleBackColor = true;
             btnEditPlayer.Click += btnEditPlayer_Click;
             // 
@@ -272,9 +284,9 @@
             btnDeletePlayer.Location = new Point(35, 341);
             btnDeletePlayer.Name = "btnDeletePlayer";
             btnDeletePlayer.Padding = new Padding(12, 0, 0, 0);
-            btnDeletePlayer.Size = new Size(248, 46);
+            btnDeletePlayer.Size = new Size(229, 46);
             btnDeletePlayer.TabIndex = 12;
-            btnDeletePlayer.Text = "Delete Player";
+            btnDeletePlayer.Text = "   Delete Player";
             btnDeletePlayer.UseVisualStyleBackColor = true;
             btnDeletePlayer.Click += btnDeletePlayer_Click;
             // 
@@ -290,6 +302,7 @@
             Name = "PlayersForm";
             Text = "PlayersForm";
             ((System.ComponentModel.ISupportInitialize)playersDataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)playerInfoDataGrip).EndInit();
             panelPlayers.ResumeLayout(false);
             panelPlayers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)assistsNumeric).EndInit();
@@ -300,7 +313,10 @@
         #endregion
         private TextBox textBoxName;
         private Label labelPlayers;
+
         private DataGridView playersDataGridView;
+        private DataGridView playerInfoDataGrip;
+
         private Label labelName;
         private Label labelLastname;
         private TextBox textBoxLastname;
@@ -310,6 +326,7 @@
         private FontAwesome.Sharp.IconButton btnAddPlayer;
         private FontAwesome.Sharp.IconButton btnEditPlayer;
         private FontAwesome.Sharp.IconButton btnDeletePlayer;
+
         private TextBox positionTextbox;
         private Label PositionLabel;
         private TextBox playerEmailTextBox;
@@ -321,5 +338,15 @@
         private Label assistLabel;
         private NumericUpDown goalsNumeric;
         private Label goalsLabel;
+/*
+        private TextBox textBox1;
+        private Label labelPosition;
+        private Label teamLabel;
+        private ComboBox teamComboBox;
+        private Label birthdayLabel;
+        private Label label1;
+        private DateTimePicker dateTimePicker1;
+        private TextBox assistsTextBox;
+*/
     }
 }

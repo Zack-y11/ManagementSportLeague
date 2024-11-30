@@ -19,10 +19,12 @@ namespace PresentationLayer.ManagerForms
         private Form activeChildForm;
         private readonly IMatchService _matchService;
         private readonly ITeamService _teamService;
-        public ManagerForm(IMatchService matchService, ITeamService teamService)
+        private readonly IPlayerService _playerService;
+        public ManagerForm(IMatchService matchService, ITeamService teamService, IPlayerService playerService)
         {
             InitializeComponent();
             _matchService = matchService;
+            _playerService = playerService;
             _teamService = teamService;
             LoadDashboardContent();
 
@@ -34,11 +36,6 @@ namespace PresentationLayer.ManagerForms
             dashboardBtn.Click += ButtonClickHandler;
             activitiesBtn.Click += ButtonClickHandler;
             playersBtn.Click += ButtonClickHandler;
-            statsBtn.Click += ButtonClickHandler;
-            positiontablebtn.Click += ButtonClickHandler;
-
-
-
         }
 
         private void OpenChildForm(Form childForm)
@@ -90,14 +87,6 @@ namespace PresentationLayer.ManagerForms
                 case "playersbtn":
                     LoadPlayersContent();
                     break;
-
-                case "statsbtn":
-                    LoadStatsContent();
-                    break;
-
-                case "positiontablebtn":
-                    LoadPositionTableContent();
-                    break;
             }
         }
 
@@ -118,9 +107,8 @@ namespace PresentationLayer.ManagerForms
         {
             try
             {
-                var playersForm = new PlayersForm();
+                var playersForm = new PlayersForm(_playerService, AuthenticatedUser.UserId);
                 OpenChildForm(playersForm);
-
             }
             catch (Exception ex)
             {
@@ -128,35 +116,7 @@ namespace PresentationLayer.ManagerForms
                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void LoadStatsContent()
-        {
-            try
-            {
-                var statsForm = new StatsForm();
-                OpenChildForm(statsForm);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred while loading the stats: {ex.Message}",
-                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void LoadPositionTableContent()
-        {
-            try
-            {
-                var positionTableForm = new PositionForm();
-
-                OpenChildForm(positionTableForm);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred while loading the position table: {ex.Message}",
-                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
+        
         private void LoadDashboardContent()
         {
             try

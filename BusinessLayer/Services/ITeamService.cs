@@ -13,5 +13,9 @@ namespace BusinessLayer.Services
         int GetTeamVictoriesCount(int teamId);
         int GetTeamPlayersCount(int userId);
         IEnumerable<TeamStandingsDto> GetTeamStandings();
+        IEnumerable <Team> GetRankedTeams();
+        int GetMatchesCount();
+        int GetFouslCount();
+        int GetCornersCount();
     }
 }

@@ -54,7 +54,7 @@ namespace PresentationLayer.Forms
                     if (!result.IsValid)
                     {
                         DisplayValidateErrors(result);
-                        MessageBox.Show("User have don't be updated", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("User has not been updated", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
@@ -79,7 +79,7 @@ namespace PresentationLayer.Forms
                     if (!result.IsValid)
                     {
                         DisplayValidateErrors(result);
-                        MessageBox.Show("User have don't be created", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("User has not been created", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
@@ -123,7 +123,7 @@ namespace PresentationLayer.Forms
                 else
                 {
                     var delete = new DialogResult();
-                    delete = MessageBox.Show("¿Are you sure to delete an User?", "Beware", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    delete = MessageBox.Show("Are you sure to delete an User?", "Beware", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (delete == DialogResult.Yes)
                     {
                         int id = Convert.ToInt32(usersDataGrip.SelectedRows[0].Cells["UserId"].Value);

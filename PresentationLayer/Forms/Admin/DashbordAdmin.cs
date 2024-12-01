@@ -245,7 +245,7 @@ namespace PresentationLayer.Forms
         {
             try
             {
-                var form = new StatisticsForm();
+                var form = new StatisticsForm(_teamService);
                 OpenChildForm(form);
             }
             catch (Exception ex)

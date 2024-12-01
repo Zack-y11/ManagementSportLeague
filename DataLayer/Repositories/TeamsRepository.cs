@@ -137,5 +137,54 @@ namespace DataLayer.Repositories
                 return connection.Query<TeamStandingsDto>(query);
             }
         }
+
+        public IEnumerable<Team> GetRankedTeams()
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"
+            SELECT 
+                u.UserId AS ManagerId,
+                t.TeamName AS TeamName,
+                t.Wins,
+                t.Loses,
+                t.Points,
+                u.Name AS Manager,
+                t.TeamId AS TeamId,
+                RANK() OVER (ORDER BY t.Points DESC, t.Wins DESC, t.Loses ASC) as Rank
+            FROM Teams t
+            JOIN Users u ON t.ManagerId = u.UserId
+            ORDER BY t.Points DESC, t.Wins DESC, t.Loses ASC;";
+
+                return connection.Query<Team>(query);
+            }
+        }
+
+        public int GetTotalMatchesCount()
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = "SELECT COUNT(*) FROM Matches;";
+                return connection.ExecuteScalar<int>(query);
+            }
+        }
+
+        public int GetTotalFoulsCount()
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = "SELECT SUM(Fouls) FROM Matches;";
+                return connection.ExecuteScalar<int>(query);
+            }
+        }
+
+        public int GetTotalCornersCount()
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = "SELECT SUM(Corners) FROM Matches;";
+                return connection.ExecuteScalar<int>(query);
+            }
+        }
     }
 }

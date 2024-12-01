@@ -77,7 +77,7 @@ namespace PresentationLayer.Forms
                     if (!result.IsValid)
                     {
                         DisplayMatchValidation(result);
-                        MessageBox.Show("Match have don't be updated", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("The match has not been updated.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
@@ -105,7 +105,7 @@ namespace PresentationLayer.Forms
                     if (!result.IsValid)
                     {
                         DisplayMatchValidation(result);
-                        MessageBox.Show("Match have don't be added", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("The match has not been added", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
@@ -149,17 +149,18 @@ namespace PresentationLayer.Forms
         {
             if (matchInformation.SelectedRows.Count < 1)
             {
-                MessageBox.Show("Debe seleccionar una fila para eliminar", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("You must select a row to delete", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
             }
             else
             {
                 var delete = new DialogResult();
-                delete = MessageBox.Show("¿Está seguro de eliminar el partido?", "Cuidado", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                delete = MessageBox.Show("Are you sure you want to delete the match?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (delete == DialogResult.Yes)
                 {
                     int id = Convert.ToInt32(matchInformation.SelectedRows[0].Cells["MatchId"].Value);
                     _matchService.DeleteMatch(id);
-                    MessageBox.Show("Match Eliminado Correctamente");
+                    MessageBox.Show("Match Deleted Successfully");
                     LoadData();
                 }
             }

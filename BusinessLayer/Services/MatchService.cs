@@ -11,13 +11,17 @@ namespace BusinessLayer.Services
     public class MatchService : IMatchService
     {
         private readonly IMatchRepository _matchRepository;
-        public MatchService(IMatchRepository matchRepository)
+        private readonly IEmailService _emailService;
+        private readonly ITeamService _teamsService;
+        public MatchService(IMatchRepository matchRepository, IEmailService emailService, ITeamService teamsService)
         {
             _matchRepository = matchRepository;
+            _emailService = emailService;
+            _teamsService = teamsService;
         }
         public IEnumerable<Match> GetMatches() => _matchRepository.GetMatches();
 
-        public  void AddMatch(Match match) => _matchRepository.AddMatch(match);
+        public async void AddMatch(Match match) =>_matchRepository.AddMatch(match);
         public void UpdateMatch(Match match) => _matchRepository.UpdateMatch(match);
         public void DeleteMatch(int matchId) => _matchRepository.DeleteMatch(matchId);
         public NextMatchDto? GetNextMatch(int userId) => _matchRepository.GetNextMatch(userId);

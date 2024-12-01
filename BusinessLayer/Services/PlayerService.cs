@@ -11,9 +11,12 @@ namespace BusinessLayer.Services
     public class PlayerService : IPlayerService
     {
         private readonly IPlayerRepository _playerRepository;
-        public PlayerService(IPlayerRepository playerRepository)
+        private readonly IEmailService _emailService;
+
+        public PlayerService(IPlayerRepository playerRepository, IEmailService emailService)
         {
             _playerRepository = playerRepository;
+            _emailService = emailService;
         }
         public IEnumerable<Player> GetAll()
         {
@@ -38,6 +41,7 @@ namespace BusinessLayer.Services
         public void CreateUserPlayer(int creatorId, string email, string password, string name, string position, DateTime birthDate, int goals, int assists)
         {
             _playerRepository.CreateUserPlayer(creatorId, email, password, name, position, birthDate, goals, assists);
+            Task.Run(() => _emailService.SendWelcomeEmailAsync(email, name, password));
         }
     }
 }

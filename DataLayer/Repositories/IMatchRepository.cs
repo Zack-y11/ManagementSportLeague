@@ -12,6 +12,5 @@ namespace DataLayer.Repositories
         NextMatchDto? GetNextMatch(int userId);
         IEnumerable<Team> GetTeamIdAndName();
         IEnumerable<Match> MatchStatus();
-
     }
 }

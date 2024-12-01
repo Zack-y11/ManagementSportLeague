@@ -14,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Configuration;
 using PresentationLayer.ManagerForms;
 using PresentationLayer.Forms.Player;
+using CommonLayer.Models;
 
 
 namespace PresentationLayer
@@ -51,6 +52,18 @@ namespace PresentationLayer
                      );
                 })
                 .ConfigureServices((context, services) => {
+                    // Get configuration
+                    var configuration = context.Configuration;
+
+                    // Configure EmailSettings from appsettings.json
+                    var emailSettings = configuration.GetSection("EmailSettings").Get<EmailSettings>();
+                    //services.Configure<EmailSettings>(configuration.GetSection("EmailSettings"));
+                    services.AddSingleton<IEmailService>(new EmailService(
+                        emailSettings.SmtpServer,
+                        emailSettings.Port,
+                        emailSettings.SenderEmail,
+                        emailSettings.Password
+                    )); 
                     services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
                     //Forms
                     services.AddTransient<dashboardAdmin>();
@@ -73,6 +86,7 @@ namespace PresentationLayer
                     services.AddScoped<ITeamService, TeamService>();
                     services.AddScoped<IUserService, UserService>();
                     services.AddScoped<IPlayerService, PlayerService>();
+                    
 
                     //services.AddScoped<IEmailService, EmailService>();
 
@@ -80,9 +94,11 @@ namespace PresentationLayer
                     services.AddTransient<dashboardAdmin>();
                     services.AddTransient<LoginForms>();
                     services.AddTransient<ManagerForm>();
+
                     services.AddTransient<PlayerDashboardForm>();
+
                     
-                    
+
 
                     //Notifications
                     //services.AddScoped<IEmailNotification, EmailNotification>();

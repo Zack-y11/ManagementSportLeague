@@ -107,6 +107,7 @@ namespace DataLayer.Repositories
                     Goals = goals,
                     Assists = assists
                 });
+                
             }
         }
         public void Add(Player player)

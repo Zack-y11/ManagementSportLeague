@@ -19,17 +19,18 @@ namespace PresentationLayer.Forms
         private readonly ITeamService _teamService;
         private readonly IMatchService _matchService;
         private readonly IUserService _userService;
-
+        private readonly IEmailService _emailService;
         public dashboardAdmin(
             ITeamService teamService,
             IMatchService matchService,
-            IUserService userService)
+            IUserService userService,
+            IEmailService emailService)
         {
             InitializeComponent();
             _teamService = teamService;
             _matchService = matchService;
             _userService = userService;
-
+            _emailService = emailService;
 
             contentPanel.Dock = DockStyle.Fill;
             contentPanel.BringToFront();
@@ -192,7 +193,7 @@ namespace PresentationLayer.Forms
         {
             try
             {
-                var form = new MatchesListForm(_matchService, _teamService);
+                var form = new MatchesListForm(_matchService, _teamService, _emailService);
                 OpenChildForm(form);
             }
             catch (Exception ex)

@@ -13,5 +13,6 @@ namespace DataLayer.Repositories
         int GetTeamVictoriesCount(int teamId);
         int GetTeamPlayersCount(int userId);
         IEnumerable<TeamStandingsDto> GetTeamStandings();
+        CoachTeam GetManagerFromTeam (int teamId);
     }
 }

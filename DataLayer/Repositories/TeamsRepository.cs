@@ -95,6 +95,19 @@ namespace DataLayer.Repositories
             }
         }
 
+        public CoachTeam GetManagerFromTeam(int teamId)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"SELECT t.TeamName, u.Email as Email
+                                FROM Teams t
+                                INNER JOIN Users u ON t.ManagerId = u.UserId
+                                WHERE t.TeamId = @teamId;";
+
+                return connection.QuerySingle<CoachTeam>(query, new { teamId });
+            }
+        }
+
         public int GetTeamVictoriesCount(int userId)
         {
             using (var connection = _dbConnection.GetConnection())

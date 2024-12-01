@@ -21,9 +21,10 @@ namespace PresentationLayer.Forms
     {
         private readonly ITeamService _teamService;
         private IMatchService _matchService;
+        private IEmailService _emailService;
         bool isUpdating = false;
 
-        public MatchesListForm(IMatchService matchService, ITeamService teamService)
+        public MatchesListForm(IMatchService matchService, ITeamService teamService, IEmailService emailService)
         {
             InitializeComponent();
             _matchService = matchService;
@@ -35,6 +36,7 @@ namespace PresentationLayer.Forms
             _teamService = teamService;
             _matchService = matchService;
             _teamService = teamService;
+            _emailService = emailService;
         }
         public void LoadData()
         {
@@ -108,6 +110,9 @@ namespace PresentationLayer.Forms
                     else
                     {
                         _matchService.AddMatch(match);
+                        var coach1 = _teamService.GetManagerFromTeam(match.HomeTeamId); 
+                        var coach2 = _teamService.GetManagerFromTeam(match.AwayTeamId);
+                        _emailService.SendMatchCreatedEmailAsync(coach1.Email, coach1.TeamName, coach2.Email, coach2.TeamName, match.MatchDate);
                         MessageBox.Show("Match added successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadData();
                         ClearData();

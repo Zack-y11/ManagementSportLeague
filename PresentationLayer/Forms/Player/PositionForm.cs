@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLayer.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,13 +13,17 @@ namespace PresentationLayer.Forms.Player
 {
     public partial class PositionForm : Form
     {
-        public PositionForm()
+        private readonly ITeamService _teamService;
+        public PositionForm(ITeamService teamService)
         {
             InitializeComponent();
+            _teamService = teamService;
+            LoadData();
         }
-
+        public void LoadData()
+        {
+            leaguePositionDataGrip.DataSource = _teamService.GetTeamStandings();
+        }
     }
 
 }
-    
-

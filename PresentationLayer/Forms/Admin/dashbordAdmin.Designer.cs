@@ -41,6 +41,10 @@ namespace PresentationLayer.Forms
             iconPictureBox1 = new IconPictureBox();
             sportLabel = new Label();
             headerPanel = new Panel();
+            IconsPanel = new Panel();
+            resetBtn = new IconButton();
+            maximizeBtn = new IconButton();
+            closeBtn = new IconButton();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             contentPanel = new Panel();
@@ -70,6 +74,8 @@ namespace PresentationLayer.Forms
             matchInformationLabel = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
+            headerPanel.SuspendLayout();
+            IconsPanel.SuspendLayout();
             contentPanel.SuspendLayout();
             matchPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)matchInformation).BeginInit();
@@ -216,27 +222,85 @@ namespace PresentationLayer.Forms
             // 
             // headerPanel
             // 
-            headerPanel.BackColor = Color.White;
+            headerPanel.BackColor = Color.FromArgb(0, 123, 255);
+            headerPanel.Controls.Add(IconsPanel);
             headerPanel.Dock = DockStyle.Top;
             headerPanel.Location = new Point(263, 0);
             headerPanel.Name = "headerPanel";
-            headerPanel.Size = new Size(1107, 61);
+            headerPanel.Size = new Size(1107, 100);
             headerPanel.TabIndex = 2;
+            // 
+            // IconsPanel
+            // 
+            IconsPanel.Controls.Add(resetBtn);
+            IconsPanel.Controls.Add(maximizeBtn);
+            IconsPanel.Controls.Add(closeBtn);
+            IconsPanel.Dock = DockStyle.Right;
+            IconsPanel.Location = new Point(936, 0);
+            IconsPanel.Name = "IconsPanel";
+            IconsPanel.Size = new Size(171, 100);
+            IconsPanel.TabIndex = 8;
+            // 
+            // resetBtn
+            // 
+            resetBtn.Dock = DockStyle.Right;
+            resetBtn.FlatStyle = FlatStyle.Popup;
+            resetBtn.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            resetBtn.IconChar = IconChar.Subtract;
+            resetBtn.IconColor = Color.White;
+            resetBtn.IconFont = IconFont.Auto;
+            resetBtn.Location = new Point(4, 0);
+            resetBtn.Name = "resetBtn";
+            resetBtn.Size = new Size(58, 100);
+            resetBtn.TabIndex = 4;
+            resetBtn.UseVisualStyleBackColor = true;
+            resetBtn.Click += resetBtn_Click;
+            // 
+            // maximizeBtn
+            // 
+            maximizeBtn.Dock = DockStyle.Right;
+            maximizeBtn.FlatStyle = FlatStyle.Popup;
+            maximizeBtn.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            maximizeBtn.IconChar = IconChar.Clone;
+            maximizeBtn.IconColor = Color.White;
+            maximizeBtn.IconFont = IconFont.Auto;
+            maximizeBtn.Location = new Point(62, 0);
+            maximizeBtn.Name = "maximizeBtn";
+            maximizeBtn.Size = new Size(58, 100);
+            maximizeBtn.TabIndex = 3;
+            maximizeBtn.UseVisualStyleBackColor = true;
+            maximizeBtn.Click += maximizeBtn_Click;
+            // 
+            // closeBtn
+            // 
+            closeBtn.Dock = DockStyle.Right;
+            closeBtn.FlatStyle = FlatStyle.Popup;
+            closeBtn.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            closeBtn.IconChar = IconChar.Close;
+            closeBtn.IconColor = Color.White;
+            closeBtn.IconFont = IconFont.Auto;
+            closeBtn.Location = new Point(120, 0);
+            closeBtn.Name = "closeBtn";
+            closeBtn.Size = new Size(51, 100);
+            closeBtn.TabIndex = 5;
+            closeBtn.UseVisualStyleBackColor = true;
+            closeBtn.Click += closeBtn_Click;
             // 
             // contentPanel
             // 
+            contentPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             contentPanel.BackColor = SystemColors.Control;
             contentPanel.Controls.Add(matchPanel);
             contentPanel.Controls.Add(matchInformation);
             contentPanel.Controls.Add(matchInformationLabel);
-            contentPanel.Dock = DockStyle.Fill;
-            contentPanel.Location = new Point(263, 61);
+            contentPanel.Location = new Point(263, 100);
             contentPanel.Name = "contentPanel";
-            contentPanel.Size = new Size(1107, 688);
+            contentPanel.Size = new Size(1107, 649);
             contentPanel.TabIndex = 5;
             // 
             // matchPanel
             // 
+            matchPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             matchPanel.Controls.Add(statusComboBox);
             matchPanel.Controls.Add(matchDateTimePicker);
             matchPanel.Controls.Add(scoreTextBox);
@@ -260,13 +324,13 @@ namespace PresentationLayer.Forms
             matchPanel.Controls.Add(createMatchLabel);
             matchPanel.Location = new Point(0, 0);
             matchPanel.Name = "matchPanel";
-            matchPanel.Size = new Size(1107, 353);
+            matchPanel.Size = new Size(1104, 353);
             matchPanel.TabIndex = 15;
             // 
             // statusComboBox
             // 
             statusComboBox.FormattingEnabled = true;
-            statusComboBox.Location = new Point(584, 104);
+            statusComboBox.Location = new Point(560, 99);
             statusComboBox.Name = "statusComboBox";
             statusComboBox.Size = new Size(192, 26);
             statusComboBox.TabIndex = 32;
@@ -280,7 +344,7 @@ namespace PresentationLayer.Forms
             // 
             // scoreTextBox
             // 
-            scoreTextBox.Location = new Point(585, 188);
+            scoreTextBox.Location = new Point(560, 188);
             scoreTextBox.Name = "scoreTextBox";
             scoreTextBox.Size = new Size(191, 26);
             scoreTextBox.TabIndex = 30;
@@ -289,7 +353,7 @@ namespace PresentationLayer.Forms
             // 
             scoreLabel.AutoSize = true;
             scoreLabel.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
-            scoreLabel.Location = new Point(585, 156);
+            scoreLabel.Location = new Point(560, 156);
             scoreLabel.Name = "scoreLabel";
             scoreLabel.Size = new Size(61, 19);
             scoreLabel.TabIndex = 29;
@@ -299,7 +363,7 @@ namespace PresentationLayer.Forms
             // 
             matchStatusLabel.AutoSize = true;
             matchStatusLabel.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
-            matchStatusLabel.Location = new Point(585, 63);
+            matchStatusLabel.Location = new Point(560, 60);
             matchStatusLabel.Name = "matchStatusLabel";
             matchStatusLabel.Size = new Size(60, 19);
             matchStatusLabel.TabIndex = 28;
@@ -309,7 +373,7 @@ namespace PresentationLayer.Forms
             // 
             cornersLabel.AutoSize = true;
             cornersLabel.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
-            cornersLabel.Location = new Point(332, 250);
+            cornersLabel.Location = new Point(806, 60);
             cornersLabel.Name = "cornersLabel";
             cornersLabel.Size = new Size(77, 19);
             cornersLabel.TabIndex = 27;
@@ -319,7 +383,7 @@ namespace PresentationLayer.Forms
             // 
             foulsLabel.AutoSize = true;
             foulsLabel.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
-            foulsLabel.Location = new Point(332, 156);
+            foulsLabel.Location = new Point(297, 156);
             foulsLabel.Name = "foulsLabel";
             foulsLabel.Size = new Size(55, 19);
             foulsLabel.TabIndex = 26;
@@ -327,14 +391,14 @@ namespace PresentationLayer.Forms
             // 
             // foulsTextBox
             // 
-            foulsTextBox.Location = new Point(332, 188);
+            foulsTextBox.Location = new Point(300, 188);
             foulsTextBox.Name = "foulsTextBox";
             foulsTextBox.Size = new Size(191, 26);
             foulsTextBox.TabIndex = 25;
             // 
             // cornersTextBox
             // 
-            cornersTextBox.Location = new Point(332, 285);
+            cornersTextBox.Location = new Point(807, 98);
             cornersTextBox.Name = "cornersTextBox";
             cornersTextBox.Size = new Size(191, 26);
             cornersTextBox.TabIndex = 24;
@@ -343,7 +407,7 @@ namespace PresentationLayer.Forms
             // 
             timeLabel.AutoSize = true;
             timeLabel.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
-            timeLabel.Location = new Point(332, 63);
+            timeLabel.Location = new Point(300, 63);
             timeLabel.Name = "timeLabel";
             timeLabel.Size = new Size(52, 19);
             timeLabel.TabIndex = 21;
@@ -353,7 +417,7 @@ namespace PresentationLayer.Forms
             // 
             editMatchLabel.AutoSize = true;
             editMatchLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            editMatchLabel.Location = new Point(846, 156);
+            editMatchLabel.Location = new Point(356, 248);
             editMatchLabel.Name = "editMatchLabel";
             editMatchLabel.Size = new Size(112, 23);
             editMatchLabel.TabIndex = 15;
@@ -363,7 +427,7 @@ namespace PresentationLayer.Forms
             // 
             deleteMatchLabel.AutoSize = true;
             deleteMatchLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            deleteMatchLabel.Location = new Point(846, 269);
+            deleteMatchLabel.Location = new Point(657, 248);
             deleteMatchLabel.Name = "deleteMatchLabel";
             deleteMatchLabel.Size = new Size(142, 23);
             deleteMatchLabel.TabIndex = 15;
@@ -389,7 +453,7 @@ namespace PresentationLayer.Forms
             deleteMatchBtn.IconColor = Color.White;
             deleteMatchBtn.IconFont = IconFont.Auto;
             deleteMatchBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            deleteMatchBtn.Location = new Point(846, 295);
+            deleteMatchBtn.Location = new Point(657, 285);
             deleteMatchBtn.Name = "deleteMatchBtn";
             deleteMatchBtn.Size = new Size(226, 43);
             deleteMatchBtn.TabIndex = 10;
@@ -406,7 +470,7 @@ namespace PresentationLayer.Forms
             editMatchBtn.IconColor = Color.White;
             editMatchBtn.IconFont = IconFont.Auto;
             editMatchBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            editMatchBtn.Location = new Point(846, 209);
+            editMatchBtn.Location = new Point(356, 285);
             editMatchBtn.Name = "editMatchBtn";
             editMatchBtn.Size = new Size(226, 43);
             editMatchBtn.TabIndex = 10;
@@ -423,7 +487,7 @@ namespace PresentationLayer.Forms
             addMatchBtn.IconColor = Color.White;
             addMatchBtn.IconFont = IconFont.Auto;
             addMatchBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            addMatchBtn.Location = new Point(846, 83);
+            addMatchBtn.Location = new Point(15, 285);
             addMatchBtn.Name = "addMatchBtn";
             addMatchBtn.Size = new Size(226, 43);
             addMatchBtn.TabIndex = 10;
@@ -510,6 +574,8 @@ namespace PresentationLayer.Forms
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
+            headerPanel.ResumeLayout(false);
+            IconsPanel.ResumeLayout(false);
             contentPanel.ResumeLayout(false);
             matchPanel.ResumeLayout(false);
             matchPanel.PerformLayout();
@@ -556,5 +622,9 @@ namespace PresentationLayer.Forms
         private ComboBox homeTeamComboBox;
         private Label createMatchLabel;
         private DataGridView matchInformation;
+        private Panel IconsPanel;
+        private IconButton resetBtn;
+        private IconButton maximizeBtn;
+        private IconButton closeBtn;
     }
 }

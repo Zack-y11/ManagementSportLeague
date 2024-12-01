@@ -11,8 +11,7 @@ namespace PresentationLayer.Forms
 
     {
         private readonly Color DEFAULT_BACKGROUND = Color.Transparent;
-        private readonly Color HOVER_BACKGROUND = Color.FromArgb(230, 230, 230);
-        private readonly Color ACTIVE_BACKGROUND = Color.FromArgb(0, 123, 255);
+        private readonly Color HEADER_COLOR = Color.FromArgb(0, 123, 252);
         private IconButton currentButton;
         private Form activeForm = null;
         private IconButton hoveredButton = null;
@@ -31,10 +30,10 @@ namespace PresentationLayer.Forms
             _matchService = matchService;
             _userService = userService;
 
-            headerPanel.Dock = DockStyle.Top;
+
             contentPanel.Dock = DockStyle.Fill;
             contentPanel.BringToFront();
-
+            headerPanel.BackColor = HEADER_COLOR;
             LoadDashboardContent();
             SetupButton();
         }
@@ -43,24 +42,30 @@ namespace PresentationLayer.Forms
         {
             try
             {
+                contentPanel.SuspendLayout();
+
+                // First handle the active form if it exists
                 if (activeForm != null)
                 {
+                    activeForm.Hide();
                     activeForm.Close();
                     activeForm.Dispose();
                 }
 
-                activeForm = childForm;
 
+                contentPanel.Controls.Clear();
+
+                activeForm = childForm;
                 childForm.TopLevel = false;
                 childForm.FormBorderStyle = FormBorderStyle.None;
                 childForm.Dock = DockStyle.Fill;
 
-                contentPanel.Controls.Clear();
+
                 contentPanel.Controls.Add(childForm);
                 contentPanel.Tag = childForm;
-
-                childForm.BringToFront();
                 childForm.Show();
+
+                contentPanel.ResumeLayout(true);
             }
             catch (Exception ex)
             {
@@ -83,16 +88,10 @@ namespace PresentationLayer.Forms
             button.MouseEnter -= Button_MouseEnter;
             button.MouseLeave -= Button_MouseLeave;
             button.Click -= Button_Click;
-
-
             button.FlatStyle = FlatStyle.Flat;
             button.FlatAppearance.BorderSize = 0;
             button.BackColor = DEFAULT_BACKGROUND;
             button.IconColor = Color.Black;
-
-
-            button.MouseEnter += Button_MouseEnter;
-            button.MouseLeave += Button_MouseLeave;
             button.Click += Button_Click;
         }
 
@@ -101,14 +100,10 @@ namespace PresentationLayer.Forms
             var button = (IconButton)sender;
             if (button != currentButton)
             {
-                hoveredButton = button;
-                button.BackColor = HOVER_BACKGROUND;
-                button.IconColor = Color.Black;
+                currentButton.BackColor = DEFAULT_BACKGROUND;
+                currentButton.ForeColor = Color.Black;
+                currentButton.IconColor = Color.Black;
 
-                if (currentButton == null)
-                {
-                    headerPanel.BackColor = HOVER_BACKGROUND;
-                }
             }
         }
 
@@ -136,25 +131,17 @@ namespace PresentationLayer.Forms
 
                 if (currentButton != null)
                 {
-                    // Reset previous button
+
                     currentButton.BackColor = DEFAULT_BACKGROUND;
                     currentButton.ForeColor = Color.Black;
                     currentButton.IconColor = Color.Black;
                 }
 
-                // Set current button
                 currentButton = button;
-
-                // Update button appearance
-                button.BackColor = ACTIVE_BACKGROUND;
+                button.BackColor = HEADER_COLOR;
                 button.ForeColor = Color.White;
                 button.IconColor = Color.White;
 
-                // Update header panel color
-                headerPanel.BackColor = ACTIVE_BACKGROUND;
-                headerPanel.Refresh();
-
-                // Load the appropriate form
                 switch (button.Name.ToLower())
                 {
                     case "matchesbtn":
@@ -185,20 +172,7 @@ namespace PresentationLayer.Forms
             }
         }
 
-        private void LoadDashboardContent()
-        {
-            try
-            {
-                var form = new MatchesListForm(_matchService);
-                OpenChildForm(form);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error loading Dashboard form: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
 
-        }
-        
         private void LoadUserContent()
         {
             try
@@ -211,6 +185,21 @@ namespace PresentationLayer.Forms
             {
                 MessageBox.Show($"Error loading Coach form: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+
+        private void LoadDashboardContent()
+        {
+            try
+            {
+                var form = new MatchesListForm(_matchService, _teamService);
+                OpenChildForm(form);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading Dashboard form: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void LoadTeamsContent()
@@ -258,7 +247,7 @@ namespace PresentationLayer.Forms
         {
             try
             {
-                var form = new SettingsForm();
+                var form = new SettingsForm(_teamService);
                 OpenChildForm(form);
             }
             catch (Exception ex)
@@ -267,16 +256,73 @@ namespace PresentationLayer.Forms
             }
         }
 
+
+
+        private void resetBtn_Click(object sender, EventArgs e)
+        {
+
+            this.WindowState = FormWindowState.Normal;
+            UpdateWindowButtons();
+        }
+
+        private void maximizeBtn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            UpdateWindowButtons();
+        }
+
+
+
+        private void UpdateWindowButtons()
+        {
+            maximizeBtn.Visible = (this.WindowState != FormWindowState.Maximized);
+            resetBtn.Visible = (this.WindowState == FormWindowState.Maximized);
+        }
+
+        private void closeBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
+
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            base.OnFormClosing(e);
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult result = MessageBox.Show(
+                    "Are you sure you want to exit?",
+                    "Exit Confirmation",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (result == DialogResult.No)
+                {
+                    e.Cancel = true;
+                    return;
+                }
+            }
+
 
             if (activeForm != null)
             {
-                activeForm.Close();
                 activeForm.Dispose();
+                activeForm = null;
             }
+
+            contentPanel?.Controls.Clear();
+
+            if (Application.MessageLoop)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                Environment.Exit(0);
+            }
+
+            base.OnFormClosing(e);
         }
 
     }
+
 }

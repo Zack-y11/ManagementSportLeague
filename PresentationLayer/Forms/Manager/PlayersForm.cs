@@ -71,6 +71,7 @@ namespace PresentationLayer.ManagerForms
             if (result.IsValid)
             {
                 _playerService.CreateUserPlayer(_userId, email, password, name, position, birthdate, goals, assists);
+                playerErrorProvider.Clear();
                 playerEmailTextBox.Text = "";
                 playerPasswordTextBox.Text = "";
                 textBoxName.Text = "";

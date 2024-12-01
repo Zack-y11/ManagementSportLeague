@@ -15,6 +15,7 @@ using QuestPDF.Fluent;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
 
+
 namespace PresentationLayer.ManagerForms
 {
     public partial class PlayersForm : Form

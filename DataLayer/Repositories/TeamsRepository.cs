@@ -39,6 +39,27 @@ namespace DataLayer.Repositories
                 return connection.Query<Team>(query);
             }
         }
+        public IEnumerable<CoachTeam> GetCoachTeamFromPlayer(int playerId)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"
+                        SELECT 
+                            t.TeamId,
+                            t.TeamName,
+                            t.Wins,
+                            t.Loses,
+                            t.Points,
+                            u.Name AS ManagerName,
+                            u.Email
+                        FROM Players p
+                        JOIN Teams t ON p.TeamId = t.TeamId
+                        JOIN Users u ON t.ManagerId = u.UserId
+                        WHERE p.UserId = @playerId";
+
+                return connection.Query<CoachTeam>(query, new { playerId });
+            }
+        }
         public void AddTeam(Team team)
         {
             using (var connection = _dbConnection.GetConnection())

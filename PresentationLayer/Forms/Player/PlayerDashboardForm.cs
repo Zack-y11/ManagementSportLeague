@@ -123,7 +123,7 @@ namespace PresentationLayer.Forms.Player
         {
             try
             {
-                var playerTeamForm = new PlayerTeamForm();
+                var playerTeamForm = new PlayerTeamForm(_teamService);
                 OpenChildForm(playerTeamForm);
             }
             catch (Exception ex)

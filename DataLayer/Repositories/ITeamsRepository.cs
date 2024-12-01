@@ -14,5 +14,6 @@ namespace DataLayer.Repositories
         int GetTeamPlayersCount(int userId);
         IEnumerable<TeamStandingsDto> GetTeamStandings();
         CoachTeam GetManagerFromTeam (int teamId);
+        IEnumerable<CoachTeam> GetCoachTeamFromPlayer(int playerId);
     }
 }

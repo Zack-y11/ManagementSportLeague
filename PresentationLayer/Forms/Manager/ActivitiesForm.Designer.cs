@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panelPlayers = new Panel();
+            PDFBtn = new FontAwesome.Sharp.IconButton();
             activiteComboBox = new ComboBox();
             typeLabel = new Label();
             placeTextBox = new TextBox();
@@ -52,6 +53,7 @@
             // 
             panelPlayers.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panelPlayers.BackColor = Color.FromArgb(37, 99, 235);
+            panelPlayers.Controls.Add(PDFBtn);
             panelPlayers.Controls.Add(activiteComboBox);
             panelPlayers.Controls.Add(typeLabel);
             panelPlayers.Controls.Add(placeTextBox);
@@ -70,6 +72,23 @@
             panelPlayers.Name = "panelPlayers";
             panelPlayers.Size = new Size(450, 654);
             panelPlayers.TabIndex = 12;
+            // 
+            // PDFBtn
+            // 
+            PDFBtn.BackColor = Color.YellowGreen;
+            PDFBtn.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
+            PDFBtn.ForeColor = Color.White;
+            PDFBtn.IconChar = FontAwesome.Sharp.IconChar.Newspaper;
+            PDFBtn.IconColor = Color.White;
+            PDFBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            PDFBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            PDFBtn.Location = new Point(84, 488);
+            PDFBtn.Name = "PDFBtn";
+            PDFBtn.Size = new Size(239, 45);
+            PDFBtn.TabIndex = 42;
+            PDFBtn.Text = "   Generate PDF";
+            PDFBtn.UseVisualStyleBackColor = false;
+            PDFBtn.Click += PDFBtn_Click;
             // 
             // activiteComboBox
             // 
@@ -125,7 +144,7 @@
             buttomEditActivity.IconColor = Color.Black;
             buttomEditActivity.IconFont = FontAwesome.Sharp.IconFont.Auto;
             buttomEditActivity.ImageAlign = ContentAlignment.MiddleLeft;
-            buttomEditActivity.Location = new Point(112, 436);
+            buttomEditActivity.Location = new Point(84, 384);
             buttomEditActivity.Name = "buttomEditActivity";
             buttomEditActivity.Padding = new Padding(12, 0, 0, 0);
             buttomEditActivity.Size = new Size(239, 46);
@@ -143,7 +162,7 @@
             buttomDeleteActivity.IconColor = Color.Black;
             buttomDeleteActivity.IconFont = FontAwesome.Sharp.IconFont.Auto;
             buttomDeleteActivity.ImageAlign = ContentAlignment.MiddleLeft;
-            buttomDeleteActivity.Location = new Point(112, 519);
+            buttomDeleteActivity.Location = new Point(84, 436);
             buttomDeleteActivity.Name = "buttomDeleteActivity";
             buttomDeleteActivity.Padding = new Padding(12, 0, 0, 0);
             buttomDeleteActivity.Size = new Size(239, 46);
@@ -161,7 +180,7 @@
             buttomAddActivity.IconColor = Color.Black;
             buttomAddActivity.IconFont = FontAwesome.Sharp.IconFont.Auto;
             buttomAddActivity.ImageAlign = ContentAlignment.MiddleLeft;
-            buttomAddActivity.Location = new Point(112, 351);
+            buttomAddActivity.Location = new Point(84, 332);
             buttomAddActivity.Name = "buttomAddActivity";
             buttomAddActivity.Padding = new Padding(12, 0, 0, 0);
             buttomAddActivity.Size = new Size(239, 46);
@@ -272,5 +291,6 @@
         private TextBox placeTextBox;
         private Label typeLabel;
         private ComboBox activiteComboBox;
+        private FontAwesome.Sharp.IconButton PDFBtn;
     }
 }

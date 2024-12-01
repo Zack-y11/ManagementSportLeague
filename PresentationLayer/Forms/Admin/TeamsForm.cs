@@ -140,7 +140,7 @@ namespace PresentationLayer.Forms
                 delete = MessageBox.Show("Are you sure you want to delete this Team?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (delete == DialogResult.Yes)
                 {
-                    int id = Convert.ToInt32(activeTeamsDataGrip.CurrentRow.Cells["Id"].Value);
+                    int id = Convert.ToInt32(activeTeamsDataGrip.CurrentRow.Cells["TeamId"].Value);
                     _teamService.DeleteTeam(id);
                     LoadData();
                 }

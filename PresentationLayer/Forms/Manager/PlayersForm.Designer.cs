@@ -49,6 +49,8 @@
             playerBirthdateLabel = new Label();
             btnEditPlayer = new FontAwesome.Sharp.IconButton();
             btnDeletePlayer = new FontAwesome.Sharp.IconButton();
+            PDFBtn = new FontAwesome.Sharp.IconButton();
+            playersPDF = new Label();
             ((System.ComponentModel.ISupportInitialize)playersDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)playerInfoDataGrip).BeginInit();
             panelPlayers.SuspendLayout();
@@ -290,11 +292,40 @@
             btnDeletePlayer.UseVisualStyleBackColor = true;
             btnDeletePlayer.Click += btnDeletePlayer_Click;
             // 
+            // PDFBtn
+            // 
+            PDFBtn.BackColor = Color.YellowGreen;
+            PDFBtn.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
+            PDFBtn.ForeColor = Color.White;
+            PDFBtn.IconChar = FontAwesome.Sharp.IconChar.Newspaper;
+            PDFBtn.IconColor = Color.White;
+            PDFBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            PDFBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            PDFBtn.Location = new Point(35, 455);
+            PDFBtn.Name = "PDFBtn";
+            PDFBtn.Size = new Size(229, 45);
+            PDFBtn.TabIndex = 43;
+            PDFBtn.Text = "   Generate PDF";
+            PDFBtn.UseVisualStyleBackColor = false;
+            PDFBtn.Click += PDFBtn_Click;
+            // 
+            // playersPDF
+            // 
+            playersPDF.AutoSize = true;
+            playersPDF.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            playersPDF.Location = new Point(37, 423);
+            playersPDF.Name = "playersPDF";
+            playersPDF.Size = new Size(201, 22);
+            playersPDF.TabIndex = 44;
+            playersPDF.Text = "Generate players PDF";
+            // 
             // PlayersForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1265, 574);
+            Controls.Add(playersPDF);
+            Controls.Add(PDFBtn);
             Controls.Add(panelPlayers);
             Controls.Add(playersDataGridView);
             Controls.Add(btnDeletePlayer);
@@ -308,6 +339,7 @@
             ((System.ComponentModel.ISupportInitialize)assistsNumeric).EndInit();
             ((System.ComponentModel.ISupportInitialize)goalsNumeric).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -338,15 +370,17 @@
         private Label assistLabel;
         private NumericUpDown goalsNumeric;
         private Label goalsLabel;
-/*
-        private TextBox textBox1;
-        private Label labelPosition;
-        private Label teamLabel;
-        private ComboBox teamComboBox;
-        private Label birthdayLabel;
-        private Label label1;
-        private DateTimePicker dateTimePicker1;
-        private TextBox assistsTextBox;
+        private FontAwesome.Sharp.IconButton PDFBtn;
+        private Label playersPDF;
+        /*
+private TextBox textBox1;
+private Label labelPosition;
+private Label teamLabel;
+private ComboBox teamComboBox;
+private Label birthdayLabel;
+private Label label1;
+private DateTimePicker dateTimePicker1;
+private TextBox assistsTextBox;
 */
     }
 }

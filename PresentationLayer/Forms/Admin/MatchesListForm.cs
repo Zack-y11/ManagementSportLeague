@@ -201,6 +201,8 @@ namespace PresentationLayer.Forms
         {
             GenerateMatchPDFAsync();
         }
+
+
         private async Task GenerateMatchPDFAsync()
         {
             try
@@ -214,13 +216,10 @@ namespace PresentationLayer.Forms
                 {
                     if (row.IsNewRow) continue;
 
-                    var homeTeamName = row.Cells["HomeTeam"].Value?.ToString() ?? string.Empty;
-                    var awayTeamName = row.Cells["AwayTeam"].Value?.ToString() ?? string.Empty;
-
                     var match = new Match
                     {
-                        HomeTeam = homeTeamName,
-                        AwayTeam = awayTeamName,
+                        HomeTeam = row.Cells["HomeTeam"].Value?.ToString() ?? string.Empty,
+                        AwayTeam = row.Cells["AwayTeam"].Value?.ToString() ?? string.Empty,
                         Status = row.Cells["Status"].Value?.ToString() ?? string.Empty,
                         Score = row.Cells["Score"].Value?.ToString() ?? string.Empty,
                         MatchDate = DateTime.TryParse(row.Cells["MatchDate"].Value?.ToString(), out DateTime matchDate) ? matchDate : DateTime.MinValue,
@@ -236,93 +235,159 @@ namespace PresentationLayer.Forms
                     container.Page(page =>
                     {
                         page.Size(PageSizes.A3.Landscape());
-                        page.Margin(1, Unit.Centimetre);
+                        page.Margin(2, Unit.Centimetre);
 
-                        page.Header().Height(50).Background(Colors.Green.Accent4)
-                            .Text("List of Matches Report")
-                            .Bold().AlignCenter().FontSize(24).FontColor(Colors.White);
+                        page.Header().Height(80).DefaultTextStyle(x => x.FontSize(28))
+                            .Background(Colors.Blue.Darken3)
+                            .Padding(20)
+                            .Row(row =>
+                            {
+                                row.RelativeItem().Text("Match Statistics Report")
+                                    .Bold()
+                                    .FontColor(Colors.White);
 
-                        page.Content()
+                                row.RelativeItem().AlignRight()
+                                    .Text(DateTime.Now.ToString("MMMM dd, yyyy"))
+                                    .FontColor(Colors.Grey.Lighten3)
+                                    .FontSize(14);
+                            });
+
+                        page.Content().PaddingVertical(1, Unit.Centimetre)
                             .Column(column =>
                             {
-                                column.Item().Padding(1, Unit.Centimetre).Table(table =>
+                                // Summary section
+                                column.Item().PaddingBottom(1, Unit.Centimetre)
+                                    .Background(Colors.Grey.Lighten4)
+                                    .Padding(20)
+                                    .Row(row =>
+                                    {
+                                        row.RelativeItem().Text($"Total Matches: {matchList.Count}")
+                                            .Bold().FontSize(14);
+                                        row.RelativeItem().Text($"Report Generated: {DateTime.Now}")
+                                            .FontSize(14);
+                                    });
+
+                                // Table
+                                column.Item().Table(table =>
                                 {
+                                    // Column definitions
                                     table.ColumnsDefinition(columns =>
                                     {
-                                        columns.RelativeColumn(2);
-                                        columns.RelativeColumn(2);
-                                        columns.RelativeColumn(3);
-                                        columns.RelativeColumn(1);
-                                        columns.RelativeColumn(3);
-                                        columns.RelativeColumn(1);
-                                        columns.RelativeColumn(1);
+                                        columns.RelativeColumn(2);     // Home Team
+                                        columns.RelativeColumn(2);     // Away Team
+                                        columns.RelativeColumn(1.5f);  // Status
+                                        columns.RelativeColumn(1);     // Score
+                                        columns.RelativeColumn(1.5f);  // Match Date
+                                        columns.RelativeColumn(1);     // Fouls
+                                        columns.RelativeColumn(1);     // Corners
                                     });
 
+                                    // Header
                                     table.Header(header =>
                                     {
-                                        header.Cell().Element(x => CellStyle(x)).Background(Colors.Grey.Lighten1)
-                                            .Text("Home Team").Bold().FontColor(Colors.White);
+                                        table.Cell().Background(Colors.Blue.Darken3)
+                                            .Padding(5).AlignCenter()
+                                            .Text("Home Team").Bold().FontColor(Colors.White).FontSize(12);
 
-                                        header.Cell().Element(x => CellStyle(x)).Background(Colors.Grey.Lighten1)
-                                            .Text("Away Team").Bold().FontColor(Colors.White);
+                                        table.Cell().Background(Colors.Blue.Darken3)
+                                            .Padding(5).AlignCenter()
+                                            .Text("Away Team").Bold().FontColor(Colors.White).FontSize(12);
 
-                                        header.Cell().Element(x => CellStyle(x)).Background(Colors.Grey.Lighten1)
-                                            .Text("Status").Bold().FontColor(Colors.White);
+                                        table.Cell().Background(Colors.Blue.Darken3)
+                                            .Padding(5).AlignCenter()
+                                            .Text("Status").Bold().FontColor(Colors.White).FontSize(12);
 
-                                        header.Cell().Element(x => CellStyle(x)).Background(Colors.Grey.Lighten1)
-                                            .Text("Score").Bold().FontColor(Colors.White);
+                                        table.Cell().Background(Colors.Blue.Darken3)
+                                            .Padding(5).AlignCenter()
+                                            .Text("Score").Bold().FontColor(Colors.White).FontSize(12);
 
-                                        header.Cell().Element(x => CellStyle(x)).Background(Colors.Grey.Lighten1)
-                                            .Text("Match Date").Bold().FontColor(Colors.White);
+                                        table.Cell().Background(Colors.Blue.Darken3)
+                                            .Padding(5).AlignCenter()
+                                            .Text("Match Date").Bold().FontColor(Colors.White).FontSize(12);
 
-                                        header.Cell().Element(x => CellStyle(x)).Background(Colors.Grey.Lighten1)
-                                            .Text("Fouls").Bold().FontColor(Colors.White);
+                                        table.Cell().Background(Colors.Blue.Darken3)
+                                            .Padding(5).AlignCenter()
+                                            .Text("Fouls").Bold().FontColor(Colors.White).FontSize(12);
 
-                                        header.Cell().Element(x => CellStyle(x)).Background(Colors.Grey.Lighten1)
-                                            .Text("Corners").Bold().FontColor(Colors.White);
+                                        table.Cell().Background(Colors.Blue.Darken3)
+                                            .Padding(5).AlignCenter()
+                                            .Text("Corners").Bold().FontColor(Colors.White).FontSize(12);
                                     });
 
-                                    bool isAlternate = false;
-                                    foreach (var match in matchList)
+                                    foreach (var (match, index) in matchList.Select((m, i) => (m, i)))
                                     {
-                                        var backgroundColor = isAlternate ? Colors.Grey.Lighten3 : Colors.White;
-                                        isAlternate = !isAlternate;
+                                        var backgroundColor = index % 2 == 0 ? Colors.White : Colors.Grey.Lighten4;
 
-                                        table.Cell().Element(x => CellStyle(x)).Background(backgroundColor)
-                                            .Text(match.HomeTeam)
-                                            .Style(TextStyle.Default.Size(12));
+                                        // Home Team
+                                        table.Cell().Background(backgroundColor)
+                                            .Padding(5)
+                                            .Text(match.HomeTeam).FontSize(11);
 
-                                        table.Cell().Element(x => CellStyle(x)).Background(backgroundColor)
-                                            .Text(match.AwayTeam)
-                                            .Style(TextStyle.Default.Size(12));
+                                        // Away Team
+                                        table.Cell().Background(backgroundColor)
+                                            .Padding(5)
+                                            .Text(match.AwayTeam).FontSize(11);
 
-                                        table.Cell().Element(x => CellStyle(x)).Background(backgroundColor)
+                                        // Status
+                                        var statusColor = match.Status.ToLower() switch
+                                        {
+                                            "completed" => Colors.Green.Medium,
+                                            "cancelled" => Colors.Red.Medium,
+                                            "postponed" => Colors.Orange.Medium,
+                                            _ => Colors.Grey.Medium
+                                        };
+
+                                        table.Cell().Background(backgroundColor)
+                                            .Padding(5)
                                             .Text(match.Status)
-                                            .Style(TextStyle.Default.Size(12));
+                                            .FontColor(statusColor)
+                                            .Bold()
+                                            .FontSize(11)
+                                            .AlignCenter();
 
-                                        table.Cell().Element(x => CellStyle(x)).Background(backgroundColor)
+                                        // Score
+                                        table.Cell().Background(backgroundColor)
+                                            .Padding(5)
                                             .Text(match.Score)
-                                            .Style(TextStyle.Default.Size(12));
+                                            .FontSize(11)
+                                            .AlignCenter();
 
-                                        table.Cell().Element(x => CellStyle(x)).Background(backgroundColor)
-                                            .Text(match.MatchDate.ToShortDateString())
-                                            .Style(TextStyle.Default.Size(12));
+                                        // Match Date
+                                        table.Cell().Background(backgroundColor)
+                                            .Padding(5)
+                                            .Text(match.MatchDate.ToString("MMM dd, yyyy"))
+                                            .FontSize(11);
 
-                                        table.Cell().Element(x => CellStyle(x)).Background(backgroundColor)
+                                        // Fouls
+                                        table.Cell().Background(backgroundColor)
+                                            .Padding(5)
                                             .Text(match.Fouls.ToString())
-                                            .Style(TextStyle.Default.Size(12));
+                                            .FontSize(11)
+                                            .AlignCenter();
 
-                                        table.Cell().Element(x => CellStyle(x)).Background(backgroundColor)
+                                        // Corners
+                                        table.Cell().Background(backgroundColor)
+                                            .Padding(5)
                                             .Text(match.Corners.ToString())
-                                            .Style(TextStyle.Default.Size(12));
+                                            .FontSize(11)
+                                            .AlignCenter();
                                     }
                                 });
+
+                                // Footer
+                                column.Item().PaddingTop(1, Unit.Centimetre)
+                                    .Text(text =>
+                                    {
+                                        text.Span("Generated by ").FontSize(10);
+                                        text.Span("Match Statistics System").Bold().FontSize(10);
+                                        text.Span($" • Page 1 of 1").FontSize(10);
+                                    });
                             });
                     });
                 });
 
                 await Task.Run(() => document.GeneratePdfAndShow());
-                MessageBox.Show("PDF report generated successfully!");
+                MessageBox.Show("PDF report generated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -334,10 +399,6 @@ namespace PresentationLayer.Forms
                 Cursor = Cursors.Default;
             }
         }
-
-        private QuestPDF.Infrastructure.IContainer CellStyle(QuestPDF.Infrastructure.IContainer container) => container
-            .Border(1)
-            .BorderColor(Colors.Grey.Darken1);
-    }
+    }   
 
  }

@@ -38,6 +38,7 @@
             editTeamBtn = new FontAwesome.Sharp.IconButton();
             deleteTeamBtn = new FontAwesome.Sharp.IconButton();
             teamPanel = new Panel();
+            PDFBtn = new FontAwesome.Sharp.IconButton();
             addTeamLabel = new Label();
             pointsTextBox = new TextBox();
             pointsLabel = new Label();
@@ -54,6 +55,7 @@
             teamErrorProvider = new ErrorProvider(components);
             activeTeamsDataGrip = new DataGridView();
             contentTeamsPanel = new Panel();
+            pdfLabel = new Label();
             headerTeamsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)searchIcon).BeginInit();
             teamPanel.SuspendLayout();
@@ -149,7 +151,7 @@
             editTeamBtn.IconColor = Color.White;
             editTeamBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             editTeamBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            editTeamBtn.Location = new Point(349, 208);
+            editTeamBtn.Location = new Point(315, 208);
             editTeamBtn.Name = "editTeamBtn";
             editTeamBtn.Size = new Size(257, 45);
             editTeamBtn.TabIndex = 4;
@@ -165,7 +167,7 @@
             deleteTeamBtn.IconColor = Color.White;
             deleteTeamBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             deleteTeamBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            deleteTeamBtn.Location = new Point(655, 208);
+            deleteTeamBtn.Location = new Point(596, 208);
             deleteTeamBtn.Name = "deleteTeamBtn";
             deleteTeamBtn.Size = new Size(254, 45);
             deleteTeamBtn.TabIndex = 5;
@@ -177,6 +179,8 @@
             // 
             teamPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             teamPanel.BackColor = Color.WhiteSmoke;
+            teamPanel.Controls.Add(pdfLabel);
+            teamPanel.Controls.Add(PDFBtn);
             teamPanel.Controls.Add(addTeamLabel);
             teamPanel.Controls.Add(pointsTextBox);
             teamPanel.Controls.Add(pointsLabel);
@@ -197,6 +201,23 @@
             teamPanel.Name = "teamPanel";
             teamPanel.Size = new Size(1370, 319);
             teamPanel.TabIndex = 2;
+            // 
+            // PDFBtn
+            // 
+            PDFBtn.BackColor = Color.YellowGreen;
+            PDFBtn.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
+            PDFBtn.ForeColor = Color.White;
+            PDFBtn.IconChar = FontAwesome.Sharp.IconChar.Newspaper;
+            PDFBtn.IconColor = Color.White;
+            PDFBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            PDFBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            PDFBtn.Location = new Point(870, 208);
+            PDFBtn.Name = "PDFBtn";
+            PDFBtn.Size = new Size(231, 45);
+            PDFBtn.TabIndex = 41;
+            PDFBtn.Text = "   Generate PDF";
+            PDFBtn.UseVisualStyleBackColor = false;
+            PDFBtn.Click += PDFBtn_Click;
             // 
             // addTeamLabel
             // 
@@ -284,7 +305,7 @@
             // 
             deleteTeamLabel.AutoSize = true;
             deleteTeamLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            deleteTeamLabel.Location = new Point(655, 162);
+            deleteTeamLabel.Location = new Point(596, 182);
             deleteTeamLabel.Name = "deleteTeamLabel";
             deleteTeamLabel.Size = new Size(133, 23);
             deleteTeamLabel.TabIndex = 9;
@@ -294,7 +315,7 @@
             // 
             editTeamLabel.AutoSize = true;
             editTeamLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            editTeamLabel.Location = new Point(349, 171);
+            editTeamLabel.Location = new Point(315, 171);
             editTeamLabel.Name = "editTeamLabel";
             editTeamLabel.Size = new Size(103, 23);
             editTeamLabel.TabIndex = 8;
@@ -340,6 +361,16 @@
             contentTeamsPanel.Name = "contentTeamsPanel";
             contentTeamsPanel.Size = new Size(1367, 576);
             contentTeamsPanel.TabIndex = 1;
+            // 
+            // pdfLabel
+            // 
+            pdfLabel.AutoSize = true;
+            pdfLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            pdfLabel.Location = new Point(870, 182);
+            pdfLabel.Name = "pdfLabel";
+            pdfLabel.Size = new Size(144, 23);
+            pdfLabel.TabIndex = 42;
+            pdfLabel.Text = "Generate PDF";
             // 
             // TeamsForm
             // 
@@ -396,5 +427,7 @@
         private Panel contentTeamsPanel;
         private DataGridView activeTeamsDataGrip;
         private Label addTeamLabel;
+        private FontAwesome.Sharp.IconButton PDFBtn;
+        private Label pdfLabel;
     }
 }

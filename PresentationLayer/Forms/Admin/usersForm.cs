@@ -25,6 +25,7 @@ namespace PresentationLayer.Forms
         public usersForm(IUserService userService)
         {
             InitializeComponent();
+         
             _userService = userService;
             LoadData();
             this.usersDataGrip.Columns["RoleId"].Visible = false;
@@ -185,7 +186,19 @@ namespace PresentationLayer.Forms
         {
             GeneratePDFAsync();
         }
+        private bool showPasswords = false;
+        private CheckBox showPasswordsCheckBox;
 
+        private void InitializePasswordControl()
+        {
+            showPasswordsCheckBox = new CheckBox
+            {
+                Text = "Show Passwords in PDF",
+                Location = new Point(PDFBtn.Left + PDFBtn.Width + 10, PDFBtn.Top),
+                AutoSize = true
+            };
+            this.Controls.Add(showPasswordsCheckBox);
+        }
         private async Task GeneratePDFAsync()
         {
             try
@@ -215,69 +228,145 @@ namespace PresentationLayer.Forms
                     container.Page(page =>
                     {
                         page.Size(PageSizes.A3.Landscape());
-                        page.Margin(1, Unit.Centimetre);
+                        page.Margin(2, Unit.Centimetre);
 
-                        page.Header().Height(50).Background(Colors.Green.Accent4)
-                            .Text("List of Users Report")
-                            .Bold().AlignCenter().FontSize(24).FontColor(Colors.White);
+                        // Enhanced header
+                        page.Header().Height(80).DefaultTextStyle(x => x.FontSize(28))
+                            .Background(Colors.Blue.Darken3)
+                            .Padding(20)
+                            .Row(row =>
+                            {
+                                row.RelativeItem().Text("User Management Report")
+                                    .Bold()
+                                    .FontColor(Colors.White);
 
-                        page.Content()
+                                row.RelativeItem().AlignRight()
+                                    .Text(DateTime.Now.ToString("MMMM dd, yyyy"))
+                                    .FontColor(Colors.Grey.Lighten3)
+                                    .FontSize(14);
+                            });
+
+                        page.Content().PaddingVertical(1, Unit.Centimetre)
                             .Column(column =>
                             {
-                                column.Item().Padding(1, Unit.Centimetre).Table(table =>
+                                // Summary section
+                                column.Item().PaddingBottom(1, Unit.Centimetre)
+                                    .Background(Colors.Grey.Lighten4)
+                                    .Padding(20)
+                                    .Row(row =>
+                                    {
+                                        row.RelativeItem().Text($"Total Users: {userList.Count}")
+                                            .Bold().FontSize(14);
+                                        row.RelativeItem().Text($"Report Generated: {DateTime.Now}")
+                                            .FontSize(14);
+                                    });
+
+                                // Enhanced table
+                                column.Item().Table(table =>
                                 {
+                                    // Column definitions with optimized widths
                                     table.ColumnsDefinition(columns =>
                                     {
-                                        columns.RelativeColumn(2);
-                                        columns.RelativeColumn(2);
-                                        columns.RelativeColumn(3);
-                                        columns.RelativeColumn(2);
+                                        columns.RelativeColumn(2f);    // Name
+                                        columns.RelativeColumn(2f);    // Password
+                                        columns.RelativeColumn(3f);    // Email
+                                        columns.RelativeColumn(1.5f);  // Role
                                     });
 
+                                    // Enhanced header
                                     table.Header(header =>
                                     {
-                                        header.Cell().Element(x => CellStyle(x)).Background(Colors.Grey.Lighten1)
-                                            .Text("Name").Bold().FontColor(Colors.White);
+                                        table.Cell().Border(1).BorderColor(Colors.Grey.Darken1)
+                                            .Background(Colors.Blue.Darken3)
+                                            .Padding(10)
+                                            .Text("Name")
+                                            .Bold()
+                                            .FontColor(Colors.White)
+                                            .FontSize(12);
 
-                                        header.Cell().Element(x => CellStyle(x)).Background(Colors.Grey.Lighten1)
-                                            .Text("Password").Bold().FontColor(Colors.White);
+                                        table.Cell().Border(1).BorderColor(Colors.Grey.Darken1)
+                                            .Background(Colors.Blue.Darken3)
+                                            .Padding(10)
+                                            .Text("Password")
+                                            .Bold()
+                                            .FontColor(Colors.White)
+                                            .FontSize(12);
 
-                                        header.Cell().Element(x => CellStyle(x)).Background(Colors.Grey.Lighten1)
-                                            .Text("Email").Bold().FontColor(Colors.White);
+                                        table.Cell().Border(1).BorderColor(Colors.Grey.Darken1)
+                                            .Background(Colors.Blue.Darken3)
+                                            .Padding(10)
+                                            .Text("Email")
+                                            .Bold()
+                                            .FontColor(Colors.White)
+                                            .FontSize(12);
 
-                                        header.Cell().Element(x => CellStyle(x)).Background(Colors.Grey.Lighten1)
-                                            .Text("Role ").Bold().FontColor(Colors.White);
+                                        table.Cell().Border(1).BorderColor(Colors.Grey.Darken1)
+                                            .Background(Colors.Blue.Darken3)
+                                            .Padding(10)
+                                            .Text("Role")
+                                            .Bold()
+                                            .FontColor(Colors.White)
+                                            .FontSize(12);
                                     });
 
-                                    bool isAlternate = false;
-                                    foreach (var user in userList)
+                                    // Enhanced rows
+                                    foreach (var (user, index) in userList.Select((u, i) => (u, i)))
                                     {
-                                        var backgroundColor = isAlternate ? Colors.Grey.Lighten3 : Colors.White;
-                                        isAlternate = !isAlternate;
+                                        var backgroundColor = index % 2 == 0 ? Colors.White : Colors.Grey.Lighten4;
 
-                                        table.Cell().Element(x => CellStyle(x)).Background(backgroundColor)
+                                        // Name
+                                        table.Cell().Border(1).BorderColor(Colors.Grey.Darken1)
+                                            .Background(backgroundColor)
+                                            .Padding(10)
                                             .Text(user.Name)
-                                            .Style(TextStyle.Default.Size(12));
+                                            .FontSize(11);
 
-                                        table.Cell().Element(x => CellStyle(x)).Background(backgroundColor)
-                                            .Text(user.Password)
-                                            .Style(TextStyle.Default.Size(12));
+                                        // Password (masked)
+                                        table.Cell().Border(1).BorderColor(Colors.Grey.Darken1)
+                                            .Background(backgroundColor)
+                                            .Padding(10)
+                                            .Text("••••••••")
+                                            .FontSize(11);
 
-                                        table.Cell().Element(x => CellStyle(x)).Background(backgroundColor)
+                                        // Email
+                                        table.Cell().Border(1).BorderColor(Colors.Grey.Darken1)
+                                            .Background(backgroundColor)
+                                            .Padding(10)
                                             .Text(user.Email)
-                                            .Style(TextStyle.Default.Size(12));
+                                            .FontSize(11);
 
-                                        table.Cell().Element(x => CellStyle(x)).Background(backgroundColor)
+                                        // Role with color coding
+                                        var roleColor = user.RolelName.ToLower() switch
+                                        {
+                                            "admin" => Colors.Red.Medium,
+                                            "manager" => Colors.Blue.Medium,
+                                            _ => Colors.Grey.Medium
+                                        };
+
+                                        table.Cell().Border(1).BorderColor(Colors.Grey.Darken1)
+                                            .Background(backgroundColor)
+                                            .Padding(10)
                                             .Text(user.RolelName)
-                                            .Style(TextStyle.Default.Size(12));
+                                            .FontColor(roleColor)
+                                            .Bold()
+                                            .FontSize(11);
                                     }
                                 });
+
+                                // Footer
+                                column.Item().PaddingTop(1, Unit.Centimetre)
+                                    .Text(text =>
+                                    {
+                                        text.Span("Generated by ").FontSize(10);
+                                        text.Span("User Management System").Bold().FontSize(10);
+                                        text.Span($" • Page 1 of 1").FontSize(10);
+                                    });
                             });
                     });
                 });
 
                 await Task.Run(() => document.GeneratePdfAndShow());
-                MessageBox.Show("PDF report generated perfectly!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("PDF report generated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -290,9 +379,6 @@ namespace PresentationLayer.Forms
             }
         }
 
-        private QuestPDF.Infrastructure.IContainer CellStyle(QuestPDF.Infrastructure.IContainer container) => container
-            .Border(1)
-            .BorderColor(Colors.Grey.Darken1);
 
     }
 }

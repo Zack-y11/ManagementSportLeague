@@ -80,7 +80,7 @@ namespace PresentationLayer
                     services.AddTransient<dashboardAdmin>();
                     services.AddTransient<LoginForms>();
                     services.AddTransient<ManagerForm>();
-
+                    services.AddTransient<PlayerDashboardForm>();
                     
                     
 

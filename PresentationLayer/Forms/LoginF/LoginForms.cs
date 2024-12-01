@@ -4,6 +4,7 @@ using CommonLayer.Models;
 using Microsoft.Extensions.DependencyInjection;
 using PresentationLayer.Forms;
 using PresentationLayer.ManagerForms;
+using PresentationLayer.Forms.Player;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -53,7 +54,8 @@ namespace PresentationLayer.LoginF
                 else if (AuthenticatedUser.RoleId == (int)Roles.Player)
                 {
                     // player
-
+                    this.Hide();
+                    _serviceProvider.GetRequiredService<PlayerDashboardForm>().ShowDialog();
                 }
             }
             else

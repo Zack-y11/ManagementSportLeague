@@ -25,7 +25,7 @@ namespace PresentationLayer.Forms
         private void SetupDataBinding()
         {
             bindingSource.DataSource = statsList;
-            perfomanceDataGrip.DataSource = bindingSource;
+            
         }
         public void LoadDataRank()
         {
@@ -41,20 +41,7 @@ namespace PresentationLayer.Forms
             // Get data from DataGridView instead of statsList
             var dataList = new List<PerfomanceStats>();
 
-            foreach (DataGridViewRow row in perfomanceDataGrip.Rows)
-            {
-                // Skip the last row if it's the new row
-                if (!row.IsNewRow)
-                {
-                    var stats = new PerfomanceStats
-                    {
-                        TeamName = row.Cells["TeamName"].Value?.ToString() ?? "",
-                        Points = Convert.ToInt32(row.Cells["Points"].Value),
-                        GoalsFor = Convert.ToInt32(row.Cells["GoalsFor"].Value)
-                    };
-                    dataList.Add(stats);
-                }
-            }
+       
 
             if (dataList.Count == 0) return;
 
@@ -85,8 +72,7 @@ namespace PresentationLayer.Forms
                 }
             };
 
-            perfomanceChart.Series = cartesianChart.Series;
-            perfomanceChart.XAxes = cartesianChart.XAxes;
+            
         }
 
         private void updateChartBtn_Click(object sender, EventArgs e)

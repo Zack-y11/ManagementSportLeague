@@ -17,9 +17,6 @@ namespace PresentationLayer.ManagerForms
             InitializeComponent();
         }
 
-        private void PDFBtn_Click(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }

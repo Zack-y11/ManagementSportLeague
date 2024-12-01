@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             panelPlayers = new Panel();
-            PDFBtn = new FontAwesome.Sharp.IconButton();
             activiteComboBox = new ComboBox();
             typeLabel = new Label();
             placeTextBox = new TextBox();
@@ -53,7 +52,6 @@
             // 
             panelPlayers.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panelPlayers.BackColor = Color.FromArgb(37, 99, 235);
-            panelPlayers.Controls.Add(PDFBtn);
             panelPlayers.Controls.Add(activiteComboBox);
             panelPlayers.Controls.Add(typeLabel);
             panelPlayers.Controls.Add(placeTextBox);
@@ -72,23 +70,6 @@
             panelPlayers.Name = "panelPlayers";
             panelPlayers.Size = new Size(450, 654);
             panelPlayers.TabIndex = 12;
-            // 
-            // PDFBtn
-            // 
-            PDFBtn.BackColor = Color.YellowGreen;
-            PDFBtn.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
-            PDFBtn.ForeColor = Color.White;
-            PDFBtn.IconChar = FontAwesome.Sharp.IconChar.Newspaper;
-            PDFBtn.IconColor = Color.White;
-            PDFBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            PDFBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            PDFBtn.Location = new Point(84, 488);
-            PDFBtn.Name = "PDFBtn";
-            PDFBtn.Size = new Size(239, 45);
-            PDFBtn.TabIndex = 42;
-            PDFBtn.Text = "   Generate PDF";
-            PDFBtn.UseVisualStyleBackColor = false;
-            PDFBtn.Click += PDFBtn_Click;
             // 
             // activiteComboBox
             // 
@@ -291,6 +272,5 @@
         private TextBox placeTextBox;
         private Label typeLabel;
         private ComboBox activiteComboBox;
-        private FontAwesome.Sharp.IconButton PDFBtn;
     }
 }

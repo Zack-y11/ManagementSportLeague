@@ -21,6 +21,7 @@ namespace PresentationLayer.Forms
     public partial class usersForm : Form
     {
         private readonly IUserService _userService;
+        
         bool isUpdating = false;
         public usersForm(IUserService userService)
         {

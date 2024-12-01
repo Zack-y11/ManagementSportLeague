@@ -19,6 +19,6 @@ namespace DataLayer.Repositories
         int GetTotalFoulsCount();
         int GetTotalCornersCount();
         CoachTeam GetManagerFromTeam (int teamId);
-
+        IEnumerable<CoachTeam> GetCoachTeamFromPlayer(int playerId);
     }
 }

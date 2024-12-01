@@ -1,4 +1,5 @@
-﻿using PresentationLayer.ManagerForms;
+﻿using BusinessLayer.Services;
+using PresentationLayer.ManagerForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,10 +15,12 @@ namespace PresentationLayer.Forms.Player
     public partial class PlayerDashboardForm : Form
     {
         private Form activeChildForm;
-        public PlayerDashboardForm()
+        private readonly ITeamService _teamService;
+        public PlayerDashboardForm(ITeamService teamService)
         {
             InitializeComponent();
             SetUpButtons();
+            _teamService = teamService;
         }
 
 
@@ -120,7 +123,7 @@ namespace PresentationLayer.Forms.Player
         {
             try
             {
-                var playerTeamForm = new PlayerTeamForm();
+                var playerTeamForm = new PlayerTeamForm(_teamService);
                 OpenChildForm(playerTeamForm);
             }
             catch (Exception ex)
@@ -133,7 +136,7 @@ namespace PresentationLayer.Forms.Player
         {
             try
             {
-                var positionForm = new PositionForm();
+                var positionForm = new PositionForm(_teamService);
                 OpenChildForm(positionForm);
             }
             catch (Exception ex)

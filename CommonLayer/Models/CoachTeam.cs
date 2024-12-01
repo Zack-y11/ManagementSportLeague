@@ -10,6 +10,9 @@ namespace CommonLayer.Models
     {
         public string TeamName { get; set; }
         public string Email { get; set; }
-
+        public string ManagerName { get; set; }
+        public int Wins { get; set; }
+        public int Loses { get; set; }
+        public int Points { get; set; }
     }
 }

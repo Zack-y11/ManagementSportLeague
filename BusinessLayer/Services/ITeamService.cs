@@ -20,6 +20,6 @@ namespace BusinessLayer.Services
         int GetCornersCount();
 
         CoachTeam GetManagerFromTeam(int teamId);
-
+        IEnumerable<CoachTeam> GetCoachTeamFromPlayer(int playerId);
     }
 }

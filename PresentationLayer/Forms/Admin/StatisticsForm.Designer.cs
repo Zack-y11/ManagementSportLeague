@@ -272,11 +272,13 @@
             // 
             topScoresDataGrip.BackgroundColor = SystemColors.ControlLight;
             topScoresDataGrip.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+
             topScoresDataGrip.Location = new Point(129, 0);
             topScoresDataGrip.Margin = new Padding(3, 2, 3, 2);
             topScoresDataGrip.Name = "topScoresDataGrip";
             topScoresDataGrip.RowHeadersWidth = 51;
             topScoresDataGrip.Size = new Size(484, 288);
+
             topScoresDataGrip.TabIndex = 0;
             // 
             // perfomancePage
@@ -295,16 +297,19 @@
             // 
             // updateChartBtn
             // 
+            updateChartBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             updateChartBtn.BackColor = SystemColors.HotTrack;
             updateChartBtn.ForeColor = SystemColors.ControlLight;
             updateChartBtn.IconChar = FontAwesome.Sharp.IconChar.Database;
             updateChartBtn.IconColor = Color.White;
             updateChartBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             updateChartBtn.ImageAlign = ContentAlignment.MiddleLeft;
+
             updateChartBtn.Location = new Point(357, 352);
             updateChartBtn.Margin = new Padding(3, 2, 3, 2);
             updateChartBtn.Name = "updateChartBtn";
             updateChartBtn.Size = new Size(236, 40);
+
             updateChartBtn.TabIndex = 3;
             updateChartBtn.Text = "Update Data";
             updateChartBtn.UseVisualStyleBackColor = false;
@@ -312,11 +317,14 @@
             // 
             // perfomanceChart
             // 
+            perfomanceChart.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             perfomanceChart.BackColor = SystemColors.ControlDark;
+
             perfomanceChart.Location = new Point(4, 122);
             perfomanceChart.Margin = new Padding(3, 2, 3, 2);
             perfomanceChart.Name = "perfomanceChart";
             perfomanceChart.Size = new Size(971, 214);
+
             perfomanceChart.TabIndex = 2;
             // 
             // perfomanceDataGrip
@@ -324,13 +332,16 @@
             perfomanceDataGrip.AllowUserToDeleteRows = false;
             perfomanceDataGrip.AllowUserToResizeColumns = false;
             perfomanceDataGrip.AllowUserToResizeRows = false;
+            perfomanceDataGrip.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             perfomanceDataGrip.BackgroundColor = SystemColors.ControlLight;
             perfomanceDataGrip.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+
             perfomanceDataGrip.Location = new Point(4, 0);
             perfomanceDataGrip.Margin = new Padding(3, 2, 3, 2);
             perfomanceDataGrip.Name = "perfomanceDataGrip";
             perfomanceDataGrip.RowHeadersWidth = 51;
             perfomanceDataGrip.Size = new Size(971, 118);
+
             perfomanceDataGrip.TabIndex = 1;
             // 
             // totalMatchesLabel

@@ -28,97 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            headerPanel = new Panel();
-            shildIcon = new FontAwesome.Sharp.IconPictureBox();
-            label2 = new Label();
-            logOutBtn = new FontAwesome.Sharp.IconButton();
-            contentGroupBox = new GroupBox();
-            pdfLabel = new Label();
+            buttonsPanel = new Panel();
             PDFButton = new FontAwesome.Sharp.IconButton();
-            settingsContentPanel = new Panel();
-            headerPanel.SuspendLayout();
+            pdfLabel = new Label();
+            logOutBtn = new FontAwesome.Sharp.IconButton();
+            shildIcon = new FontAwesome.Sharp.IconPictureBox();
+            userLabel = new Label();
+            buttonsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)shildIcon).BeginInit();
-            contentGroupBox.SuspendLayout();
-            settingsContentPanel.SuspendLayout();
             SuspendLayout();
             // 
-            // headerPanel
+            // buttonsPanel
             // 
-            headerPanel.BackColor = SystemColors.Highlight;
-            headerPanel.Controls.Add(shildIcon);
-            headerPanel.Controls.Add(label2);
-            headerPanel.Dock = DockStyle.Top;
-            headerPanel.Location = new Point(0, 0);
-            headerPanel.Name = "headerPanel";
-            headerPanel.Size = new Size(1331, 100);
-            headerPanel.TabIndex = 7;
-            // 
-            // shildIcon
-            // 
-            shildIcon.BackColor = Color.Transparent;
-            shildIcon.ForeColor = SystemColors.Control;
-            shildIcon.IconChar = FontAwesome.Sharp.IconChar.ShieldHalved;
-            shildIcon.IconColor = SystemColors.Control;
-            shildIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            shildIcon.IconSize = 40;
-            shildIcon.Location = new Point(39, 25);
-            shildIcon.Name = "shildIcon";
-            shildIcon.Size = new Size(40, 40);
-            shildIcon.TabIndex = 1;
-            shildIcon.TabStop = false;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(106, 31);
-            label2.Name = "label2";
-            label2.Size = new Size(191, 34);
-            label2.TabIndex = 0;
-            label2.Text = "User Settings ";
-            // 
-            // logOutBtn
-            // 
-            logOutBtn.BackColor = Color.Red;
-            logOutBtn.FlatStyle = FlatStyle.Flat;
-            logOutBtn.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
-            logOutBtn.ForeColor = Color.Transparent;
-            logOutBtn.IconChar = FontAwesome.Sharp.IconChar.RightToBracket;
-            logOutBtn.IconColor = Color.White;
-            logOutBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            logOutBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            logOutBtn.Location = new Point(232, 261);
-            logOutBtn.Name = "logOutBtn";
-            logOutBtn.Size = new Size(263, 43);
-            logOutBtn.TabIndex = 6;
-            logOutBtn.Text = "Log Out";
-            logOutBtn.UseVisualStyleBackColor = false;
-            // 
-            // contentGroupBox
-            // 
-            contentGroupBox.Controls.Add(pdfLabel);
-            contentGroupBox.Controls.Add(PDFButton);
-            contentGroupBox.Controls.Add(logOutBtn);
-            contentGroupBox.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            contentGroupBox.Location = new Point(79, 85);
-            contentGroupBox.Name = "contentGroupBox";
-            contentGroupBox.Size = new Size(701, 416);
-            contentGroupBox.TabIndex = 8;
-            contentGroupBox.TabStop = false;
-            contentGroupBox.Text = "Settings";
-            // 
-            // pdfLabel
-            // 
-            pdfLabel.AutoSize = true;
-            pdfLabel.Location = new Point(232, 88);
-            pdfLabel.Name = "pdfLabel";
-            pdfLabel.Size = new Size(261, 19);
-            pdfLabel.TabIndex = 8;
-            pdfLabel.Text = "Generate PDF of your stadistics";
+            buttonsPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            buttonsPanel.BackColor = SystemColors.ControlLight;
+            buttonsPanel.Controls.Add(PDFButton);
+            buttonsPanel.Controls.Add(pdfLabel);
+            buttonsPanel.Controls.Add(logOutBtn);
+            buttonsPanel.Location = new Point(302, 134);
+            buttonsPanel.Name = "buttonsPanel";
+            buttonsPanel.Size = new Size(672, 361);
+            buttonsPanel.TabIndex = 10;
             // 
             // PDFButton
             // 
+            PDFButton.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             PDFButton.BackColor = Color.YellowGreen;
             PDFButton.FlatStyle = FlatStyle.Flat;
             PDFButton.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
@@ -127,50 +61,91 @@
             PDFButton.IconColor = Color.White;
             PDFButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             PDFButton.ImageAlign = ContentAlignment.MiddleLeft;
-            PDFButton.Location = new Point(232, 143);
+            PDFButton.Location = new Point(113, 151);
             PDFButton.Name = "PDFButton";
-            PDFButton.Size = new Size(263, 43);
+            PDFButton.Size = new Size(477, 43);
             PDFButton.TabIndex = 7;
             PDFButton.Text = "Generate PDF";
             PDFButton.UseVisualStyleBackColor = false;
             // 
-            // settingsContentPanel
+            // pdfLabel
             // 
-            settingsContentPanel.BackColor = SystemColors.ControlLightLight;
-            settingsContentPanel.Controls.Add(contentGroupBox);
-            settingsContentPanel.Dock = DockStyle.Fill;
-            settingsContentPanel.Location = new Point(0, 100);
-            settingsContentPanel.Name = "settingsContentPanel";
-            settingsContentPanel.Size = new Size(1331, 654);
-            settingsContentPanel.TabIndex = 8;
+            pdfLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            pdfLabel.AutoSize = true;
+            pdfLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            pdfLabel.Location = new Point(30, 32);
+            pdfLabel.Name = "pdfLabel";
+            pdfLabel.Size = new Size(312, 23);
+            pdfLabel.TabIndex = 8;
+            pdfLabel.Text = "Generate PDF of your stadistics";
             // 
-            // SettingsForm
+            // logOutBtn
+            // 
+            logOutBtn.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            logOutBtn.BackColor = Color.Red;
+            logOutBtn.FlatStyle = FlatStyle.Flat;
+            logOutBtn.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            logOutBtn.ForeColor = Color.Transparent;
+            logOutBtn.IconChar = FontAwesome.Sharp.IconChar.RightToBracket;
+            logOutBtn.IconColor = Color.White;
+            logOutBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            logOutBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            logOutBtn.Location = new Point(113, 239);
+            logOutBtn.Name = "logOutBtn";
+            logOutBtn.Size = new Size(477, 43);
+            logOutBtn.TabIndex = 6;
+            logOutBtn.Text = "Log Out";
+            logOutBtn.UseVisualStyleBackColor = false;
+            // 
+            // shildIcon
+            // 
+            shildIcon.BackColor = Color.FromArgb(0, 123, 252);
+            shildIcon.ForeColor = SystemColors.Control;
+            shildIcon.IconChar = FontAwesome.Sharp.IconChar.ShieldHalved;
+            shildIcon.IconColor = SystemColors.Control;
+            shildIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            shildIcon.IconSize = 40;
+            shildIcon.Location = new Point(32, 28);
+            shildIcon.Name = "shildIcon";
+            shildIcon.Size = new Size(40, 40);
+            shildIcon.TabIndex = 1;
+            shildIcon.TabStop = false;
+            // 
+            // userLabel
+            // 
+            userLabel.AutoSize = true;
+            userLabel.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            userLabel.ForeColor = Color.FromArgb(0, 123, 252);
+            userLabel.Location = new Point(114, 34);
+            userLabel.Name = "userLabel";
+            userLabel.Size = new Size(218, 34);
+            userLabel.TabIndex = 0;
+            userLabel.Text = "Player Settings ";
+            // 
+            // SettingsPlayerForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1331, 754);
-            Controls.Add(settingsContentPanel);
-            Controls.Add(headerPanel);
-            Name = "SettingsForm";
-            Text = "SettingsForm";
-            WindowState = FormWindowState.Maximized;
-            headerPanel.ResumeLayout(false);
-            headerPanel.PerformLayout();
+            ClientSize = new Size(1276, 628);
+            Controls.Add(buttonsPanel);
+            Controls.Add(userLabel);
+            Controls.Add(shildIcon);
+            Name = "SettingsPlayerForm";
+            Text = "SettingsPlayerForm";
+            buttonsPanel.ResumeLayout(false);
+            buttonsPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)shildIcon).EndInit();
-            contentGroupBox.ResumeLayout(false);
-            contentGroupBox.PerformLayout();
-            settingsContentPanel.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-        private Panel headerPanel;
-        private Label label2;
-        private FontAwesome.Sharp.IconPictureBox shildIcon;
-        private FontAwesome.Sharp.IconButton logOutBtn;
-        private GroupBox contentGroupBox;
+
+        private Panel buttonsPanel;
         private FontAwesome.Sharp.IconButton PDFButton;
         private Label pdfLabel;
-        private Panel settingsContentPanel;
+        private FontAwesome.Sharp.IconButton logOutBtn;
+        private FontAwesome.Sharp.IconPictureBox shildIcon;
+        private Label userLabel;
     }
 }

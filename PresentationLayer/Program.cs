@@ -5,14 +5,16 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PresentationLayer.Forms;
 using BusinessLayer.Services;
-using DataLayer.Repositories;
+
 using DataLayer.DbConnection;
+
 using PresentationLayer.LoginF;
 using QuestPDF.Infrastructure;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Configuration;
 using PresentationLayer.ManagerForms;
 using PresentationLayer.Forms.Player;
+using CommonLayer.Models;
 
 
 namespace PresentationLayer
@@ -50,12 +52,25 @@ namespace PresentationLayer
                      );
                 })
                 .ConfigureServices((context, services) => {
+                    // Get configuration
+                    var configuration = context.Configuration;
 
+                    // Configure EmailSettings from appsettings.json
+                    var emailSettings = configuration.GetSection("EmailSettings").Get<EmailSettings>();
+                    //services.Configure<EmailSettings>(configuration.GetSection("EmailSettings"));
+                    services.AddSingleton<IEmailService>(new EmailService(
+                        emailSettings.SmtpServer,
+                        emailSettings.Port,
+                        emailSettings.SenderEmail,
+                        emailSettings.Password
+                    )); 
+                    services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
                     //Forms
                     services.AddTransient<dashboardAdmin>();
                     services.AddTransient<LoginForms>();
                     services.AddTransient<ManagerForm>();
                     services.AddTransient<PlayerDashboardForm>();
+
 
 
                     //Repositories
@@ -65,15 +80,25 @@ namespace PresentationLayer
 
                     //services.AddScoped<IEmailQueueRepository, EmailQueueRepository>();
                     services.AddScoped<IUserRepository, UserRepository>();
+
                     //Services
-
-
                     services.AddScoped<IMatchService, MatchService>();
                     services.AddScoped<ITeamService, TeamService>();
                     services.AddScoped<IUserService, UserService>();
                     services.AddScoped<IPlayerService, PlayerService>();
+                    
 
                     //services.AddScoped<IEmailService, EmailService>();
+
+                    //Forms
+                    services.AddTransient<dashboardAdmin>();
+                    services.AddTransient<LoginForms>();
+                    services.AddTransient<ManagerForm>();
+
+                    services.AddTransient<PlayerDashboardForm>();
+
+                    
+
 
                     //Notifications
                     //services.AddScoped<IEmailNotification, EmailNotification>();
@@ -82,7 +107,7 @@ namespace PresentationLayer
                     //services.AddScoped<ICategoryReport, CategoryReport>();
 
                     //Connection
-                    services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
+                    //services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
                 });
         }
     }

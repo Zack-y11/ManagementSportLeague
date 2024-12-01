@@ -32,9 +32,8 @@
             managementIcon = new FontAwesome.Sharp.IconPictureBox();
             userManagementLabel = new Label();
             administrationGroupBox = new GroupBox();
-            PDFBtn = new FontAwesome.Sharp.IconButton();
+            logOutLabel = new Label();
             logOutBtn = new FontAwesome.Sharp.IconButton();
-            seachTextBox = new TextBox();
             headerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)managementIcon).BeginInit();
             administrationGroupBox.SuspendLayout();
@@ -45,11 +44,11 @@
             headerPanel.Controls.Add(managementIcon);
             headerPanel.Controls.Add(userManagementLabel);
             headerPanel.Controls.Add(administrationGroupBox);
-            headerPanel.Dock = DockStyle.Top;
+            headerPanel.Dock = DockStyle.Fill;
             headerPanel.ForeColor = Color.White;
             headerPanel.Location = new Point(0, 0);
             headerPanel.Name = "headerPanel";
-            headerPanel.Size = new Size(1370, 611);
+            headerPanel.Size = new Size(1370, 712);
             headerPanel.TabIndex = 0;
             // 
             // managementIcon
@@ -80,34 +79,33 @@
             // 
             // administrationGroupBox
             // 
-            administrationGroupBox.Controls.Add(PDFBtn);
+            administrationGroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            administrationGroupBox.Controls.Add(logOutLabel);
             administrationGroupBox.Controls.Add(logOutBtn);
             administrationGroupBox.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             administrationGroupBox.Location = new Point(137, 164);
             administrationGroupBox.Name = "administrationGroupBox";
-            administrationGroupBox.Size = new Size(935, 367);
+            administrationGroupBox.Size = new Size(935, 468);
             administrationGroupBox.TabIndex = 0;
             administrationGroupBox.TabStop = false;
             administrationGroupBox.Text = "Management";
             // 
-            // PDFBtn
+            // logOutLabel
             // 
-            PDFBtn.BackColor = Color.YellowGreen;
-            PDFBtn.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
-            PDFBtn.ForeColor = Color.White;
-            PDFBtn.IconChar = FontAwesome.Sharp.IconChar.Newspaper;
-            PDFBtn.IconColor = Color.White;
-            PDFBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            PDFBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            PDFBtn.Location = new Point(341, 157);
-            PDFBtn.Name = "PDFBtn";
-            PDFBtn.Size = new Size(279, 49);
-            PDFBtn.TabIndex = 10;
-            PDFBtn.Text = "Generate PDF";
-            PDFBtn.UseVisualStyleBackColor = false;
+            logOutLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            logOutLabel.AutoSize = true;
+            logOutLabel.BackColor = Color.Transparent;
+            logOutLabel.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            logOutLabel.ForeColor = Color.Black;
+            logOutLabel.Location = new Point(174, 104);
+            logOutLabel.Name = "logOutLabel";
+            logOutLabel.Size = new Size(94, 27);
+            logOutLabel.TabIndex = 11;
+            logOutLabel.Text = "Log out";
             // 
             // logOutBtn
             // 
+            logOutBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             logOutBtn.BackColor = Color.Red;
             logOutBtn.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
             logOutBtn.ForeColor = Color.White;
@@ -115,27 +113,18 @@
             logOutBtn.IconColor = Color.White;
             logOutBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             logOutBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            logOutBtn.Location = new Point(341, 269);
+            logOutBtn.Location = new Point(174, 173);
             logOutBtn.Name = "logOutBtn";
-            logOutBtn.Size = new Size(279, 49);
+            logOutBtn.Size = new Size(588, 62);
             logOutBtn.TabIndex = 9;
             logOutBtn.Text = "Log out";
             logOutBtn.UseVisualStyleBackColor = false;
-            // 
-            // seachTextBox
-            // 
-            seachTextBox.Location = new Point(25, 660);
-            seachTextBox.Name = "seachTextBox";
-            seachTextBox.PlaceholderText = "Search teams, coachs, players...";
-            seachTextBox.Size = new Size(238, 27);
-            seachTextBox.TabIndex = 8;
             // 
             // SettingsForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1370, 712);
-            Controls.Add(seachTextBox);
             Controls.Add(headerPanel);
             Name = "SettingsForm";
             Text = "SettingsForm";
@@ -143,8 +132,8 @@
             headerPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)managementIcon).EndInit();
             administrationGroupBox.ResumeLayout(false);
+            administrationGroupBox.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -153,8 +142,7 @@
         private GroupBox administrationGroupBox;
         private Label userManagementLabel;
         private FontAwesome.Sharp.IconPictureBox managementIcon;
-        private TextBox seachTextBox;
         private FontAwesome.Sharp.IconButton logOutBtn;
-        private FontAwesome.Sharp.IconButton PDFBtn;
+        private Label logOutLabel;
     }
 }

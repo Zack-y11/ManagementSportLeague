@@ -71,6 +71,11 @@ namespace BusinessLayer.Services
         public int GetCornersCount()
         {
             return _teamsRepository.GetTotalCornersCount();
+
+        public CoachTeam GetManagerFromTeam(int teamId)
+        {
+            return _teamsRepository.GetManagerFromTeam(teamId);
+
         }
     }
 }

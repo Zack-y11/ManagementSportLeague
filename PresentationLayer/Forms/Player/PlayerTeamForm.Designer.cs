@@ -28,38 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            headerPanel = new Panel();
             titleIcon = new FontAwesome.Sharp.IconPictureBox();
             titleLabel = new Label();
             teamGroupBox = new GroupBox();
             teamDataGrip = new DataGridView();
             contentTeamPanel = new Panel();
-            headerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)titleIcon).BeginInit();
             teamGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)teamDataGrip).BeginInit();
             contentTeamPanel.SuspendLayout();
             SuspendLayout();
             // 
-            // headerPanel
-            // 
-            headerPanel.BackColor = SystemColors.Highlight;
-            headerPanel.Controls.Add(titleIcon);
-            headerPanel.Controls.Add(titleLabel);
-            headerPanel.Dock = DockStyle.Top;
-            headerPanel.Location = new Point(0, 0);
-            headerPanel.Name = "headerPanel";
-            headerPanel.Size = new Size(1381, 100);
-            headerPanel.TabIndex = 0;
-            // 
             // titleIcon
             // 
             titleIcon.BackColor = Color.Transparent;
+            titleIcon.ForeColor = Color.FromArgb(0, 123, 252);
             titleIcon.IconChar = FontAwesome.Sharp.IconChar.UserShield;
-            titleIcon.IconColor = Color.White;
+            titleIcon.IconColor = Color.FromArgb(0, 123, 252);
             titleIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
             titleIcon.IconSize = 40;
-            titleIcon.Location = new Point(34, 34);
+            titleIcon.Location = new Point(26, 31);
             titleIcon.Name = "titleIcon";
             titleIcon.Size = new Size(40, 40);
             titleIcon.TabIndex = 1;
@@ -68,9 +56,10 @@
             // titleLabel
             // 
             titleLabel.AutoSize = true;
+            titleLabel.BackColor = Color.Transparent;
             titleLabel.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            titleLabel.ForeColor = Color.White;
-            titleLabel.Location = new Point(107, 40);
+            titleLabel.ForeColor = Color.FromArgb(0, 123, 252);
+            titleLabel.Location = new Point(154, 37);
             titleLabel.Name = "titleLabel";
             titleLabel.Size = new Size(251, 34);
             titleLabel.TabIndex = 0;
@@ -78,33 +67,37 @@
             // 
             // teamGroupBox
             // 
+            teamGroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             teamGroupBox.BackColor = Color.White;
             teamGroupBox.Controls.Add(teamDataGrip);
             teamGroupBox.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            teamGroupBox.Location = new Point(67, 31);
+            teamGroupBox.Location = new Point(154, 114);
             teamGroupBox.Name = "teamGroupBox";
-            teamGroupBox.Size = new Size(1006, 511);
+            teamGroupBox.Size = new Size(1006, 530);
             teamGroupBox.TabIndex = 1;
             teamGroupBox.TabStop = false;
             teamGroupBox.Text = "Team content";
             // 
             // teamDataGrip
             // 
+            teamDataGrip.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             teamDataGrip.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             teamDataGrip.Location = new Point(47, 73);
             teamDataGrip.Name = "teamDataGrip";
             teamDataGrip.RowHeadersWidth = 51;
-            teamDataGrip.Size = new Size(883, 373);
+            teamDataGrip.Size = new Size(883, 406);
             teamDataGrip.TabIndex = 0;
             // 
             // contentTeamPanel
             // 
             contentTeamPanel.BackColor = SystemColors.ControlLightLight;
+            contentTeamPanel.Controls.Add(titleIcon);
             contentTeamPanel.Controls.Add(teamGroupBox);
+            contentTeamPanel.Controls.Add(titleLabel);
             contentTeamPanel.Dock = DockStyle.Fill;
-            contentTeamPanel.Location = new Point(0, 100);
+            contentTeamPanel.Location = new Point(0, 0);
             contentTeamPanel.Name = "contentTeamPanel";
-            contentTeamPanel.Size = new Size(1381, 595);
+            contentTeamPanel.Size = new Size(1381, 695);
             contentTeamPanel.TabIndex = 2;
             // 
             // PlayerTeamForm
@@ -113,21 +106,17 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1381, 695);
             Controls.Add(contentTeamPanel);
-            Controls.Add(headerPanel);
             Name = "PlayerTeamForm";
             Text = "PlayerTeamForm";
-            headerPanel.ResumeLayout(false);
-            headerPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)titleIcon).EndInit();
             teamGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)teamDataGrip).EndInit();
             contentTeamPanel.ResumeLayout(false);
+            contentTeamPanel.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Panel headerPanel;
         private Label titleLabel;
         private FontAwesome.Sharp.IconPictureBox titleIcon;
         private GroupBox teamGroupBox;

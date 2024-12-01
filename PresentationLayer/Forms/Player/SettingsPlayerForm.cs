@@ -16,7 +16,5 @@ namespace PresentationLayer.Forms.Player
         {
             InitializeComponent();
         }
-
-     
     }
 }

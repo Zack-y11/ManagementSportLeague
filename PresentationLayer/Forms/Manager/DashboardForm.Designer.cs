@@ -46,6 +46,8 @@
             labelPlayersStatus = new Label();
             labelPlayersNumber = new Label();
             labelPlayers = new Label();
+            playersPDF = new Label();
+            PDFBtn = new FontAwesome.Sharp.IconButton();
             panelPositionTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ipbPositionTable).BeginInit();
             ((System.ComponentModel.ISupportInitialize)teamsStandingDGV).BeginInit();
@@ -113,7 +115,7 @@
             panelWins.Controls.Add(labelWins);
             panelWins.Location = new Point(43, 39);
             panelWins.Name = "panelWins";
-            panelWins.Size = new Size(529, 152);
+            panelWins.Size = new Size(529, 128);
             panelWins.TabIndex = 8;
             // 
             // ipbStar
@@ -135,7 +137,7 @@
             labelWinsNumber.AutoSize = true;
             labelWinsNumber.Font = new Font("Microsoft Sans Serif", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelWinsNumber.ForeColor = Color.White;
-            labelWinsNumber.Location = new Point(13, 58);
+            labelWinsNumber.Location = new Point(23, 48);
             labelWinsNumber.Name = "labelWinsNumber";
             labelWinsNumber.Size = new Size(162, 52);
             labelWinsNumber.TabIndex = 3;
@@ -147,7 +149,7 @@
             labelWins.AutoSize = true;
             labelWins.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelWins.ForeColor = Color.White;
-            labelWins.Location = new Point(190, 10);
+            labelWins.Location = new Point(190, -2);
             labelWins.Name = "labelWins";
             labelWins.Size = new Size(61, 25);
             labelWins.TabIndex = 0;
@@ -161,9 +163,9 @@
             panelNextMach.Controls.Add(labelTimeNextMatch);
             panelNextMach.Controls.Add(labelRival);
             panelNextMach.Controls.Add(labelNextActivity);
-            panelNextMach.Location = new Point(43, 234);
+            panelNextMach.Location = new Point(43, 199);
             panelNextMach.Name = "panelNextMach";
-            panelNextMach.Size = new Size(529, 152);
+            panelNextMach.Size = new Size(529, 137);
             panelNextMach.TabIndex = 7;
             // 
             // ipbActivities
@@ -185,7 +187,7 @@
             labelTimeNextMatch.AutoSize = true;
             labelTimeNextMatch.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelTimeNextMatch.ForeColor = Color.White;
-            labelTimeNextMatch.Location = new Point(23, 118);
+            labelTimeNextMatch.Location = new Point(23, 102);
             labelTimeNextMatch.Name = "labelTimeNextMatch";
             labelTimeNextMatch.Size = new Size(102, 25);
             labelTimeNextMatch.TabIndex = 2;
@@ -196,7 +198,7 @@
             labelRival.AutoSize = true;
             labelRival.Font = new Font("Microsoft Sans Serif", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelRival.ForeColor = Color.White;
-            labelRival.Location = new Point(30, 52);
+            labelRival.Location = new Point(23, 35);
             labelRival.Name = "labelRival";
             labelRival.Size = new Size(336, 52);
             labelRival.TabIndex = 1;
@@ -209,7 +211,7 @@
             labelNextActivity.BackColor = Color.FromArgb(37, 99, 235);
             labelNextActivity.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelNextActivity.ForeColor = Color.White;
-            labelNextActivity.Location = new Point(190, 9);
+            labelNextActivity.Location = new Point(190, 1);
             labelNextActivity.Name = "labelNextActivity";
             labelNextActivity.Size = new Size(121, 25);
             labelNextActivity.TabIndex = 0;
@@ -223,9 +225,9 @@
             panelPlayers.Controls.Add(labelPlayersStatus);
             panelPlayers.Controls.Add(labelPlayersNumber);
             panelPlayers.Controls.Add(labelPlayers);
-            panelPlayers.Location = new Point(43, 449);
+            panelPlayers.Location = new Point(43, 360);
             panelPlayers.Name = "panelPlayers";
-            panelPlayers.Size = new Size(529, 152);
+            panelPlayers.Size = new Size(529, 135);
             panelPlayers.TabIndex = 9;
             // 
             // ipbPlayers
@@ -247,7 +249,7 @@
             labelPlayersStatus.AutoSize = true;
             labelPlayersStatus.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelPlayersStatus.ForeColor = Color.White;
-            labelPlayersStatus.Location = new Point(23, 115);
+            labelPlayersStatus.Location = new Point(23, 98);
             labelPlayersStatus.Name = "labelPlayersStatus";
             labelPlayersStatus.Size = new Size(83, 25);
             labelPlayersStatus.TabIndex = 4;
@@ -258,7 +260,7 @@
             labelPlayersNumber.AutoSize = true;
             labelPlayersNumber.Font = new Font("Microsoft Sans Serif", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelPlayersNumber.ForeColor = Color.White;
-            labelPlayersNumber.Location = new Point(13, 50);
+            labelPlayersNumber.Location = new Point(13, 36);
             labelPlayersNumber.Name = "labelPlayersNumber";
             labelPlayersNumber.Size = new Size(238, 52);
             labelPlayersNumber.TabIndex = 3;
@@ -270,17 +272,46 @@
             labelPlayers.AutoSize = true;
             labelPlayers.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelPlayers.ForeColor = Color.White;
-            labelPlayers.Location = new Point(190, 11);
+            labelPlayers.Location = new Point(190, 2);
             labelPlayers.Name = "labelPlayers";
             labelPlayers.Size = new Size(175, 25);
             labelPlayers.TabIndex = 0;
             labelPlayers.Text = "Players on Team";
+            // 
+            // playersPDF
+            // 
+            playersPDF.AutoSize = true;
+            playersPDF.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            playersPDF.Location = new Point(43, 507);
+            playersPDF.Name = "playersPDF";
+            playersPDF.Size = new Size(201, 22);
+            playersPDF.TabIndex = 45;
+            playersPDF.Text = "Generate players PDF";
+            // 
+            // PDFBtn
+            // 
+            PDFBtn.BackColor = Color.YellowGreen;
+            PDFBtn.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
+            PDFBtn.ForeColor = Color.White;
+            PDFBtn.IconChar = FontAwesome.Sharp.IconChar.Newspaper;
+            PDFBtn.IconColor = Color.White;
+            PDFBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            PDFBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            PDFBtn.Location = new Point(43, 543);
+            PDFBtn.Name = "PDFBtn";
+            PDFBtn.Size = new Size(231, 45);
+            PDFBtn.TabIndex = 46;
+            PDFBtn.Text = "   Generate PDF";
+            PDFBtn.UseVisualStyleBackColor = false;
+            PDFBtn.Click += PDFBtn_Click;
             // 
             // DashboardForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1096, 654);
+            Controls.Add(PDFBtn);
+            Controls.Add(playersPDF);
             Controls.Add(panelPositionTable);
             Controls.Add(panelWins);
             Controls.Add(panelNextMach);
@@ -301,6 +332,7 @@
             panelPlayers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)ipbPlayers).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -322,5 +354,7 @@
         private Label labelPlayersStatus;
         private Label labelPlayersNumber;
         private Label labelPlayers;
+        private Label playersPDF;
+        private FontAwesome.Sharp.IconButton PDFBtn;
     }
 }

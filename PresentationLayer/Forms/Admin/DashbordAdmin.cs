@@ -1,6 +1,7 @@
 ﻿using BusinessLayer.Services;
 using CommonLayer.Models;
 using FontAwesome.Sharp;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -19,7 +20,12 @@ namespace PresentationLayer.Forms
         private readonly ITeamService _teamService;
         private readonly IMatchService _matchService;
         private readonly IUserService _userService;
+
+        private readonly IServiceProvider _serviceProvider;
+
+
         private readonly IEmailService _emailService;
+
         public dashboardAdmin(
             ITeamService teamService,
             IMatchService matchService,
@@ -30,7 +36,9 @@ namespace PresentationLayer.Forms
             _teamService = teamService;
             _matchService = matchService;
             _userService = userService;
+
             _emailService = emailService;
+
 
             contentPanel.Dock = DockStyle.Fill;
             contentPanel.BringToFront();
@@ -235,7 +243,7 @@ namespace PresentationLayer.Forms
         {
             try
             {
-                var form = new StatisticsForm();
+                var form = new StatisticsForm(_teamService);
                 OpenChildForm(form);
             }
             catch (Exception ex)

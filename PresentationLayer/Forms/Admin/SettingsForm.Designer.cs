@@ -119,6 +119,7 @@
             logOutBtn.TabIndex = 9;
             logOutBtn.Text = "Log out";
             logOutBtn.UseVisualStyleBackColor = false;
+          
             // 
             // SettingsForm
             // 

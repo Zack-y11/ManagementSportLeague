@@ -53,5 +53,9 @@ namespace BusinessLayer.Services
         {
             return _teamsRepository.GetTeamStandings();
         }
+        public CoachTeam GetManagerFromTeam(int teamId)
+        {
+            return _teamsRepository.GetManagerFromTeam(teamId);
+        }
     }
 }

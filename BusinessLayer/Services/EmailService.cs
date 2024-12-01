@@ -23,6 +23,32 @@ namespace BusinessLayer.Services
             _password = password;
         }
 
+        public async Task SendMatchCreatedEmailAsync(string coach1Email, string team1Name, string coach2Email, string team2Name, DateTime matchDate)
+        {
+            using (var client = new SmtpClient(_smtpServer))
+            {
+                client.Port = _port;
+                client.Credentials = new NetworkCredential(_senderEmail, _password);
+                client.EnableSsl = true;
+
+                var mailMessage = new MailMessage
+                {
+                    From = new MailAddress(_senderEmail),
+                    Subject = "Match Created",
+                    Body = $"Hello,\n\n" +
+                       $"A new match has been created between {team1Name} and {team2Name} for the {matchDate.ToString("dddd dd, MMMM yyyy")}.\n\n" +
+                       $"Best regards,\n" +
+                       $"Sports Management System Team",
+
+                    IsBodyHtml = false
+                };
+                
+                mailMessage.To.Add(coach1Email);
+                mailMessage.To.Add(coach2Email);
+
+                await client.SendMailAsync(mailMessage);
+            }
+        }
         public async Task SendWelcomeEmailAsync(string recipientEmail, string userName, string password)
         {
             using (var client = new SmtpClient(_smtpServer))

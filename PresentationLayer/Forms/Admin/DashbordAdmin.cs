@@ -1,6 +1,7 @@
 ﻿using BusinessLayer.Services;
 using CommonLayer.Models;
 using FontAwesome.Sharp;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -19,6 +20,7 @@ namespace PresentationLayer.Forms
         private readonly ITeamService _teamService;
         private readonly IMatchService _matchService;
         private readonly IUserService _userService;
+        private readonly IServiceProvider _serviceProvider;
 
         public dashboardAdmin(
             ITeamService teamService,
@@ -29,6 +31,7 @@ namespace PresentationLayer.Forms
             _teamService = teamService;
             _matchService = matchService;
             _userService = userService;
+           
 
 
             contentPanel.Dock = DockStyle.Fill;

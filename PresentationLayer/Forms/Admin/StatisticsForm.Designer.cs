@@ -28,6 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
             statsHeaderTable = new TableLayoutPanel();
             avgPanel = new Panel();
             displayAvgLabel = new Label();
@@ -43,14 +52,14 @@
             totalMatchsLabel = new Label();
             panel2 = new Panel();
             leagueTapControl = new TabControl();
-            teamPage = new TabPage();
             leagueTableDataGrip = new DataGridView();
-            scoresPage = new TabPage();
+            teamPage = new TabPage();
             topScoresDataGrip = new DataGridView();
-            perfomancePage = new TabPage();
-            updateChartBtn = new FontAwesome.Sharp.IconButton();
-            perfomanceChart = new LiveChartsCore.SkiaSharpView.WinForms.CartesianChart();
+            scoresPage = new TabPage();
             perfomanceDataGrip = new DataGridView();
+            perfomanceChart = new LiveChartsCore.SkiaSharpView.WinForms.CartesianChart();
+            updateChartBtn = new FontAwesome.Sharp.IconButton();
+            perfomancePage = new TabPage();
             statsHeaderTable.SuspendLayout();
             avgPanel.SuspendLayout();
             seasonPanel.SuspendLayout();
@@ -58,12 +67,12 @@
             matchesPanel.SuspendLayout();
             panel2.SuspendLayout();
             leagueTapControl.SuspendLayout();
-            teamPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)leagueTableDataGrip).BeginInit();
-            scoresPage.SuspendLayout();
+            teamPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)topScoresDataGrip).BeginInit();
-            perfomancePage.SuspendLayout();
+            scoresPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)perfomanceDataGrip).BeginInit();
+            perfomancePage.SuspendLayout();
             SuspendLayout();
             // 
             // statsHeaderTable
@@ -234,6 +243,42 @@
             leagueTapControl.Size = new Size(1378, 598);
             leagueTapControl.TabIndex = 0;
             // 
+            // leagueTableDataGrip
+            // 
+            leagueTableDataGrip.BackgroundColor = SystemColors.ControlLight;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = SystemColors.Control;
+            dataGridViewCellStyle10.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle10.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
+            leagueTableDataGrip.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            leagueTableDataGrip.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = SystemColors.Window;
+            dataGridViewCellStyle11.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle11.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.False;
+            leagueTableDataGrip.DefaultCellStyle = dataGridViewCellStyle11;
+            leagueTableDataGrip.Dock = DockStyle.Fill;
+            leagueTableDataGrip.GridColor = SystemColors.ScrollBar;
+            leagueTableDataGrip.Location = new Point(3, 3);
+            leagueTableDataGrip.Name = "leagueTableDataGrip";
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = SystemColors.Control;
+            dataGridViewCellStyle12.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle12.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.True;
+            leagueTableDataGrip.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            leagueTableDataGrip.RowHeadersWidth = 51;
+            leagueTableDataGrip.Size = new Size(1364, 553);
+            leagueTableDataGrip.TabIndex = 1;
+            // 
             // teamPage
             // 
             teamPage.Controls.Add(leagueTableDataGrip);
@@ -246,17 +291,40 @@
             teamPage.Text = "League Table";
             teamPage.UseVisualStyleBackColor = true;
             // 
-            // leagueTableDataGrip
+            // topScoresDataGrip
             // 
-            leagueTableDataGrip.BackgroundColor = SystemColors.ControlLight;
-            leagueTableDataGrip.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            leagueTableDataGrip.Dock = DockStyle.Fill;
-            leagueTableDataGrip.GridColor = SystemColors.ScrollBar;
-            leagueTableDataGrip.Location = new Point(3, 3);
-            leagueTableDataGrip.Name = "leagueTableDataGrip";
-            leagueTableDataGrip.RowHeadersWidth = 51;
-            leagueTableDataGrip.Size = new Size(1364, 553);
-            leagueTableDataGrip.TabIndex = 1;
+            topScoresDataGrip.BackgroundColor = SystemColors.ControlLight;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            topScoresDataGrip.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            topScoresDataGrip.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = SystemColors.Window;
+            dataGridViewCellStyle5.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            topScoresDataGrip.DefaultCellStyle = dataGridViewCellStyle5;
+            topScoresDataGrip.Dock = DockStyle.Fill;
+            topScoresDataGrip.Location = new Point(3, 3);
+            topScoresDataGrip.Name = "topScoresDataGrip";
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = SystemColors.Control;
+            dataGridViewCellStyle6.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            topScoresDataGrip.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            topScoresDataGrip.RowHeadersWidth = 51;
+            topScoresDataGrip.Size = new Size(1364, 553);
+            topScoresDataGrip.TabIndex = 0;
             // 
             // scoresPage
             // 
@@ -269,29 +337,52 @@
             scoresPage.Text = "Top Scores";
             scoresPage.UseVisualStyleBackColor = true;
             // 
-            // topScoresDataGrip
+            // perfomanceDataGrip
             // 
-            topScoresDataGrip.BackgroundColor = SystemColors.ControlLight;
-            topScoresDataGrip.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            topScoresDataGrip.Dock = DockStyle.Fill;
-            topScoresDataGrip.Location = new Point(3, 3);
-            topScoresDataGrip.Name = "topScoresDataGrip";
-            topScoresDataGrip.RowHeadersWidth = 51;
-            topScoresDataGrip.Size = new Size(1364, 553);
-            topScoresDataGrip.TabIndex = 0;
+            perfomanceDataGrip.AllowUserToDeleteRows = false;
+            perfomanceDataGrip.AllowUserToResizeColumns = false;
+            perfomanceDataGrip.AllowUserToResizeRows = false;
+            perfomanceDataGrip.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            perfomanceDataGrip.BackgroundColor = SystemColors.ControlLight;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = SystemColors.Control;
+            dataGridViewCellStyle7.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            perfomanceDataGrip.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            perfomanceDataGrip.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = SystemColors.Window;
+            dataGridViewCellStyle8.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            perfomanceDataGrip.DefaultCellStyle = dataGridViewCellStyle8;
+            perfomanceDataGrip.Location = new Point(3, 3);
+            perfomanceDataGrip.Name = "perfomanceDataGrip";
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = SystemColors.Control;
+            dataGridViewCellStyle9.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle9.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
+            perfomanceDataGrip.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            perfomanceDataGrip.RowHeadersWidth = 51;
+            perfomanceDataGrip.Size = new Size(1364, 184);
+            perfomanceDataGrip.TabIndex = 1;
             // 
-            // perfomancePage
+            // perfomanceChart
             // 
-            perfomancePage.Controls.Add(updateChartBtn);
-            perfomancePage.Controls.Add(perfomanceChart);
-            perfomancePage.Controls.Add(perfomanceDataGrip);
-            perfomancePage.Location = new Point(4, 35);
-            perfomancePage.Name = "perfomancePage";
-            perfomancePage.Padding = new Padding(3);
-            perfomancePage.Size = new Size(1370, 559);
-            perfomancePage.TabIndex = 2;
-            perfomancePage.Text = "Perfomance";
-            perfomancePage.UseVisualStyleBackColor = true;
+            perfomanceChart.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            perfomanceChart.BackColor = SystemColors.ControlDark;
+            perfomanceChart.Location = new Point(3, 193);
+            perfomanceChart.Name = "perfomanceChart";
+            perfomanceChart.Size = new Size(1359, 298);
+            perfomanceChart.TabIndex = 2;
             // 
             // updateChartBtn
             // 
@@ -310,28 +401,18 @@
             updateChartBtn.UseVisualStyleBackColor = false;
             updateChartBtn.Click += updateChartBtn_Click;
             // 
-            // perfomanceChart
+            // perfomancePage
             // 
-            perfomanceChart.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            perfomanceChart.BackColor = SystemColors.ControlDark;
-            perfomanceChart.Location = new Point(3, 193);
-            perfomanceChart.Name = "perfomanceChart";
-            perfomanceChart.Size = new Size(1359, 298);
-            perfomanceChart.TabIndex = 2;
-            // 
-            // perfomanceDataGrip
-            // 
-            perfomanceDataGrip.AllowUserToDeleteRows = false;
-            perfomanceDataGrip.AllowUserToResizeColumns = false;
-            perfomanceDataGrip.AllowUserToResizeRows = false;
-            perfomanceDataGrip.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            perfomanceDataGrip.BackgroundColor = SystemColors.ControlLight;
-            perfomanceDataGrip.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            perfomanceDataGrip.Location = new Point(3, 3);
-            perfomanceDataGrip.Name = "perfomanceDataGrip";
-            perfomanceDataGrip.RowHeadersWidth = 51;
-            perfomanceDataGrip.Size = new Size(1364, 184);
-            perfomanceDataGrip.TabIndex = 1;
+            perfomancePage.Controls.Add(updateChartBtn);
+            perfomancePage.Controls.Add(perfomanceChart);
+            perfomancePage.Controls.Add(perfomanceDataGrip);
+            perfomancePage.Location = new Point(4, 35);
+            perfomancePage.Name = "perfomancePage";
+            perfomancePage.Padding = new Padding(3);
+            perfomancePage.Size = new Size(1370, 559);
+            perfomancePage.TabIndex = 2;
+            perfomancePage.Text = "Perfomance";
+            perfomancePage.UseVisualStyleBackColor = true;
             // 
             // StatisticsForm
             // 
@@ -353,12 +434,12 @@
             matchesPanel.PerformLayout();
             panel2.ResumeLayout(false);
             leagueTapControl.ResumeLayout(false);
-            teamPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)leagueTableDataGrip).EndInit();
-            scoresPage.ResumeLayout(false);
+            teamPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)topScoresDataGrip).EndInit();
-            perfomancePage.ResumeLayout(false);
+            scoresPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)perfomanceDataGrip).EndInit();
+            perfomancePage.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -380,12 +461,12 @@
         private Panel panel2;
         private TabControl leagueTapControl;
         private TabPage teamPage;
-        private TabPage scoresPage;
-        private TabPage perfomancePage;
         private DataGridView leagueTableDataGrip;
+        private TabPage scoresPage;
         private DataGridView topScoresDataGrip;
+        private TabPage perfomancePage;
+        private FontAwesome.Sharp.IconButton updateChartBtn;
         private LiveChartsCore.SkiaSharpView.WinForms.CartesianChart perfomanceChart;
         private DataGridView perfomanceDataGrip;
-        private FontAwesome.Sharp.IconButton updateChartBtn;
     }
 }

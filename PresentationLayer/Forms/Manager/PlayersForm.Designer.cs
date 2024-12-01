@@ -298,6 +298,7 @@
             // playerErrorProvider
             // 
             playerErrorProvider.ContainerControl = this;
+            // 
             // PDFBtn
             // 
             PDFBtn.BackColor = Color.YellowGreen;

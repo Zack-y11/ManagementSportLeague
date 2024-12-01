@@ -95,7 +95,8 @@ namespace PresentationLayer
                     services.AddTransient<LoginForms>();
                     services.AddTransient<ManagerForm>();
 
-                    // register email service
+                    services.AddTransient<PlayerDashboardForm>();
+
                     
 
 

@@ -16,11 +16,14 @@ namespace PresentationLayer.Forms.Player
     {
         private Form activeChildForm;
         private readonly ITeamService _teamService;
-        public PlayerDashboardForm(ITeamService teamService)
+        private readonly IPlayerService _playerService;
+        public PlayerDashboardForm(ITeamService teamService, IPlayerService playerService)
         {
             InitializeComponent();
             SetUpButtons();
             _teamService = teamService;
+            _playerService = playerService;
+            LoadDashboardContent();
         }
 
 
@@ -96,7 +99,7 @@ namespace PresentationLayer.Forms.Player
         {
             try
             {
-                var playerInfoForm = new PlayerInfoForm();
+                var playerInfoForm = new PlayerInfoForm(_playerService);
                 OpenChildForm(playerInfoForm);
             }
             catch (Exception ex)

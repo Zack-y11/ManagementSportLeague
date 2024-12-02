@@ -37,12 +37,6 @@
             soccerIconPictureBox = new FontAwesome.Sharp.IconPictureBox();
             dashboardPlayerLabel = new Label();
             contentPanel = new Panel();
-            statsIcon = new FontAwesome.Sharp.IconPictureBox();
-            headerLabel = new Label();
-            playerDataGrip = new DataGridView();
-            playerSportInformation = new DataGridView();
-            playerInformationLabel = new Label();
-            titlePlayerLabel = new Label();
             buttonsPanel = new Panel();
             IconsPanel = new Panel();
             resetBtn = new FontAwesome.Sharp.IconButton();
@@ -50,10 +44,6 @@
             closeBtn = new FontAwesome.Sharp.IconButton();
             dashboardPlayerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)soccerIconPictureBox).BeginInit();
-            contentPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)statsIcon).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)playerDataGrip).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)playerSportInformation).BeginInit();
             buttonsPanel.SuspendLayout();
             IconsPanel.SuspendLayout();
             SuspendLayout();
@@ -77,7 +67,7 @@
             // dashboardBtn
             // 
             dashboardBtn.FlatStyle = FlatStyle.Flat;
-            dashboardBtn.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            dashboardBtn.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
             dashboardBtn.IconChar = FontAwesome.Sharp.IconChar.User;
             dashboardBtn.IconColor = Color.Black;
             dashboardBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -92,7 +82,7 @@
             // calendarBtn
             // 
             calendarBtn.FlatStyle = FlatStyle.Flat;
-            calendarBtn.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            calendarBtn.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
             calendarBtn.IconChar = FontAwesome.Sharp.IconChar.CalendarWeek;
             calendarBtn.IconColor = Color.Black;
             calendarBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -107,7 +97,7 @@
             // settingsPlayerBtn
             // 
             settingsPlayerBtn.FlatStyle = FlatStyle.Flat;
-            settingsPlayerBtn.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            settingsPlayerBtn.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
             settingsPlayerBtn.IconChar = FontAwesome.Sharp.IconChar.Cogs;
             settingsPlayerBtn.IconColor = Color.Black;
             settingsPlayerBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -122,7 +112,7 @@
             // positionTableBtn
             // 
             positionTableBtn.FlatStyle = FlatStyle.Flat;
-            positionTableBtn.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            positionTableBtn.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
             positionTableBtn.IconChar = FontAwesome.Sharp.IconChar.Star;
             positionTableBtn.IconColor = Color.Gold;
             positionTableBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -137,7 +127,7 @@
             // playerTeamBtn
             // 
             playerTeamBtn.FlatStyle = FlatStyle.Flat;
-            playerTeamBtn.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            playerTeamBtn.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
             playerTeamBtn.IconChar = FontAwesome.Sharp.IconChar.Users;
             playerTeamBtn.IconColor = Color.Black;
             playerTeamBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -166,10 +156,10 @@
             // dashboardPlayerLabel
             // 
             dashboardPlayerLabel.AutoSize = true;
-            dashboardPlayerLabel.Font = new Font("Century Gothic", 16F, FontStyle.Bold);
+            dashboardPlayerLabel.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Bold);
             dashboardPlayerLabel.Location = new Point(74, 21);
             dashboardPlayerLabel.Name = "dashboardPlayerLabel";
-            dashboardPlayerLabel.Size = new Size(159, 64);
+            dashboardPlayerLabel.Size = new Size(156, 62);
             dashboardPlayerLabel.TabIndex = 2;
             dashboardPlayerLabel.Text = "Dashboard\r\nPlayer";
             // 
@@ -177,83 +167,10 @@
             // 
             contentPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             contentPanel.BackColor = SystemColors.ControlLightLight;
-            contentPanel.Controls.Add(statsIcon);
-            contentPanel.Controls.Add(headerLabel);
-            contentPanel.Controls.Add(playerDataGrip);
-            contentPanel.Controls.Add(playerSportInformation);
-            contentPanel.Controls.Add(playerInformationLabel);
-            contentPanel.Controls.Add(titlePlayerLabel);
             contentPanel.Location = new Point(263, 99);
             contentPanel.Name = "contentPanel";
             contentPanel.Size = new Size(1118, 583);
             contentPanel.TabIndex = 3;
-            // 
-            // statsIcon
-            // 
-            statsIcon.BackColor = Color.FromArgb(0, 123, 252);
-            statsIcon.IconChar = FontAwesome.Sharp.IconChar.UniversalAccess;
-            statsIcon.IconColor = Color.White;
-            statsIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            statsIcon.IconSize = 40;
-            statsIcon.Location = new Point(55, 21);
-            statsIcon.Name = "statsIcon";
-            statsIcon.Size = new Size(42, 40);
-            statsIcon.TabIndex = 21;
-            statsIcon.TabStop = false;
-            // 
-            // headerLabel
-            // 
-            headerLabel.AutoSize = true;
-            headerLabel.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            headerLabel.ForeColor = Color.FromArgb(0, 123, 252);
-            headerLabel.Location = new Point(103, 27);
-            headerLabel.Name = "headerLabel";
-            headerLabel.Size = new Size(168, 34);
-            headerLabel.TabIndex = 20;
-            headerLabel.Text = "Player Stats";
-            // 
-            // playerDataGrip
-            // 
-            playerDataGrip.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            playerDataGrip.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            playerDataGrip.Location = new Point(81, 157);
-            playerDataGrip.Name = "playerDataGrip";
-            playerDataGrip.RowHeadersWidth = 51;
-            playerDataGrip.Size = new Size(907, 351);
-            playerDataGrip.TabIndex = 19;
-            // 
-            // playerSportInformation
-            // 
-            playerSportInformation.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            playerSportInformation.BackgroundColor = Color.White;
-            playerSportInformation.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            playerSportInformation.GridColor = SystemColors.GradientInactiveCaption;
-            playerSportInformation.Location = new Point(55, 125);
-            playerSportInformation.Name = "playerSportInformation";
-            playerSportInformation.RowHeadersWidth = 51;
-            playerSportInformation.Size = new Size(956, 414);
-            playerSportInformation.TabIndex = 18;
-            // 
-            // playerInformationLabel
-            // 
-            playerInformationLabel.AutoSize = true;
-            playerInformationLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            playerInformationLabel.Location = new Point(55, 81);
-            playerInformationLabel.Name = "playerInformationLabel";
-            playerInformationLabel.Size = new Size(193, 23);
-            playerInformationLabel.TabIndex = 17;
-            playerInformationLabel.Text = "Player Information:";
-            // 
-            // titlePlayerLabel
-            // 
-            titlePlayerLabel.AutoSize = true;
-            titlePlayerLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            titlePlayerLabel.ForeColor = SystemColors.HotTrack;
-            titlePlayerLabel.Location = new Point(489, 34);
-            titlePlayerLabel.Name = "titlePlayerLabel";
-            titlePlayerLabel.Size = new Size(499, 23);
-            titlePlayerLabel.TabIndex = 11;
-            titlePlayerLabel.Text = "\"Player Stats: Rankings, Wins, Upcoming Matches \"";
             // 
             // buttonsPanel
             // 
@@ -335,11 +252,6 @@
             dashboardPlayerPanel.ResumeLayout(false);
             dashboardPlayerPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)soccerIconPictureBox).EndInit();
-            contentPanel.ResumeLayout(false);
-            contentPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)statsIcon).EndInit();
-            ((System.ComponentModel.ISupportInitialize)playerDataGrip).EndInit();
-            ((System.ComponentModel.ISupportInitialize)playerSportInformation).EndInit();
             buttonsPanel.ResumeLayout(false);
             IconsPanel.ResumeLayout(false);
             ResumeLayout(false);
@@ -355,17 +267,11 @@
         private FontAwesome.Sharp.IconPictureBox soccerIconPictureBox;
         private Label dashboardPlayerLabel;
         private Panel contentPanel;
-        private Label titlePlayerLabel;
-        private DataGridView playerSportInformation;
-        private Label playerInformationLabel;
         private FontAwesome.Sharp.IconButton dashboardBtn;
-        private DataGridView playerDataGrip;
         private Panel buttonsPanel;
         private Panel IconsPanel;
         private FontAwesome.Sharp.IconButton resetBtn;
         private FontAwesome.Sharp.IconButton maximizeBtn;
         private FontAwesome.Sharp.IconButton closeBtn;
-        private Label headerLabel;
-        private FontAwesome.Sharp.IconPictureBox statsIcon;
     }
 }

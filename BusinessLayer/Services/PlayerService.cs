@@ -26,6 +26,10 @@ namespace BusinessLayer.Services
         {
             return _playerRepository.GetCoachPlayers(_userId);
         }
+        public IEnumerable<CoachPlayer> GetCoachPlayerInfo(int _userId)
+        {
+            return _playerRepository.GetCoachPlayerInfo(_userId);
+        }
         public void Add(Player player)
         {
             _playerRepository.Add(player);

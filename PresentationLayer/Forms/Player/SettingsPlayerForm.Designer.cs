@@ -55,7 +55,7 @@
             PDFButton.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             PDFButton.BackColor = Color.YellowGreen;
             PDFButton.FlatStyle = FlatStyle.Flat;
-            PDFButton.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            PDFButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
             PDFButton.ForeColor = Color.Transparent;
             PDFButton.IconChar = FontAwesome.Sharp.IconChar.RightToBracket;
             PDFButton.IconColor = Color.White;
@@ -72,10 +72,10 @@
             // 
             pdfLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pdfLabel.AutoSize = true;
-            pdfLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            pdfLabel.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             pdfLabel.Location = new Point(30, 32);
             pdfLabel.Name = "pdfLabel";
-            pdfLabel.Size = new Size(312, 23);
+            pdfLabel.Size = new Size(317, 25);
             pdfLabel.TabIndex = 8;
             pdfLabel.Text = "Generate PDF of your stadistics";
             // 
@@ -84,7 +84,7 @@
             logOutBtn.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             logOutBtn.BackColor = Color.Red;
             logOutBtn.FlatStyle = FlatStyle.Flat;
-            logOutBtn.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            logOutBtn.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
             logOutBtn.ForeColor = Color.Transparent;
             logOutBtn.IconChar = FontAwesome.Sharp.IconChar.RightToBracket;
             logOutBtn.IconColor = Color.White;
@@ -96,6 +96,7 @@
             logOutBtn.TabIndex = 6;
             logOutBtn.Text = "Log Out";
             logOutBtn.UseVisualStyleBackColor = false;
+            logOutBtn.Click += logOutBtn_Click;
             // 
             // shildIcon
             // 
@@ -114,11 +115,11 @@
             // userLabel
             // 
             userLabel.AutoSize = true;
-            userLabel.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            userLabel.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             userLabel.ForeColor = Color.FromArgb(0, 123, 252);
             userLabel.Location = new Point(114, 34);
             userLabel.Name = "userLabel";
-            userLabel.Size = new Size(218, 34);
+            userLabel.Size = new Size(229, 32);
             userLabel.TabIndex = 0;
             userLabel.Text = "Player Settings ";
             // 

@@ -17,12 +17,16 @@ namespace PresentationLayer.Forms.Player
         private Form activeChildForm;
         private readonly ITeamService _teamService;
         private readonly IPlayerService _playerService;
-        public PlayerDashboardForm(ITeamService teamService, IPlayerService playerService)
+        private readonly IUserService _userService;        
+        private readonly IServiceProvider _serviceProvider; 
+        public PlayerDashboardForm(ITeamService teamService, IPlayerService playerService, IUserService userService, IServiceProvider serviceProvider)
         {
             InitializeComponent();
             SetUpButtons();
             _teamService = teamService;
             _playerService = playerService;
+            _userService = userService;          
+            _serviceProvider = serviceProvider;
             LoadDashboardContent();
         }
 
@@ -151,7 +155,7 @@ namespace PresentationLayer.Forms.Player
         {
             try
             {
-                var settingsPlayerForm = new SettingsPlayerForm();
+                var settingsPlayerForm = new SettingsPlayerForm(_userService, _serviceProvider);
                 OpenChildForm(settingsPlayerForm);
             }
             catch (Exception ex)

@@ -1,5 +1,7 @@
 ﻿using BusinessLayer.Services;
 using CommonLayer.Models;
+using Microsoft.Extensions.DependencyInjection;
+using PresentationLayer.LoginF;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,8 +12,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
-
 namespace PresentationLayer.ManagerForms
 {
     public partial class ManagerForm : Form
@@ -20,12 +20,16 @@ namespace PresentationLayer.ManagerForms
         private readonly IMatchService _matchService;
         private readonly ITeamService _teamService;
         private readonly IPlayerService _playerService;
-        public ManagerForm(IMatchService matchService, ITeamService teamService, IPlayerService playerService)
+        private readonly IUserService _userService;
+        private readonly IServiceProvider _serviceProvider;
+        public ManagerForm(IMatchService matchService, ITeamService teamService, IPlayerService playerService, IUserService userService, IServiceProvider serviceProvider)
         {
             InitializeComponent();
             _matchService = matchService;
             _playerService = playerService;
             _teamService = teamService;
+            _userService = userService;
+            _serviceProvider = serviceProvider;
             LoadDashboardContent();
 
             SetUpButtons();
@@ -83,7 +87,7 @@ namespace PresentationLayer.ManagerForms
                     MessageBox.Show($"Unknown button: {button.Name}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
 
-                
+
             }
         }
 
@@ -100,7 +104,7 @@ namespace PresentationLayer.ManagerForms
                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
         private void LoadDashboardContent()
         {
             try
@@ -139,6 +143,21 @@ namespace PresentationLayer.ManagerForms
         {
             this.WindowState = FormWindowState.Normal;
             UpdateWindowButtons();
+        }
+
+        private void logOutBtn_Click(object sender, EventArgs e)
+        {
+            AuthenticatedUser.Name = null;
+            AuthenticatedUser.UserId = 0;
+            AuthenticatedUser.RoleId = 0;
+
+            this.Hide();
+            this.Close();
+
+            var loginForm = _serviceProvider.GetRequiredService<LoginForms>();
+            loginForm.Show();
+
+
         }
     }
 }

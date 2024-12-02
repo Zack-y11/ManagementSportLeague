@@ -20,23 +20,21 @@ namespace PresentationLayer.Forms
         private readonly ITeamService _teamService;
         private readonly IMatchService _matchService;
         private readonly IUserService _userService;
-
         private readonly IServiceProvider _serviceProvider;
-
-
         private readonly IEmailService _emailService;
-
         public dashboardAdmin(
             ITeamService teamService,
             IMatchService matchService,
             IUserService userService,
-            IEmailService emailService)
+            IEmailService emailService,
+            IServiceProvider serviceProvider
+        )
         {
             InitializeComponent();
             _teamService = teamService;
             _matchService = matchService;
             _userService = userService;
-
+            _serviceProvider = serviceProvider;
             _emailService = emailService;
 
 
@@ -256,7 +254,7 @@ namespace PresentationLayer.Forms
         {
             try
             {
-                var form = new SettingsForm(_teamService);
+                var form = new SettingsForm(_teamService, _userService, _serviceProvider);
                 OpenChildForm(form);
             }
             catch (Exception ex)
@@ -293,45 +291,6 @@ namespace PresentationLayer.Forms
             this.Close();
 
         }
-
-        protected override void OnFormClosing(FormClosingEventArgs e)
-        {
-            if (e.CloseReason == CloseReason.UserClosing)
-            {
-                DialogResult result = MessageBox.Show(
-                    "Are you sure you want to exit?",
-                    "Exit Confirmation",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question);
-
-                if (result == DialogResult.No)
-                {
-                    e.Cancel = true;
-                    return;
-                }
-            }
-
-
-            if (activeForm != null)
-            {
-                activeForm.Dispose();
-                activeForm = null;
-            }
-
-            contentPanel?.Controls.Clear();
-
-            if (Application.MessageLoop)
-            {
-                Application.Exit();
-            }
-            else
-            {
-                Environment.Exit(0);
-            }
-
-            base.OnFormClosing(e);
-        }
-
     }
 
 }

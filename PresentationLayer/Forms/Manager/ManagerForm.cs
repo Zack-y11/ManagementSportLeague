@@ -34,7 +34,6 @@ namespace PresentationLayer.ManagerForms
         private void SetUpButtons()
         {
             dashboardBtn.Click += ButtonClickHandler;
-            activitiesBtn.Click += ButtonClickHandler;
             playersBtn.Click += ButtonClickHandler;
         }
 
@@ -76,33 +75,17 @@ namespace PresentationLayer.ManagerForms
                 case "dashboardbtn":
                     LoadDashboardContent();
                     break;
-
-                case "activitiesbtn":
-                    LoadActivitiesContent();
+                case "playersbtn":
+                    LoadPlayersContent();
                     break;
                 default:
                     MessageBox.Show($"Unknown button: {button.Name}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
 
-                case "playersbtn":
-                    LoadPlayersContent();
-                    break;
+                
             }
         }
 
-        private void LoadActivitiesContent()
-        {
-            try
-            {
-                var activitiesForm = new ActivitiesForm();
-                OpenChildForm(activitiesForm);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred while loading the activities: {ex.Message}",
-                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
         private void LoadPlayersContent()
         {
             try

@@ -82,9 +82,5 @@ namespace BusinessLayer.Services
         {
             return _teamsRepository.GetCoachTeamFromPlayer(playerId);
         }
-        public IEnumerable<CoachTeam> GetCoachTeamFromPlayer(int playerId)
-        {
-            return _teamsRepository.GetCoachTeamFromPlayer(playerId);
-        }
     }
 }

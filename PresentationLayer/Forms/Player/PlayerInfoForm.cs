@@ -23,10 +23,14 @@ namespace PresentationLayer.Forms.Player
             LoadData();
         }
 
-       public void LoadData()
+        public void LoadData()
         {
             playerDataGrip.DataSource = _playerService.GetCoachPlayerInfo(AuthenticatedUser.UserId);
         }
 
+        private void PDFBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

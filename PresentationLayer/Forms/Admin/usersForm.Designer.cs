@@ -148,6 +148,7 @@
             // usersDataGrip
             // 
             usersDataGrip.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            usersDataGrip.BackgroundColor = SystemColors.ControlLightLight;
             usersDataGrip.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             usersDataGrip.Location = new Point(84, 252);
             usersDataGrip.Name = "usersDataGrip";

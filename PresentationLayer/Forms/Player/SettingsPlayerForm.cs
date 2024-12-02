@@ -17,12 +17,12 @@ namespace PresentationLayer.Forms.Player
 {
     public partial class SettingsPlayerForm : Form
     {
-        private readonly IServiceProvider _serviceProvider;  // Declare the field here
+        private readonly IServiceProvider _serviceProvider;  
         private readonly IUserService _userService;
         public SettingsPlayerForm(IUserService userService, IServiceProvider serviceProvider)
         {
             InitializeComponent();
-            _serviceProvider = serviceProvider;  // Store the serviceProvider
+            _serviceProvider = serviceProvider;  
             _userService = userService;
         }
 

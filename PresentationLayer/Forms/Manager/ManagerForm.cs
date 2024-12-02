@@ -34,7 +34,7 @@ namespace PresentationLayer.ManagerForms
         private void SetUpButtons()
         {
             dashboardBtn.Click += ButtonClickHandler;
-            activitiesBtn.Click += ButtonClickHandler;
+        
             playersBtn.Click += ButtonClickHandler;
         }
 

@@ -52,7 +52,6 @@
             ipbGoals = new FontAwesome.Sharp.IconPictureBox();
             labelGoals = new Label();
             sidePanel = new Panel();
-            activitiesBtn = new FontAwesome.Sharp.IconButton();
             dashboardBtn = new FontAwesome.Sharp.IconButton();
             playersBtn = new FontAwesome.Sharp.IconButton();
             panelLogo = new Panel();
@@ -351,7 +350,6 @@
             // sidePanel
             // 
             sidePanel.BackColor = Color.WhiteSmoke;
-            sidePanel.Controls.Add(activitiesBtn);
             sidePanel.Controls.Add(dashboardBtn);
             sidePanel.Controls.Add(playersBtn);
             sidePanel.Controls.Add(panelLogo);
@@ -361,24 +359,6 @@
             sidePanel.Name = "sidePanel";
             sidePanel.Size = new Size(302, 754);
             sidePanel.TabIndex = 7;
-            // 
-            // activitiesBtn
-            // 
-            activitiesBtn.FlatAppearance.BorderSize = 0;
-            activitiesBtn.FlatStyle = FlatStyle.Flat;
-            activitiesBtn.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            activitiesBtn.ForeColor = Color.Black;
-            activitiesBtn.IconChar = FontAwesome.Sharp.IconChar.Calendar;
-            activitiesBtn.IconColor = Color.Black;
-            activitiesBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            activitiesBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            activitiesBtn.Location = new Point(0, 179);
-            activitiesBtn.Name = "activitiesBtn";
-            activitiesBtn.Padding = new Padding(12, 0, 0, 0);
-            activitiesBtn.Size = new Size(302, 60);
-            activitiesBtn.TabIndex = 9;
-            activitiesBtn.Text = "Activities";
-            activitiesBtn.UseVisualStyleBackColor = true;
             // 
             // dashboardBtn
             // 
@@ -408,7 +388,7 @@
             playersBtn.IconColor = Color.Black;
             playersBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             playersBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            playersBtn.Location = new Point(0, 257);
+            playersBtn.Location = new Point(0, 188);
             playersBtn.Name = "playersBtn";
             playersBtn.Padding = new Padding(12, 0, 0, 0);
             playersBtn.Size = new Size(302, 60);
@@ -603,7 +583,6 @@
         private Panel contentPanel;
         private FontAwesome.Sharp.IconButton dashboardBtn;
         private Label labelGoalsStatus;
-        private FontAwesome.Sharp.IconButton activitiesBtn;
         private Panel IconsPanel;
         private FontAwesome.Sharp.IconButton resetBtn;
         private FontAwesome.Sharp.IconButton maximizeBtn;

@@ -30,7 +30,6 @@ namespace PresentationLayer.Forms.Player
         private void SetUpButtons()
         {
             dashboardBtn.Click += ButtonClickHandler;
-            calendarBtn.Click += ButtonClickHandler;
             playerTeamBtn.Click += ButtonClickHandler;
             positionTableBtn.Click += ButtonClickHandler;
             settingsPlayerBtn.Click += ButtonClickHandler;

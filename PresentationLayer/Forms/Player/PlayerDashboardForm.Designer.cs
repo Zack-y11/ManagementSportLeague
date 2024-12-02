@@ -30,7 +30,6 @@
         {
             dashboardPlayerPanel = new Panel();
             dashboardBtn = new FontAwesome.Sharp.IconButton();
-            calendarBtn = new FontAwesome.Sharp.IconButton();
             settingsPlayerBtn = new FontAwesome.Sharp.IconButton();
             positionTableBtn = new FontAwesome.Sharp.IconButton();
             playerTeamBtn = new FontAwesome.Sharp.IconButton();
@@ -52,7 +51,6 @@
             // 
             dashboardPlayerPanel.BackColor = Color.WhiteSmoke;
             dashboardPlayerPanel.Controls.Add(dashboardBtn);
-            dashboardPlayerPanel.Controls.Add(calendarBtn);
             dashboardPlayerPanel.Controls.Add(settingsPlayerBtn);
             dashboardPlayerPanel.Controls.Add(positionTableBtn);
             dashboardPlayerPanel.Controls.Add(playerTeamBtn);
@@ -79,21 +77,6 @@
             dashboardBtn.Text = "Dashboard";
             dashboardBtn.UseVisualStyleBackColor = true;
             // 
-            // calendarBtn
-            // 
-            calendarBtn.FlatStyle = FlatStyle.Flat;
-            calendarBtn.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            calendarBtn.IconChar = FontAwesome.Sharp.IconChar.CalendarWeek;
-            calendarBtn.IconColor = Color.Black;
-            calendarBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            calendarBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            calendarBtn.Location = new Point(0, 202);
-            calendarBtn.Name = "calendarBtn";
-            calendarBtn.Size = new Size(263, 59);
-            calendarBtn.TabIndex = 7;
-            calendarBtn.Text = "Calendar";
-            calendarBtn.UseVisualStyleBackColor = true;
-            // 
             // settingsPlayerBtn
             // 
             settingsPlayerBtn.FlatStyle = FlatStyle.Flat;
@@ -102,7 +85,7 @@
             settingsPlayerBtn.IconColor = Color.Black;
             settingsPlayerBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             settingsPlayerBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            settingsPlayerBtn.Location = new Point(0, 366);
+            settingsPlayerBtn.Location = new Point(0, 312);
             settingsPlayerBtn.Name = "settingsPlayerBtn";
             settingsPlayerBtn.Size = new Size(263, 59);
             settingsPlayerBtn.TabIndex = 6;
@@ -117,7 +100,7 @@
             positionTableBtn.IconColor = Color.Gold;
             positionTableBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             positionTableBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            positionTableBtn.Location = new Point(0, 310);
+            positionTableBtn.Location = new Point(0, 256);
             positionTableBtn.Name = "positionTableBtn";
             positionTableBtn.Size = new Size(263, 59);
             positionTableBtn.TabIndex = 4;
@@ -132,7 +115,7 @@
             playerTeamBtn.IconColor = Color.Black;
             playerTeamBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             playerTeamBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            playerTeamBtn.Location = new Point(0, 256);
+            playerTeamBtn.Location = new Point(0, 202);
             playerTeamBtn.Name = "playerTeamBtn";
             playerTeamBtn.Size = new Size(263, 59);
             playerTeamBtn.TabIndex = 3;
@@ -260,7 +243,6 @@
         #endregion
 
         private Panel dashboardPlayerPanel;
-        private FontAwesome.Sharp.IconButton calendarBtn;
         private FontAwesome.Sharp.IconButton settingsPlayerBtn;
         private FontAwesome.Sharp.IconButton positionTableBtn;
         private FontAwesome.Sharp.IconButton playerTeamBtn;

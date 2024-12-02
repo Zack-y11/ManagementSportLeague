@@ -76,8 +76,8 @@ namespace DataLayer.Repositories
                                     u.Password
                                 FROM Players p
                                 JOIN Users u ON p.UserId = u.UserId
-                                WHERE p.PlayerId = @PlayerId;";
-                return connection.Query<CoachPlayer>(query, new { PlayerId = userId });
+                                WHERE u.UserId = @UserId;";
+                return connection.Query<CoachPlayer>(query, new { UserId = userId });
             }
         }
         public void CreateUserPlayer(int creatorId, string email, string password, string name, string position, DateTime birthDate, int goals, int assists)

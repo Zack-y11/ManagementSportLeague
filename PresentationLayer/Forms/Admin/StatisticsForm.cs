@@ -4,6 +4,7 @@ using LiveChartsCore;
 using SkiaSharp;
 using LiveChartsCore.SkiaSharpView.WinForms;
 using PresentationLayer.Reports.Categories;
+using BusinessLayer.Services;
 
 namespace PresentationLayer.Forms
 {
@@ -11,19 +12,28 @@ namespace PresentationLayer.Forms
     {
         private List<PerfomanceStats> statsList = new List<PerfomanceStats>();
         private BindingSource bindingSource = new BindingSource();
+        private readonly ITeamService _teamService;
 
-        public StatisticsForm()
+        public StatisticsForm(ITeamService teamService)
         {
             InitializeComponent();
             SetupDataBinding();
-         
-
+            _teamService = teamService;
+            LoadDataRank();
         }
 
         private void SetupDataBinding()
         {
             bindingSource.DataSource = statsList;
             perfomanceDataGrip.DataSource = bindingSource;
+        }
+        public void LoadDataRank()
+        {
+            leagueTableDataGrip.DataSource = _teamService.GetRankedTeams();
+
+            totalMatchesLabel.Text = _teamService.GetMatchesCount().ToString();
+            displayTotaFoulsLabel.Text = _teamService.GetFouslCount().ToString();
+            displayCornersLabel.Text = _teamService.GetCornersCount().ToString();
         }
 
         private void UpdateChart()

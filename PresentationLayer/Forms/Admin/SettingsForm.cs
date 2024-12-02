@@ -11,25 +11,27 @@ using System.IO;
 using Microsoft.Extensions.Configuration;
 using BusinessLayer.Services;
 using CommonLayer.Models;
+using PresentationLayer.LoginF;
+using Microsoft.Extensions.DependencyInjection;
+using System.Diagnostics;
 
 
 
 namespace PresentationLayer.Forms
 {
 
-    
+
     public partial class SettingsForm : Form
     {
-   
+        
+        
+        
         public SettingsForm(ITeamService teamService)
         {
-          
+
             InitializeComponent();
+ 
         }
-
-
-
-
 
        
 

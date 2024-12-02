@@ -63,6 +63,7 @@
             maximizeBtn = new FontAwesome.Sharp.IconButton();
             closeBtn = new FontAwesome.Sharp.IconButton();
             contentPanel = new Panel();
+            logOutBtn = new FontAwesome.Sharp.IconButton();
             panelNextMach.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ipbActivities).BeginInit();
             panelWins.SuspendLayout();
@@ -350,6 +351,7 @@
             // sidePanel
             // 
             sidePanel.BackColor = Color.WhiteSmoke;
+            sidePanel.Controls.Add(logOutBtn);
             sidePanel.Controls.Add(dashboardBtn);
             sidePanel.Controls.Add(playersBtn);
             sidePanel.Controls.Add(panelLogo);
@@ -511,6 +513,24 @@
             contentPanel.Size = new Size(1046, 654);
             contentPanel.TabIndex = 9;
             // 
+            // logOutBtn
+            // 
+            logOutBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            logOutBtn.BackColor = Color.Red;
+            logOutBtn.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold);
+            logOutBtn.ForeColor = Color.White;
+            logOutBtn.IconChar = FontAwesome.Sharp.IconChar.UserCircle;
+            logOutBtn.IconColor = Color.White;
+            logOutBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            logOutBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            logOutBtn.Location = new Point(0, 247);
+            logOutBtn.Name = "logOutBtn";
+            logOutBtn.Size = new Size(302, 62);
+            logOutBtn.TabIndex = 10;
+            logOutBtn.Text = "Log out";
+            logOutBtn.UseVisualStyleBackColor = false;
+            logOutBtn.Click += logOutBtn_Click;
+            // 
             // ManagerForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -587,5 +607,6 @@
         private FontAwesome.Sharp.IconButton resetBtn;
         private FontAwesome.Sharp.IconButton maximizeBtn;
         private FontAwesome.Sharp.IconButton closeBtn;
+        private FontAwesome.Sharp.IconButton logOutBtn;
     }
 }

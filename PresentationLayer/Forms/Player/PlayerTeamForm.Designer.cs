@@ -32,6 +32,7 @@
             titleLabel = new Label();
             teamGroupBox = new GroupBox();
             teamDataGrip = new DataGridView();
+            PDFBtn = new FontAwesome.Sharp.IconButton();
             contentTeamPanel = new Panel();
             ((System.ComponentModel.ISupportInitialize)titleIcon).BeginInit();
             teamGroupBox.SuspendLayout();
@@ -71,9 +72,9 @@
             teamGroupBox.BackColor = Color.White;
             teamGroupBox.Controls.Add(teamDataGrip);
             teamGroupBox.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            teamGroupBox.Location = new Point(154, 114);
+            teamGroupBox.Location = new Point(218, 118);
             teamGroupBox.Name = "teamGroupBox";
-            teamGroupBox.Size = new Size(1006, 530);
+            teamGroupBox.Size = new Size(1006, 541);
             teamGroupBox.TabIndex = 1;
             teamGroupBox.TabStop = false;
             teamGroupBox.Text = "Team content";
@@ -85,12 +86,31 @@
             teamDataGrip.Location = new Point(47, 73);
             teamDataGrip.Name = "teamDataGrip";
             teamDataGrip.RowHeadersWidth = 51;
-            teamDataGrip.Size = new Size(883, 406);
+            teamDataGrip.Size = new Size(883, 430);
             teamDataGrip.TabIndex = 0;
+            // 
+            // PDFBtn
+            // 
+            PDFBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            PDFBtn.BackColor = Color.YellowGreen;
+            PDFBtn.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
+            PDFBtn.ForeColor = Color.White;
+            PDFBtn.IconChar = FontAwesome.Sharp.IconChar.Newspaper;
+            PDFBtn.IconColor = Color.White;
+            PDFBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            PDFBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            PDFBtn.Location = new Point(915, 57);
+            PDFBtn.Name = "PDFBtn";
+            PDFBtn.Size = new Size(233, 45);
+            PDFBtn.TabIndex = 44;
+            PDFBtn.Text = "       Generate PDF";
+            PDFBtn.UseVisualStyleBackColor = false;
+            PDFBtn.Click += PDFBtn_Click;
             // 
             // contentTeamPanel
             // 
             contentTeamPanel.BackColor = SystemColors.ControlLightLight;
+            contentTeamPanel.Controls.Add(PDFBtn);
             contentTeamPanel.Controls.Add(titleIcon);
             contentTeamPanel.Controls.Add(teamGroupBox);
             contentTeamPanel.Controls.Add(titleLabel);
@@ -122,5 +142,6 @@
         private GroupBox teamGroupBox;
         private DataGridView teamDataGrip;
         private Panel contentTeamPanel;
+        private FontAwesome.Sharp.IconButton PDFBtn;
     }
 }

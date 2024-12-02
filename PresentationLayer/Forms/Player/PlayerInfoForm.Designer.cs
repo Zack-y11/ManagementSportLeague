@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             contentPanel = new Panel();
+            PDFBtn = new FontAwesome.Sharp.IconButton();
             statsIcon = new FontAwesome.Sharp.IconPictureBox();
             playerDataGrip = new DataGridView();
             playerSportInformation = new DataGridView();
@@ -47,6 +48,7 @@
             // 
             contentPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             contentPanel.BackColor = SystemColors.ControlLightLight;
+            contentPanel.Controls.Add(PDFBtn);
             contentPanel.Controls.Add(statsIcon);
             contentPanel.Controls.Add(playerDataGrip);
             contentPanel.Controls.Add(playerSportInformation);
@@ -57,6 +59,24 @@
             contentPanel.Name = "contentPanel";
             contentPanel.Size = new Size(1339, 693);
             contentPanel.TabIndex = 4;
+            // 
+            // PDFBtn
+            // 
+            PDFBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            PDFBtn.BackColor = Color.YellowGreen;
+            PDFBtn.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
+            PDFBtn.ForeColor = Color.White;
+            PDFBtn.IconChar = FontAwesome.Sharp.IconChar.Newspaper;
+            PDFBtn.IconColor = Color.White;
+            PDFBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            PDFBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            PDFBtn.Location = new Point(1092, 32);
+            PDFBtn.Name = "PDFBtn";
+            PDFBtn.Size = new Size(233, 45);
+            PDFBtn.TabIndex = 45;
+            PDFBtn.Text = "       Generate PDF";
+            PDFBtn.UseVisualStyleBackColor = false;
+            PDFBtn.Click += PDFBtn_Click;
             // 
             // statsIcon
             // 
@@ -75,10 +95,10 @@
             // 
             playerDataGrip.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             playerDataGrip.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            playerDataGrip.Location = new Point(209, 193);
+            playerDataGrip.Location = new Point(80, 165);
             playerDataGrip.Name = "playerDataGrip";
             playerDataGrip.RowHeadersWidth = 51;
-            playerDataGrip.Size = new Size(917, 376);
+            playerDataGrip.Size = new Size(917, 430);
             playerDataGrip.TabIndex = 20;
             // 
             // playerSportInformation
@@ -87,10 +107,10 @@
             playerSportInformation.BackgroundColor = Color.White;
             playerSportInformation.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             playerSportInformation.GridColor = SystemColors.GradientInactiveCaption;
-            playerSportInformation.Location = new Point(145, 148);
+            playerSportInformation.Location = new Point(25, 124);
             playerSportInformation.Name = "playerSportInformation";
             playerSportInformation.RowHeadersWidth = 51;
-            playerSportInformation.Size = new Size(1028, 467);
+            playerSportInformation.Size = new Size(1028, 515);
             playerSportInformation.TabIndex = 18;
             // 
             // headerLabel
@@ -119,7 +139,7 @@
             titlePlayerLabel.AutoSize = true;
             titlePlayerLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             titlePlayerLabel.ForeColor = SystemColors.HotTrack;
-            titlePlayerLabel.Location = new Point(394, 36);
+            titlePlayerLabel.Location = new Point(318, 32);
             titlePlayerLabel.Name = "titlePlayerLabel";
             titlePlayerLabel.Size = new Size(499, 23);
             titlePlayerLabel.TabIndex = 11;
@@ -161,5 +181,6 @@
         private FontAwesome.Sharp.IconPictureBox statsIcon;
         private DataGridView playerDataGrip;
         private Panel contentPlayerPanel;
+        private FontAwesome.Sharp.IconButton PDFBtn;
     }
 }

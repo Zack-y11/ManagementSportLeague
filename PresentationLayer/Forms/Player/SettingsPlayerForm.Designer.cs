@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             buttonsPanel = new Panel();
-            PDFButton = new FontAwesome.Sharp.IconButton();
             pdfLabel = new Label();
             logOutBtn = new FontAwesome.Sharp.IconButton();
             shildIcon = new FontAwesome.Sharp.IconPictureBox();
@@ -42,14 +41,12 @@
             // 
             buttonsPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             buttonsPanel.BackColor = SystemColors.ControlLight;
-            buttonsPanel.Controls.Add(PDFButton);
             buttonsPanel.Controls.Add(pdfLabel);
             buttonsPanel.Controls.Add(logOutBtn);
             buttonsPanel.Location = new Point(302, 134);
             buttonsPanel.Name = "buttonsPanel";
             buttonsPanel.Size = new Size(672, 361);
             buttonsPanel.TabIndex = 10;
-            // 
             // PDFButton
             // 
             PDFButton.Anchor = AnchorStyles.Left | AnchorStyles.Right;
@@ -67,7 +64,7 @@
             PDFButton.TabIndex = 7;
             PDFButton.Text = "Generate PDF";
             PDFButton.UseVisualStyleBackColor = false;
-            // 
+            
             // pdfLabel
             // 
             pdfLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
@@ -90,7 +87,7 @@
             logOutBtn.IconColor = Color.White;
             logOutBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             logOutBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            logOutBtn.Location = new Point(113, 239);
+            logOutBtn.Location = new Point(108, 178);
             logOutBtn.Name = "logOutBtn";
             logOutBtn.Size = new Size(477, 43);
             logOutBtn.TabIndex = 6;
@@ -143,7 +140,6 @@
         #endregion
 
         private Panel buttonsPanel;
-        private FontAwesome.Sharp.IconButton PDFButton;
         private Label pdfLabel;
         private FontAwesome.Sharp.IconButton logOutBtn;
         private FontAwesome.Sharp.IconPictureBox shildIcon;

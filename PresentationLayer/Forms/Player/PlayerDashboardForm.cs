@@ -79,10 +79,6 @@ namespace PresentationLayer.Forms.Player
                 case "dashboardbtn":
                     LoadDashboardContent();
                     break;
-                case "calendarbtn":
-                    LoadCalendarContent();
-                    break;
-
                 case "playerteambtn":
                     LoadPlayerTeamContent();
                     break;
@@ -112,19 +108,7 @@ namespace PresentationLayer.Forms.Player
             }
         }
 
-        private void LoadCalendarContent()
-        {
-            try
-            {
-                var activitiesForm = new CalendarForm();
-                OpenChildForm(activitiesForm);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred while loading the activities: {ex.Message}",
-                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+
         private void LoadPlayerTeamContent()
         {
             try

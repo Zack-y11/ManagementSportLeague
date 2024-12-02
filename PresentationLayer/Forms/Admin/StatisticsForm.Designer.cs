@@ -35,9 +35,6 @@
             avgPanel = new Panel();
             displayCornersLabel = new Label();
             avgAttendance = new Label();
-            seasonPanel = new Panel();
-            displaySeasonProgressLabel = new Label();
-            seasonProgressLabel = new Label();
             goalsPanel = new Panel();
             displayTotaFoulsLabel = new Label();
             totalGoalsLabel = new Label();
@@ -50,7 +47,6 @@
             leagueTableDataGrip = new DataGridView();
             statsHeaderTable.SuspendLayout();
             avgPanel.SuspendLayout();
-            seasonPanel.SuspendLayout();
             goalsPanel.SuspendLayout();
             matchesPanel.SuspendLayout();
             panel2.SuspendLayout();
@@ -68,7 +64,6 @@
             statsHeaderTable.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 366F));
             statsHeaderTable.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 286F));
             statsHeaderTable.Controls.Add(avgPanel, 2, 0);
-            statsHeaderTable.Controls.Add(seasonPanel, 3, 0);
             statsHeaderTable.Controls.Add(goalsPanel, 1, 0);
             statsHeaderTable.Controls.Add(matchesPanel, 0, 0);
             statsHeaderTable.Dock = DockStyle.Top;
@@ -110,37 +105,6 @@
             avgAttendance.Size = new Size(125, 21);
             avgAttendance.TabIndex = 2;
             avgAttendance.Text = "Total Corners: ";
-            // 
-            // seasonPanel
-            // 
-            seasonPanel.BackColor = Color.Transparent;
-            seasonPanel.Controls.Add(displaySeasonProgressLabel);
-            seasonPanel.Controls.Add(seasonProgressLabel);
-            seasonPanel.Location = new Point(1086, 3);
-            seasonPanel.Name = "seasonPanel";
-            seasonPanel.Size = new Size(279, 119);
-            seasonPanel.TabIndex = 3;
-            // 
-            // displaySeasonProgressLabel
-            // 
-            displaySeasonProgressLabel.AutoSize = true;
-            displaySeasonProgressLabel.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            displaySeasonProgressLabel.ForeColor = Color.Indigo;
-            displaySeasonProgressLabel.Location = new Point(61, 59);
-            displaySeasonProgressLabel.Name = "displaySeasonProgressLabel";
-            displaySeasonProgressLabel.Size = new Size(60, 21);
-            displaySeasonProgressLabel.TabIndex = 2;
-            displaySeasonProgressLabel.Text = "label1";
-            // 
-            // seasonProgressLabel
-            // 
-            seasonProgressLabel.AutoSize = true;
-            seasonProgressLabel.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            seasonProgressLabel.Location = new Point(51, 16);
-            seasonProgressLabel.Name = "seasonProgressLabel";
-            seasonProgressLabel.Size = new Size(146, 21);
-            seasonProgressLabel.TabIndex = 3;
-            seasonProgressLabel.Text = "Season Progress:";
             // 
             // goalsPanel
             // 
@@ -231,7 +195,7 @@
             teamPage.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             teamPage.Location = new Point(4, 35);
             teamPage.Name = "teamPage";
-            teamPage.Padding = new Padding(3, 3, 3, 3);
+            teamPage.Padding = new Padding(3);
             teamPage.Size = new Size(1362, 559);
             teamPage.TabIndex = 0;
             teamPage.Text = "League Table";
@@ -285,8 +249,6 @@
             statsHeaderTable.ResumeLayout(false);
             avgPanel.ResumeLayout(false);
             avgPanel.PerformLayout();
-            seasonPanel.ResumeLayout(false);
-            seasonPanel.PerformLayout();
             goalsPanel.ResumeLayout(false);
             goalsPanel.PerformLayout();
             matchesPanel.ResumeLayout(false);
@@ -301,17 +263,14 @@
         #endregion
 
         private TableLayoutPanel statsHeaderTable;
-        private Panel seasonPanel;
         private Panel avgPanel;
         private Panel goalsPanel;
         private Panel matchesPanel;
         private Label totalMatchsLabel;
         private Label avgAttendance;
         private Label totalGoalsLabel;
-        private Label seasonProgressLabel;
         private Label displayTotaFoulsLabel;
         private Label displayCornersLabel;
-        private Label displaySeasonProgressLabel;
         private Panel panel2;
         private TabControl leagueTapControl;
         private TabPage teamPage;

@@ -105,7 +105,7 @@
             PDFBtn.TabIndex = 44;
             PDFBtn.Text = "       Generate PDF";
             PDFBtn.UseVisualStyleBackColor = false;
-            
+            PDFBtn.Click += PDFBtn_Click;
             // 
             // contentTeamPanel
             // 

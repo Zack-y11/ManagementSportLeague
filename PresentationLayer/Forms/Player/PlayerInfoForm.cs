@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BusinessLayer.Services;
+using CommonLayer.Models;
+using DataLayer.Repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +15,18 @@ namespace PresentationLayer.Forms.Player
 {
     public partial class PlayerInfoForm : Form
     {
-        public PlayerInfoForm()
+        private IPlayerService _playerService;
+        public PlayerInfoForm(IPlayerService playerService)
         {
             InitializeComponent();
+            _playerService = playerService;
+            LoadData();
         }
 
-       
+       public void LoadData()
+        {
+            playerDataGrip.DataSource = _playerService.GetCoachPlayerInfo(AuthenticatedUser.UserId);
+        }
+
     }
 }

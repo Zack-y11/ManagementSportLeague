@@ -60,6 +60,26 @@ namespace DataLayer.Repositories
                 return connection.Query<CoachPlayer>(query, new { UserId = _userId });
             }
         }
+        public IEnumerable<CoachPlayer> GetCoachPlayerInfo(int userId)
+        {
+
+           using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"SELECT 
+                                    p.PlayerId,
+                                    u.Name as PlayerName,
+                                    p.Position,
+                                    p.Goals,
+                                    p.Assists,
+                                    p.Birthdate,
+                                    u.Email,
+                                    u.Password
+                                FROM Players p
+                                JOIN Users u ON p.UserId = u.UserId
+                                WHERE p.PlayerId = @PlayerId;";
+                return connection.Query<CoachPlayer>(query, new { PlayerId = userId });
+            }
+        }
         public void CreateUserPlayer(int creatorId, string email, string password, string name, string position, DateTime birthDate, int goals, int assists)
         {
             using (var connection = _dbConnection.GetConnection())

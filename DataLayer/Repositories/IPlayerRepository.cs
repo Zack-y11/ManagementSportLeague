@@ -9,7 +9,9 @@ namespace DataLayer.Repositories
         void Delete(int playerId);
         IEnumerable<Player> GetAll();
         IEnumerable<CoachPlayer> GetCoachPlayers(int _userId);
+        IEnumerable<CoachPlayer> GetCoachPlayerInfo(int _userId);
         void Update(Player player);
         void CreateUserPlayer(int creatorId, string email, string password, string name, string position, DateTime birthDate, int goals, int assists);
+
     }
 }

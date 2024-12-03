@@ -49,21 +49,21 @@
             buttonsPanel.TabIndex = 10;
             // PDFButton
             // 
-            PDFButton.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            PDFButton.BackColor = Color.YellowGreen;
-            PDFButton.FlatStyle = FlatStyle.Flat;
-            PDFButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            PDFButton.ForeColor = Color.Transparent;
-            PDFButton.IconChar = FontAwesome.Sharp.IconChar.RightToBracket;
-            PDFButton.IconColor = Color.White;
-            PDFButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            PDFButton.ImageAlign = ContentAlignment.MiddleLeft;
-            PDFButton.Location = new Point(113, 151);
-            PDFButton.Name = "PDFButton";
-            PDFButton.Size = new Size(477, 43);
-            PDFButton.TabIndex = 7;
-            PDFButton.Text = "Generate PDF";
-            PDFButton.UseVisualStyleBackColor = false;
+            //PDFButton.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            //PDFButton.BackColor = Color.YellowGreen;
+            //PDFButton.FlatStyle = FlatStyle.Flat;
+            //PDFButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            //PDFButton.ForeColor = Color.Transparent;
+            //PDFButton.IconChar = FontAwesome.Sharp.IconChar.RightToBracket;
+            //PDFButton.IconColor = Color.White;
+            //PDFButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            //PDFButton.ImageAlign = ContentAlignment.MiddleLeft;
+            //PDFButton.Location = new Point(113, 151);
+            //PDFButton.Name = "PDFButton";
+            //PDFButton.Size = new Size(477, 43);
+            //PDFButton.TabIndex = 7;
+            //PDFButton.Text = "Generate PDF";
+            //PDFButton.UseVisualStyleBackColor = false;
             
             // pdfLabel
             // 
